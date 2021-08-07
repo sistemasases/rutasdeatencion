@@ -12,11 +12,8 @@ $(function() {
      //obtener la informacion del json
      const json = getJson();
 
-
-
-
-
-
+    //llamar la funcionalida movil
+    screenResponsiveWebDesing()
 
 
 
@@ -63,7 +60,7 @@ async function getJson() {
 
    if (!answer.ok) {
 
-    let error = "Error 404. datAbase Json, no found";
+    let error = "Error 404. dataBase Json, no found";
     console.log("hey")
     throw new Error(error);
 
