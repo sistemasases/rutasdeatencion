@@ -12,16 +12,22 @@ $(function() {
      //obtener la informacion del json
      const json = getJson();
 
-    //llamar la funcionalida movil
-    screenResponsiveWebDesing()
+
+     /* fin de las varibles */
 
 
+     //llamar la funcionalida movil
+     screenResponsiveWebDesing()
+    
+
+     /* EVENTOS CLICK  */
 
 
 
 });
 
 
+/* INSERTAR EL TEXTO DEL JSON A SU RESPECTIVO CAJON */
 function get_information_about_attention(json,objectInsert,attention,nameEntity,about) {
 
     //variables internas   
@@ -41,7 +47,7 @@ function get_information_about_attention(json,objectInsert,attention,nameEntity,
     //Insertar el texto 
     json.then( (value) => {
 
-      // no olvidar colocar una restricion para la dimensio individual
+      // no olvidar colocar una restricion para la dimension individual
       nameAttention = (Object.keys(value[dimension][attention][nameEntity]))[0]
       $(objectInsert).html(value[dimension][attention][nameEntity][nameAttention][about])
       
@@ -74,5 +80,8 @@ async function getJson() {
 
 
 }
+
+
+
 
 
