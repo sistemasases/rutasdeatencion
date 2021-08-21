@@ -87,6 +87,7 @@ h1 {
     grid-template-columns: 10% 80% 10%;
     background-color: white;
     box-shadow: rgba(199, 202, 202, 0.2) 0px 8px 24px;
+    z-index: 1;
 }
 
 .title {
@@ -167,20 +168,176 @@ h1 {
     overflow: hidden;
 }
 
+/* */
+.box-major {
+    display: grid;
+    grid-template-rows: 4em;
+    grid-template-columns: 100%;
+    justify-items: center;
+    position: fixed;
+    top: 5em;
+    width: 100%;
+    z-index: 1;
+}
+
+.box-arrows {
+    display: grid;
+    grid-template-rows: 4em;
+    grid-template-columns: 4.7em 5.5em 5.5em 5.7em ;
+    justify-items: baseline;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.box-breadcrumbs {
+    display: none;
+    position: relative;
+}
+
+.box-breadcrumbs:first-child {
+    background-color: white;
+    border-left: 2px solid gray;
+    box-sizing: content-box;
+}
+
+.box-breadcrumbs::before {
+    top: -5px;
+    transform: skew(30deg);
+    border-top: 2px solid gray;
+}
+
+.box-breadcrumbs::before, .box-breadcrumbs::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 62.5%;
+    width: 5.3em;
+    background: white;
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+    z-index: -2;
+}
+
+.box-breadcrumbs-aux::before, .box-breadcrumbs-aux::after {
+    width: 4em !important;
+}
+
+.box-breadcrumbs-active::before, .box-breadcrumbs-active::after {
+    background: gainsboro;
+}
+
+.box-breadcrumbs:first-child::before, .box-breadcrumbs:first-child::after {
+    left: 5px;
+}
+
+.box-breadcrumbs::after {
+    bottom: -5px;
+    transform: skew(-30deg);
+    border-bottom: 2px solid gray;
+}
+
+.content-breadcrumbs {
+    display: inline-block;
+    position: relative;
+    line-height: 2.7em;
+    padding: 0 10px;
+    color: gray;
+    text-decoration: none;
+}
+
+.content-breadcrumbs.active { 
+    color: white !important;
+}
+
+.content-breadcrumbs:hover {
+    text-decoration: none;
+    color: gray;
+}
+
+.title-breadcrumbs {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.home {
+    text-align: center;
+    font-size: 30px;
+}
+
+.home.active {
+    color: white !important;
+}
+
+/* AJUSTES DE LA CAJA PRINCIPAL */
+.box-page-inicio {
+    display: grid;
+    position: fixed;
+    bottom: 7.5em;
+    width: 100%;
+    height: 27em;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
+    overflow: hidden;
+}
+
+.lienzo {
+    grid-column-start: 2;
+    align-self: end;
+    justify-self: end;
+    height: 27em;
+}
 
 /* AJUSTES DEL PERSONAJE */
+
 .box-personaje {
-    position: fixed;
-    bottom: 3em;
-    left: 3.5em;
+    grid-column-start: 1;
+    align-self: end;
+    justify-self: center;
 }
 
 .features-personajes {
     width: 100%;
-    height: 20em;
+    height: 27em;
 }
 
+.contact-information {
+    display: inline;
+    overflow: hidden;
+    color: white;
+    font-style: italic;
+    font-size: 1.2em;
+    font-family: Roboto, sans-serif;
+    text-align: justify;
+    margin: 2.5em;   
+    grid-column-start: 1;
+    align-self: center;
+}
 
+.content-info {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 0em;
+    grid-template-rows: 7.3em;
+    grid-template-columns: 90% 10%;
+    background-color: gray;
+    overflow: hidden;
+}
+
+.close-footer {
+    grid-column-start: 2;
+}
+
+.close-btn-footer {
+    border: hidden;
+    color: white;
+    font-size: 30px;
+    background-color: gray;
+}
 /* 4 espacios para  syntaxis */
 
 /*
@@ -306,9 +463,9 @@ h1 {
           background-color: gray;
       }
       .box-personaje {
-          position: fixed;
-          bottom: 7em;
-          left: 2.5em;
+         grid-column-start: 1;
+         justify-self: center;
+         align-self: flex-end;
       }
       .features-personajes {
           width: 8em;
@@ -336,7 +493,7 @@ h1 {
           overflow: hidden;
       }
       .box-breadcrumbs {
-          display: inline-block;
+          display:  none;
           position: relative;
       }
       .box-breadcrumbs:first-child {
@@ -400,9 +557,25 @@ h1 {
       .home.active {
           color: white !important;
       }
+      .box-page-inicio {
+          display: grid;
+          position: fixed;
+          bottom: 7.5em;
+          width: 100%;
+          height: 20em;
+          grid-template-rows: 100%;
+          grid-template-columns: 50% 50%;
+          overflow: hidden;
+      }
+      .lienzo {
+          position: relative;
+          right: 0;
+          height: 20em;
+      }
 
 
 }
+
 
 /* REPOSIVE WED DESING PARA PANTALLAS DE 375PX DE ANCHO */
 
@@ -509,13 +682,13 @@ h1 {
           background-color: gray;
       }
       .box-personaje {
-          position: fixed;
-          bottom: 7em;
-          left: 1.5em;
+          grid-column-start: 1;
+          align-self: flex-end;
+          justify-self: flex-start;
       }
       .features-personajes {
           width: 7em;
-          height: 17em;
+          height: 16em;
       }
      .box-major {
           display: grid;
@@ -538,7 +711,7 @@ h1 {
           overflow: hidden;
       }
       .box-breadcrumbs {
-          display: inline-block;
+          display:  none;
           position: relative;
       }
       .box-breadcrumbs:first-child {
@@ -601,5 +774,20 @@ h1 {
       }
       .home.active {
           color: white !important;
+      }
+      .box-page-inicio {
+          display: grid;
+          position: fixed;
+          bottom: 7.5em;
+          width: 100%;
+          height: 16em;
+          grid-template-rows: 100%;
+          grid-template-columns: 50% 50%;
+          overflow: hidden;
+      }
+      .lienzo {
+          position: relative;
+          right: 0;
+          height: 16em;
       }
 }
