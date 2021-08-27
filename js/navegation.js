@@ -33,7 +33,9 @@ function svgPaint(json) {
     for (let i = 1 ; i <= 4 ; i++) {
     $('#arrows-'+i).show()
     $('#arrows-'+iterador).hide()
-    $('#arrows-'+i + ' text').html(Object.keys(event)[i-1])
+    let wordDimension = Object.keys(event)[i-1]
+    wordDimension = wordDimension.charAt(0).toUpperCase() +  wordDimension.slice(1);
+    $('#arrows-'+i + ' text').html(wordDimension)
     iterador++;
     }
 

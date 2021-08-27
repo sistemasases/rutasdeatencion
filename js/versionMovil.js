@@ -26,7 +26,6 @@ function screenResponsiveWebDesing(json) {
 
      //mostrar el breadcumbs de inicio
      $('#bread-1').css('display','inline-block')
-     $('#detonating-question').hide()
      $('body').addClass('active')
 
      //Funcionalidad de las flechas
