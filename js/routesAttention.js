@@ -94,6 +94,7 @@ function animateBackground(screen,bandAux,iterador, dimension , json) {
     bandArrow = null
     endTime = null
     $('body').addClass('active')
+    $('.detonating-question-box').show()
     funcionalityBrecumbs(screen)
     funcionalityRute(json ,true, dimension , null , iterador);
    
