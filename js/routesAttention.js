@@ -15,19 +15,18 @@ async function rutesAttentionMovil(json) {
 
       let number = Number( $(this).attr('id').replace('arrows-','') )
       let iterador = 1;
-      band = true;
     
     if ($('body').hasClass('active')) {
 
       if ($('#bread-1').hasClass('box-breadcrumbs-active')) { 
-      dimension = $(this).find('text').text()  
+      dimension = $(this).find('text').text().toLowerCase() 
       attetionAux = null
       animateBackground(number,false,1,dimension,json)
       }
       else {
-      attetionAux = $(this).find('text').text()   
-      band = false;
-      funcionalityRute( json , band, dimension ,attetionAux , iterador);
+      attetionAux = $(this).find('text').text()
+      attetionAux =  attetionAux.charAt(0).toLowerCase() + attetionAux.slice(1)
+      funcionalityRute( json , false, dimension ,attetionAux , iterador);
       }
 
     }  
@@ -94,8 +93,8 @@ function animateBackground(screen,bandAux,iterador, dimension , json) {
     increaseAux = 0;
     bandArrow = null
     endTime = null
-    $('#detonating-question').show()
     $('body').addClass('active')
+    $('.detonating-question-box').show()
     funcionalityBrecumbs(screen)
     funcionalityRute(json ,true, dimension , null , iterador);
    
@@ -143,17 +142,21 @@ function funcionalityRute( json ,band , dimension , attetionAux , iterador ) {
 
       for (const attention of Object.keys(value[dimension]) ) {
       $('#arrows-'+iterador+'').show()
-      $('#arrows-'+iterador+' text').html(attention)
+      let wordAttention = attention
+      wordAttention = wordAttention.charAt(0).toUpperCase() +  wordAttention.slice(1);
+      $('#arrows-'+iterador+' text').html(wordAttention)
       iterador++;
 
       }
 
       } 
       else { 
-
+  
       for (const attention of Object.keys(value[dimension][attetionAux]) ) {
       $('#arrows-'+iterador+'').show()
-      $('#arrows-'+iterador+' text').html(attention)
+      let wordAttention = attention
+      wordAttention = wordAttention.charAt(0).toUpperCase() +  wordAttention.slice(1);
+      $('#arrows-'+iterador+' text').html(wordAttention)
       iterador++;
       }
 

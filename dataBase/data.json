@@ -1,5 +1,5 @@
 {
-
+   
   "individual": {
 
     "atencionPsicosocial": {
@@ -40,7 +40,7 @@
 
     },
 
-    "AtencionDeSalud": {
+    "atencionDeSalud": {
 
       "consultaMedicaUnivalle": {
 
@@ -98,7 +98,7 @@
       
       "suministroDeMedicamentosUnivalleOComfandi": {
 
-         "MedicamentoSuministrado": {
+         "medicamentoSuministrado": {
 
             "descripcion" : "Se reciben en algunos de los puntos COMFANDI, la entidad contratada para el suministro, debe presentar: 1) la fórmula autorizada; 2) presentar carné renovado o recibo de pago y tabulado; 3) usted debe cancelar en la droguería el 60% del valor total de los medicamentos formulados. La Universidad asumirá el 40% restante.",
 
@@ -174,9 +174,9 @@
 
     },
 
-    "AtencionEducativa": {
+    "atencionEducativa": {
 
-      "OfertaDeAtencionAnteSituacionDiscapacidadVisual": {
+      "ofertaDeAtencionAnteSituacionDiscapacidadVisual": {
 
          "monitoriasParaDiscapacitados": {
 
@@ -343,7 +343,7 @@
           
         },
 
-        "ColectivoTeatral": {
+        "colectivoTeatral": {
 
            "colectivoTeatralLibre": {
             
@@ -484,7 +484,7 @@
           
         },
 
-        "Voleibol": {
+        "voleibol": {
 
            "clasesDeVoleibol": {
 
@@ -503,7 +503,7 @@
           
         },
 
-        "Baloncesto": {
+        "baloncesto": {
 
            "clasesDeBaloncesto": {
 
@@ -522,7 +522,7 @@
           
         },
 
-        "Rugby": {
+        "rugby": {
 
            "clasesDeRugby": {
 
@@ -549,10 +549,10 @@
 
   "economica": {
 
-    "AtencionSocioeconomica": {
+    "atencionSocioeconomica": {
 
 
-        "SubsidioEconomicoBecaDeAlimentacion": {
+        "subsidioEconomicoBecaDeAlimentacion": {
 
          "apoyosEconomicos": {
 
@@ -697,7 +697,7 @@
 
    "atencionAcadémica": {
 
-      "MonitoriasSocioeducativasAses": {
+      "monitoriasSocioeducativasAses": {
 
          "acompanamientoSocioEducativo": {
 
@@ -849,7 +849,7 @@
           
       },
 
-      "RemisionRegistro-MatrículaAcademica": {
+      "remisionRegistro-MatrículaAcademica": {
 
          "ayudadEnProcesosAcademicos": {
 
