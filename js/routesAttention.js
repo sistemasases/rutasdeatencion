@@ -15,20 +15,22 @@ async function rutesAttentionMovil(json) {
 
       let number = Number( $(this).attr('id').replace('arrows-','') )
       let iterador = 1;
+      band = true;
     
-      if ($('body').hasClass('active')) {
+    if ($('body').hasClass('active')) {
 
-        if ($('#bread-1').hasClass('box-breadcrumbs-active')) { 
-        dimension = $(this).find('text').text()  
-        attetionAux = null
-        animateBackground(number,false,1,dimension,json)
-        }
-        else {
-        attetionAux = $(this).find('text').text()   
-        funcionalityRute( json , false, dimension ,attetionAux , iterador);
+      if ($('#bread-1').hasClass('box-breadcrumbs-active')) { 
+      dimension = $(this).find('text').text()  
+      attetionAux = null
+      animateBackground(number,false,1,dimension,json)
+      }
+      else {
+      attetionAux = $(this).find('text').text()   
+      band = false;
+      funcionalityRute( json , band, dimension ,attetionAux , iterador);
       }
 
-     }  
+    }  
   })
 
 }
@@ -65,8 +67,7 @@ function animateBackground(screen,bandAux,iterador, dimension , json) {
    }
 
    //incrementos de las variables de la animacion 
-
-   if (    dimension != 'individual' && sizeScreenWidth  < 374
+   if ( dimension != 'individual' && sizeScreenWidth  < 374
         || sizeScreenWidth >= 375) {
    sizeScreen += 10
    }else {
@@ -93,6 +94,7 @@ function animateBackground(screen,bandAux,iterador, dimension , json) {
     increaseAux = 0;
     bandArrow = null
     endTime = null
+    $('#detonating-question').show()
     $('body').addClass('active')
     funcionalityBrecumbs(screen)
     funcionalityRute(json ,true, dimension , null , iterador);
