@@ -3,11 +3,9 @@
 
 
 
-
 /* Funcionalidad de rutas de atencion svg */
 async function rutesAttentionMovil(json) {
  
-  let aux = ['a','div','span']
   let dimension,attetionAux;
 
   $('.arrows-lienzo').on('click' , function (event) {
@@ -20,13 +18,103 @@ async function rutesAttentionMovil(json) {
       band = true;
     
     if ($('body').hasClass('active')) {
+
       if ($('#bread-1').hasClass('box-breadcrumbs-active')) { 
-       
-      
       dimension = $(this).find('text').text()  
       attetionAux = null
+      animateBackground(number,false,1,dimension,json)
+      }
+      else {
+      attetionAux = $(this).find('text').text()   
+      band = false;
+      funcionalityRute( json , band, dimension ,attetionAux , iterador);
+      }
 
-      //quitar la clase activa  
+    }  
+  })
+
+}
+
+/* animacion del personaje,ruta,fondo*/
+function animateBackground(screen,bandAux,iterador, dimension , json) {
+
+  let sizeScreenWidth  = $(window).width()
+  let sizeScreen = 0;
+  let increase = 0;
+  let increaseAux = 0;
+  bandArrow = true
+  endTime = true
+
+  //evitar usar los escuchas mientras se hace la animacion
+  $('body').removeClass('active')
+
+  const timer = setInterval( function () {
+   
+   //si el tamaño de pantalla es superado habra acaba la animacion
+   if (sizeScreen < sizeScreenWidth*screen) {
+   $('body,html').css('background-position-x',''+ increase +'%')
+
+   //animacion de la ruta
+   if ( increaseAux <= 200 &&  bandArrow) {
+   $('.lienzo').css('right', ''+ (increaseAux+10) +'%')
+   }else if (increaseAux == 203) {
+   increaseAux = -50;
+   endTime  =  false
+   bandArrow = false
+   }else if (sizeScreen > (sizeScreenWidth*screen-84)) {
+   endTime = true
+   $('.lienzo').css('right', ''+ (increaseAux+7) +'%')
+   }
+
+   //incrementos de las variables de la animacion 
+   if ( dimension != 'individual' && sizeScreenWidth  < 374
+        || sizeScreenWidth >= 375) {
+   sizeScreen += 10
+   }else {
+   sizeScreen += 8
+   }
+
+   if (endTime) {
+   increaseAux += 7;
+   }
+
+   increase += iterador;
+
+   }
+   else {
+     bandAux = true;
+   }
+
+  
+   if(bandAux) {
+    clearInterval(timer)
+    bandAux = null
+    sizeScreen = 0;
+    increase = 0;
+    increaseAux = 0;
+    bandArrow = null
+    endTime = null
+    $('#detonating-question').show()
+    $('body').addClass('active')
+    funcionalityBrecumbs(screen)
+    funcionalityRute(json ,true, dimension , null , iterador);
+   
+   }
+
+  },100)
+
+  return timer;
+
+
+}
+
+
+/* Quitar la clase activa en el brecumbs */
+function funcionalityBrecumbs(number) {
+
+  let aux = ['a','div','span']
+
+       //quitar la clase activa  
       $('.box-breadcrumbs').each((index,value) => {
 
         if ( $(value).hasClass('box-breadcrumbs-active') ) {
@@ -39,21 +127,16 @@ async function rutesAttentionMovil(json) {
            $(value).find('a').attr('style',' ')
 
 
-           animateBackground(number,false,1,dimension)
            $('#bread-'+ (number+1) +'').css('display','inline-block')
            $('#bread-'+ (number+1) +'').addClass('box-breadcrumbs-active')
         }
 
       })
-    
+}
 
-      }
-      else {
-      attetionAux = $(this).find('text').text()   
-      band = false;
-      }
+/* poner y colocar los nodos de la dimension precionada  */
+function funcionalityRute( json ,band , dimension , attetionAux , iterador ) {
 
-      //poner y colocar los nodos de la dimension precionada
       json.then( function (value) {
       
       if (band) {
@@ -85,77 +168,5 @@ async function rutesAttentionMovil(json) {
         
       console.log('ups, paso un error al insertar el texto' , err)
 
-      });
-             
-    }  
-  })
-
-}
-
-/* animacion del personaje,ruta,fondo*/
-function animateBackground(screen,bandAux,iterador, dimension) {
-
-  let sizeScreenWidth  = $(window).width()
-  let sizeScreen = 0;
-  let increase = 0;
-  let increaseAux = 0;
-  bandArrow = true
-  endTime = true
-
-  //evitar usar los escuchas mientras se hace la animacion
-  $('body').removeClass('active')
-
-  const timer = setInterval( function () {
-   
-   //si el tamaño de pantalla es superado habra acaba la animacion
-   if (sizeScreen < sizeScreenWidth*screen) {
-   $('body,html').css('background-position-x',''+ increase +'%')
-
-   //animacion de la ruta
-   if ( increaseAux <= 200 &&  bandArrow) {
-   $('.lienzo').css('right', ''+ (increaseAux+10) +'%')
-   }else if (increaseAux == 203) {
-   increaseAux = -50;
-   endTime  =  false
-   bandArrow = false
-   }else if (sizeScreen > (sizeScreenWidth*screen-84)) {
-   endTime = true
-   $('.lienzo').css('right', ''+ (increaseAux+7) +'%')
-   }
-
-   //incrementos de las variables de la animacion 
-   if ( dimension != 'individual') {
-   sizeScreen += 10
-   }else {
-   sizeScreen += 7.5
-   }
-
-   if (endTime) {
-   increaseAux += 7;
-   }
-
-   increase += iterador;
-
-   }
-   else {
-     bandAux = true;
-   }
-
-  
-   if(bandAux) {
-    clearInterval(timer)
-    bandAux = null
-    sizeScreen = 0;
-    increase = 0;
-    increaseAux = 0;
-    bandArrow = null
-    endTime = null
-    $('body').addClass('active')
-   }
-
-  },100)
-
-  return timer;
-
-
+      });  
 }

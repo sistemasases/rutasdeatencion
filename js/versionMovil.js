@@ -26,6 +26,7 @@ function screenResponsiveWebDesing(json) {
 
      //mostrar el breadcumbs de inicio
      $('#bread-1').css('display','inline-block')
+     $('#detonating-question').hide()
      $('body').addClass('active')
 
      //Funcionalidad de las flechas
@@ -43,7 +44,6 @@ async function breadcrumbs_funcionality(json) {
     let arrows;
     let aux = ['a','div','span']
     let breadcrumbs_array = []
-    let backgroundPosition;
     
     $('.box-breadcrumbs').each((index,value)=> {
     breadcrumbs_array.push(value)
@@ -52,9 +52,8 @@ async function breadcrumbs_funcionality(json) {
     $('.box-breadcrumbs').on('click', function(event) {
        event.preventDefault();
        event.isPropagationStopped();
-     
+    
        arrows = this;
-       backgroundPosition = Number($(arrows).attr('id').replace('bread-','')) -1;
 
       if ($('body').hasClass('active')) {
        //agregar la clase activa a la flecha selecionada
@@ -68,12 +67,10 @@ async function breadcrumbs_funcionality(json) {
            
             //agregar el fondo de color para la primer flecha  
             ($(value).find('a').attr('href') === '#home')?  $(value).find('a').css({
-            'background-color': 'gainsboro'
+            'background-color': '#2271b3'
             }):false 
             $(arrows).addClass('box-breadcrumbs-active')
             
-            $//('body,html').css('background-position-x', ''+10*backgroundPosition+'%')
-
             //quitar las felchas que estan despues de la selecionada
             for (let i = 0 ; i < 3 ; i++) {
             $(breadcrumbs_array[(index+1)+i]).hide()
