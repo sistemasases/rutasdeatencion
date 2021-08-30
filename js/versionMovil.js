@@ -92,6 +92,7 @@ async function breadcrumbs_funcionality(json) {
 
           })
 
+          $('body').attr('title', 0)
           svgPaint(json)
 
        }
