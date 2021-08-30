@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 $(function() {
  
      /*     variables       */
@@ -24,21 +19,30 @@ $(function() {
 });
 
 
-/* Pintar las flechas con su nombe siempre al iniciar*/
+/* Pinta la capa mayor que corresponde a los nombres de las dimensiones */
 function svgPaint(json) {
   
-  let iterador = 5;
+  let i = 1;
   json.then( function(event) {
 
-    for (let i = 1 ; i <= 4 ; i++) {
+    let iterador = Object.keys(event).length
+    for (const dimension of  Object.keys(event)) {
+    //activar la flecha 
     $('#arrows-'+i).show()
+    //ocultar flechas 
     $('#arrows-'+iterador).hide()
-    let wordDimension = Object.keys(event)[i-1]
-    wordDimension = wordDimension.charAt(0).toUpperCase() +  wordDimension.slice(1);
-    $('#arrows-'+i + ' text').html(wordDimension)
+    //ajustar el tamano de la fuente
+    $('#arrows-'+i + ' text').attr('font-size','10.5732')
+    //insertar el texto correspiente de la felcha
+    $('#arrows-'+i + ' text').html(dimension.charAt(0).toUpperCase() +  dimension.slice(1))
+    //incrementos
     iterador++;
+    i++;
     }
-
+    //liberar memoria 
+    iterador = null
+    i = null
+    
   }).catch((err) => {
 
       console.log('ups, paso un error al insertar el texto' , err)
