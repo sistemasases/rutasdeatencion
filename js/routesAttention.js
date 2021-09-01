@@ -5,7 +5,7 @@
 async function rutesAttentionMovil(json) {
  
   let dimension,attetionAux , entity;
-
+  let sizeScreenWidth  = 376
 
   $('body').attr('title',0)
 
@@ -27,12 +27,11 @@ async function rutesAttentionMovil(json) {
 
       //si esta activa la clase del brecumbs home, guarda el numero de la dimension precionada y activa la animacion
       if ($('#bread-1').hasClass('box-breadcrumbs-active')) { 
-    
       dimension = index
-      attetionAux = null
-      animateBackground((index+1),false,1,dimension,json, Number(indexCap))
+      attetionAux = 0
+      entity = 0
       }
-      else {
+      
       // guarda el index de la flecha en la capa 1
       if ( Number(indexCap) === 1) {
       attetionAux = index
@@ -44,28 +43,25 @@ async function rutesAttentionMovil(json) {
       entity = index
       }
 
-      //inserta los nombres correpondientes a cada capa donde este
-      funcionalityRute( json , dimension ,attetionAux , entity, iterador , Number(indexCap))
-      }
-
+      Promise.all([ animateBackground(false,sizeScreenWidth) ,
+      animateRute(false,sizeScreenWidth , (index+1) , json, dimension, attetionAux ,entity , indexCap)])
+      
+      //incrementar el numero de la capa de donde se encontraba
+      $('body').attr('title', Number( ($('body').attr('title')))+1)
     }
     
-    //incrementar el numero de la capa de donde se encontraba
-    $('body').attr('title', Number( ($('body').attr('title')))+1)
 
   })
 
 }
 
-/* animacion del personaje,ruta,fondo*/
-function animateBackground(screen,bandAux,iterador, dimension , json , indexCap) {
 
-  let sizeScreenWidth  = $(window).width()
+/* animacion del fondo*/
+function animateBackground(band,sizeScreenWidth) {
+
+  //let sizeScreenWidth  = $(window).width()
   let sizeScreen = 0;
   let increase = 0;
-  let increaseAux = 0;
-  bandArrow = true
-  endTime = true
 
   //evitar usar los escuchas mientras se hace la animacion
   $('body').removeClass('active')
@@ -73,63 +69,81 @@ function animateBackground(screen,bandAux,iterador, dimension , json , indexCap)
   const timer = setInterval( function () {
    
    //si el tamaño de pantalla es superado habra acaba la animacion
-   if (sizeScreen < sizeScreenWidth*screen) {
+   if (sizeScreen < sizeScreenWidth*2) {
    $('body,html').css('background-position-x',''+ increase +'%')
-
-   //animacion de la ruta
-   if ( increaseAux <= 200 &&  bandArrow) {
-   $('.lienzo').css('right', ''+ (increaseAux+10) +'%')
-   }else if (increaseAux == 203) {
-   increaseAux = -50;
-   endTime  =  false
-   bandArrow = false
-   }else if (sizeScreen > (sizeScreenWidth*screen-84)) {
-   endTime = true
-   $('.lienzo').css('right', ''+ (increaseAux+7) +'%')
-   }
-
-   //incrementos de las variables de la animacion 
-   if ( dimension != 'individual' && sizeScreenWidth  < 374
-        || sizeScreenWidth >= 375) {
-   sizeScreen += 10
-   }else {
-   sizeScreen += 8
-   }
-
-   if (endTime) {
-   increaseAux += 7;
-   }
-
-   increase += iterador;
-
+   increase += 1;
+   sizeScreen += 10;
    }
    else {
-     bandAux = true;
+   band = true;
    }
 
-  
-   if(bandAux) {
+   if(band) {
     clearInterval(timer)
-    bandAux = null
+    band = null
     sizeScreen = 0;
     increase = 0;
-    increaseAux = 0;
-    bandArrow = null
-    endTime = null
     $('body').addClass('active')
     $('.detonating-question-box').show()
-    funcionalityBrecumbs(screen)
-    funcionalityRute(json , dimension , 0 , 0 , iterador , indexCap);
-   
    }
-
+  
   },100)
 
   return timer;
 
-
 }
 
+
+/* animacion de la ruta */
+function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,entity,indexCap) {
+
+   //variables locales
+   let sizeScreen = 0;
+   let increase = 0;
+   let timeHideRute = ((sizeScreenWidth*2)*50)/100;
+   let timeShowRute = ((sizeScreenWidth*2)*79)/100;
+   bandAux = true
+
+   var ruteAnimate = setInterval( function () {
+   
+     if (sizeScreen < sizeScreenWidth*2) {
+     
+     //mover el svg hacia fuera de la pantalla
+     if (sizeScreen <= timeHideRute) {
+     $('.lienzo').css('right', ''+ increase +'%')
+     increase += 6;
+     }
+
+     //poner svg al inicio y actulizar su contenido
+     if (sizeScreen > timeHideRute && bandAux) {
+     bandAux = false
+     increase = -90
+     }
+
+     //volver a mostrar el svg con los cambios nuevos
+     if (sizeScreen >= timeShowRute) {
+     if ($('#bread-1').hasClass('box-breadcrumbs-active')) {
+     funcionalityBrecumbs(screen)
+     }
+     funcionalityRute(json , dimension , attetionAux , entity , 1 , indexCap);
+     $('.lienzo').css('right', ''+ increase +'%')
+     increase += 6
+     }
+
+     sizeScreen += 10
+     }
+     else {
+     band = true
+     }
+
+     if (band) {
+     clearInterval(ruteAnimate)
+     }
+     
+   }, 100)
+
+   return ruteAnimate
+}
 
 /* Quitar la clase activa en el brecumbs */
 function funcionalityBrecumbs(number) {
@@ -191,7 +205,6 @@ function funcionalityRute( json , dimension , attetionAux , entity, iterador, in
 
       });  
 }
-
 
 /* ajustar el texto que sale en las flechas */
 function fitTextInSvg(text,index) {
