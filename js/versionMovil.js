@@ -92,10 +92,18 @@ async function breadcrumbs_funcionality(json) {
 
           })
 
+         // if ($(arrows).attr('href') == 'home') {
           $('body').attr('title', 0)
           svgPaint(json)
+          //}
 
        }
+
+        /*retomar la capa de esta clase
+        if ($(arrows).attr('href') != 'home') {
+        funcionalityRute(json,Number($('#bread-1').attr('title')),0,0,1,0)
+        console.log( $('#bread-1').attr('title'),'ensayo')
+        }*/
 
       } 
 

@@ -28,10 +28,11 @@ async function rutesAttentionMovil(json) {
       //si esta activa la clase del brecumbs home, guarda el numero de la dimension precionada y activa la animacion
       if ($('#bread-1').hasClass('box-breadcrumbs-active')) { 
       dimension = index
+      $('#bread-1').attr('title',dimension)
       attetionAux = 0
       entity = 0
       }
-      
+     
       // guarda el index de la flecha en la capa 1
       if ( Number(indexCap) === 1) {
       attetionAux = index
@@ -219,7 +220,7 @@ function fitTextInSvg(text,index) {
     textNew += i
     }
   }
-  
+ 
   //si el tamano de la palabra es mayor que 10 caracteres, se le reduce el tamano
   if (textNew.length > 10) {
   $('#arrows-'+index+' text').attr('font-size', '7')

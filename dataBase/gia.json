@@ -1,0 +1,29 @@
+{
+	"0": {
+		"name": "Individual",
+		"TiposDeAtencion": {
+			"0": {
+				"name": "Psicosocial",
+				"Entidades": {
+					"0": {
+						"name": "Servicio Psicológico",
+						"atenciones": {
+							"0": {
+								"name": "Programa Salud Mental Preventiva",
+								"CaracteristicaDescripcion": "Descripción de la característica",
+								"enlaces": "información específica",
+								"comoSeHace": "Información cómo se hace",
+								"QuienLoHace": "Información sobre el responsable de la atención",
+								"Periodicidad": "Cada cuanto se hace la atención"
+							},
+							"1": {
+								"name": ""
+							}
+						}
+					}
+				}
+			},
+		  "1": {}
+		}
+	}
+}
