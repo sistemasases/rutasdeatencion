@@ -26,15 +26,15 @@ function svgPaint(json) {
   json.then( function(event) {
 
     let iterador = Object.keys(event).length
-    for (const dimension of  Object.keys(event)) {
+
+
+    for (const dimension of  Object.values(event) ) {
     //activar la flecha 
     $('#arrows-'+i).show()
     //ocultar flechas 
     $('#arrows-'+iterador).hide()
-    //ajustar el tamano de la fuente
-    $('#arrows-'+i + ' text').attr('font-size','10.5732')
     //insertar el texto correspiente de la felcha
-    $('#arrows-'+i + ' text').html(dimension.charAt(0).toUpperCase() +  dimension.slice(1))
+    $('#arrows-'+i + ' text').html(dimension.name)
     //incrementos
     iterador++;
     i++;
