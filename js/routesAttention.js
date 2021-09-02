@@ -178,7 +178,7 @@ function funcionalityRute( json , dimension , attetionAux , entity, iterador, in
       //recorrer la capas internas del json por dimension, a expecion de la capa mayor  
       try {
 
-      objectJson = [Object.keys((Object.entries(value)[dimension])[1]),Object.keys(Object.entries((Object.entries(value)[dimension])[1])[attetionAux][1]),Object.keys((Object.entries(Object.entries((Object.entries(value)[dimension])[1])[attetionAux][1])[entity])[1])]
+      objectJson = [(Object.entries((Object.values(value)[dimension].TiposDeAtencion))),Object.entries((Object.entries((Object.values(value)[dimension].TiposDeAtencion))[attetionAux])[1].Entidades),Object.entries((((Object.entries((Object.entries((Object.values(value)[dimension].TiposDeAtencion))[attetionAux])[1].Entidades))[entity])[1] ).Atenciones)]
 
       }catch (err) {
        console.log('la instancia del json selecionada, esta vacia o le faltan componentes' ,err)
@@ -186,9 +186,9 @@ function funcionalityRute( json , dimension , attetionAux , entity, iterador, in
       }     
 
       //insertar el texto de las llaves del json al svg
-      for (const  attention of objectJson[indexCap] ) {
+      for (const  attention of objectJson[indexCap]) {
       $('#arrows-'+iterador+'').show()
-      $('#arrows-'+iterador+' text').html(fitTextInSvg(attention,iterador))
+      $('#arrows-'+iterador+' text').html(attention[1].name)
       iterador++;
       }
 
@@ -206,25 +206,3 @@ function funcionalityRute( json , dimension , attetionAux , entity, iterador, in
       });  
 }
 
-/* ajustar el texto que sale en las flechas */
-function fitTextInSvg(text,index) {
-
-  //si encuentra un caracter mayusculaa, agrega un espacios antes
-  let textNew = ''
-  for (const i of text) {
-    if (i == i.toUpperCase() ) {
-    textNew += ' ' + i
-    }
-    else {
-    textNew += i
-    }
-  }
-  
-  //si el tamano de la palabra es mayor que 10 caracteres, se le reduce el tamano
-  if (textNew.length > 10) {
-  $('#arrows-'+index+' text').attr('font-size', '7')
-  }
-
-  return textNew.charAt(0).toUpperCase() + textNew.slice(1) 
-  
-}
