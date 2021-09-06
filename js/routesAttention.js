@@ -104,7 +104,7 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
    let timeHideRute = ((sizeScreenWidth*2)*50)/100;
    let timeShowRute = ((sizeScreenWidth*2)*79)/100;
    bandAux = true
-   p = true
+   bandBrecumbs = true
 
    var ruteAnimate = setInterval( function () {
    
@@ -124,8 +124,8 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
 
      //volver a mostrar el svg con los cambios nuevos
      if (sizeScreen >= timeShowRute) {
-     if (p) {  
-     p = false  
+     if ( bandBrecumbs ) {  
+     bandBrecumbs = false  
      funcionalityBrecumbs(screen)
      }
      funcionalityRute(json , dimension , attetionAux , entity , 1 , indexCap);
