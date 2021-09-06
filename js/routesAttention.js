@@ -38,7 +38,7 @@ async function rutesAttentionMovil(json) {
       entity = 0
       }
 
-     // guarda el index de la flecha en la capa 2
+      // guarda el index de la flecha en la capa 2
       if ( Number(indexCap) === 2 ) {
       entity = index
       }
@@ -48,6 +48,7 @@ async function rutesAttentionMovil(json) {
       
       //incrementar el numero de la capa de donde se encontraba
       $('body').attr('title', Number( ($('body').attr('title')))+1)
+      $('#arrows-1').attr('title', dimension + ',' + attetionAux + ',' + entity)
     }
     
 
@@ -103,6 +104,7 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
    let timeHideRute = ((sizeScreenWidth*2)*50)/100;
    let timeShowRute = ((sizeScreenWidth*2)*79)/100;
    bandAux = true
+   p = true
 
    var ruteAnimate = setInterval( function () {
    
@@ -122,7 +124,8 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
 
      //volver a mostrar el svg con los cambios nuevos
      if (sizeScreen >= timeShowRute) {
-     if ($('#bread-1').hasClass('box-breadcrumbs-active')) {
+     if (p) {  
+     p = false  
      funcionalityBrecumbs(screen)
      }
      funcionalityRute(json , dimension , attetionAux , entity , 1 , indexCap);
@@ -149,25 +152,31 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
 function funcionalityBrecumbs(number) {
 
   let aux = ['a','div','span']
+  let indexCap = Number($('body').attr('title'))
 
        //quitar la clase activa  
+      if (indexCap < 4) { 
+
       $('.box-breadcrumbs').each((index,value) => {
 
         if ( $(value).hasClass('box-breadcrumbs-active') ) {
            for (const i of aux) {
              $(value).find(i).removeClass('active')
-             $('#bread-'+ (number+1) +'').find(i).addClass('active')
+             $('#bread-'+ (indexCap+1) +'').find(i).addClass('active')
            }
 
            $(value).removeClass('box-breadcrumbs-active')
            $(value).find('a').attr('style',' ')
 
 
-           $('#bread-'+ (number+1) +'').css('display','inline-block')
-           $('#bread-'+ (number+1) +'').addClass('box-breadcrumbs-active')
+           $('#bread-'+ (indexCap+1) +'').css('display','inline-block')
+           $('#bread-'+ (indexCap+1) +'').addClass('box-breadcrumbs-active')
+           $('#bread-'+ (indexCap+1) +' span ').html($('#arrows-'+ number +' text').html())
         }
 
       })
+      
+      }
 }
 
 /* poner y colocar los nodos de la dimension precionada  */
@@ -205,4 +214,5 @@ function funcionalityRute( json , dimension , attetionAux , entity, iterador, in
 
       });  
 }
+
 

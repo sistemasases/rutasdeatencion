@@ -92,12 +92,24 @@ async function breadcrumbs_funcionality(json) {
 
           })
 
+          if ($(arrows).find('a').attr('href') == '#home') {
           $('body').attr('title', 0)
           svgPaint(json)
+          }
+          else {
+            
+          $('body').attr('title', Number( ($('body').attr('title')))-1)
+          let paramters = ($('#arrows-1').attr('title')).split(',')
+          let indexCap =  Number($('body').attr('title'))-1
+          
+          funcionalityRute(json, paramters[0] , paramters[1] , paramters[2] , 1 , indexCap) 
+          }
+
 
        }
-
+      
       } 
 
     })
+    
 }
