@@ -2,7 +2,7 @@
 
 
 /* Funcionalidad de rutas de atencion svg */
-async function rutesAttentionMovil(json) {
+function rutesAttentionMovil(json) {
  
   let dimension,attetionAux , entity;
   let sizeScreenWidth  = 376
@@ -12,8 +12,6 @@ async function rutesAttentionMovil(json) {
   $('.arrows-lienzo').on('click' , function (event) {
       event.preventDefault();
       event.isPropagationStopped();
-
-      let iterador = 1;
 
       //sacar un numero al dar click en la felchita
       dimensionNav = $(this).parent()
@@ -38,16 +36,23 @@ async function rutesAttentionMovil(json) {
       entity = 0
       }
 
-     // guarda el index de la flecha en la capa 2
+      // guarda el index de la flecha en la capa 2
       if ( Number(indexCap) === 2 ) {
       entity = index
       }
 
+      if (!$('#bread-4').hasClass('box-breadcrumbs-active')) {
       Promise.all([ animateBackground(false,sizeScreenWidth) ,
       animateRute(false,sizeScreenWidth , (index+1) , json, dimension, attetionAux ,entity , indexCap)])
       
       //incrementar el numero de la capa de donde se encontraba
       $('body').attr('title', Number( ($('body').attr('title')))+1)
+      $('#arrows-1').attr('title', dimension + ',' + attetionAux + ',' + entity)
+      }
+      else {
+        funcionalityInfoContent( json , dimension , attetionAux , entity , index)
+      }
+
     }
     
 
@@ -84,7 +89,6 @@ function animateBackground(band,sizeScreenWidth) {
     sizeScreen = 0;
     increase = 0;
     $('body').addClass('active')
-    $('.detonating-question-box').show()
    }
   
   },100)
@@ -103,6 +107,10 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
    let timeHideRute = ((sizeScreenWidth*2)*50)/100;
    let timeShowRute = ((sizeScreenWidth*2)*79)/100;
    bandAux = true
+   bandBrecumbs = true
+
+   //apagar la preguntaa detonante
+   $('.detonating-question-box').fadeIn()
 
    var ruteAnimate = setInterval( function () {
    
@@ -122,14 +130,17 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
 
      //volver a mostrar el svg con los cambios nuevos
      if (sizeScreen >= timeShowRute) {
-     if ($('#bread-1').hasClass('box-breadcrumbs-active')) {
-     funcionalityBrecumbs(screen)
+     if ( bandBrecumbs ) {  
+     bandBrecumbs = false  
+     funcionalityAskDetoting(indexCap)
+     funcionalityBrecumbs()
      }
+
      funcionalityRute(json , dimension , attetionAux , entity , 1 , indexCap);
      $('.lienzo').css('right', ''+ increase +'%')
      increase += 6
      }
-
+     
      sizeScreen += 10
      }
      else {
@@ -146,28 +157,34 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
 }
 
 /* Quitar la clase activa en el brecumbs */
-function funcionalityBrecumbs(number) {
+function funcionalityBrecumbs() {
 
   let aux = ['a','div','span']
+  let indexCap = Number($('body').attr('title'))
 
        //quitar la clase activa  
+      if (indexCap < 4) { 
+
       $('.box-breadcrumbs').each((index,value) => {
 
         if ( $(value).hasClass('box-breadcrumbs-active') ) {
            for (const i of aux) {
              $(value).find(i).removeClass('active')
-             $('#bread-'+ (number+1) +'').find(i).addClass('active')
+             $('#bread-'+ (indexCap+1) +'').find(i).addClass('active')
            }
 
            $(value).removeClass('box-breadcrumbs-active')
            $(value).find('a').attr('style',' ')
 
 
-           $('#bread-'+ (number+1) +'').css('display','inline-block')
-           $('#bread-'+ (number+1) +'').addClass('box-breadcrumbs-active')
+           $('#bread-'+ (indexCap+1) +'').css('display','inline-block')
+           $('#bread-'+ (indexCap+1) +'').addClass('box-breadcrumbs-active')
+         
         }
 
       })
+      
+      }
 }
 
 /* poner y colocar los nodos de la dimension precionada  */
@@ -206,3 +223,39 @@ function funcionalityRute( json , dimension , attetionAux , entity, iterador, in
       });  
 }
 
+function funcionalityAskDetoting(index) {
+
+  let text = ['atención', 'entidades' , 'atenciones']
+
+  //mostrar la pregunta
+  $('.detonating-question-box').fadeIn()
+  //$('.detonating-question-box').delay(5000).fadeOut()
+  
+  //insertar el texto dependiendo de la capa
+  $('.detonating-question-box').find('.detonating-question-text').html(' ¿Qué tipo de '+text[index]+' estás buscando?')
+}
+
+function funcionalityInfoContent( json , dimension , attetionAux , entity , index ) {
+
+     json.then( function (value) {
+
+     //mostrar caja texto
+     $('#information').fadeIn()
+
+     //ocultar
+     $('#page-inicio').hide()
+     $('.detonating-question-box').hide()
+
+     //insertar el titulo
+     $('.title-content-info').find('.title-info').html((((Object.entries((((Object.entries((Object.entries((Object.values(value)[dimension].TiposDeAtencion))[attetionAux])[1].Entidades))[entity])[1] ).Atenciones))[index])[1]).name)
+
+     //insertar el contenido
+     $('.content-text-info').find('.content-text').html((((Object.entries((((Object.entries((Object.entries((Object.values(value)[dimension].TiposDeAtencion))[attetionAux])[1].Entidades))[entity])[1] ).Atenciones))[index])[1]).descripcion)
+     
+
+     }).catch((err) => {
+        
+      console.log('ups, paso un error al insertar el texto' , err)
+ 
+     });
+}

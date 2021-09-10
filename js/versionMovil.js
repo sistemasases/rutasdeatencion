@@ -52,8 +52,18 @@ async function breadcrumbs_funcionality(json) {
     $('.box-breadcrumbs').on('click', function(event) {
        event.preventDefault();
        event.isPropagationStopped();
-    
+   
        arrows = this;
+
+       //sacar un numero al dar click en el brecumbs
+       dimensionNav = $(this).parent()
+       navsInDimension = dimensionNav.find('.box-breadcrumbs')
+       index = navsInDimension.index(this)
+       
+       //
+       $('#information').fadeOut()
+       $('#page-inicio').show()
+       
 
       if ($('body').hasClass('active')) {
        //agregar la clase activa a la flecha selecionada
@@ -92,12 +102,21 @@ async function breadcrumbs_funcionality(json) {
 
           })
 
+          if ($(arrows).find('a').attr('href') == '#home') {
           $('body').attr('title', 0)
           svgPaint(json)
+          }
+          else {
+          funcionalityAskDetoting(index-1)
+          $('body').attr('title', index)  
+          let paramters = ($('#arrows-1').attr('title')).split(',') 
+          funcionalityRute(json, paramters[0] , paramters[1] , paramters[2] , 1 , index-1) 
+          }
 
        }
-
+      
       } 
 
     })
+    
 }
