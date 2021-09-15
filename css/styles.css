@@ -475,7 +475,7 @@ h1 {
           display: grid;
           grid-template-rows: 4em;
           grid-template-columns: 100%;
-          justify-items: center;
+          justify-items: baseline;
           position: fixed;
           top: 3.5em;
           width: 100%;
@@ -484,7 +484,7 @@ h1 {
       .box-arrows {
           display: grid;
           grid-template-rows: 4em;
-          grid-template-columns: 4.7em 5.5em 5.5em 5.7em ;
+          grid-template-columns: 0.6em 4.7em 5.5em 5.5em 5.7em ;
           justify-items: baseline;
           align-items: center;
           color: inherit;
@@ -498,6 +498,7 @@ h1 {
       }
       .box-breadcrumbs:first-child {
           background-color: white;
+          grid-column-start: 2;
           border-left: 2px solid gray;
           box-sizing: content-box;
       }
@@ -606,8 +607,8 @@ h1 {
           position: fixed;
           width: 100%;
           height: 100%;
-          padding-top: 35%;
-          padding-bottom: 35%;
+          padding-top: 7.5em;
+          padding-bottom: 7.5em;
           overflow: hidden;
       }
       .title-content-info {
@@ -813,7 +814,7 @@ h1 {
           display: grid;
           grid-template-rows: 4em;
           grid-template-columns: 100%;
-          justify-items: center;
+          justify-items: baseline;
           position: fixed;
           top: 3em;
           width: 100%;
@@ -822,7 +823,7 @@ h1 {
       .box-arrows {
           display: grid;
           grid-template-rows: 4em;
-          grid-template-columns:  3.7em 4.3em 4.3em 4.4em;
+          grid-template-columns:  0.5em 3.7em 4.3em 4.3em 4.4em;
           justify-items: baseline;
           align-items: center;
           color: inherit;
@@ -835,6 +836,7 @@ h1 {
       }
       .box-breadcrumbs:first-child {
           background-color: white;
+          grid-column-start: 2;
           border-left: 2px solid gray;
           box-sizing: content-box;
       }
@@ -943,8 +945,8 @@ h1 {
           position: fixed;
           width: 100%;
           height: 100%;
-          padding-top: 44%;
-          padding-bottom: 44%;
+          padding-top: 7.5em;
+          padding-bottom: 7.5em;
           overflow: hidden;
       }
       .title-content-info {

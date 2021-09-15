@@ -104,9 +104,12 @@ async function breadcrumbs_funcionality(json) {
 
           if ($(arrows).find('a').attr('href') == '#home') {
           $('body').attr('title', 0)
+          $('.detonating-question-box').removeClass('on')
+          $('.detonating-question-box').hide()
           svgPaint(json)
           }
           else {
+          $('.detonating-question-box').removeClass('on')
           funcionalityAskDetoting(index-1)
           $('body').attr('title', index)  
           let paramters = ($('#arrows-1').attr('title')).split(',') 

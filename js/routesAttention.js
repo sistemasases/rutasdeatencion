@@ -109,15 +109,14 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
    bandAux = true
    bandBrecumbs = true
 
-   //apagar la preguntaa detonante
-   $('.detonating-question-box').fadeIn()
-
    var ruteAnimate = setInterval( function () {
    
      if (sizeScreen < sizeScreenWidth*2) {
      
      //mover el svg hacia fuera de la pantalla
      if (sizeScreen <= timeHideRute) {
+     $('.detonating-question-box').removeClass('on')
+     //$('.detonating-question-box').fadeOut() 
      $('.lienzo').css('right', ''+ increase +'%')
      increase += 6;
      }
@@ -133,10 +132,10 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
      if ( bandBrecumbs ) {  
      bandBrecumbs = false  
      funcionalityAskDetoting(indexCap)
-     funcionalityBrecumbs()
+     funcionalityBrecumbs(screen)
      }
 
-     funcionalityRute(json , dimension , attetionAux , entity , 1 , indexCap);
+     funcionalityRute(json , dimension , attetionAux , entity , 1 , indexCap );
      $('.lienzo').css('right', ''+ increase +'%')
      increase += 6
      }
@@ -157,7 +156,7 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
 }
 
 /* Quitar la clase activa en el brecumbs */
-function funcionalityBrecumbs() {
+function funcionalityBrecumbs(indexArr) {
 
   let aux = ['a','div','span']
   let indexCap = Number($('body').attr('title'))
@@ -176,6 +175,7 @@ function funcionalityBrecumbs() {
            $(value).removeClass('box-breadcrumbs-active')
            $(value).find('a').attr('style',' ')
 
+           titleBrecumbs(indexArr,indexCap)
 
            $('#bread-'+ (indexCap+1) +'').css('display','inline-block')
            $('#bread-'+ (indexCap+1) +'').addClass('box-breadcrumbs-active')
@@ -188,7 +188,7 @@ function funcionalityBrecumbs() {
 }
 
 /* poner y colocar los nodos de la dimension precionada  */
-function funcionalityRute( json , dimension , attetionAux , entity, iterador, indexCap ) {
+function funcionalityRute( json , dimension , attetionAux , entity, iterador, indexCap) {
 
       json.then( function (value) {
       
@@ -202,6 +202,8 @@ function funcionalityRute( json , dimension , attetionAux , entity, iterador, in
        objectJson = [Object.keys((Object.entries(value)[dimension])[1])]
       }     
 
+
+
       //insertar el texto de las llaves del json al svg
       for (const  attention of objectJson[indexCap]) {
       $('#arrows-'+iterador+'').show()
@@ -209,6 +211,7 @@ function funcionalityRute( json , dimension , attetionAux , entity, iterador, in
       iterador++;
       }
 
+      
       //apagar las felchas que no son utilizadas
       while (iterador < 8) {
       $('#arrows-'+iterador+'').hide()
@@ -226,13 +229,32 @@ function funcionalityRute( json , dimension , attetionAux , entity, iterador, in
 function funcionalityAskDetoting(index) {
 
   let text = ['atención', 'entidades' , 'atenciones']
-
+  $('.detonating-question-box').addClass('on')
+  let count = 0
   //mostrar la pregunta
-  $('.detonating-question-box').fadeIn()
-  //$('.detonating-question-box').delay(5000).fadeOut()
+  var time = setInterval( function() {
+
+    if (count > 3) {
+    $('.detonating-question-box').removeClass('on')
+    }
+
+    if (!$('.detonating-question-box').hasClass('on')) {
+    $('.detonating-question-box').fadeOut()
+    clearInterval(time)
+    }
+    else {
+    $('.detonating-question-box').show()
+    }
+
+    count++
+    console.log('hola')
+
+  },1000)
   
   //insertar el texto dependiendo de la capa
   $('.detonating-question-box').find('.detonating-question-text').html(' ¿Qué tipo de '+text[index]+' estás buscando?')
+
+  return time
 }
 
 function funcionalityInfoContent( json , dimension , attetionAux , entity , index ) {
@@ -244,6 +266,7 @@ function funcionalityInfoContent( json , dimension , attetionAux , entity , inde
 
      //ocultar
      $('#page-inicio').hide()
+     $('.detonating-question-box').removeClass('on')
      $('.detonating-question-box').hide()
 
      //insertar el titulo
@@ -258,4 +281,12 @@ function funcionalityInfoContent( json , dimension , attetionAux , entity , inde
       console.log('ups, paso un error al insertar el texto' , err)
  
      });
+}
+
+function titleBrecumbs(indexArr,indexCap) {
+
+    //insertar el texto en brecumbs
+    textBrecumbs = $('#arrows-'+ indexArr +'').find('text').text()
+    $('#bread-'+(indexCap+1)+'').find('span').html(textBrecumbs.slice(0,10))
+
 }
