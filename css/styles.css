@@ -43,7 +43,7 @@ html {
     padding: 0;
     margin: 0;
     overflow-y: hidden;
-    background-image: url("../images/fondoPantalla/fondoPantalla.jpeg");
+    background-image: url("../images/fondoPantalla/fondoPantalla.jpg");
     background-repeat: repeat-x;
     background-attachment: fixed;
     background-size: cover;
@@ -468,7 +468,7 @@ h1 {
          align-self: flex-end;
       }
       .features-personajes {
-          width: 8em;
+          width: 15em;
           height: 20em;
       }
       .box-major {
@@ -571,7 +571,8 @@ h1 {
       .lienzo {
           position: relative;
           right: 0;
-          height: 20em;
+          bottom: -10%;
+          height: 25em;
       }
       .detonating-question-box {
           display: grid;
@@ -804,10 +805,10 @@ h1 {
       .box-personaje {
           grid-column-start: 1;
           align-self: flex-end;
-          justify-self: flex-start;
+          justify-self: center;
       }
       .features-personajes {
-          width: 7em;
+          width: 15em;
           height: 16em;
       }
      .box-major {
@@ -909,7 +910,7 @@ h1 {
       .lienzo {
           position: relative;
           right: 0;
-          height: 16em;
+          height: 21em;
       }
       .detonating-question-box {
           display: grid;
