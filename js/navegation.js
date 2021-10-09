@@ -27,7 +27,6 @@ function svgPaint(json) {
 
     let iterador = Object.keys(event).length
 
-
     for (const dimension of  Object.values(event) ) {
     //activar la flecha 
     $('#arrows-'+i).show()

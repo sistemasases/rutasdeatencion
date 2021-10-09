@@ -54,8 +54,7 @@ function rutesAttentionMovil(json) {
       }
 
     }
-    
-
+   
   })
 
 }
