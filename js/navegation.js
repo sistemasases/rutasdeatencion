@@ -22,21 +22,21 @@ $(function() {
 /* Pinta la capa mayor que corresponde a los nombres de las dimensiones */
 function svgPaint(json) {
   
-  let i = 1;
+  let i = 0;
   json.then( function(event) {
 
     let iterador = Object.keys(event).length
-
+    
     for (const dimension of  Object.values(event) ) {
+    //incrementos
+    iterador++;
+    i++;
     //activar la flecha 
     $('#arrows-'+i).show()
     //ocultar flechas 
     $('#arrows-'+iterador).hide()
     //insertar el texto correspiente de la felcha
     $('#arrows-'+i + ' text').html(dimension.name)
-    //incrementos
-    iterador++;
-    i++;
     }
     //liberar memoria 
     iterador = null
@@ -49,6 +49,7 @@ function svgPaint(json) {
   });
 
 }
+
 
 
 /* INSERTAR EL TEXTO DEL JSON A SU RESPECTIVO CAJON */
