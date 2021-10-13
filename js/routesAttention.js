@@ -51,6 +51,7 @@ function rutesAttentionMovil(json) {
       }
       else {
         funcionalityInfoContent( json , dimension , attetionAux , entity , index)
+        funcionality_botton_text(json , dimension , attetionAux , entity , index)
       }
 
     }
@@ -90,7 +91,7 @@ function animateBackground(band,sizeScreenWidth) {
     $('body').addClass('active')
    }
   
-  },100)
+  },80)
 
   return timer;
 
@@ -149,7 +150,7 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
      clearInterval(ruteAnimate)
      }
      
-   }, 100)
+   }, 80)
 
    return ruteAnimate
 }
@@ -246,7 +247,6 @@ function funcionalityAskDetoting(index) {
     }
 
     count++
-    console.log('hola')
 
   },1000)
   
@@ -287,5 +287,44 @@ function titleBrecumbs(indexArr,indexCap) {
     //insertar el texto en brecumbs
     textBrecumbs = $('#arrows-'+ indexArr +'').find('text').text()
     $('#bread-'+(indexCap+1)+'').find('span').html(textBrecumbs.slice(0,10))
+
+}
+
+
+//añadir el texto a los botones
+function funcionality_botton_text(json, dimension , attetionAux , entity , index) {
+
+     let accioneBotton = ['enlaces', 'quienLoHace' , 'comoSeHace']
+
+     $('.boton-info').on('click', function (event) {
+      event.preventDefault();
+      event.isPropagationStopped();
+
+       
+       //sacar un numero al dar click en los botones 
+       dimensionNav = $(this).parent()
+       navsInDimension = dimensionNav.find('.boton-info')
+       indexBotton = navsInDimension.index(this)
+       
+       //limpiar el texto que esta
+       $('.content-text-botton').html('')
+
+       json.then( function (value) {
+
+       //insertar el contenido
+       $('.content-text-botton-box').find('.content-text-botton').html((((Object.entries((((Object.entries((Object.entries((Object.values(value)[dimension].TiposDeAtencion))[attetionAux])[1].Entidades))[entity])[1] ).Atenciones))[index])[1])[accioneBotton[indexBotton]])
+     
+
+       }).catch((err) => {
+        
+       console.log('ups, paso un error al insertar el texto' , err)
+ 
+       });
+
+
+       $(".content-text-botton-box").slideToggle('slow');
+
+       
+     })
 
 }

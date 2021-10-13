@@ -26,6 +26,7 @@ function screenResponsiveWebDesing(json) {
 
      //mostrar el breadcumbs de inicio
      $('#bread-1').css('display','inline-block')
+     $('.content-text-botton-box').css('display','none')
      $('.detonating-question-box').hide()
      $('body').addClass('active')
 
@@ -123,3 +124,4 @@ async function breadcrumbs_funcionality(json) {
     })
     
 }
+

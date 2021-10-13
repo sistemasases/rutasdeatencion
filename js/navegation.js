@@ -11,7 +11,7 @@ $(function() {
      /* fin de las varibles */
 
      //activar las funciones en paralelo
-     Promise.all([screenResponsiveWebDesing(json),svgPaint(json) ,rutesAttentionMovil(json) ])
+     Promise.all([screenResponsiveWebDesing(json),svgPaint(json) ,rutesAttentionMovil(json)])
     
      /* EVENTOS CLICK  */
 
