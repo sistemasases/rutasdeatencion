@@ -64,7 +64,8 @@ async function breadcrumbs_funcionality(json) {
        //
        $('#information').fadeOut()
        $('#page-inicio').show()
-       
+       $('.content-text-botton-box').css('display','none')
+       $('.boton-info').off('click')
 
       if ($('body').hasClass('active')) {
        //agregar la clase activa a la flecha selecionada
