@@ -295,6 +295,7 @@ function titleBrecumbs(indexArr,indexCap) {
 function funcionality_botton_text(json, dimension , attetionAux , entity , index) {
 
      let accioneBotton = ['enlaces', 'quienLoHace' , 'comoSeHace']
+     band = true
 
      $('.boton-info').on('click', function (event) {
       event.preventDefault();
@@ -322,7 +323,15 @@ function funcionality_botton_text(json, dimension , attetionAux , entity , index
        });
 
 
-       $(".content-text-botton-box").slideToggle('slow');
+       if (band) {
+       band = false  
+       $(".content-text-botton-box").slideDown('slow');
+       }
+       else {
+       band = true
+       $(".content-text-botton-box").slideUp('slow');
+       }
+      
 
        
      })
