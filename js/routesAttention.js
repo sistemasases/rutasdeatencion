@@ -296,12 +296,23 @@ function funcionality_botton_text(json, dimension , attetionAux , entity , index
 
      let accioneBotton = ['enlaces', 'quienLoHace' , 'comoSeHace']
      band = true
+     textEnlace = ""
 
      $('.boton-info').on('click', function (event) {
       event.preventDefault();
       event.isPropagationStopped();
 
+       botonPress = this
        
+       //quitar clase activa y colocarla a los demas
+       $('.boton-info').each(function (index, value) {
+
+         if ($(value).hasClass('active')) {
+           $(value).removeClass('active')
+         }
+
+       })
+
        //sacar un numero al dar click en los botones 
        dimensionNav = $(this).parent()
        navsInDimension = dimensionNav.find('.boton-info')
@@ -314,25 +325,36 @@ function funcionality_botton_text(json, dimension , attetionAux , entity , index
 
        //insertar el contenido
        $('.content-text-botton-box').find('.content-text-botton').html((((Object.entries((((Object.entries((Object.entries((Object.values(value)[dimension].TiposDeAtencion))[attetionAux])[1].Entidades))[entity])[1] ).Atenciones))[index])[1])[accioneBotton[indexBotton]])
-     
+       
+       //
+       if ($(botonPress).attr('id') === 'enlaces') {
+        //console.log( $('.content-text-botton-box').find('.content-text-botton').text().split(',') ,'holp' )
+        for (const array_enlaces of $('.content-text-botton-box').find('.content-text-botton').text().split(',') ) {
+        textEnlace += '<a target="_blank" href="'+ array_enlaces +'" >'+ array_enlaces + '</a> , '
+        }
+
+        $('.content-text-botton-box').find('.content-text-botton').html(textEnlace)
+        textEnlace = ''
+
+       }
 
        }).catch((err) => {
         
        console.log('ups, paso un error al insertar el texto' , err)
  
        });
-
-
+      
        if (band) {
        band = false  
        $(".content-text-botton-box").slideDown('slow');
+       $(this).addClass('active')
        }
        else {
        band = true
        $(".content-text-botton-box").slideUp('slow');
+       $(this).removeClass('active')
        }
-      
-
+       
        
      })
 
