@@ -61,6 +61,27 @@
 }
 
 
+.content-text-botton::-webkit-scrollbar {
+    display: initial;
+    width: 20px;
+}
+
+.content-text-botton::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.content-text-botton::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+.content-text-botton::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
+
 /*ajustes generales*/
 
 body,
@@ -742,7 +763,9 @@ h1 {
           font-weight: 450;
           word-break: break-all;
           hyphens: auto;
-          overflow: hidden;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          overscroll-behavior: contain;
       }
       .overlay {
           display: none;
@@ -754,6 +777,9 @@ h1 {
           top: 0;
           background-color: rgb(180 180 180 / 85%);
           overflow-x: hidden;
+      }
+      .boton-info.active {
+          background-color: grey;
       }
 
 }

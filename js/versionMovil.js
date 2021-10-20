@@ -60,7 +60,12 @@ async function breadcrumbs_funcionality(json) {
        dimensionNav = $(this).parent()
        navsInDimension = dimensionNav.find('.box-breadcrumbs')
        index = navsInDimension.index(this)
-       
+
+       $('.boton-info').each(function (index, value) {
+           $(value).removeClass('active')
+       })
+
+
        //
        $('#information').fadeOut()
        $('#page-inicio').show()
@@ -70,7 +75,7 @@ async function breadcrumbs_funcionality(json) {
       if ($('body').hasClass('active')) {
        //agregar la clase activa a la flecha selecionada
        if ( $(arrows).hasClass('box-breadcrumbs-active') === false ) {
-            
+           
           //quitar la clase activa y agregarla a la selecionada
           $('.box-breadcrumbs').each((index,value)=> {
 
