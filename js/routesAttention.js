@@ -43,7 +43,7 @@ function rutesAttentionMovil(json) {
 
       if (!$('#bread-4').hasClass('box-breadcrumbs-active')) {
       Promise.all([ animateBackground(false,sizeScreenWidth) ,
-      animateRute(false,sizeScreenWidth , (index+1) , json, dimension, attetionAux ,entity , indexCap)])
+      animateRute(false,sizeScreenWidth , (index+1) , json, dimension, attetionAux ,entity , indexCap), animateCharacter(sizeScreenWidth)])
       
       //incrementar el numero de la capa de donde se encontraba
       $('body').attr('title', Number( ($('body').attr('title')))+1)
@@ -154,6 +154,53 @@ function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,ent
 
    return ruteAnimate
 }
+
+/* Animacion del personaje */
+function animateCharacter(sizeScreenWidth) {
+  
+  //variables
+  let sizeScreen = 0;
+  let timeSequence = 3
+  let imgSequence = 1
+  band = true
+  killTimer = false
+
+
+  var animateCharac =  setInterval( function () {
+
+    if (sizeScreen < sizeScreenWidth*2) {
+    
+    //cambiar la imagen determinado tiempo  
+    if (timeSequence == 4) {
+    $('#personaje').find('img').attr('src','images/personaje/'+ imgSequence +'.png')
+    imgSequence++
+    timeSequence = 1
+    }
+
+    //restablecer la imagen inicial finalizada la primer secuencia
+    if (imgSequence > 6) {
+    imgSequence = 1
+    }
+
+    //incrementos
+    timeSequence++
+    sizeScreen += 10
+    }
+    else {
+    killTimer = true
+    $('#personaje').find('img').attr('src','images/personaje/personaje.png')
+    }
+
+    if (killTimer) {
+    clearInterval(animateCharac)
+    }
+
+  },80)
+
+   return animateCharac
+
+}
+
 
 /* Quitar la clase activa en el brecumbs */
 function funcionalityBrecumbs(indexArr) {
@@ -303,8 +350,12 @@ function funcionality_botton_text(json, dimension , attetionAux , entity , index
       event.isPropagationStopped();
 
        botonPress = this
-       
-       //quitar clase activa y colocarla a los demas
+
+       //quitar la clase cuando se esta activada y se vuelve undir de nuevo
+       if ($(botonPress).hasClass('active')) {
+        band = false
+       }
+       //quitar clase activa
        $('.boton-info').each(function (index, value) {
 
          if ($(value).hasClass('active')) {
@@ -326,14 +377,16 @@ function funcionality_botton_text(json, dimension , attetionAux , entity , index
        //insertar el contenido
        $('.content-text-botton-box').find('.content-text-botton').html((((Object.entries((((Object.entries((Object.entries((Object.values(value)[dimension].TiposDeAtencion))[attetionAux])[1].Entidades))[entity])[1] ).Atenciones))[index])[1])[accioneBotton[indexBotton]])
        
-       //
+       //crear los botones para los enlaces
        if ($(botonPress).attr('id') === 'enlaces') {
-        //console.log( $('.content-text-botton-box').find('.content-text-botton').text().split(',') ,'holp' )
+
+        //hacer un vector de cada enlace
         for (const array_enlaces of $('.content-text-botton-box').find('.content-text-botton').text().split(',') ) {
-        textEnlace += '<a target="_blank" href="'+ array_enlaces +'" >'+ array_enlaces + '</a> , '
+        textEnlace += '<li><a target="_blank" href="'+ array_enlaces +'" >'+ array_enlaces + '</a> </li>'
         }
 
-        $('.content-text-botton-box').find('.content-text-botton').html(textEnlace)
+        //insertar el vector con los enlaces organizado con la etiqueta a
+        $('.content-text-botton-box').find('.content-text-botton').html('<ul style="color:gray">' + textEnlace + '</ul>')
         textEnlace = ''
 
        }
@@ -343,9 +396,10 @@ function funcionality_botton_text(json, dimension , attetionAux , entity , index
        console.log('ups, paso un error al insertar el texto' , err)
  
        });
-      
+     
+
+       //bajar y subir
        if (band) {
-       band = false  
        $(".content-text-botton-box").slideDown('slow');
        $(this).addClass('active')
        }
@@ -353,6 +407,7 @@ function funcionality_botton_text(json, dimension , attetionAux , entity , index
        band = true
        $(".content-text-botton-box").slideUp('slow');
        $(this).removeClass('active')
+       $('.content-text-botton-box').find('.content-text-botton').html('hola')
        }
        
        
