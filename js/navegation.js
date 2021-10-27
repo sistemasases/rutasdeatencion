@@ -51,7 +51,6 @@ function svgPaint(json) {
 }
 
 
-
 /* INSERTAR EL TEXTO DEL JSON A SU RESPECTIVO CAJON */
 function get_information_about_attention(json,objectInsert,attention,nameEntity,about) {
 
@@ -84,6 +83,19 @@ function get_information_about_attention(json,objectInsert,attention,nameEntity,
    
 }
 
+//pruebas del json de la nueva version
+function getJsonNew(json) {
+    
+  json.then( (value) => {
+
+    console.log( Object.entries((Object.values(((Object.entries((Object.values(value)[0]).TiposDeAtencion))[1])[1]))[2]) ) 
+    //console.log( (Object.values(value)[0]) )
+
+  }).catch( (err) => {
+    console.log('ups, paso un error al insertar el texto' , err)
+  })
+
+}
 
 /* Peticion local al servidor donde se aloja el json  */
 async function getJson() {
