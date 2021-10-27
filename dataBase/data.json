@@ -1,28 +1,30 @@
 {
   "0": {
     "name": "Individual",
+    "caminata": false,
     "TiposDeAtencion": {
       "0": {
-        "name": "Psicosocial",
-        "Entidades": {
+        "name": "Ases",
+        "caminata": false,
+        "sedes": {
           "0": {
-            "name": "Servicio Psicológico Univalle",
-            "Atenciones": {
+            "name": "Sede Cali",
+            "caminata": true,
+            "Entidades": {
               "0": {
-                "name": "Programa Salud Mental Preventiva",
-                "descripcion": "En este programa se desarrollan una serie de talleres con el objetivo de ofrecer al individuo herramientas que le permitan a través de un mayor conocimiento de sí mismo, de sus potencialidades y del fortalecimiento de sus principios y valores, realizar los cambios necesarios para afrontar la vida con actitud positiva y tomar decisiones responsables.",
-                "enlaces": "http://vicebienestar.univalle.edu.co/home/22-actividades-servicio-psicologico/50-programa-de-salud-mental-preventiva",
-                "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio psicologico. Indagar  cómo se ha sentido en el proceso de atención psicologica.",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
-              },
-              "1": {
-                "name": "Asesoría Psicológica Individual",
-                "descripcion": "Este programa va dirigido a aquellas personas que requieren un proceso terapéutico al presentar un motivo específico de consulta, bien sea en el área personal, familiar, social, académica u ocupacional. Para solicitar información sobre nuestros programas y expresar sus inquietudes puede comunicarse a través del correo electrónico serviciopsicologico@univalle.edu.co y de las líneas telefónicas 3212319 y 3212374.",
-                "enlaces": "http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/servicio-psicologico/asesoria-psicologica , https://drive.google.com/file/d/1xSZJT1F_hO1YIp_Baqv47EcpPxEBXMsN/view?usp=sharing ",
-                "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio psicologico. Indagar  cómo se ha sentido en el proceso de atención psicologica.",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                "name": "Monitorias Socioeducativas",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Monitorias Socioeducativas",
+                    "descripcion": "El acompañamiento Socio educativo implica la atención al proceso de adaptación de los estudiantes a la vida universitaria y los retos que este genera. En estas monitorias se busca establecer un vínculo de confianza que permite al nuevo estudiante conocer la labor de “ser estudiante universitario” a partir del ejemplo y el diálogo con un compañero que va un poco más avanzado en el proceso.",
+                    "enlaces": "http://ases.univalle.edu.co/",
+                    "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio psicologico. Indagar  cómo se ha sentido en el proceso de atención psicologica.",
+                    "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                    "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante",
+                    "correos": "Cali: estrategia.ases@correounivalle.edu.co , Yumbo: ases.yumbo@correounivalle.edu.co , Norte del Cauca : ases.ncauca@correounivalle.edu.co , Pacifico: ases.pacifico@correounivalle.edu.co , Caicedonia: ases.caicedonia@correounivalle.edu.co , Zarzal: ases.zarzal@correounivalle.edu.co , Cartago: ases.cartago@correounivalle.edu.co , Palmira: ases.palmira@correounivalle.edu.co , Buga: ases.buga@correounivalle.edu.co , Tuluá: ases.tulua@correounivalle.edu.co"
+                  }
+                }
               }
             }
           }
@@ -30,162 +32,472 @@
       },
       "1": {
         "name": "Salud",
-        "Entidades": {
+        "caminata": false,
+        "sedes": {
           "0": {
-            "name": "Consulta Medica Univalle",
-            "Atenciones": {
+            "name": "Sede Cali",
+            "caminata": false,
+            "Entidades": {
               "0": {
-                "name": "Sede Meléndez Edificio",
-                "descripcion": "Sede Meléndez en el edificio 384, 2° piso, para mayor información Tel: 3212269 – 3213022 Sede San Fernando en el edificio 100, Tel: 5579587 Horario de atención de 7:30am a 5:00pm. Para la solicitud de su cita debe dirigirse a la recepción del servicio médico a las 7:30am o 1:00pm. ",
-                "enlaces": "http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/solicitud-de-citas , https://drive.google.com/file/d/12_RoguXWs0WkNZy2PIs75slnLzmFlRwD/view?usp=sharing , https://www.minsalud.gov.co/Documents/Archivos-temporal-jd/infografia-portabilidad.png",
-                "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio de Salud, cómo le fue en su cita y si requiere algun otro apoyo en el proceso. ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                "name": "Consulta Medica Univalle",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Sede Meléndez Edificio",
+                    "descripcion": "Sede Meléndez en el edificio 384, 2° piso, para mayor información Tel: 3212269 – 3213022 Sede San Fernando en el edificio 100, Tel: 5579587 Horario de atención de 7:30am a 5:00pm. Para la solicitud de su cita debe dirigirse a la recepción del servicio médico a las 7:30am o 1:00pm. ",
+                    "enlaces": "http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/solicitud-de-citas , https://drive.google.com/file/d/12_RoguXWs0WkNZy2PIs75slnLzmFlRwD/view?usp=sharing , https://www.minsalud.gov.co/Documents/Archivos-temporal-jd/infografia-portabilidad.png",
+                    "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio de Salud, cómo le fue en su cita y si requiere algun otro apoyo en el proceso. ",
+                    "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                    "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                  }
+                }
+              },
+              "1": {
+                "name": "Atencion De Urgencias Univalle",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Atención de urgencias",
+                    "descripcion": "Podrá acudir al Servicio  Médico de cada sede, en el horario habitual de 7:30 a.m. a 5:00 p.m. Después de las 5:30 p.m. se atenderá en las siguientes entidades adscritas al Servicio de Salud de la Universidad del Valle - Cali: <br> Clínica Farallones <br> (Calle 18 N # 5-34 # 50 – 25 TEL.: 487 80 00), <br> Hospital Universitario del Valle <br> (Calle 5 # 36 – 08, TEL. 554 07 00), <br> Hospital Psiquiátrico del Valle <br> (Calle 5 # 80 00, TEL. 682 18 00), <br> Clínica de Fracturas de Cali <br> (Avenida Roosevelt # 42 – 38, TEL.553 66 57), <br> Clínica Oftalmológica de Cali (Carrera 57 # 8 C – 94, TEL. 552 08 90), <br> Traumatólogos Clínica de Fracturas <br> (Carrera 42 # 5 C -103, TEL. 552 28 98), <br> Clínica de Occidente <br> (Calle 18 N # 5 – 34, TEL. 660 30 00). <br> En todas las instituciones mencionadas usted debe presentar: 1) documento de identidad; 2)carné vigente o tabulado y recibo de pago del semestre en curso. *Nota: Si el estudiante tiene E.P.S, Se le orientara a su E.P.S correspondiente.",
+                    "enlaces": "http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/atencion-de-urgencias ",
+                    "comoSeHace": "Indagar en el  encuentro con el/la estudiante si fue atendido/a por urgencias,  cómo le fue en su cita y si requiere algun otro apoyo en el proceso.",
+                    "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                    "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                  }
+                }
+              },
+              "2": {
+                "name": "Laboratorio Clínico Univalle",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Tramite De Autorizacion Servicio Salud",
+                    "descripcion": " Éstos se deben tramitar en el área de autorizaciones del servicio de salud en la respectiva sede de la universidad. Los exámenes se realizan en laboratorios externos. ",
+                    "enlaces": "https://drive.google.com/file/d/1Y__Gw2YuOJDwvxCI42reYPsVLrH_oJY6/view?usp=sharing",
+                    "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente se realizó los examanes medicos, que le enviaron. ",
+                    "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                    "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                  }
+                }
+              },
+              "3": {
+                "name": "Suministro De Medicamentos",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Suministro de medicamentos",
+                    "descripcion": "Se reciben en algunos de los puntos COMFANDI, la entidad contratada para el suministro, debe presentar: 1) la fórmula autorizada; 2) presentar carné renovado o recibo de pago y tabulado; 3) usted debe cancelar en la droguería el 60% del valor total de los medicamentos formulados. La Universidad asumirá el 40% restante.",
+                    "enlaces": "http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/suministro-de-medicamentos",
+                    "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio odontologico, cómo le fue en su cita y si requiere algun otro apoyo en el proceso. ",
+                    "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                    "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                  }
+                }
+              },
+              "4": {
+                "name": "Programa de promoción y prevención",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Control Prenatal",
+                    "descripcion": "Los programas de promoción y prevención están dirigidos a Estudiantes Activos de la Universidad del Valle y cuentan con continuidad durante el semestre activo. <ul style='color:gray;'> <li> Se desarrollan acorde al horario de enfermería. Los estudiantes podrán asistir en el horario que convenga. Las citas son asignadas el mismo día que se solicitan.  Asignación y Cancelación de citas Teléfono: 3212990 – 3212993 On-Line cancelacioncitas.servisalud@correounivalle.edu.co , Programa de Control Prenatal: dirigido a las mujeres embarazadas afiliadas al Servicio de Salud de la Universidad del Valle. El programa busca prevenir las enfermedades y riesgos que puedan afectar el periodo de embarazo, el parto y el puerperio. Se realizan intervenciones para detección y control de factores de riesgo. Se promociona el apoyo a la embarazada de su grupo familiar, el personal de salud y otros miembros de su grupo social para lograr el feliz término del embarazo. </li> <li> Programa de salud sexual y reproductiva: planificación familiar, métodos de planificación, control del método. Asesorías Pos VIH, entrega de resultados. Toma y entrega de citologías.</li> </ul>",
+                    "enlaces": "http://vicebienestar.univalle.edu.co/promocion-y-prevencion/programa-de-control-prenatal ",
+                    "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio, cómo le fue en su cita y si requiere algun otro apoyo en el proceso. ",
+                    "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                    "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                  }
+                }
               }
             }
           },
           "1": {
-            "name": "Atencion De Urgencias Univalle",
-            "Atenciones": {
+            "name": "Sede Regionales",
+            "caminata": false,
+            "Entidades": {
               "0": {
-                "name": "Servicio Médico Cada Sede",
-                "descripcion": "Podrá acudir al Servicio  Médico de cada sede, en el horario habitual de 7:30 a.m. a 5:00 p.m. Después de las 5:30 p.m. se atenderá en las siguientes entidades adscritas al Servicio de Salud de la Universidad del Valle - Cali: <br> Clínica Farallones <br> (Calle 18 N # 5-34 # 50 – 25 TEL.: 487 80 00), <br> Hospital Universitario del Valle <br> (Calle 5 # 36 – 08, TEL. 554 07 00), <br> Hospital Psiquiátrico del Valle <br> (Calle 5 # 80 00, TEL. 682 18 00), <br> Clínica de Fracturas de Cali <br> (Avenida Roosevelt # 42 – 38, TEL.553 66 57), <br> Clínica Oftalmológica de Cali (Carrera 57 # 8 C – 94, TEL. 552 08 90), <br> Traumatólogos Clínica de Fracturas <br> (Carrera 42 # 5 C -103, TEL. 552 28 98), <br> Clínica de Occidente <br> (Calle 18 N # 5 – 34, TEL. 660 30 00). <br> En todas las instituciones mencionadas usted debe presentar: 1) documento de identidad; 2)carné vigente o tabulado y recibo de pago del semestre en curso. *Nota: Si el estudiante tiene E.P.S, Se le orientara a su E.P.S correspondiente.",
-                "enlaces": "http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/atencion-de-urgencias ",
-                "comoSeHace": "Indagar en el  encuentro con el/la estudiante si fue atendido/a por urgencias,  cómo le fue en su cita y si requiere algun otro apoyo en el proceso.",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
-              }
-            }
-          },
-          "2": {
-            "name": "Laboratorio Clínico Univalle",
-            "Atenciones": {
-              "0": {
-                "name": "Tramite De Autorizacion Servicio Salud",
-                "descripcion": " Éstos se deben tramitar en el área de autorizaciones del servicio de salud en la respectiva sede de la universidad. Los exámenes se realizan en laboratorios externos. ",
-                "enlaces": "https://drive.google.com/file/d/1Y__Gw2YuOJDwvxCI42reYPsVLrH_oJY6/view?usp=sharing",
-                "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente se realizó los examanes medicos, que le enviaron. ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
-              }
-            }
-          },
-          "3": {
-            "name": "Suministro De Medicamentos Univalle O Comfandi",
-            "Atenciones": {
-              "0": {
-                "name": "Medicamento Suministrado",
-                "descripcion": "Se reciben en algunos de los puntos COMFANDI, la entidad contratada para el suministro, debe presentar: 1) la fórmula autorizada; 2) presentar carné renovado o recibo de pago y tabulado; 3) usted debe cancelar en la droguería el 60% del valor total de los medicamentos formulados. La Universidad asumirá el 40% restante.",
-                "enlaces": "http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/suministro-de-medicamentos",
-                "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio odontologico, cómo le fue en su cita y si requiere algun otro apoyo en el proceso. ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
-              }
-            }
-          },
-          "4": {
-            "name": "Servicio Odontológico Univalle",
-            "Atenciones": {
-              "0": {
-                "name": "Atencion SaludOral",
-                "descripcion": "Se encarga de brindar atención en salud oral oportuna y de calidad a servidores públicos y jubilados con sus correspondientes beneficiarios y a los estudiantes. El Servicio Odontológico presta sus servicios a los estudiantes que no tienen EPS en el régimen contributivo. Quienes cuentan con EPS en dicho régimen son atendidos únicamente en Urgencias. En caso de requerir otra clase de tratamiento, serán remitidos a su respectiva EPS. Horario de atención: Lunes a viernes: 8:00 a.m. a 12:00 m y de 1:30 p.m. a 5:30 p.m. Informes: Edificio D1 (Antiguo 388) primer piso teléfonos 321 23 39 – 321 2265 ",
-                "enlaces": "http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/servicio-odontologico , https://drive.google.com/file/d/1arGOpYeuKxFd0goBGvWsDo4idkFYxbBK/view?usp=sharing",
-                "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio odontologico, cómo le fue en su cita y si requiere algun otro apoyo en el proceso. ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
-              }
-            }
-          },
-          "5": {
-            "name": "programaDeControlPrenatalUnivalle",
-            "Atenciones": {
-              "0": {
-                "name": "Control Prenatal",
-                "descripcion": "Los programas de promoción y prevención están dirigidos a Estudiantes Activos de la Universidad del Valle. Estos programas cuentan con continuidad durante el semestre activo, y se desarrollan acorde al horario de enfermería. Los estudiantes podrán asistir en el horario que convenga. Las citas son asignadas el mismo día que se solicitan. Este programa está dirigido a las mujeres embarazadas afiliadas al Servicio de Salud de la Universidad el Valle. El programa busca prevenir las enfermedades y riesgos que puedan afectar el periodo de embarazo, el parto y el puerperio. Se realizan intervenciones para para detección y control de factores de riesgo. Se promociona el apoyo a la embarazada de su grupo familiar, el personal de salud y otros miembros de su grupo social para lograr el feliz término del embarazo.",
-                "enlaces": "http://vicebienestar.univalle.edu.co/promocion-y-prevencion/programa-de-control-prenatal ",
-                "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio, cómo le fue en su cita y si requiere algun otro apoyo en el proceso. ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
-              }
-            }
-          },
-          "6": {
-            "name": "Programa De Salud Sexual Reproductiva Univalle",
-            "Atenciones": {
-              "0": {
-                "name": "Planificacion Familiar",
-                "descripcion": "Los programas de promoción y prevención están dirigidos a Estudiantes Activos de la Universidad del Valle. Estos programas cuentan con continuidad durante el semestre activo, y se desarrollan acorde al horario de enfermería. Los estudiantes podrán asistir en el horario que convenga. Las citas son asignadas el mismo día que se solicitan. En este programa se llevan a cabo programas de planificación familia, métodos de planificación, control del método. Asesorías Pos VIH, entrega de resultados. Toma y entrega de citologías.",
-                "enlaces": "http://vicebienestar.univalle.edu.co/2015-11-11-17-19-33/programas-promocion-y-prevencion# ",
-                "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio, cómo le fue en su cita y si requiere algun otro apoyo en el proceso. ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                "name": "Atención primaria en Salud",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Atención primaria en Salud",
+                    "descripcion": "directamente en el Campus correspondiente de cada sede a través del  servicio de Enfermería. Este servicio se presta a toda la comunidad universitaria en ambas jornadas y ofrece servicios generales como: Inmovilizaciones, Procedimientos ambulatorios, Curaciones, Vendaje, Toma de presión arterial Control de Enfermedades crónicas no transmisibles.",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
+              },
+              "1": {
+                "name": "Consulta Médica y urgencias",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Consulta Médica y urgencias",
+                    "descripcion": "Para acceder al servicio  médico, la Universidad direcciona a las dependencias externas encargadas de prestar la atención prioritaria:",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": "",
+                    "a": "Contactar a la EPS del particular o dirigirse al Hospital municipal, si la EPS no tiene atención a urgencias en el municipio donde se encuentra la persona | http://eps.coomeva.com.co/ , https://www.comfenalcoeps.com/ , https://www.epssura.com/ , https://www.sos.com.co/ , https://www.emssanar.org.co/",
+                    "b": "Hospital municipal para Atención Urgencias y SISBEN. Solicitar cita médica según la gravedad del asunto o en caso de urgencia, dirigirse de manera inmediata al Hospital municipal. , Sede Yumbo: Hospital la Buena Esperanza de Yumbo:  https://hospitaldeyumbo.gov.co/hospital  +57 2 6959595 - Ext. 195 , Sede Norte del Cauca: Francisco De Paula Santander En Santander de Quilichao - Hospital Piloto de Jamundí , Sede Pacifico: Hospital Departamental De Buenaventura - Hospital Distrital Luis Ablanque de la Plata (Buenaventura) , Sede Calcedonia: Hospital Santander Dirección: Carrera 9 # 6 - 36 , Teléfono Conmutador:  (2) 2161144 - 2160023 - 2160085 , Sitio web: http://www.esehospitalsantander-caicedonia-valle.gov.co/ , Hospital Departamental Centenario de Sevilla, Valle. , Calle 56 #44-43 Barrio Siracusa , Teléfono: (2) 2196013 - 2191955 - 2197171 , Sitio web: http://hdcentenario.gov.co/ , Sede Zarzal: Hospital Departamental San Rafael de Zarzal , Dirección: Calle 5ª No. 6-32, Barrio San Rafael, Zarzal, Valle del Cauca, Colombia.  , Conmutador: (57 +2)2220046 - Fax 2220043 ext 104 , Urgencias Directo:(57 +2)2221011- Celular 323228215 , Sitio Web: https://www.hospitalsanrafaelzarzal.gov.co/ , Sede Cartago: Hospital San Juan de Dios. Cra 3Bis entre calles 1 y 2.  Tel: + 57 2 4892222 o 3116118355. , Sede Palmira: Comfandi Palmira - Calle 32 #21-74 , Clínica Palma Real SAS - Carrera 28 #44-35 - 2879000 , Sede Buga: Hospital San José   Cra 8 #17-52  tel:  (57) (602)  2361000  (+57) 317 580 9671 y Hospital Divino NIño  Cr 15 # 26-50,  Teléfono: (57) (602) 2372264 , Sede Tuluá: Hospital Ruben Cruz Velez  , Hospital  Tomas Uribe Uribe Tel +57 2 231 7333",
+                    "c": " Convenio ASOHOSVAL en caso de no encontrarse en el Sistema de Seguridad Social en Salud (no tener EPS ni SISBEN), el estudiante debe acercarse a la Coordinación de Bienestar Universitario de la Sede y reclamar copia del convenio y solicitar cita en el Hospital municipal personalmente o comunicarse por teléfono para solicitar cita médica ,*Si se trata de una urgencia dirigirse de forma directa al Hospital al área de urgencias http://nortedelcauca.univalle.edu.co/images/Bienestar/ASOHOSVAL.pdf",
+                    "d": "Seguros de Vida del Estado  que ampara la Póliza Integral Estudiantil (018000123010) https://drive.google.com/file/d/0B2Ei7tRtVop5NTFBckJhOU8zTFU/view?resourcekey=0-axEVMj2ow5iguPMaoHWVXQ , Decarga de carnet https://drive.google.com/file/d/14SL0VMF-wlp3h4LNednf2pYjOvxEesR-/view , *El estudiante debe presentar el carné estudiantil actualizado, su documento de identidad y el carné de la póliza (que le entregaron en la oficina de Bienestar Universitario); si no es atendido deberá reportarlo a Bienestar Universitario"
+                  }
+                }
+              },
+              "2": {
+                "name": "Programa de Promoción y Prevención ",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Programa de Promoción y Prevención ",
+                    "descripcion": "Los programas de promoción y prevención están dirigidos a toda la comunidad universitaria y tiene como objetivo mejorar y mantener la salud integral de los estudiantes desarrollando programas y actividades que promueven el mantenimiento de la salud con base en los ciclos vitales y en factores de riesgos individuales y colectivos. <br> Programa de salud sexual y reproductiva Programas de planificación familiar: - Métodos de planificación: control del método - Orientación para el control prenatal - Charlas y talleres Semana de salud, belleza y nutrición Jornadas de donación de sangre  y vacunación Toma de muestras de VIH Talleres: Prevención consumo de alcohol y tabaco, prevención consumo de SPA, nutrición, estilo de vida saludable, entre otras",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": "",
+                    "a": "Sede Yumbo: http://yumbo.univalle.edu.co/bienestar/2015-11-12-23-15-00/bienestar-areas-servicios-salud  Tel: 6699323 - Ext. 4, marcela.borrero@correounivalle.edu.co , Sede Norte del Cauca:  http://nortedelcauca.univalle.edu.co/bienestar-universitario/atenciono-primaria-en-salud , saludocupacional.ncauca@correounivalle.edu.co , Sede Pacifico: http://pacifico.univalle.edu.co/bienestar-universitario/areas-servicios/salud ,Tel: 57 602 240 3669 - 602 240 1290 ext 6412 , bienestar.pacifico@correounivalle.edu.co, Sede Calcedonia: http://caicedonia.univalle.edu.co/bienestar/programas/universidad-saludable , +57 2 2160070 Ext. 6208,Bienestar.caicedonia@correounivalle.edu.co , Sede Zarzal: http://zarzal.univalle.edu.co/buv/desarrollo-buv , bienestar.zarzal @correounivalle.edu.co , Tel: 2209193 - 2035069 , Sede Cartago: http://cartago.univalle.edu.co/bienestar-universitario/areas-servicios/salud.html , bienestar.cartago@correounivalle.edu.co ,Tel: 323 5908395 - 2119978 - 2119976 - 2135131 ext. 6308 , Sede Palmira: http://palmira.univalle.edu.co/bienestar-universitario-principal , auxiliarenfermeria.palmira@correounivalle.edu.co , Tel: 321 2100 Ext. 6524 , Sede Buga: bienestar.buga@correounivalle.edu.co , Tel: +57 2 2372496 Ext. 6115 , Sede Tulua:  http://tulua.univalle.edu.co/bienestar/area-de-promocion-y-prevencion , bienestar.tulua@correounivalle.edu.co , Tel: 2349938"
+                  }
+                }
               }
             }
           }
         }
       },
       "2": {
-        "name": "Educativa",
-        "Entidades": {
+        "name": "Odontologia",
+        "caminata": false,
+        "sedes": {
           "0": {
-            "name": "Oferta De Atencion Ante Situacion Discapacidad Visual",
-            "Atenciones": {
+            "name": "Sede Cali",
+            "caminata": false,
+            "Entidades": {
               "0": {
-                "name": "Monitorias Para Discapacitados",
-                "descripcion": "Formacion y Monitores de Acompañamiento para Estudiantes con discapacidad Visual Informacion Alba.cadena@correounivalle.edu.co ",
-                "enlaces": "https://drive.google.com/file/d/1oxnSZz0ojZQNaHTvLxjVO9N5oeLzGzp4/view?usp=sharing",
-                "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio, cómo le fue en su cita y si requiere algun otro apoyo en el proceso.",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                "name": "Atención interna",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Atención interna",
+                    "descripcion": "Edificio D1 (Antiguo 388) primer piso teléfonos 321 23 39 – 321 2265 Horario de atención: Lunes a viernes: 8:00 a.m. a 12:00 m y de 1:30 p.m. a 5:30 p.m",
+                    "enlaces": "https://drive.google.com/file/d/1arGOpYeuKxFd0goBGvWsDo4idkFYxbBK/view?usp=sharing",
+                    "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio, cómo le fue en su cita y si requiere algun otro apoyo en el proceso.",
+                    "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                    "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                  }
+                }
+              },
+              "1": {
+                "name": "Atención externa",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Atención externa",
+                    "descripcion": "El Servicio Odontológico presta sus servicios a los estudiantes que no tienen EPS en el régimen contributivo. Quienes cuentan con EPS en dicho régimen son atendidos únicamente en Urgencias. En caso de requerir otra clase de tratamiento, serán remitidos a su respectiva EPS.",
+                    "enlaces": "https://drive.google.com/file/d/1arGOpYeuKxFd0goBGvWsDo4idkFYxbBK/view?usp=sharing",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
+              }
+            }
+          },
+          "1": {
+            "name": "Sede Regionales",
+            "caminata": false,
+            "Entidades": {
+              "0": {
+                "name": "Atención interna",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Atención interna",
+                    "descripcion": "en la cual se ofrecen servicios como Valoración odontológica, Limpieza General, aplicación de sellantes y Campañas de prevención en salud oral",
+                    "enlaces": "https://drive.google.com/file/d/1arGOpYeuKxFd0goBGvWsDo4idkFYxbBK/view?usp=sharing",
+                    "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio, cómo le fue en su cita y si requiere algun otro apoyo en el proceso.",
+                    "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                    "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante",
+                    "a": "Sede Pacifico: bienestar.pacifico@correounivalle.edu.co solicitar por correo agendamiento para odontología. , Sede Zarzal: http://zarzal.univalle.edu.co/buv/salud-buv/serv-odont-bienestar , bienestar.zarzal@correounivalle.edu.co  Tel. 2209193 – 2035069 ext. 6706 , Sede Palmira: http://palmira.univalle.edu.co/bienestar-universitario-salud, bienestar.palmira@correounivalle.edu.co Tel. 321 2100 Ext. 6530 , Sede Tuluá: http://tulua.univalle.edu.co/bienestar/area-de-promocion-y-prevencion o a través del correo universitario donde se inscriben en un formulario de solicitud de citasbienestar.tulua@correounivalle.edu.co , Sede Norte del Cauca: El servicio se ofrece en fechas específicas (campañas de salud), está información será enviada por medio del correo institucional. saludocupacional.ncauca@correounivalle.edu.co"
+                  }
+                }
+              },
+              "1": {
+                "name": "Atención externa",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Atención externa",
+                    "descripcion": "El Servicio Odontológico presta sus servicios a los estudiantes que no tienen EPS en el régimen contributivo. Quienes cuentan con EPS en dicho régimen son atendidos únicamente en Urgencias. En caso de requerir otra clase de tratamiento, serán remitidos a su respectiva EPS.",
+                    "enlaces": "https://drive.google.com/file/d/1arGOpYeuKxFd0goBGvWsDo4idkFYxbBK/view?usp=sharing",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": "",
+                    "a": "Contactar a la EPS del particular o dirigirse al Hospital municipal, si la EPS no tiene atención a urgencias en el municipio donde se encuentra la persona. , http://eps.coomeva.com.co/ , https://www.comfenalcoeps.com/ , https://www.epssura.com/ , https://www.sos.com.co/ , https://www.emssanar.org.co/",
+                    "b": "Hospital municipal para Atención Urgencias y SISBEN. Solicitar cita médica según la gravedad del asunto o en caso de urgencia, dirigirse de manera inmediata al Hospital municipal. , Sede Yumbo: Hospital la Buena Esperanza de Yumbo:  https://hospitaldeyumbo.gov.co/hospital  +57 2 6959595 - Ext. 195 , Sede Norte del Cauca: Francisco De Paula Santander En Santander de Quilichao - Hospital Piloto de Jamundí , Sede Pacifico: Hospital Departamental De Buenaventura - Hospital Distrital Luis Ablanque de la Plata (Buenaventura) , Sede Calcedonia:  Hospital Santander - Dirección: Carrera 9 # 6 - 36 Teléfono Conmutador:  (2) 2161144 - 2160023 - 2160085 Hospital Departamental Centenario de Sevilla, Valle. - Calle 56 #44-43 Barrio Siracusa Teléfono: (2) 2196013 - 2191955 - 2197171 , Sede Zarzal: Hospital Departamental San Rafael de Zarzal Dirección: Calle 5ª No. 6-32, Barrio San Rafael, Zarzal, Valle del Cauca, Colombia. Conmutador: (57 +2)2220046 - Fax 2220043 ext 104 , Urgencias Directo:(57 +2)2221011- Celular 323228215 , Sede Cartago: Hospital San Juan de Dios. Cra 3Bis entre calles 1 y 2.  Tel: + 57 2 4892222 o 3116118355. , Sede Palmira: Comfandi Palmira - Calle 32 #21-74 Clínica Palma Real SAS - Carrera 28 #44-35 - 2879000 , Sede Buga: Hospital San José   Cra 8 #17-52  tel:  (57) (602)  2361000  (+57) 317 580 9671 <br> Hospital Divino NIño  Cr 15 # 26-50  Teléfono: (57) (602) 2372264 , Sede Tuluá: Hospital Ruben Cruz Velez Hospital  Tomas Uribe Uribe Tel +57 2 231 7333",
+                    "c": "Convenio ASOHOSVAL en caso de no encontrarse en el Sistema de Seguridad Social en Salud (no tener EPS ni SISBEN), el estudiante debe acercarse a la Coordinación de Bienestar Universitario de la Sede y reclamar copia del convenio y solicitar cita en el Hospital municipal personalmente o comunicarse por teléfono para solicitar cita médica *Si se trata de una urgencia dirigirse de forma directa al Hospital al área de urgencias http://nortedelcauca.univalle.edu.co/images/Bienestar/ASOHOSVAL.pdf",
+                    "d": "Seguros de Vida del Estado  que ampara la Póliza Integral Estudiantil (018000123010) https://drive.google.com/file/d/0B2Ei7tRtVop5NTFBckJhOU8zTFU/view?resourcekey=0-axEVMj2ow5iguPMaoHWVXQ Decarga de carnet https://drive.google.com/file/d/14SL0VMF-wlp3h4LNednf2pYjOvxEesR-/view *El estudiante debe presentar el carné estudiantil actualizado, su documento de identidad y el carné de la póliza (que le entregaron en la oficina de Bienestar Universitario); si no es atendido deberá reportarlo a Bienestar Universitario"
+                  }
+                }
               }
             }
           }
         }
       },
       "3": {
-        "name": "Psicosocial Externa",
-        "Entidades": {
+        "name": "Atención Psicosocial",
+        "caminata": false,
+        "sedes": {
           "0": {
-            "name": "Línea Atención Psicosocial Gratuita Corpolatin",
-            "Atenciones": {
+            "name": "Sede Cali",
+            "caminata": false,
+            "Entidades": {
               "0": {
-                "name": "Violencia Individual",
-                "descripcion": "Brindamos servicios de detección temprana y atención psicosocial a los niños, niñas, adolescentes, jóvenes, mujeres y sus familias, frente a situaciones de violencia familiar, violencia social, vulneración de derechos, salud mental y otras; para resignificar su proyecto de vida, reconociéndolos como sujetos de derechos",
-                "enlaces": "https://drive.google.com/file/d/1OGfoeyX1LNvdSTSo7FXepDRQwmAFNb1j/view?usp=sharing",
-                "comoSeHace": "Indagar en los encuentros con el/la estudiante si realizó la llamada a la linea-Indagar  cómo se ha sentido en el proceso de atención, si se relaizó alguna remisión o requiere un acompañamiento extra. ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                "name": "Atención interna",
+                "caminata": false,
+                "Atenciones": {
+                  "0": {
+                    "caminata": true,
+                    "name": "Programa de salud mental",
+                    "descripcion": "preventiva:http://vicebienestar.univalle.edu.co/home/22-actividades-servicio-psicologico/50-programa-de-salud-mental-preventiva En este programa se desarrollan una serie de talleres con el objetivo de ofrecer al individuo herramientas que le permitan a través de un mayor conocimiento de sí mismo, de sus potencialidades y del fortalecimiento de sus principios y valores, realizar los cambios necesarios para afrontar la vida con actitud positiva y tomar decisiones responsables.",
+                    "enlaces": "https://drive.google.com/file/d/1OGfoeyX1LNvdSTSo7FXepDRQwmAFNb1j/view?usp=sharing",
+                    "comoSeHace": "Indagar en los encuentros con el/la estudiante si realizó la llamada a la linea-Indagar  cómo se ha sentido en el proceso de atención, si se relaizó alguna remisión o requiere un acompañamiento extra. ",
+                    "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                    "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                  },
+                  "1": {
+                    "caminata": true,
+                    "name": "Asesoría Psicológica",
+                    "descripcion": "Este programa va dirigido a aquellas personas que requieren un proceso terapéutico al presentar un motivo específico de consulta, bien sea en el área personal, familiar, social, académica u ocupacional.Para solicitar información sobre nuestros programas y expresar sus inquietudes puede comunicarse a través del correo electrónico serviciopsicologico@univalle.edu.co y de las líneas telefónicas 3212319 y 3212374.",
+                    "enlaces": "http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/servicio-psicologico/asesoria-psicologica",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
+              },
+              "1": {
+                "name": "Atención externa",
+                "caminata": false,
+                "Atenciones": {
+                  "0": {
+                    "name": "Línea de atención psicosocial gratuita –106",
+                    "descripcion": "Brindamos servicios de detección temprana y atención psicosocial a los niños, niñas, adolescentes, jóvenes, mujeres y sus familias, frente a situaciones de violencia familiar, violencia social, vulneración de derechos, salud mental y otras; para resignificar su proyecto de vida, reconociéndolos como sujetos de derechos.",
+                    "enlaces": "https://drive.google.com/file/d/1OGfoeyX1LNvdSTSo7FXepDRQwmAFNb1j/view?usp=sharing",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  },
+                  "1": {
+                    "name": "Casa Matria Oriente y Juanambú- linea 105.",
+                    "descripcion": "Los servicios son prestados a la comunidad por un equipo interdisciplinario el cual brinda atención, asesoría, prevención  y orientaciòn frente a procesos legales, apoyo psicosocial, erradicación de violencias basadas en género, y espacios/jornadas de sensibilizaciòn y de empoderamiento de la mujer. Se puede acceder a la atención en: Calle 10 No.9N – 07 barrio Juanambú. Teléfono: 668 82 50.",
+                    "enlaces": "https://drive.google.com/file/d/14MOy4qbRf2nCZQUqM7yxR6e5oJvFdvOv/view?usp=sharing",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
               }
             }
           },
           "1": {
-            "name": "Casa Matria Oriente Y JuananbuLinea",
-            "Atenciones": {
+            "name": "Sede Regionales",
+            "caminata": false,
+            "Entidades": {
               "0": {
-                "name": "Orientacion Psicosocial",
-                "descripcion": "Los servicios son prestados a la comunidad por un equipo interdicisplinario el cual brinda atencion, asesoria, prevencion  y orientaciòn frente a procesos legales, apoyo psicosocial, erradicacion de violencias basadas en genero, y espacios/jornadas de sensibilizaciòn y de empoderamiento de la mujer. Calle 10 No.9N – 07 barrio Juanambú. Teléfono: 668 82 50.",
-                "enlaces": "https://drive.google.com/file/d/14MOy4qbRf2nCZQUqM7yxR6e5oJvFdvOv/view?usp=sharing",
-                "comoSeHace": "- Indagar en los encuentros con el/la estudiante si efectivamente solicitó la atencion en Casa matria, cómo le fue en la cita y si requiere algun otro apoyo en el proceso. ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                "name": "Atención interna",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Atención interna",
+                    "descripcion": "-Asesoría psicológica: atención individual con procesos terapéuticos, atendiendo motivos de consulta a nivel personal, familiar, social académico y laboral.-Programa de salud mental preventiva: talleres y/ o campañas  para fortalecer la toma de decisiones asertivas y favorecer su relación consigo.",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": "",
+                    "a": "Sede Yumbo: http://yumbo.univalle.edu.co/bienestar/2015-11-12-23-15-00/bienestar-areas-servicios-salud Adscrita a Bienestar Universitario. Contactar a: marcela.borrero@correounivalle.edu.co ó 6699323 Ext. 6838 (horario de oficina) Sede Norte del Cauca:  Oficinas de Bienestar Universitario, con posibilidad de acceso al Programa de Salud Mental Preventiva y Programa De Asesoría Psicológica. link para solicitar cita: https://docs.google.com/forms/d/e/1FAIpQLSek3hjE8EYLhI927VNqXyftay92b2Aepj-wOGS0ANw9sLsinA/viewform Contactar a: bienestar.nortedelcauca@correounivalle.edu.co  Sede pacífico: http://pacifico.univalle.edu.co/bienestar Adscrita al Bienestar Universitario. Contactar a: bienestar.pacifico@correounivalle.edu.co Sede Caicedonia:  Adscrita a Bienestar Universitario. Contactar a: psicologia.caicedonia@correounivalle.edu.co Sede Zarzal:  http://zarzal.univalle.edu.co/buv/salud-buv/menu-servicio-salud Adscrita a Bienestar Universitario. Contactar a: viviana.palacios@correounivalle.edu.co  o 3232898573    2209193 – 2035069 ext.  Sede Cartago: http://cartago.univalle.edu.co/bienestar-universitario/areas-servicios/salud.html Adscrita a Bienestar Universitario. Contactar a: bienestar.cartago@correounivalle.edu.co Celular: 323 5908395    -  Teléfonos: 2119978 - 2119976 - 2135131 ext. 6308 Sede Palmira: http://palmira.univalle.edu.co/bienestar-universitario-salud Adscrita a Bienestar Universitario. Contactar a: servicio.psicologia.palmira@correounivalle.edu.co o 321 2100 Ext. 6512, Ext. 6532 Sede Buga: http://buga.univalle.edu.co/bienestar-universitario-buga Psicóloga de carácter permanente (Lina Maria Parra) hace acompañamiento de tipo educativo. Contactar a: 3187657700  57 2 2370000, +57 2 2370000, +57 2 2372841 Sede Tuluá: http://tulua.univalle.edu.co/bienestar/area-de-promocion-y-prevencion Adscrita a Bienestar Universitario. Contactar a: serviciopsicologico.tulua@correounivalle.edu.co"
+                  }
+                }
+              },
+              "1": {
+                "name": "Atención externa",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Atención externa",
+                    "descripcion": "",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": "",
+                    "a": "Contactar a la EPS del particular o dirigirse al Hospital municipal, si la EPS no tiene atención psicológica en el municipio donde se encuentra la persona",
+                    "b": "Hospital municipal para Atención Urgencias y SISBEN. Solicitar cita médica según la gravedad del asunto o en caso de urgencia, dirigirse de manera inmediata al Hospital municipal. Sede Yumbo: Hospital la Buena Esperanza de Yumbo:  https://hospitaldeyumbo.gov.co/hospital  +57 2 6959595 - Ext. 195 Sede Norte del Cauca: Francisco De Paula Santander En Santander de Quilichao - Hospital Piloto de Jamundí Sede Pacifico: Hospital Departamental De Buenaventura - Hospital Distrital Luis Ablanque de la Plata (Buenaventura) Sede Calcedonia:  Hospital Santander - Dirección: Carrera 9 # 6 - 36 Teléfono Conmutador:  (2) 2161144 - 2160023 - 2160085 Hospital Departamental Centenario de Sevilla, Valle. - Calle 56 #44-43 Barrio Siracusa Teléfono: (2) 2196013 - 2191955 - 2197171 Sede Zarzal: Hospital Departamental San Rafael de Zarzal Dirección: Calle 5ª No. 6-32, Barrio San Rafael, Zarzal, Valle del Cauca, Colombia. Conmutador: (57 +2)2220046 - Fax 2220043 ext 104 Urgencias Directo:(57 +2)2221011- Celular 323228215 Sede Cartago: Hospital San Juan de Dios. Cra 3Bis entre calles 1 y 2.  Tel: + 57 2 4892222 o 3116118355. Sede Palmira: Comfandi Palmira - Calle 32 #21-74 Clínica Palma Real SAS - Carrera 28 #44-35 - 2879000 Sede Buga: Hospital San José   Cra 8 #17-52  tel:  (57) (602)  2361000  (+57) 317 580 9671 Hospital Divino NIño  Cr 15 # 26-50,  Teléfono: (57) (602) 2372264 Sede Tuluá: Hospital Ruben Cruz Velez  Hospital  Tomas Uribe Uribe Tel +57 2 231 7333",
+                    "c": "Convenio ASOHOSVAL en caso de no encontrarse en el Sistema de Seguridad Social en Salud (no tener EPS ni SISBEN), el estudiante debe acercarse a la Coordinación de Bienestar Universitario de la Sede y reclamar copia del convenio y solicitar cita en el Hospital municipal personalmente o comunicarse por teléfono para solicitar cita médica *Si se trata de una urgencia dirigirse de forma directa al Hospital al área de urgencias http://nortedelcauca.univalle.edu.co/images/Bienestar/ASOHOSVAL.pdf ",
+                    "d": " Seguros de Vida del Estado  que ampara la Póliza Integral Estudiantil (018000123010) https://drive.google.com/file/d/0B2Ei7tRtVop5NTFBckJhOU8zTFU/view?resourcekey=0-axEVMj2ow5iguPMaoHWVXQ Decarga de carnet https://drive.google.com/file/d/14SL0VMF-wlp3h4LNednf2pYjOvxEesR-/view  *El estudiante debe presentar el carné estudiantil actualizado, su documento de identidad y el carné de la póliza (que le entregaron en la oficina de Bienestar Universitario); si no es atendido deberá reportarlo a Bienestar Universitario"
+                  }
+                }
               }
             }
           }
         }
       },
       "4": {
-        "name": "Juridica",
-        "Entidades": {
+        "name": "Atención educativa",
+        "caminata": false,
+        "sedes": {
           "0": {
-            "name": "Consultorio Juridico",
-            "Atenciones": {
+            "name": "Sede Cali",
+            "caminata": false,
+            "Entidades": {
               "0": {
-                "name": "Acompanamiento Juridico",
-                "descripcion": "Los servicios son prestados por los estudiantes de los últimos dos años de la carrera de derecho quienes, acompañados por Asesores docentes de las distintas áreas de conocimiento brindan Asesoramiento, direccionamiento y acompañamiento a la comunidad en temas de tipo legal. U Icesi, U Javeriana, U Libre, U Santiago de Cali ",
-                "enlaces": "https://www.icesi.edu.co/centros-academicos/consultorio-juridico/#tab-323 , https://www.javerianacali.edu.co/facultades/humanidades-y-ciencias-sociales/consultorio-juridico , https://derecho.usc.edu.co/index.php/consultorio-juridico , https://www.unilibrecali.edu.co/index.php/la-universidad-1/agenda-informativa/consultorio-juridico ",
-                "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita con alguno de los consultorios Juridicos, cómo le fue en la cita y si requiere algun otro apoyo en el proceso. ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
-                "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
+                "name": "Atención interna",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Atención interna",
+                    "descripcion": "La División de Bibliotecas de la Universidad del Valle, ofrece acceso a la información a los usuarios en condición de discapacidad visual, a través de recursos tiflotécnicos, materiales impresos en Braille y recursos didácticos especializados. Biblioteca Mario Carvajal (Ciudad Universitaria Meléndez) Biblioteca San Fernando (Sede San Fernando) Alba.cadena@correounivalle.edu.co",
+                    "enlaces": "https://biblioteca.univalle.edu.co/index.php/servicios/presenciales/servicio-para-usuarios-en-condicion-de-discapacidad-visual",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
+              },
+              "1": {
+                "name": "Atención externa",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Atención externa",
+                    "descripcion": "El Hospital Universitario del Valle ofrece un programa de aprendizaje y adaptación de la cotidianidad ante una situación de discapacidad visual. Hospital Universitario del Valle: Calle 5 ##36 - 08, Cali, Valle del Cauca",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
+              }
+            }
+          },
+          "1": {
+            "name": "Sedes Regionales",
+            "caminata": false,
+            "Entidades": {
+              "0": {
+                "name": "",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "",
+                    "descripcion": "",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": "",
+                    "a": "Sede Yumbo: Para recibir acompañamiento de un monitor especial, el estudiante debe hacer la solicitud directamente a la coordinadora de Bienestar Universitario al correo bienestar.yumbo@correounivalle.edu.co y desde esta área remitirán la solicitud a la política de discapacidad e inclusión. Sede Norte del Cauca: Las solicitud para recibir el apoyo de un monitor o monitora (monitoria especial) debe dirigirse a la coordinadora de Bienestar Universitario Erika Forero: Erika.forero@correounivalle.edu.co y al correo de Bienestar : bienestar.nortedelcauca@correounivalle.edu.co  Sede Pacífico: Con la finalidad de recibir monitorias especiales se debe escribir un correo electrónico a la Coordinadora de Bienestar Universitario Alejandra Ordoñez, Correo: bienestar.pacifico@correounivalle.edu.co Sede Palmira: La solicitud se realiza directamente con Bienestar Universitario, la coordinadora es Carmen Bedoya. Correo: bienestar.palmira@correounivalle.edu.co Sede Caicedonia: para acceder a este acompañamiento, los interesados deben remitirse al correo bienestar.caicedonia@correounivalle.edu.co coordinador de Bienestar Universitario Hamilton Agudelo, desde allí harán la respectiva notificación y solicitud a la política de discapacidad e inclusión. Sede Zarzal: Atención interna: Con el fin de recibir monitorias especiales y/o ser incluidos en la política de discapacidad, deben hacer la solicitud con el profesional de apoyo de Bienestar José Luis Doncel, es el encargado de caracterizar a esta población y remitir a los profesionales de sede Cali, su correo es: jose.doncel@correounivalle.edu.co  Atención externa: directamente con el Hospital Departamental San Rafael de Zarzal:  Dirección: Calle 5ª No. 6-32, Barrio San Rafael, Zarzal, Valle del Cauca, Colombia. Conmutador: (57 +2)2220046 - Fax 2220043 ext 104 Urgencias Directo:(57 +2)2221011- Celular 323228215 Sitio Web: https://www.hospitalsanrafaelzarzal.gov.co/  Sede Cartago: Para dar cumplimiento a la política de discapacidad, la Universidad brinda la atención y asesoría desde Bienestar Universitario a los estudiantes interesados, y por ende se hace la notificación al Proyecto de Discapacidad de la Universidad por remisión de Bienestar de la sede vía correo. bienestar.cartago@correounivalle.edu.co Celular: 323 5908395 Teléfonos: 2119978 - 2119976 - 2135131 ext. 6308 Sede Buga: Enlace con bienestar universitario. bienestar.buga@correo uivalle.edu.co Sede Tuluá: Servicio para usuarios de discapacidad en condición de discapacidad visual La división de la Biblioteca de la Universidad del Valle, ofrece acceso a la información a los usuarios en condición de discapacidad visual, a través de recursos, como ayuda destinadas a esta población con el fin de favorecer su autonomía personal e integración laboral y educativa. En sala de mediateca estudiantes, se maneja en un solo equipo para estudiantes con disminución visual, al cual se le hace el préstamo de cómputo No.12 con software JAWS Y MAGIC VISION. enlace de bienestar universitario:  bienestar.tulua@correounivalle.edu.co"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "5": {
+        "name": "Juridica",
+        "caminata": false,
+        "sedes": {
+          "0": {
+            "name": "Sede Cali",
+            "caminata": false,
+            "Entidades": {
+              "0": {
+                "name": "",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "",
+                    "descripcion": "",
+                    "enlaces": "Universidad Icesi: https://www.icesi.edu.co/centros-academicos/consultorio-juridico/#tab-323 , Universidad Javeriana: https://www.javerianacali.edu.co/facultades/humanidades-y-ciencias-sociales/consultorio-juridico , Universidad Santiago de Cali: https://derecho.usc.edu.co/index.php/consultorio-juridico/presentacion , Universidad Libre: https://www.unilibrecali.edu.co/index.php/la-universidad-1/agenda-informativa/consultorio-juridico",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
+              }
+            }
+          },
+          "1": {
+            "name": "Sede Regionales",
+            "caminata": false,
+            "Entidades": {
+              "0": {
+                "name": "",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "",
+                    "descripcion": "",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": "",
+                    "a": "Sede Yumbo: Personería del municipio de Yumbo - consultorio jurídico. Teléfono: 6693686, Ext. 108 (Protección de Derechos Humanos) o 6695555. Dirección: Calle 4 # 5-35 / Barrio Belalcázar- Yumbo, Valle del Cauca. Email: personeria@personeriayumbo.gov.co Página Web: http://www.personeriayumbo.gov.co/  Sede Pacífico:  Alcaldía Distrital de Buenaventura 2405400 Cámara de comercio 2424508 Sede Caicedonia:  En la sede y municipio no se cuenta con este servicio; sin embargo, en la ciudad de Armenia La Universidad La Gran Colombia cuenta con consultorio jurídico. Calle 12 No. 8-37 Primer piso. Teléfono: 314 8783442 https://wwwp.ugc.edu.co/sede/bogota/pages/SolicitudesConsultorioVirtual/acceso/accesoCJV.php Sede Zarzal: Hospital Departamental San Rafael de Zarzal- Atención aspectos judiciales: notificacionjudicial@hospitalsanrafaelzarzal.gov.co Alcaldía Municipal de Zarzal- Correo de notificaciones judiciales: juridica@zarzal-valle.gov.co Sede Cartago:  Universidad Cooperativa de Colombia. Horario de atención: Lunes a viernes de 8:00 a 11:30 y 2:00 a  4:30 p.m. Carrera 4 # 13 – 64  Tel. (57) (2) 2121600 Ext. 114 Diego.taveram@campusucc.edu.co Sede Buga  hospital San Jose Cra 8 #17-52  tel:  (57) (602)  2361000  (+57) 317 580 9671 y Hospital Divino NIño  Cr 15 # 26-50,  Teléfono: (57) (602) 2372264 Sede Tuluá: Concejo Municipal de Tuluá asesoría jurídica a la comunidad Martes y Jueves 9:00 am a 11:00 am y 2:00 pm a 4:00 pm. Telefonos 2244463 - 2259098    Ext: 111 Correo : juridico@concejotulua.gov.co Consultorio jurídico UCEVA - dirección : a30-102, cra. 26 # 30-2, Tuluá Teléfono: 2243294"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "6": {
+        "name": "Atención de Violencias Basadas en Genero",
+        "caminata": false,
+        "sedes": {
+          "0": {
+            "name": "Sede Cali",
+            "caminata": false,
+            "Entidades": {
+              "0": {
+                "name": "Proceso 1",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Proceso 1",
+                    "descripcion": "Si la situación de violencia ocurrió en la universidad o fue perpetrada por un miembro de la comunidad universitaria (docente, estudiante, trabajador(a) o funcionario(a)) dirigirse al área de Bienestar Universitario. En caso de que sea otra persona la que ha sido afectada por la violencia de género acompañarla hasta la oficina (si se es testigo de la violencia, pero la persona no quiere denunciar, usted puede notificar). ",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
+              },
+              "1": {
+                "name": "Proceso 2",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Proceso 2",
+                    "descripcion": "Solicite el acompañamiento de un profesional en psicología o trabajo social, esta persona la o lo acompañará en la construcción del relato que será indispensable para realizar la denuncia de Violencia de Género ante el Centro de investigación género, mujer y sociedad de la Universidad del Valle, esta instancia se encargaran de llevar a cabo la investigación (tenga en cuenta que es posible que le soliciten una carta de autorización para iniciar el proceso y utilizar las pruebas que usted entregue). Dependiendo del caso el profesional que atienda su caso en Bienestar remitirá a instancias externas (entidades municipales) para realizar el procedimiento pertinente (el hospital, la EPS, fiscalía, policía, comisaría de familia, personería, defensoría del pueblo, ICBF o medicina legal) *Acudir a la EPS en caso de que la situación lo requiera. Si la persona no cuenta con afiliación por régimen subsidiado o contributivo, se atenderá la emergencia por medio del convenio Univalle - ASOHOSVAL, en uno de los hospitales públicos del Valle. También puede comunicarse con el Plan de Contingencia para la Prevención y Atención Oportuna de las Violencias Basadas en Género contra las Mujeres y Población Diversa en el Departamento del Valle del Cauca”. Línea de atención: 317 434 2586 - Janeth Vivas Fuentes.",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
+              },
+              "2": {
+                "name": "Proceso 3",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "name": "Proceso 3",
+                    "descripcion": "Espere la notificación del Centro de género de la Universidad del Valle (esta notificación puede tardar algunas semanas, pero usted puede solicitar información por medio del correo de Bienestar Universitario de la Sede). El área de Bienestar Universitario se encarga de hacer el seguimiento de los casos con el Centro de Género de la Universidad bienestar.yumbo@correounivalle.edu.co  bienestar.nortedelcauca@correounivalle.edu.co  bienestar.pacifico@correounivalle.edu.co bienestar.zarzal@correounivalle.edu.co bienestar.palmira@correounivalle.edu.co bienestar.caicedonia@correounivalle.edu.co bienestar.cartago@correounivalle.edu.co bienestar.buga@correo uivalle.edu.co bienestar.tulua@correounivalle.edu.co Oficina de equidad de género de cada municipio Comisaria de Familia del municipio",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
               }
             }
           }
@@ -207,7 +519,7 @@
                 "descripcion": "Vivo la ciudad Como estudiantes ASES también debemos formarnos en ciudadanía. El primer paso para ello es reconocer el lugar en el que vivimos, comprender su cultura, disfrutar sus expresiones culturales y analizar sus problemáticas desde una postura crítica y propositiva. Con ánimo investigativo o por el disfrute de la oferta cultural, te invitamos no sólo a explorar la ciudad, sino también a construirla.",
                 "enlaces": "http://ases.univalle.edu.co/vivo-la-ciudad-vivo-la-u/vivo-la-ciudad , http://ases.univalle.edu.co/vivo-la-ciudad-vivo-la-u/geo-ases-vivo-la-ciudad-u ,http://ases.univalle.edu.co/vivo-la-ciudad-vivo-la-u/conoce-la-u ",
                 "comoSeHace": "En los primeros encuentros con el/la estudiante el monitor/a le explica toda la información referente a los diferentes grupos studiantiles, académicos, investigativos, culturales, y deportivos de la Universidad del Valle Presentación y explicacion de servicios que ofrece la universidad. El monitor ayuda al estudiante a comprender dinámicas propias de la vida universitaria en univalle. Consejo sobre lugares a visitar, El monitor promueve la visita conjunta o personal del estudiante a sitios turísticos de la ciudad. Consejos sobre medios y métodos de transporte ",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -220,7 +532,7 @@
                 "descripcion": "Conoce la U y las opciones que te brinda Para conocer la universidad, hay que vivirla. Exploremos juntos todos los beneficios de pertenecer a una de las mejores universidades de Colombia: grupos de estudio, agrupaciones culturales, escenarios deportivos, espacios de esparcimiento, riqueza vegetal y animal, talento humano y mucho más. Geolocalización",
                 "enlaces": "https://www.tripadvisor.co/Attractions-g297475-Activities-Cali_Valle_del_Cauca_Department.html ,https://travelgrafia.co/blog/que-hacer-en-cali/ ",
                 "comoSeHace": "En los primeros encuentros con el/la estudiante el monitor/a le explica toda la información referente a los diferentes grupos studiantiles, académicos, investigativos, culturales, y deportivos de la Universidad del Valle Presentación y explicacion de servicios que ofrece la universidad. El monitor ayuda al estudiante a comprender dinámicas propias de la vida universitaria en univalle. Consejo sobre lugares a visitar, El monitor promueve la visita conjunta o personal del estudiante a sitios turísticos de la ciudad. Consejos sobre medios y métodos de transporte ",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -238,7 +550,7 @@
                 "descripcion": "Jornadas de gimnasia dirigida a través de bailes típicos y música moderna. Tienen dos lugares donde desarrollan las actividades.Lunes y miércoles de 5:30 p.m. a 6:30 p.m. Salón de Tenis de Mesa - Sede Meléndez.Jueves de 4:30 p.m. a 6:30 p.m. Canchas del Centro Deportivo Universitario - Sede San Fernando",
                 "enlaces": "http://vicebienestar.univalle.edu.co/cultura-recreacion-y-deporte/area-de-cultura/actividades-permanentes",
                 "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -251,7 +563,7 @@
                 "descripcion": "Danzario Contempo Univalle surge en el primer semestre del año 2013 con la iniciativa del coordinador del área de Cultura de la Universidad del Valle, Francisco Emerson Castañeda y la maestra en danza contemporánea de la Facultad de Artes (FAASAB) de la Universidad Distrital (Bogotá) Alexandra Castañeda Obando. Semillero: Lunes, miércoles y viernes 12:00 m a 2:00 pm Auditorio 5- Sede Meléndez Grupo representativo: Martes y jueves 6:00 pm a 9:00 pm; Miércoles 2:00 pm a 6:00 pm; Domingo  8:00 am a 12:00 m. Auditorio 5- Sede Meléndez",
                 "enlaces": "http://vicebienestar.univalle.edu.co/2015-11-20-21-40-18/area-de-cultura/grupos-artisticos-y-culturales/danzas-folcloricas",
                 "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -264,7 +576,7 @@
                 "descripcion": "El Colectivo Teatral Entrada Libre comenzó con una etapa de formación autodidacta, poco después contó con el acompañamiento ocasional del compañero Jhonatan Panesso, egresado del Instituto Popular de Cultura (IPC), también estuvieron algunos estudiante de la Escuela de Arte Dramático de la Universidad del Valle, así como el profesor Francisco Antonio Henao Velasco, director del Grupo de Teatro Experimenta Latinoamericano de Cali – GRUTELA. Entrenamiento: Lunes, miércoles y viernes 5:00 pm a 9:00 pm. Camerinos Coliseo Alberto León Betancourt Sábado 9:00 am a 1:00 pm. Edificio Ágora Construcción escenografía: Martes y jueves 9:00 am a 1:00 pm. Diferentes espacios",
                 "enlaces": "http://vicebienestar.univalle.edu.co/2015-11-20-21-40-18/area-de-cultura/grupos-artisticos-y-culturales/teatro",
                 "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -277,7 +589,7 @@
                 "descripcion": "Este grupo nace en el año 2009 como iniciativa del estudiante de Licenciatura en Educación Física, Ancizar Gallego quien en un principio ensayaba solo en el Coliseo Alberto León Betancourt, pero rápidamente se sumaron estudiantes de diversos planes a esta práctica danzaria. Una vez el grupo se fue consolidando, se oficializó su existencia ante el área de Cultura de la Vicerrectoría de Bienestar Universitario, durante el mismo año. Lunes, miércoles y viernes 2:00 pm a 6:00 pm Martes y jueves 2:00 pm a 7:00 pm Coliseo Alberto León Betancourt - Campus Meléndez",
                 "enlaces": "http://vicebienestar.univalle.edu.co/2015-11-20-21-40-18/area-de-cultura/grupos-artisticos-y-culturales/break-dance",
                 "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -295,7 +607,7 @@
                 "descripcion": "NATACIÓN Y NATACIÓN CON ALETAS: Cursos diseñados para que las personas que no saben nadar aprendan en un entorno seguro, aprendizaje de estilos. Quienes ya saben nadar pueden aprender el uso de  las aletas, aprender estilos y mantener su condición física a través de la práctica de la natación.APNEA I: Este curso enseña a conocer el mundo subacuático y a manejar el equipo básico de un buzo: careta, aletas y snorkel, a manejar la flotabilidad y a sumergirse de manera segura. Aprenderá a contener la respiración, a adaptar su cuerpo y su mente para disfrutar de manera libre el medio acuático.BUCEO AUTÓNOMO: El buceo autónomo permite utilizar el equipo Scuba: tanque, regulador y chaleco. Además el curso le enseña todas las implicaciones físicas y fisiológicas que tiene el ingreso al mundo acuático así usted estará preparado para disfrutar del mundo submarino de una manera segura. Al final de cada curso usted recibirá una certificación internacional que le permite disfrutar del buceo sin fronteras. BUZO AUTÓNOMO 1 estrella (AGUAS ABIERTAS)",
                 "enlaces": "https://drive.google.com/file/d/1ZJeqTTZsv8U9RquiflHVX0b9enur2j0_/view?usp=sharing",
                 "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -308,7 +620,7 @@
                 "descripcion": "Colectivo de aprendizaje de ajedrez guiado por el entrenador Victor Saavedra Estudiantes: Lunes a viernes   9:00 am a 1:00 pm Funcionarios Viernes  4:00 pm a 6:00 pm Salón de Ajedrez Campus Meléndez ",
                 "enlaces": "http://vicebienestar.univalle.edu.co/2-uncategorised/121-ajedrez",
                 "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -321,7 +633,7 @@
                 "descripcion": "Colectivo de aprendizaje de fútbol Masculino guiado por los entrenadores Milton Torres (lunes, miércoles y viernes de 12:00 pm a 2:00 pm) y Mauricio Ortiz (lunes a viernes de 12:30 pm a 2:00 pm)Colectivo de aprendizaje de fútbol Femenino guiado por los entrenadores Milton Torres (lunes, miércoles y viernes de 12:00 pm a 2:00 pm) y Mauricio Ortiz (lunes a viernes de 12:30 pm a 2:00 pm)",
                 "enlaces": "http://vicebienestar.univalle.edu.co/restaurante-universitario/2-uncategorised/123-futboll",
                 "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -334,7 +646,7 @@
                 "descripcion": "Colectivo de aprendizaje de natación guiado por el entrenador Fernando Zarama de Lunes a viernes de 12:00 pm a 2:00 pm. CDU Univalle Melendez",
                 "enlaces": "http://vicebienestar.univalle.edu.co/2-uncategorised/125-natacion",
                 "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -347,7 +659,7 @@
                 "descripcion": "Colectivo de aprendizaje de tenis de campo guiado por el entrenador Richard Quenguan Lunes a viernes. de 12:00 pm. a 2:00 pm.",
                 "enlaces": "http://vicebienestar.univalle.edu.co/17-contenido-simple/137-tenis-de-campo",
                 "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -360,7 +672,7 @@
                 "descripcion": "Colectivo de aprendizaje de Voleibol presentado en tres modalidades: 1. Como semillero: guiado por un monitor lunes y miércoles de 12:00 pm a 1:30 pm y los viernes de 1:00 pm a 3:00 pm. 2. Como entrenamiento masculino: guiado por el entrenador Diego Quintero los miércoles de 7:00 pm a 9:00 pm y los jueves de 8:00 a 9:30 pm 3. Como entrenamiento femenino: guiado por el entrenador Diego Quintero los lunes de 8:00pm a 9:30 pm y los martes de 6:00 pm a 8:00 pm.",
                 "enlaces": "http://vicebienestar.univalle.edu.co/2-uncategorised/140-voleibol",
                 "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -373,7 +685,7 @@
                 "descripcion": "Colectivo de aprendizaje de baloncesto guiado por el entrenador James Valdés lúnes (de 10:00 am a 12:00 pm), miércoles (de 4:00 pm a 6:00 pm), jueves (6:00 pm a 8:00 pm) y viernes (12:00 pm a 2:00 pm)",
                 "enlaces": "http://vicebienestar.univalle.edu.co/2-uncategorised/122-baloncesto",
                 "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -386,7 +698,7 @@
                 "descripcion": "Colectivo de aprendizaje de rugby masculino guiado por el entrenador Efraín Paz los días martes, jueves y viernes de 12:00 pm a 2:00 pm Colectivo de aprendizaje de rugby femenino guiado por el entrenador Felipe Sanclemente los días lunes, miércoles y viernes. Los entrenamientos para las estudiantes de la categoría A/B son de 5:30 am a 7:30 am y para las estudiantes de la categoría C son de 12:00 pm a 2:00 pm",
                 "enlaces": "Link: http://vicebienestar.univalle.edu.co/2-uncategorised/133-rugby Página de Facebook 'Lobos Univalle ': https://www.facebook.com/LobosUnivalleRugby/?ref=page_internal",
                 "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
-                "quienLoHace": "Monitor/a componente socioeducativo",
+                "quenLoHace": "Monitor/a componente socioeducativo",
                 "periodicidad": "De manera continua en los acompañamientos Socio educativos"
               }
             }
@@ -409,7 +721,7 @@
                 "descripcion": "Es un apoyo económico y un auxilio en alimentación, que se brinda a los estudiantes cuya situación financiera es precaria y que se otorga por un determinado tiempo.",
                 "enlaces": "http://vicebienestar.univalle.edu.co/desarrollo-humano-y-promocion-socioeconomica/subsidio-para-estudiantes-de-escasos-recursos-y-becas-de-alimentacion/subsidio-economico",
                 "comoSeHace": "- Indagar en los encuentros con el/la estudiante si efectivamente solicitó el apoyo o auxilio economico ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                "quenLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
                 "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
               }
             }
@@ -422,7 +734,7 @@
                 "descripcion": "La Revisión de Derechos Económicos (del Valor de Matrícula Financiera), es un proceso que ha sido reglamentado para ayudar a las familias de estudiantes de pregrado con dificultades socioeconómicas para pagar el valor de la matrícula. De esta manera, se previene el riesgo de deserción del estudiante por dichas causales.",
                 "enlaces": "http://vicebienestar.univalle.edu.co/desarrollo-humano-y-promocion-socioeconomica/estudios-socioeconomicos-para-descuentos-en-la-matricula-financiera",
                 "comoSeHace": "- Indagar en los encuentros con el/la estudiante si efectivamente solicitó el apoyo o auxilio economico ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                "quenLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
                 "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
               }
             }
@@ -435,7 +747,7 @@
                 "descripcion": "Los préstamos estudiantiles están dirigidos a estudiantes que presentan dificultades socioeconómicas para asumir los costos de su estadía en la Universidad. Este préstamo está diseñado para emplearse en la cancelación del valor de la matricula financiera y la adquisición de material bibliográfico -o de apoyo académico-. ",
                 "enlaces": "http://vicebienestar.univalle.edu.co/desarrollo-humano-y-promocion-socioeconomica/fondo-de-prestamo-estudiantil",
                 "comoSeHace": "- Indagar en los encuentros con el/la estudiante si efectivamente solicitó el apoyo o auxilio economico ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                "quenLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
                 "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
               }
             }
@@ -448,7 +760,7 @@
                 "descripcion": "Su objetivo principal es promover la vinculación de egresados, profesionales, directivos, empresarios e inversores potenciales, como benefactores en la modalidad de becas, orientadas a apoyar a aquellos estudiantes que pese a su buen rendimiento académico, tienen dificultades para el pago de sus matrículas financiera. Beneficia específicamente a estudiantes de los estratos 1, 2 y 3; así como a los mejores promedios. Consiste en suministrar al beneficiario el porcentaje de la matricula que no ha sido subsidiado por el estado o la universidad, siempre y cuando cumpla con los requisitos necesarios.",
                 "enlaces": "http://vicebienestar.univalle.edu.co/desarrollo-humano-y-promocion-socioeconomica/padrinazgo-educativo",
                 "comoSeHace": "- Indagar en los encuentros con el/la estudiante si efectivamente solicitó el apoyo o auxilio economico ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                "quenLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
                 "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
               }
             }
@@ -461,7 +773,7 @@
                 "descripcion": "Desde el pasado 20 de Febrero /07 se inauguró en la Universidad del Valle (Meléndez) la nueva sede del SPE, un servicio gratuito al que pueden acceder todos los colombianos, permitiendo que tanto empresarios, como profesores y funcionarios de la institución  que requieran monitor, puedan publicar sus vacantes o escoger los candidatos para las mismas.",
                 "enlaces": "https://agenciapublicadeempleo.sena.edu.co/Paginas/inicio.aspx , http://vicebienestar.univalle.edu.co/desarrollo-humano-y-promocion-socioeconomica/fomento-al-empleo",
                 "comoSeHace": "- Indagar en los encuentros con el/la estudiante si efectivamente solicitó el apoyo o auxilio economico ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                "quenLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
                 "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
               }
             }
@@ -479,7 +791,7 @@
                 "descripcion": "Es un programa del Gobierno nacional que acompaña a los jóvenes en su formación técnica, tecnológica y/o profesional con la entrega de transferencias monetarias condicionadas con el propósito de mejorar sus capacidades y oportunidades de movilidad social y condiciones de bienestar. Asimismo, se brindan procesos pedagógicos para promover y fortalecer sus habilidades para la vida con el fin de potenciar su proyecto de vida. Lugar Sede Meléndez: Edificio Ágora- Sección Desarrollo Humano y Promoción Socioeconómica. Requisitos: - Ser desplazado o Pertenecer a la Red Unidos o Tener Sisben (puntaje igual o inferior a 54.86 %) o ser población indígena debidamente registrada o rotegido por el ICBF. - Edad entre 16 y 24 años -Haber matriculado entre uno y cuatro semestres (carrera profesional) y  entre uno y tres semestres (Carrera Tecnológica) al I semestre de 2015. ",
                 "enlaces": "https://drive.google.com/file/d/1RRZQe1Rzw5F4EzcVIGCo2_dimEykCsf3/view?usp=sharing Link de la descripción: https://prosperidadsocial.gov.co/sgpp/transferencias/jovenes-en-accion/",
                 "comoSeHace": "- Indagar en los encuentros con el/la estudiante si efectivamente solicitó el apoyo o auxilio economico ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                "quenLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
                 "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
               }
             }
@@ -492,7 +804,7 @@
                 "descripcion": "La Universidad del Valle firmó desde el año 2003 un  convenio marco con el ICETEX, el cual se constituyó como una alianza estratégica, para fortalecer la continuidad de los estudiantes en el nivel superior, buscando alcanzar mejores niveles de competitividad nacional e internacional. Buen número de estudiantes de la Universidad del Valle acceden a las diferentes líneas de crédito educativo a través de este sistema, facilitando de esta manera la permanencia y culminación de sus estudios. Avenida 1 norte No. 7N41 - Cali  Teléfonos: 6618646 - 6618659 Profesional Univalle  Aura  316 2863224",
                 "enlaces": "https://matriculafinanciera.univalle.edu.co/Beneficios/index.html , https://portal.icetex.gov.co/Portal/",
                 "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó el apoyo o auxilio economico ",
-                "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
+                "quenLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
                 "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
               }
             }
@@ -515,7 +827,7 @@
                 "descripcion": "El acompañamiento Socio educativo implica la atencion al proceso de adaptacion de los estudiantes a la vida universitaria y los retos que este genera. - Eleccion Vocacional: A través de los encuentros de pares se identifica las causas por las cuales hay posibles problemas de elección vocacional, ello con el fin de hacer un reconocimiento de la situación y establecer si hay o no dificultades con el tema, puede ser que tan solo sean dudas que se puedan resolver durante la monitoría. Una vez identificado que existe un problema de elección vocacional, se le informará al/la practicante y este a su vez a la/el profesional, con fin del crear acciones conjuntas. Será la/le profesional que atienda la situación con el/la estudiante y se informará al monitor/as las acciones realizadas-Apoyo académico entre pares (asesoria en la resolucion y comprencion de las tematicas academicas) -Taller par-par (Organización de deberes,  Estrategias de estudio para los cursos",
                 "enlaces": "http://ases.univalle.edu.co/home-que-es",
                 "comoSeHace": "En el marco de la Estrategia ASES el monitor Socioeducativo indaga continuamente sobre el proceso del estudiante y esto es reportado en las Fichas de seguimiento (campus virtual) y las reuniones de seguimiento con practicantes y profesionales.",
-                "quienLoHace": "",
+                "quenLoHace": "",
                 "periodicidad": ""
               }
             }
@@ -528,7 +840,7 @@
                 "descripcion": "Se recolectarán en un directorio las habilidades académicas y experienciales de los/as monitores/as, sus horarios y disponibilidad, para que una vez se requiera un apoyo en específico se pueda acudir a este recurso.",
                 "enlaces": "Monitorías académicas ASES: http://ases.univalle.edu.co/monitorias-academicas , Monitorías académicas grupales ASES:http://ases.univalle.edu.co/noticias/item95-programacion-de-monitorias-academicas-grupales",
                 "comoSeHace": "En el marco de la Estrategia ASES el monitor Socioeducativo indaga continuamente sobre el proceso del estudiante y esto es reportado en las Fichas de seguimiento (campus virtual) y las reuniones de seguimiento con practicantes y profesionales.",
-                "quienLoHace": "",
+                "quenLoHace": "",
                 "periodicidad": ""
               }
             }
@@ -541,7 +853,7 @@
                 "descripcion": "Invitar al estudiante a participar de las asignaturas tipo electivas complementarias que fortalezcan su proceso de comprensión lectora, estos cursos en ocasiones son genéricos, y no requieren carta de solicitud de cupo. Ello se puede indagar a la programación académica de la U para buscar la disponibilidad.",
                 "enlaces": "www.matricula.univalle.edu.co, http://registro.univalle.edu.co/pregrado-programacion-academica ",
                 "comoSeHace": "En el marco de la Estrategia ASES el monitor Socioeducativo indaga continuamente sobre el proceso del estudiante y esto es reportado en las Fichas de seguimiento (campus virtual) y las reuniones de seguimiento con practicantes y profesionales.",
-                "quienLoHace": "",
+                "quenLoHace": "",
                 "periodicidad": ""
               }
             }
@@ -554,7 +866,7 @@
                 "descripcion": "“La representación estudiantil tiene como función principal velar por los derechos de los estudiantes, y promover el cumplimiento de sus deberes.” (Art. 9 – Acuerdo 009 de 1997) A través de la representación estudiantil del respectivo programa académico, expondrá la situación y se revisarán las posibles acciones que dicte el conducto regular para solucionar y llegar acuerdos óptimos con la intención de mejor las afectaciones de la relación estudiante – docente. Según corresponda desde la representación estudiantil será posible escalar el caso a los diferentes comités del programa académico facultad, o instituto.",
                 "enlaces": "https://www.univalle.edu.co/formacion/pregrado",
                 "comoSeHace": "En el marco de la Estrategia ASES el monitor Socioeducativo indaga continuamente sobre el proceso del estudiante y esto es reportado en las Fichas de seguimiento (campus virtual) y las reuniones de seguimiento con practicantes y profesionales.",
-                "quienLoHace": "",
+                "quenLoHace": "",
                 "periodicidad": ""
               }
             }
@@ -567,7 +879,7 @@
                 "descripcion": "La cual tiene como propósitos: a) Orientar al estudiante en su proceso de matrícula académica; b) Hacer seguimiento del desempeño y desarrollo académico del estudiante;  c) Orientar la vida universitaria del estudiante de acuerdo con las pautas establecidas en el Reglamento Estudiantil y demás normas de la Universidad;  d) Promover y estimular en el estudiante actividades formativas para un mejor desarrollo como persona;  e) Informar oportunamente al Director del Programa Académico de aquellas situaciones que puedan poner en riesgo la permanencia del estudiante en la Universidad;  f) Presentar al Jefe de la Unidad Académica o quien haga sus veces, con copia al Director del Programa Académico respectivo, un informe semestral sobre la actividad de consejería realizada”. Se debe validar en cada programa si cuenta con la atencion de consejeria para que se brinde el contacto de la persona encargada",
                 "enlaces": "https://drive.google.com/file/d/1-XMYZ3eD3ZyhkY2uA-5mVvirzABaRXg3/view?usp=sharin",
                 "comoSeHace": "En el marco de la Estrategia ASES el monitor Socioeducativo indaga continuamente sobre el proceso del estudiante y esto es reportado en las Fichas de seguimiento (campus virtual) y las reuniones de seguimiento con practicantes y profesionales.",
-                "quienLoHace": "",
+                "quenLoHace": "",
                 "periodicidad": ""
               }
             }
@@ -580,7 +892,7 @@
                 "descripcion": "Grupos de Apoyo a la Cultura Académica, los cuales tienen como objetivos “Ofrecer a los estudiantes apoyo en sus tareas de lectura y de escritura tanto en la parte retórica de los textos como en la construcción de sentido en sus disciplinas; Generar espacios de estudio y de formación de tutores de pre y posgrado en las disciplinas para hacer acompañamiento a los estudiantes universitarios en sus procesos de lectura, de escritura y de comunicación oral.” Por ende es un espacio pertinente para el desarrollo de actividades que potencien las habilidades de escritura y lectura de los/as estudiantes, para acceder a éste se deben dirigir al GRACA de la respectiva facultad o instituto, agendar una cita y proceder con las orientaciones dadas.Contacto por facultad: Facultad de Ciencias Naturales y Exactas    culturaacademica.ciencias@correounivalle.edu.co Facultad de Ingeniería:     culturaacademica.ingenieria@correounivalle.edu.co Facultad de Artes Integradas:   fai.graca@correounivalle.edu.co Facultad de Ciencias de la Administración: culturaacademica.administracion@correounivalle.edu.co Programa de Sociología: sociologia.graca@correounivalle.edu.co Programa de Trabajo social: trabajosocial.graca@Programa de Licenciatura en lenguas extranjeras graca.ecl@correounivalle.edu.co Programa de Medicina culturaacademica.salud@correounivalle.edu.co",
                 "enlaces": "https://drive.google.com/file/d/1_fSt5Xfg2A6Di8nOOoxyO8pib28rCtR6/view?usp=sharing https://drive.google.com/file/d/1aNjjKk7WnaAKpM4lt_cPsPJeQWGG0TRy/view?usp=sharing",
                 "comoSeHace": "En el marco de la Estrategia ASES el monitor Socioeducativo indaga continuamente sobre el proceso del estudiante y esto es reportado en las Fichas de seguimiento (campus virtual) y las reuniones de seguimiento con practicantes y profesionales.",
-                "quienLoHace": "",
+                "quenLoHace": "",
                 "periodicidad": ""
               }
             }
@@ -593,7 +905,7 @@
                 "descripcion": "Oferta de recursos bibliograficos y talleres formativos en distintos momentos del semestre donde los/as estudiantes puedes explorar sus habilidades y dificultades a formativas:Talleres de Escritura y Hablar en Público Manejo de Bases de datos",
                 "enlaces": "https://biblioteca.univalle.edu.co/https://biblioteca.univalle.edu.co/servicios/presenciales/prestamo-de-material-bibliografico ",
                 "comoSeHace": "En el marco de la Estrategia ASES el monitor Socioeducativo indaga continuamente sobre el proceso del estudiante y esto es reportado en las Fichas de seguimiento (campus virtual) y las reuniones de seguimiento con practicantes y profesionales.",
-                "quienLoHace": "",
+                "quenLoHace": "",
                 "periodicidad": ""
               }
             }
@@ -606,7 +918,7 @@
                 "descripcion": "Su objetivo es “proporcionar recursos bibliográficos acordes con las necesidades de información de los grupos de investigación del Instituto, mediante la prestación de servicios de información de alta calidad, con recurso humano y tecnológico calificado.Por Facultad: CENDOPU - Instituto de Educación y Pedagogía CENDOC - Ciencias Sociales y EconómicasCentro de Documentación ECL- Escuela de Ciencias del Lenguaje CINARA - Investigación en abastecimiento de agua Biblioteca Álvaro López Toro - Departamento de Matemáticas",
                 "enlaces": "Recursos Bibliográficos - Instituto de Educación y Pedagogía - IEP / Universidad del Valle / Cali, Colombia (univalle.edu.co) https://socioeconomia.univalle.edu.co/cidse/centro-de-documentacion-cendoc , http://cendoecl.univalle.edu.co/ , http://cinara.univalle.edu.co/ , https://sites.google.com/a/correounivalle.edu.co/bialotor/ ",
                 "comoSeHace": "En el marco de la Estrategia ASES el monitor Socioeducativo indaga continuamente sobre el proceso del estudiante y esto es reportado en las Fichas de seguimiento (campus virtual) y las reuniones de seguimiento con practicantes y profesionales.",
-                "quienLoHace": "",
+                "quenLoHace": "",
                 "periodicidad": ""
               }
             }
@@ -619,7 +931,7 @@
                 "descripcion": "Apoyo al estudiante en la información para procesos de matrícula, pago, cancelación de semestre o materias, horarios y estímulos académicos entre otros",
                 "enlaces": "www.matricula.univalle.edu.co , http://registro.univalle.edu.co/pregrado-programacion-academica ",
                 "comoSeHace": "En el marco de la Estrategia ASES el monitor Socioeducativo indaga continuamente sobre el proceso del estudiante y esto es reportado en las Fichas de seguimiento (campus virtual) y las reuniones de seguimiento con practicantes y profesionales.",
-                "quienLoHace": "",
+                "quenLoHace": "",
                 "periodicidad": ""
               }
             }
@@ -632,7 +944,7 @@
                 "descripcion": "Invitación a la participación en los grupos académicos o de investigacion en los diferentes programas academicos",
                 "enlaces": "Ingeniería electrica: https://eiee.univalle.edu.co/grupos-de-estudio Trabajo social: http://trabajosocial.univalle.edu.co/grupo-estudios-de-familia-y-sociedad Ingeniería y computación: http://eisc.univalle.edu.co/index.php/grupos-investigacion Facultad de ciencias naturales y excactas: https://ciencias.univalle.edu.co/departamento-de-biologia/grupos-de-investigacion Facultad de ciencias sociales y económicas: https://socioeconomia.univalle.edu.co/grupos-de-investigacion Psicología: https://psicologia.univalle.edu.co/2015-09-28-14-34-05/grupos-de-investigacion Ingeniería: http://ingenieria.univalle.edu.co/grupos-investigacion ",
                 "comoSeHace": "En el marco de la Estrategia ASES el monitor Socioeducativo indaga continuamente sobre el proceso del estudiante y esto es reportado en las Fichas de seguimiento (campus virtual) y las reuniones de seguimiento con practicantes y profesionales.",
-                "quienLoHace": "",
+                "quenLoHace": "",
                 "periodicidad": ""
               }
             }
