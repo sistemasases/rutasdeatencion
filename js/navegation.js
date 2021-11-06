@@ -36,7 +36,7 @@ function svgPaint(json) {
     //ocultar flechas 
     $('#arrows-'+iterador).hide()
     //insertar el texto correspiente de la felcha
-    $('#arrows-'+i + ' text').html(dimension.name)
+    $('#arrows-'+i + ' text').html((dimension.name).toUpperCase())
     }
     //liberar memoria 
     iterador = null

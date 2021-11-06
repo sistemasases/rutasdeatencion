@@ -1,6 +1,5 @@
 
 
-
 /* Funcionalidad de rutas de atencion svg */
 function rutesAttentionMovil(json) {
 
@@ -261,7 +260,7 @@ function funcionalityRute(json, dimension, attetionAux, entity, iterador, indexC
     //insertar el texto de las llaves del json al svg
     for (const attention of objectJson[indexCap]) {
       $('#arrows-' + iterador + '').show()
-      $('#arrows-' + iterador + ' text').html(attention[1].name)
+      $('#arrows-' + iterador + ' text').html( ((attention[1].name).toUpperCase()).slice(0, 9))
       iterador++;
     }
 
@@ -340,7 +339,7 @@ function titleBrecumbs(indexArr, indexCap) {
 
   //insertar el texto en brecumbs
   textBrecumbs = $('#arrows-' + indexArr + '').find('text').text()
-  $('#bread-' + (indexCap + 1) + '').find('span').html(textBrecumbs.slice(0, 10))
+  $('#bread-' + (indexCap + 1) + '').find('span').html(textBrecumbs.slice(0, 9))
 
 }
 
