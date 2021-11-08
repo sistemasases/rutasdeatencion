@@ -22,7 +22,7 @@ $(function() {
 /* Pinta la capa mayor que corresponde a los nombres de las dimensiones */
 function svgPaint(json) {
   
-  let i = 0;
+  let i = 1;
   json.then( function(event) {
 
     let iterador = Object.keys(event).length
@@ -32,16 +32,16 @@ function svgPaint(json) {
     iterador++;
     i++;
     //activar la flecha 
-    $('#arrows-'+i).show()
+    $('#arrow-'+i).show()
     //ocultar flechas 
-    $('#arrows-'+iterador).hide()
+    $('#arrow-'+iterador).hide()
     //insertar el texto correspiente de la felcha
-    $('#arrows-'+i + ' text').html((dimension.name).toUpperCase())
+    $('#arrow-'+i + ' text').html((dimension.name).toUpperCase())
+    console.log(iterador)
     }
     //liberar memoria 
     iterador = null
     i = null
-    
   }).catch((err) => {
 
       console.log('ups, paso un error al insertar el texto' , err)
