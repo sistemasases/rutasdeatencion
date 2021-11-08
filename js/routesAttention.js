@@ -1,5 +1,4 @@
 
-
 /* Funcionalidad de rutas de atencion svg */
 function rutesAttentionMovil(json) {
 
