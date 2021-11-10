@@ -37,6 +37,7 @@ function svgPaint(json) {
     $('#arrow-'+iterador).hide()
     //insertar el texto correspiente de la felcha
     $('#arrow-'+i + ' text').html((dimension.name).toUpperCase())
+    console.log(iterador)
     }
     //liberar memoria 
     iterador = null
@@ -117,12 +118,6 @@ async function getJson() {
 
 
 }
-
-
-
-
-
-
 
 
 
