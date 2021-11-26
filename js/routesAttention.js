@@ -5,7 +5,6 @@
 * @license  http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 */
 
-
 /* Funcionalidad de rutas de atencion svg */
 function rutesAttentionMovil(json) {
 
