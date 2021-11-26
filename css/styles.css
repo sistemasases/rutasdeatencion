@@ -887,9 +887,6 @@ h1 {
         hyphens: auto;
         overflow: hidden;
      }
-     .content-dimension {
-
-     }
      .read-more-button {
         display: grid;
         grid-template-rows: 100%;
