@@ -94,14 +94,15 @@ html {
     background-attachment: fixed;
     background-size: cover;
     background-position-x: 0%;
-    background-color: #2271b3;
+    background-color: deepskyblue;
+    height: 100vh;
     touch-action: none;
 }
 
 h1 {
     display: inline-block;
     font-family: "Roboto", sans-serif;
-    color: gray;
+    color: #4da34a;
     font-size: 5em;
 }
 
@@ -136,7 +137,6 @@ h1 {
 .title {
     text-align: center;
     font-style: italic;
-    padding-top: 0.2em;
     grid-column-start: 2;
     grid-column-end: 2;
     justify-self: stretch;
@@ -410,24 +410,65 @@ h1 {
           top: 0;
           width: 100%;
           overflow: hidden;
-          grid-template-rows: 3.5em;
-          grid-template-columns: 10% 80% 10%;
-          background-color: white;
+          grid-template-rows: 5em;
+          grid-template-columns: 15% 70% 15%;
+          background-color: #f2f6ff;
           box-shadow: rgba(199, 202, 202, 0.2) 0px 8px 24px;
+          border-bottom-left-radius: 3em;
           z-index: 1;
+      }
+      .box-hamburger {
+          grid-column-start: 1;
+          font-size: x-large;
+          color: #4da34a;
+          justify-self: flex-end;
+          align-self: center;
+      }
+      .title.aux {
+          grid-row-start: 1;
+          grid-column-start: 1;
+          align-self: end;  
+          justify-self: flex-start;  
+          font-weight: 500;  
+          font-size: 1em;
+          margin-bottom: -0.5em;
+          padding-left: 1.4em;
+      }
+      .box-title-content {
+            grid-row-start: 2;
+            grid-column-start: 1;
+            display: grid;
+            grid-template-rows: 100%;
+            grid-template-columns: 17em ;
+      }
+      .box-title-aux {
+         grid-row-start: 1;
+         grid-column-start: 1;
+         display: grid;
+         grid-template-rows: 100%;
+         grid-template-columns: 8em 50%;
+      }
+      .box-title {
+        grid-column-start: 2;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        padding-bottom: 0.85em;
       }
       .title {
           text-align: center;
           font-style: italic;
-          padding-top: 0.2em;
-          grid-column-start: 2;
-          grid-column-end: 2;
+          grid-column-start: 1;
           justify-self: stretch;
-          align-self: center;
+          align-self: baseline;
+          font-family: "Roboto", sans-serif;
+          color: #4da34a;
+          font-size: 1.5em;
+          font-weight: 700;
       }
       .footer-content {
           display: grid;
-          grid-template-rows: 5em 2.2em;
+          grid-template-rows: 3.4em 1.7em;
           position: fixed;
           bottom: 0;
           width: 100%;
@@ -444,7 +485,7 @@ h1 {
           margin-left: 20%;
           margin-right: 20%;
           color: white;
-          font-size: 1.3em;
+          font-size: 1em;
           font-family: Roboto, sans-serif;
           font-style: italic;
           font-weight: unset;
@@ -461,7 +502,7 @@ h1 {
           width: 100%;
           height: 100%;
           color: white;
-          font-size: 1.3em;
+          font-size: 1em;
           font-family: Roboto, sans-serif;
           font-style: italic;
           font-weight: unset;
@@ -507,12 +548,16 @@ h1 {
       }
       .box-personaje {
          grid-column-start: 1;
+         grid-column-end: 1;
          justify-self: center;
          align-self: flex-end;
+         height: 90%;
+         width: 15em;
+         overflow: hidden;
       }
       .features-personajes {
-          width: 15em;
-          height: 20em;
+          width: 100%;
+          height: 100%;
       }
       .box-major {
           display: grid;
@@ -604,7 +649,7 @@ h1 {
       .box-page-inicio {
           display: grid;
           position: fixed;
-          bottom: 7.5em;
+          bottom: 2.7em;
           width: 100%;
           height: 20em;
           grid-template-rows: 100%;
@@ -614,8 +659,6 @@ h1 {
       .lienzo {
           position: relative;
           right: 0;
-          bottom: -10%;
-          height: 25em;
       }
       .detonating-question-box {
           display: grid;
@@ -740,7 +783,7 @@ h1 {
           display: none;
       }
       body,html {
-          background-position-y: 3.5em;
+          background-position-y: 5em;
       }
       .box-botton-content {
           display: none;
@@ -781,6 +824,87 @@ h1 {
       .boton-info.active {
           background-color: grey;
       }
+     .box-page-inicio-new {
+         display: grid;
+         position: fixed;
+         width: 100%;
+         height: 100%;
+         grid-template-rows: 100%;
+         grid-template-columns: 45% 55%;
+         padding-top: 5.5em;
+         padding-bottom: 3em;
+         overflow: hidden;
+     }
+     .box-svg {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        height: 100%;
+     }
+     .box-svg svg {
+        height: 100%;
+     }
+     .box-information-dimension {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        grid-template-rows: 100%;
+        grid-template-columns: 100%;
+        padding-top: 6em;
+        padding-bottom: 4em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        z-index: 4;
+        align-items: center;
+        justify-items: center;
+        overflow: hidden;
+     }
+     .box-dimension {
+        display: grid;
+        grid-template-rows: 20% 70% 10%;
+        grid-template-columns: 100%;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        overflow: hidden;
+        border-radius: 1em;
+     }
+     .title-dimension {
+        display: grid;
+        height: 80%;
+        width: 100%;
+        grid-template-rows: 100%;
+        grid-template-columns: 100%;
+        align-items: center;
+        justify-items: center;
+        font-size: 1.5em;
+        font-family: Roboto, sans-serif;
+        font-style: italic;
+        font-weight: 430;
+        word-break: break-all;
+        hyphens: auto;
+        overflow: hidden;
+     }
+     .content-dimension {
+
+     }
+     .read-more-button {
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 100%;
+        align-items: center;
+        justify-items: center;
+        width: 80%;
+        height: 80%;
+        background-color: rgb(105, 104, 104);
+        overflow: hidden;
+        color: white;
+        font-size: 1.5em;
+        font-family: Roboto, sans-serif;
+        border-radius: 1em;
+     }
 
 }
 
@@ -798,26 +922,32 @@ h1 {
           top: 0;
           width: 100%;
           overflow: hidden;
-          grid-template-rows: 3em;
-          grid-template-columns: 10% 80% 10%;
-          background-color: white;
+          grid-template-rows: 4.5em;
+          grid-template-columns: 15% 70% 15%;
+          background-color: #f2f6ff;
           box-shadow: rgba(199, 202, 202, 0.2) 0px 8px 24px;
       }
       .title {
           text-align: center;
           font-style: italic;
-          padding-top: 0.2em;
-          grid-column-start: 2;
-          grid-column-end: 2;
-          justify-self: stretch;
-          align-self: center;
+          grid-column-start: 1;
+          justify-self: flex-start;
+          align-self: baseline;
+          font-family: "Roboto", sans-serif;
+          color: #4da34a;
+          font-size: 1.3em;
+          font-weight: 700;
+          padding-left: 1em;
       }
       .footer-content {
           display: grid;
-          grid-template-rows: 5em 2.2em;
+          grid-template-rows: 3.4em 2em;
           position: fixed;
           bottom: 0;
           width: 100%;
+      }
+      .box-title {
+          padding-bottom: 0.65em;
       }
       .box-botton {
           grid-row-start: 1;
@@ -831,7 +961,7 @@ h1 {
           margin-left: 20%;
           margin-right: 20%;
           color: white;
-          font-size: 1.3em;
+          font-size: 1em;
           font-family: Roboto, sans-serif;
           font-style: italic;
           font-weight: unset;
@@ -848,7 +978,7 @@ h1 {
           width: 100%;
           height: 100%;
           color: white;
-          font-size: 1.3em;
+          font-size: 1em;
           font-family: Roboto, sans-serif;
           font-style: italic;
           font-weight: unset;
@@ -891,12 +1021,12 @@ h1 {
       }
       .box-personaje {
           grid-column-start: 1;
-          align-self: flex-end;
-          justify-self: center;
+          grid-column-end: 1;
+          height: 90%;
       }
       .features-personajes {
-          width: 15em;
-          height: 16em;
+          width: 14em;
+          height: 100%;
       }
      .box-major {
           display: grid;
@@ -987,7 +1117,7 @@ h1 {
       .box-page-inicio {
           display: grid;
           position: fixed;
-          bottom: 7.5em;
+          bottom: 2.7em;
           width: 100%;
           height: 20em;
           grid-template-rows: 100%;
@@ -997,8 +1127,6 @@ h1 {
       .lienzo {
           position: relative;
           right: 0;
-          bottom: -2.5em;
-          height: 21em;
       }
       .detonating-question-box {
           display: grid;
@@ -1120,7 +1248,32 @@ h1 {
       body,html {
           background-position-y: 3em;
       }
-      
+      .box-page-inicio-new {
+         display: grid;
+         position: fixed;
+         width: 100%;
+         height: 100%;
+         grid-template-rows: 100%;
+         grid-template-columns: 50% 50%;
+         padding-top: 5.5em;
+         padding-bottom: 3em;
+         overflow: hidden;
+     }
+
+}
 
 
+/* RESPONSIVE DEL FONDO */
+@media screen and (max-height: 600px) and (max-width: 500px) and (orientation: portrait) {
+   body,html {
+      background-position-y: 2em;
+   }
+}
+
+
+/* RESPONSIVE DEL FONDO */
+@media screen and (max-height: 600px) and (max-width: 375px) and (orientation: portrait) {
+   body,html {
+      background-position-y: 3em;
+   }
 }

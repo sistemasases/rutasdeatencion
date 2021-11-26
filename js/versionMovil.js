@@ -1,4 +1,9 @@
-
+/**
+* Management - Funcionalidad de la capa de informacion
+* @author Cristian Duvan Machado Moquera
+* @copyright 2021 Cristian Duvan Machado Mosquera <cristiankm4088@gmail.com>
+* @license  http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*/
 
 
 function screenResponsiveWebDesing(json) {
