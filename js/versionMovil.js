@@ -1,5 +1,12 @@
 
 
+/**
+* Management - Funcionalidad de la capa de informacion
+* @author Cristian Duvan Machado Moquera
+* @copyright 2021 Cristian Duvan Machado Mosquera <cristiankm4088@gmail.com>
+* @license  http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*/
+
 
 function screenResponsiveWebDesing(json) {
 
@@ -40,6 +47,7 @@ function screenResponsiveWebDesing(json) {
 }
 
 
+/*
 async function breadcrumbs_funcionality(json) {
 
     let arrows;
@@ -130,4 +138,59 @@ async function breadcrumbs_funcionality(json) {
     })
     
 }
+*/
 
+
+function breadcrumbs_funcionality(json) {
+
+    //evento click en el breadcrumbs
+    $('.arrow-7').on('click', function(event) {
+        event.preventDefault();
+    
+        arrows = this;
+  
+        //sacar un numero al dar click en el brecumbs
+        dimensionNav = $(this).parent()
+        navsInDimension = dimensionNav.find('.arrow-7')
+        index = navsInDimension.index(this)
+
+        indexClick = index;
+ 
+        //each de la clase arrow-7
+        $('.arrow-7').each(function (index, value) {
+            //colocar la clase activa si es igual al selecionado
+            if (value === arrows) {
+              $(value).find('.arrow-text').addClass('arrow-active')
+              indexClick = index
+            }else {
+              $(value).find('.arrow-text').removeClass('arrow-active')
+            }
+
+            if (index > indexClick) {
+              $(value).hide()
+            }
+
+        })
+
+        if (index === 0) {
+          $('#bread-1').addClass('box-breadcrumbs-active')
+          $('.arrow-1').addClass('active')
+          $('body').attr('title', 0)
+          $('.box-title-1').css('display', 'none')
+          $('.box-arrow').css('display', 'none')
+          $('header').css('display', 'grid')
+          svgPaint(json)
+        }
+        else {
+          $('body').attr('title', index)
+          let paramters = ($('#arrows-1').attr('title')).split(',') 
+          funcionalityRute(json, Number(paramters[0]) , Number(paramters[1]) , Number(paramters[2]) , 1 , index-1 , paramters[3]) 
+        }
+        console.log(index,'index')
+        $('.box-information').hide()
+        $('.box-abc-dimension').hide()
+        $('.box-button-dimension').hide()
+        //$('.boton-info').removeClass('active')
+    })
+
+} 

@@ -1,97 +1,135 @@
 
 
+/**
+* Management - Funcionalidad de la capa de informacion
+* @author Cristian Duvan Machado Moquera
+* @copyright 2021 Cristian Duvan Machado Mosquera <cristian.machado@correounivalle.edu.co>
+* @license  http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*/
+
 
 /* Funcionalidad de rutas de atencion svg */
 function rutesAttentionMovil(json) {
- 
-  let dimension,attetionAux , entity;
-  let sizeScreenWidth  = 376
 
-  $('body').attr('title',0)
+  let dimension, attetionAux, entity;
+  let sizeScreenWidth = 376
+  $('.arrow-1').addClass('active')
+  $('body').attr('title', 0)
 
-  $('.arrows-lienzo').on('click' , function (event) {
-      event.preventDefault();
-      event.isPropagationStopped();
+  $('.arrows-lienzo').on('click', function (event) {
+    event.preventDefault();
+    event.isPropagationStopped();
 
-      //sacar un numero al dar click en la felchita
-      dimensionNav = $(this).parent()
-      navsInDimension = dimensionNav.find('.arrows-lienzo')
-      index = navsInDimension.index(this)
+    //sacar el nombre de la senñalitica
+    let regerxc = /^\s{10,50}$/
+    let name = ($(this).attr('id')).split('-')[0] + '-'
 
-      //sacar el numero de la capa actual
-      let indexCap = $('body').attr('title')
+    $(this).find('text').each(function (index, value) {
+
+      if (regerxc.exec($(value).text()) === null) {
+        if ($(value).attr('title') != 0) {
+          nameDimension = $(value).text()
+        }
+      }
+    });
+
+    //sacar un numero al dar click en la felchita
+    dimensionNav = $(this).parent()
+    navsInDimension = dimensionNav.find('.arrows-lienzo')
+    index = navsInDimension.index(this)
+
+    //sacar el numero de la capa actual
+    let indexCap = $('body').attr('title')
 
     if ($('body').hasClass('active')) {
 
       //si esta activa la clase del brecumbs home, guarda el numero de la dimension precionada y activa la animacion
-      if ($('#bread-1').hasClass('box-breadcrumbs-active')) { 
-      dimension = index
-      attetionAux = 0
-      entity = 0
+      if ($('#bread-1').hasClass('box-breadcrumbs-active')) {
+        dimension = index
+        attetionAux = 0
+        entity = 0
       }
-      
+
       // guarda el index de la flecha en la capa 1
-      if ( Number(indexCap) === 1) {
-      attetionAux = index
-      entity = 0
+      if (Number(indexCap) === 1) {
+        attetionAux = index
+        entity = 0
       }
 
       // guarda el index de la flecha en la capa 2
-      if ( Number(indexCap) === 2 ) {
-      entity = index
+      if (Number(indexCap) === 2) {
+        entity = index
       }
 
-      if (!$('#bread-4').hasClass('box-breadcrumbs-active')) {
-      Promise.all([ animateBackground(false,sizeScreenWidth) ,
-      animateRute(false,sizeScreenWidth , (index+1) , json, dimension, attetionAux ,entity , indexCap), animateCharacter(sizeScreenWidth)])
-      
-      //incrementar el numero de la capa de donde se encontraba
-      $('body').attr('title', Number( ($('body').attr('title')))+1)
-      $('#arrows-1').attr('title', dimension + ',' + attetionAux + ',' + entity)
+      console.log($('.arrow-3').hasClass('arrow-active'),'comfirmalo',indexCap)
+      if (Number(indexCap) < 3) {
+        Promise.all([animateBackground(false, sizeScreenWidth),
+        animateRute(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension), animateCharacter(sizeScreenWidth)])
+
+        //incrementar el numero de la capa de donde se encontraba
+        $('body').attr('title', Number(($('body').attr('title'))) + 1)
+        $('#arrows-1').attr('title', dimension + ',' + attetionAux + ',' + entity + ',' + name)
       }
       else {
-        funcionalityInfoContent( json , dimension , attetionAux , entity , index)
-        funcionality_botton_text(json , dimension , attetionAux , entity , index)
+         $('.arrow-3').removeClass('arrow-active')
+         $('.arrow-3').find('.arrow-text').removeClass('arrow-active')
+         $('.arrow-4').find('.arrow-text').addClass('arrow-active')
+         $('.arrow-4').show()
+         $('.arrow-4').find('.arrow-text').html(nameDimension)
+        json.then(function (value) {
+          if ((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).tipoCaja == 2) {
+            create_box_botton(json, dimension, attetionAux, entity, index)
+          }
+          else if ((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).tipoCaja == 3) {
+            create_box_botton_abc(json, dimension, attetionAux, entity, index)
+          }
+          else {
+            funcionalityInfoContent(json, dimension, attetionAux, entity, index)
+            funcionality_botton_text(json, dimension, attetionAux, entity, index)
+          }
+        })
       }
 
     }
-   
+
   })
 
 }
 
 
 /* animacion del fondo*/
-function animateBackground(band,sizeScreenWidth) {
+function animateBackground(band, sizeScreenWidth) {
 
   //let sizeScreenWidth  = $(window).width()
   let sizeScreen = 0;
   let increase = 0;
+  let increasefg2 = 0;
 
   //evitar usar los escuchas mientras se hace la animacion
   $('body').removeClass('active')
 
-  const timer = setInterval( function () {
-   
-   //si el tamaño de pantalla es superado habra acaba la animacion
-   if (sizeScreen < sizeScreenWidth*2) {
-   $('body,html').css('background-position-x',''+ increase +'%')
-   increase += 1;
-   sizeScreen += 10;
-   }
-   else {
-   band = true;
-   }
+  const timer = setInterval(function () {
+    //si el tamaño de pantalla es superado habra acaba la animacion
+    if (sizeScreen < sizeScreenWidth * 2) {
+      $('body,html').css('background-position-x', '' + increase + '% , ' + (increasefg2) + '% ,' + (increasefg2) + '%')
+      increase += 1;
+      sizeScreen += 10;
+      increasefg2 += 2;
+    }
+    else {
+      band = true;
+    }
 
-   if(band) {
-    clearInterval(timer)
-    band = null
-    sizeScreen = 0;
-    increase = 0;
-    $('body').addClass('active')
-   }
-  
-  },80)
+    if (band) {
+      clearInterval(timer)
+      band = null
+      sizeScreen = 0;
+      increasefg2 = 0;
+      increase = 0;
+      $('body').addClass('active')
+    }
+
+  }, 100)
 
   return timer;
 
@@ -99,65 +137,67 @@ function animateBackground(band,sizeScreenWidth) {
 
 
 /* animacion de la ruta */
-function animateRute(band,sizeScreenWidth,screen,json,dimension, attetionAux,entity,indexCap) {
+function animateRute(band, sizeScreenWidth, screen, json, dimension, attetionAux, entity, indexCap, nameArrow, nameDimension) {
 
-   //variables locales
-   let sizeScreen = 0;
-   let increase = 0;
-   let timeHideRute = ((sizeScreenWidth*2)*50)/100;
-   let timeShowRute = ((sizeScreenWidth*2)*79)/100;
-   bandAux = true
-   bandBrecumbs = true
+  //variables locales
+  let sizeScreen = 0;
+  let increase = 0;
+  let timeHideRute = ((sizeScreenWidth * 2) * 50) / 100;
+  let timeShowRute = ((sizeScreenWidth * 2) * 79) / 100;
+  bandAux = true
+  bandBrecumbs = true
 
-   var ruteAnimate = setInterval( function () {
-   
-     if (sizeScreen < sizeScreenWidth*2) {
-     
-     //mover el svg hacia fuera de la pantalla
-     if (sizeScreen <= timeHideRute) {
-     $('.detonating-question-box').removeClass('on')
-     //$('.detonating-question-box').fadeOut() 
-     $('.lienzo').css('right', ''+ increase +'%')
-     increase += 6;
-     }
+  var ruteAnimate = setInterval(function () {
 
-     //poner svg al inicio y actulizar su contenido
-     if (sizeScreen > timeHideRute && bandAux) {
-     bandAux = false
-     increase = -90
-     }
+    if (sizeScreen < sizeScreenWidth * 2) {
 
-     //volver a mostrar el svg con los cambios nuevos
-     if (sizeScreen >= timeShowRute) {
-     if ( bandBrecumbs ) {  
-     bandBrecumbs = false  
-     funcionalityAskDetoting(indexCap)
-     funcionalityBrecumbs(screen)
-     }
+      //mover el svg hacia fuera de la pantalla
+      if (sizeScreen <= timeHideRute) {
+        $('.detonating-question-box').removeClass('on')
+        //$('.detonating-question-box').fadeOut() 
+        $('.lienzo').css('right', '' + increase + '%')
+        increase += 6;
+      }
 
-     funcionalityRute(json , dimension , attetionAux , entity , 1 , indexCap );
-     $('.lienzo').css('right', ''+ increase +'%')
-     increase += 6
-     }
-     
-     sizeScreen += 10
-     }
-     else {
-     band = true
-     }
+      //poner svg al inicio y actulizar su contenido
+      if (sizeScreen > timeHideRute && bandAux) {
+        bandAux = false
+        increase = -90
+      }
 
-     if (band) {
-     clearInterval(ruteAnimate)
-     }
-     
-   }, 80)
+      //volver a mostrar el svg con los cambios nuevos
+      if (sizeScreen >= timeShowRute) {
+        if (bandBrecumbs) {
+          bandBrecumbs = false
+          funcionalityAskDetoting(indexCap)
+          funcionalityBrecumbs(indexCap, nameDimension)
+          funcionalityRute(json, dimension, attetionAux, entity, 1, indexCap, nameArrow);
+          show_brecumbs()
+        }
 
-   return ruteAnimate
+        //funcionalityRute(json , dimension , attetionAux , entity , 1 , indexCap );
+        $('.lienzo').css('right', '' + increase + '%')
+        increase += 6
+      }
+
+      sizeScreen += 10
+    }
+    else {
+      band = true
+    }
+
+    if (band) {
+      clearInterval(ruteAnimate)
+    }
+
+  }, 100)
+
+  return ruteAnimate
 }
 
 /* Animacion del personaje */
 function animateCharacter(sizeScreenWidth) {
-  
+
   //variables
   let sizeScreen = 0;
   let timeSequence = 3
@@ -166,251 +206,452 @@ function animateCharacter(sizeScreenWidth) {
   killTimer = false
 
 
-  var animateCharac =  setInterval( function () {
+  var animateCharac = setInterval(function () {
 
-    if (sizeScreen < sizeScreenWidth*2) {
-    
-    //cambiar la imagen determinado tiempo  
-    if (timeSequence == 4) {
-    $('#personaje').find('img').attr('src','images/personaje/'+ imgSequence +'.png')
-    imgSequence++
-    timeSequence = 1
-    }
+    if (sizeScreen < sizeScreenWidth * 2) {
 
-    //restablecer la imagen inicial finalizada la primer secuencia
-    if (imgSequence > 6) {
-    imgSequence = 1
-    }
+      //cambiar la imagen determinado tiempo  
+      if (timeSequence == 4) {
+        $('#personaje').find('img').attr('src', 'images/personaje/' + imgSequence + '.png')
+        imgSequence++
+        timeSequence = 1
+      }
 
-    //incrementos
-    timeSequence++
-    sizeScreen += 10
+      //restablecer la imagen inicial finalizada la primer secuencia
+      if (imgSequence > 6) {
+        imgSequence = 1
+      }
+
+      //incrementos
+      timeSequence++
+      sizeScreen += 10
     }
     else {
-    killTimer = true
-    $('#personaje').find('img').attr('src','images/personaje/personaje.png')
+      killTimer = true
+      $('#personaje').find('img').attr('src', 'images/personaje/personaje.png')
     }
 
     if (killTimer) {
-    clearInterval(animateCharac)
+      clearInterval(animateCharac)
     }
 
-  },80)
+  }, 100)
 
-   return animateCharac
+  return animateCharac
 
 }
 
 
 /* Quitar la clase activa en el brecumbs */
-function funcionalityBrecumbs(indexArr) {
+function funcionalityBrecumbs(indexArr, nameDimension) {
 
-  let aux = ['a','div','span']
-  let indexCap = Number($('body').attr('title'))
+  $('.arrow-7').each(function (index, value) {
 
-       //quitar la clase activa  
-      if (indexCap < 4) { 
+    if ((Number(indexArr) + 1) === index) {
+      $(value).show()
+      $(value).find('.arrow-text').addClass('arrow-active')
+      $(value).addClass('arrow-active')
+      $(value).find('.arrow-text').html(nameDimension.slice(0, 10))
+    }
+    else {
+      $(value).removeClass('arrow-active')
+      $(value).find('.arrow-text').removeClass('arrow-active')
+    }
 
-      $('.box-breadcrumbs').each((index,value) => {
+  })
 
-        if ( $(value).hasClass('box-breadcrumbs-active') ) {
-           for (const i of aux) {
-             $(value).find(i).removeClass('active')
-             $('#bread-'+ (indexCap+1) +'').find(i).addClass('active')
-           }
-
-           $(value).removeClass('box-breadcrumbs-active')
-           $(value).find('a').attr('style',' ')
-
-           titleBrecumbs(indexArr,indexCap)
-
-           $('#bread-'+ (indexCap+1) +'').css('display','inline-block')
-           $('#bread-'+ (indexCap+1) +'').addClass('box-breadcrumbs-active')
-         
-        }
-
-      })
-      
-      }
 }
 
-/* poner y colocar los nodos de la dimension precionada  */
-function funcionalityRute( json , dimension , attetionAux , entity, iterador, indexCap) {
 
-      json.then( function (value) {
-      
-      //recorrer la capas internas del json por dimension, a expecion de la capa mayor  
-      try {
+/**
+ * 
+ * @method funcionalityRute
+ * @desc poner y colocar los nodos de la dimension precionada
+ * @param {*} json {json}
+ * @param {*} dimension {number} 
+ * @param {*} attetionAux {number}
+ * @param {*} entity {number}
+ * @param {*} iterador {number}
+ * @param {*} indexCap  {number}
+ * @param {*} nameArrow {string}
+ */
+function funcionalityRute(json, dimension, attetionAux, entity, iterador, indexCap, nameArrow) {
 
-      objectJson = [(Object.entries((Object.values(value)[dimension].TiposDeAtencion))),Object.entries((Object.entries((Object.values(value)[dimension].TiposDeAtencion))[attetionAux])[1].Entidades),Object.entries((((Object.entries((Object.entries((Object.values(value)[dimension].TiposDeAtencion))[attetionAux])[1].Entidades))[entity])[1] ).Atenciones)]
+  json.then(function (value) {
 
-      }catch (err) {
-       console.log('la instancia del json selecionada, esta vacia o le faltan componentes' ,err)
-       objectJson = [Object.keys((Object.entries(value)[dimension])[1])]
-      }     
+    //recorrer la capas internas del json por dimension, a expecion de la capa mayor  
+    try {
+      objectJson = [(Object.entries((Object.values(value)[dimension].TiposDeAtencion))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes), Object.entries(((Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)[entity])[1]).Entidades)]
+    } catch (err) {
+      console.log('la instancia del json selecionada, esta vacia o le faltan componentes', err)
+      objectJson = [(((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)]
+    }
+    console.log(indexCap, 'indexCap')
+    //insertar el texto de las llaves del json al svg
+    for (const attention of objectJson[indexCap]) {
+      $('#' + nameArrow + + iterador + '').show()
 
-
-
-      //insertar el texto de las llaves del json al svg
-      for (const  attention of objectJson[indexCap]) {
-      $('#arrows-'+iterador+'').show()
-      $('#arrows-'+iterador+' text').html(attention[1].name)
+      funcionality_title_text(nameArrow, iterador, attention[1], attention[1].tipoTitulo)
+      //$('#' + nameArrow + + iterador + '').find('text').html(((attention[1].name).toUpperCase()).slice(0, 9))
       iterador++;
-      }
+    }
 
-      
-      //apagar las felchas que no son utilizadas
-      while (iterador < 8) {
-      $('#arrows-'+iterador+'').hide()
+
+    //apagar las felchas que no son utilizadas
+    while (iterador < 9) {
+      $('#arrow-' + iterador + '').hide()
       iterador++;
-      }
+    }
 
 
-      }).catch((err) => {
-        
-      console.log('ups, paso un error al insertar el texto' , err)
+  }).catch((err) => {
 
-      });  
+    console.log('ups, paso un error al insertar el texto', err)
+
+  });
 }
 
 function funcionalityAskDetoting(index) {
 
-  let text = ['atención', 'entidades' , 'atenciones']
+  let text = ['atención', 'entidades', 'atenciones']
   $('.detonating-question-box').addClass('on')
   let count = 0
   //mostrar la pregunta
-  var time = setInterval( function() {
+  var time = setInterval(function () {
 
     if (count > 3) {
-    $('.detonating-question-box').removeClass('on')
+      $('.detonating-question-box').removeClass('on')
     }
 
     if (!$('.detonating-question-box').hasClass('on')) {
-    $('.detonating-question-box').fadeOut()
-    clearInterval(time)
+      $('.detonating-question-box').fadeOut()
+      clearInterval(time)
     }
     else {
-    $('.detonating-question-box').show()
+      $('.detonating-question-box').show()
     }
 
     count++
 
-  },1000)
-  
+  }, 1000)
+
   //insertar el texto dependiendo de la capa
-  $('.detonating-question-box').find('.detonating-question-text').html(' ¿Qué tipo de '+text[index]+' estás buscando?')
+  $('.detonating-question-box').find('.detonating-question-text').html(' ¿Qué tipo de ' + text[index] + ' estás buscando?')
 
   return time
 }
 
-function funcionalityInfoContent( json , dimension , attetionAux , entity , index ) {
+function funcionalityInfoContent(json, dimension, attetionAux, entity, index) {
 
-     json.then( function (value) {
+  json.then(function (value) {
 
-     //mostrar caja texto
-     $('#information').fadeIn()
+    //mostrar caja texto
+    $('#information').fadeIn()
 
-     //ocultar
-     $('#page-inicio').hide()
-     $('.detonating-question-box').removeClass('on')
-     $('.detonating-question-box').hide()
+    //ocultar
+    $('#page-inicio').hide()
+    $('.detonating-question-box').removeClass('on')
+    $('.detonating-question-box').hide()
 
-     //insertar el titulo
-     $('.title-content-info').find('.title-info').html((((Object.entries((((Object.entries((Object.entries((Object.values(value)[dimension].TiposDeAtencion))[attetionAux])[1].Entidades))[entity])[1] ).Atenciones))[index])[1]).name)
+    //insertar el titulo
+    $('.title-content-info').find('.title-info').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).name)
 
-     //insertar el contenido
-     $('.content-text-info').find('.content-text').html((((Object.entries((((Object.entries((Object.entries((Object.values(value)[dimension].TiposDeAtencion))[attetionAux])[1].Entidades))[entity])[1] ).Atenciones))[index])[1]).descripcion)
-     
+    //insertar el contenido
+    $('.content-text-info').find('.content-text').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).descripcion)
 
-     }).catch((err) => {
-        
-      console.log('ups, paso un error al insertar el texto' , err)
- 
-     });
+
+  }).catch((err) => {
+
+    console.log('ups, paso un error al insertar el texto', err)
+
+  });
 }
 
-function titleBrecumbs(indexArr,indexCap) {
+function titleBrecumbs(indexArr, indexCap) {
 
-    //insertar el texto en brecumbs
-    textBrecumbs = $('#arrows-'+ indexArr +'').find('text').text()
-    $('#bread-'+(indexCap+1)+'').find('span').html(textBrecumbs.slice(0,10))
+  //insertar el texto en brecumbs
+  textBrecumbs = $('#arrows-' + indexArr + '').find('text').text()
+  $('#bread-' + (indexCap + 1) + '').find('span').html(textBrecumbs.slice(0, 9))
 
 }
 
 
 //añadir el texto a los botones
-function funcionality_botton_text(json, dimension , attetionAux , entity , index) {
+function funcionality_botton_text(json, dimension, attetionAux, entity, index) {
 
-     let accioneBotton = ['enlaces', 'quienLoHace' , 'comoSeHace']
-     band = true
-     textEnlace = ""
+  let accioneBotton = ['enlaces', 'quienLoHace', 'comoSeHace']
+  band = true
+  textEnlace = ""
 
-     $('.boton-info').on('click', function (event) {
-      event.preventDefault();
-      event.isPropagationStopped();
+  $('.boton-info').on('click', function (event) {
+    event.preventDefault();
+    event.isPropagationStopped();
 
-       botonPress = this
+    botonPress = this
 
-       //quitar la clase cuando se esta activada y se vuelve undir de nuevo
-       if ($(botonPress).hasClass('active')) {
-        band = false
-       }
-       //quitar clase activa
-       $('.boton-info').each(function (index, value) {
+    //quitar la clase cuando esta activada y se vuelve undir de nuevo
+    if ($(botonPress).hasClass('active')) {
+      band = false
+    }
 
-         if ($(value).hasClass('active')) {
-           $(value).removeClass('active')
-         }
+    //quitar clase activa
+    $('.boton-info').each(function (index, value) {
 
-       })
+      if ($(value).hasClass('active')) {
+        $(value).removeClass('active')
+      }
 
-       //sacar un numero al dar click en los botones 
-       dimensionNav = $(this).parent()
-       navsInDimension = dimensionNav.find('.boton-info')
-       indexBotton = navsInDimension.index(this)
-       
-       //limpiar el texto que esta
-       $('.content-text-botton').html('')
+    })
 
-       json.then( function (value) {
+    //sacar un numero al dar click en los botones 
+    dimensionNav = $(this).parent()
+    navsInDimension = dimensionNav.find('.boton-info')
+    indexBotton = navsInDimension.index(this)
 
-       //insertar el contenido
-       $('.content-text-botton-box').find('.content-text-botton').html((((Object.entries((((Object.entries((Object.entries((Object.values(value)[dimension].TiposDeAtencion))[attetionAux])[1].Entidades))[entity])[1] ).Atenciones))[index])[1])[accioneBotton[indexBotton]])
-       
-       //crear los botones para los enlaces
-       if ($(botonPress).attr('id') === 'enlaces') {
+    //limpiar el texto que esta
+    $('.content-text-botton').html('')
+
+    json.then(function (value) {
+
+      //insertar el contenido
+      $('.content-text-botton-box').find('.content-text-botton').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0])[accioneBotton[indexBotton]])
+
+      //crear los botones para los enlaces
+      if ($(botonPress).attr('id') === 'enlaces') {
 
         //hacer un vector de cada enlace
-        for (const array_enlaces of $('.content-text-botton-box').find('.content-text-botton').text().split(',') ) {
-        textEnlace += '<li><a target="_blank" href="'+ array_enlaces +'" >'+ array_enlaces + '</a> </li>'
+        for (const array_enlaces of $('.content-text-botton-box').find('.content-text-botton').text().split(',')) {
+          textEnlace += '<li><a target="_blank" href="' + array_enlaces + '" >' + array_enlaces + '</a> </li>'
         }
 
         //insertar el vector con los enlaces organizado con la etiqueta a
         $('.content-text-botton-box').find('.content-text-botton').html('<ul style="color:gray">' + textEnlace + '</ul>')
         textEnlace = ''
 
-       }
+      }
 
-       }).catch((err) => {
-        
-       console.log('ups, paso un error al insertar el texto' , err)
- 
-       });
-     
+    }).catch((err) => {
 
-       //bajar y subir
-       if (band) {
-       $(".content-text-botton-box").slideDown('slow');
-       $(this).addClass('active')
-       }
-       else {
-       band = true
-       $(".content-text-botton-box").slideUp('slow');
-       $(this).removeClass('active')
-       $('.content-text-botton-box').find('.content-text-botton').html('hola')
-       }
-       
-       
-     })
+      console.log('ups, paso un error al insertar el texto', err)
+
+    });
+
+     console.log(band,'band')
+    //bajar y subir
+    if (band) {
+      $(".content-text-botton-box").slideDown('slow');
+      $(this).addClass('active')
+    }
+    else {
+      band = true
+      $(".content-text-botton-box").slideUp('slow');
+      $(this).removeClass('active')
+      //$('.content-text-botton-box').find('.content-text-botton').html('hola')
+    }
+
+
+  })
+
+}
+
+/**
+ * @method funcionality_title_text
+ * @description funcion para identificar el tipo de titulo y asi isertarlo en los arrow
+ * @param {*} nameArrow {string}
+ * @param {*} iterador  {number}
+ * @param {*} attention  {object}
+ * @param {*} typeTittle  {number}
+ * @returns 
+ */
+function funcionality_title_text(nameArrow, iterador, attention, typeTittle) {
+
+  switch (typeTittle) {
+    case 1:
+      //insertar texto
+      text = $('#' + nameArrow + iterador + '').find('text').each(function (index, value) {
+        if (index == 0) {
+          $(value).show()
+          $(value).html(((attention.name).toUpperCase()).slice(0, 12))
+          $(value).attr('title', typeTittle)
+        } else {
+          $(value).hide()
+          $(value).attr('title', 0)
+        }
+
+      })
+      return text
+    case 2:
+      //insertar texto
+      longNames = attention.name.split(',')
+      text = $('#' + nameArrow + iterador + '').find('text').each(function (index, value) {
+        if (index > 0 && index < 3) {
+          $(value).show()
+          $(value).html(((longNames[index - 1]).toUpperCase()).slice(0, 12))
+          $(value).attr('title', typeTittle)
+        } else {
+          $(value).hide()
+          $(value).attr('title', 0)
+        }
+
+      })
+      return text
+    case 3:
+      //insertar texto
+      longNames = attention.name.split(',')
+      text = $('#' + nameArrow + iterador + '').find('text').each(function (index, value) {
+        if (index > 2 && index < 6) {
+          $(value).show()
+          $(value).html(((longNames[index - 3]).toUpperCase()).slice(0, 12))
+          $(value).attr('title', typeTittle)
+        } else {
+          $(value).hide()
+          $(value).attr('title', 0)
+        }
+
+      })
+      return text
+  }
+
+  //$('#'+ nameArrow + + iterador + ' text').html( ((attention[1].name).toUpperCase()).slice(0, 9))
+}
+
+
+/* */
+function create_box_botton(json, dimension, attetionAux, entity, typeBox) {
+
+  //variables internas
+  let iterador = 0;
+  let countClick = 0;
+
+  json.then((value) => {
+    $('.box-button-dimension').show()
+    //obtine el nombre de las sedes
+    textKeys = Object.keys(Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[typeBox][1]).Atenciones)[0])
+    //obtiene el contenido de las sedes
+    textValues = Object.values(Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[typeBox][1]).Atenciones)[0])
+
+    //crea el boton y le pone su correspondiente texto
+    for (const nameSedes of textKeys) {
+      if (iterador > 6) {
+        $('.box-button-dimension-content').append('<div class="botton-sedes">' + nameSedes + '</div>')
+      }
+      iterador++;
+    }
+
+    //librear memoria
+    iterador = null
+
+    $('.botton-sedes').on('click', function (event) {
+      event.preventDefault();
+
+      var gridPorcent = '';
+      bottonClick = null;
+      click = this;
+
+      //generar un numero unico para cada boton 
+      dimensionNav = $(this).parent()
+      navsInDimension = dimensionNav.find('.botton-sedes')
+      index = navsInDimension.index(this)
+
+      //quitar el texto agregado al boton
+      $('#1').remove()
+
+
+      if (!$(click).hasClass('botton-dimension-active')) {
+        //each para agregar un boton mas debajo del clickiado
+        $('.botton-sedes').each(function (indexAux, value) {
+
+          if (index != indexAux) {
+            $(value).removeClass('botton-dimension-active')
+          }
+          else {
+            $(value).addClass('botton-dimension-active')
+          }
+
+          if (index == indexAux && indexAux != 8) {
+            gridPorcent += '15% 85% '
+            bottonClick = value
+          }
+          else if ((textKeys.length - 8) == indexAux) {
+            index == 8 ? (gridPorcent += '15% 85%', bottonClick = value) : (gridPorcent += '15%')
+            $('.box-button-dimension-content').css('grid-template-rows', gridPorcent)
+            $(bottonClick).after('<div class="text-button-dimension" id="1"> ' + textValues[index + 7] + ' </div>')
+          } else {
+            gridPorcent += '15% '
+          }
+
+        });
+      } else {
+        $(click).removeClass('botton-dimension-active')
+        $('.box-button-dimension-content').css('grid-template-rows', '15% 15% 15% 15% 15% 15% 15% 15% 15%')
+      }
+      console.log(gridPorcent, "end")
+
+    })
+
+  }).catch((err) => {
+    console.log('ups, paso un error al insertar el texto', err)
+  })
+
+}
+
+function show_brecumbs() {
+  if ($('.arrow-1').hasClass('active')) {
+    $('#bread-1').removeClass('box-breadcrumbs-active')
+    $('.arrow-1').removeClass('active')
+    $('header').hide()
+    $('.box-title-1').css('display', 'grid')
+    $('.box-arrow').css('display', 'grid')
+  }
+}
+
+function create_box_botton_abc(json, dimension, attetionAux, entity, index) {
+
+  let accioneBotton = ['enlaces', 'quienLoHace', 'comoSeHace']
+  let accionAbc = ['a', 'b', 'c', 'd']
+  json.then((value) => {
+
+    //colocar la caja
+    $('.box-abc-dimension').css('display', 'grid')
+
+    //obtine el nombre de la caja
+    $('.box-abc-title').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).name)
+
+    //obtiene el contenido de la caja
+    $('#text-button-1').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).descripcion)
+
+    //crea el boton y le pone su correspondiente texto
+    $('.button-abc').on('click', function (event) {
+      click = this
+      $('.button-abc').each(function (index1, value) {
+        if (click === value) {
+          $(value).addClass('active-box-button-abc')
+        } else {
+          $(value).removeClass('active-box-button-abc')
+        }
+      })
+      //numero de botones
+      numButtons = $(this).parent()
+      //sacar un numero al dar click en la felchita
+      dimensionNav = $(this).parent()
+      navsInDimension = dimensionNav.find('.button-abc')
+      indexAux = navsInDimension.index(this)
+
+
+      if ($(numButtons[0]).attr('class') === 'box-button-abc-aux1') {
+
+        $('#text-abc-content').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0])[accioneBotton[indexAux]])
+
+      }
+      else {
+
+        $('#text-abc-content').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0])[accionAbc[indexAux]])
+
+      }
+
+    })
+  }).catch((err) => {
+    console.log('ups, paso un error al insertar el texto', err)
+  })
 
 }
