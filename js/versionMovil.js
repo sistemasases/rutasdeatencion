@@ -1,5 +1,3 @@
-
-
 /**
 * Management - Funcionalidad de la capa de informacion
 * @author Cristian Duvan Machado Moquera
@@ -10,40 +8,40 @@
 
 function screenResponsiveWebDesing(json) {
 
-     /*  VARIABLES  */
-     let sizeScreenWidth  = $(window).width()
-     let sizeScreenHeigth = $(window).height()
-     
-    // if ( sizeScreenWidth <= 1050 &&  sizeScreenWidth < sizeScreenHeigth) {
+  /*  VARIABLES  */
+  let sizeScreenWidth = $(window).width()
+  let sizeScreenHeigth = $(window).height()
 
-     //mostrar el contenido de mayor informacion
-     $('#mayorInformacion').on('click' , (event)=> {
-       event.preventDefault();
-       $('.content-info').animate({height: '7.3em'})
-       $('.content-info').css({
-        'display': 'grid'
-       })
-     })
-     
-     //quitar la animacion del footer
-     $('#close-footer').on('click', (event) => {
-      event.preventDefault();
-      $('.content-info').animate({height: '0em'})
-     })
+  // if ( sizeScreenWidth <= 1050 &&  sizeScreenWidth < sizeScreenHeigth) {
 
-     //mostrar el breadcumbs de inicio
-     $('#bread-1').css('display','inline-block')
-     $('.content-text-botton-box').css('display','none')
-     $('.detonating-question-box').hide()
-     $('body').addClass('active')
+  //mostrar el contenido de mayor informacion
+  $('#mayorInformacion').on('click', (event) => {
+    event.preventDefault();
+    $('.content-info').animate({ height: '7.3em' })
+    $('.content-info').css({
+      'display': 'grid'
+    })
+  })
 
-     //Funcionalidad de las flechas
-     breadcrumbs_funcionality(json)
+  //quitar la animacion del footer
+  $('#close-footer').on('click', (event) => {
+    event.preventDefault();
+    $('.content-info').animate({ height: '0em' })
+  })
+
+  //mostrar el breadcumbs de inicio
+  $('#bread-1').css('display', 'inline-block')
+  $('.content-text-botton-box').css('display', 'none')
+  $('.detonating-question-box').hide()
+  $('body').addClass('active')
+
+  //Funcionalidad de las flechas
+  breadcrumbs_funcionality(json)
 
 
-     //}
+  //}
 
-    
+
 }
 
 
@@ -143,54 +141,70 @@ async function breadcrumbs_funcionality(json) {
 
 function breadcrumbs_funcionality(json) {
 
-    //evento click en el breadcrumbs
-    $('.arrow-7').on('click', function(event) {
-        event.preventDefault();
-    
-        arrows = this;
-  
-        //sacar un numero al dar click en el brecumbs
-        dimensionNav = $(this).parent()
-        navsInDimension = dimensionNav.find('.arrow-7')
-        index = navsInDimension.index(this)
+  //evento click en el breadcrumbs
+  $('.arrow-7').on('click', function (event) {
+    event.preventDefault();
 
-        indexClick = index;
- 
-        //each de la clase arrow-7
-        $('.arrow-7').each(function (index, value) {
-            //colocar la clase activa si es igual al selecionado
-            if (value === arrows) {
-              $(value).find('.arrow-text').addClass('arrow-active')
-              indexClick = index
-            }else {
-              $(value).find('.arrow-text').removeClass('arrow-active')
-            }
+    arrows = this;
+    if (!$('#arrow-box-principality').hasClass('breadcrumbs-active-click')) {
+    //sacar un numero al dar click en el brecumbs
+    dimensionNav = $(this).parent()
+    navsInDimension = dimensionNav.find('.arrow-7')
+    index = navsInDimension.index(this)
 
-            if (index > indexClick) {
-              $(value).hide()
-            }
+    indexClick = index;
 
-        })
+    //each de la clase arrow-7
+    $('.arrow-7').each(function (index, value) {
+      //colocar la clase activa si es igual al selecionado
+      if (value === arrows) {
+        $(value).find('.arrow-text').addClass('arrow-active')
+        indexClick = index
+      } else {
+        $(value).find('.arrow-text').removeClass('arrow-active')
+      }
 
-        if (index === 0) {
-          $('#bread-1').addClass('box-breadcrumbs-active')
-          $('.arrow-1').addClass('active')
-          $('body').attr('title', 0)
-          $('.box-title-1').css('display', 'none')
-          $('.box-arrow').css('display', 'none')
-          $('header').css('display', 'grid')
-          svgPaint(json)
-        }
-        else {
-          $('body').attr('title', index)
-          let paramters = ($('#arrows-1').attr('title')).split(',') 
-          funcionalityRute(json, Number(paramters[0]) , Number(paramters[1]) , Number(paramters[2]) , 1 , index-1 , paramters[3]) 
-        }
-        console.log(index,'index')
-        $('.box-information').hide()
-        $('.box-abc-dimension').hide()
-        $('.box-button-dimension').hide()
-        //$('.boton-info').removeClass('active')
+      if (index > indexClick) {
+        $(value).hide()
+      }
+
     })
+
+    if (index === 0) {
+      $('#bread-1').addClass('box-breadcrumbs-active')
+      $('.arrow-1').addClass('active')
+      $('body').attr('title', 0)
+      $('.box-title-1').css('display', 'none')
+      $('.box-arrow').css('display', 'none')
+      $('header').css('display', 'grid')
+      svgPaint(json)
+    }
+    else {
+      $('body').attr('title', index)
+      let paramters = ($('#arrows-1').attr('title')).split(',')
+      funcionalityRute(json, Number(paramters[0]), Number(paramters[1]), Number(paramters[2]), 1, index - 1, paramters[3])
+    }
+    console.log(index, 'index')
+    $('.box-information').hide()
+    $('.box-abc-dimension').hide()
+    $('.box-button-dimension').hide()
+    $('.box-information-dimension').hide()
+    $('#enlaces').addClass('bandera-true')
+    $('.boton-info').off('click')
+    $(".content-text-botton-box").slideUp('slow');
+    $('.boton-info').each(function (index, value) {
+      if ($(value).hasClass('active')) {
+        $(value).removeClass('active')
+      }
+    })
+    $('.button-abc').each(function (index1, value) { 
+      $(value).removeClass('active-box-button-abc')
+    })
+    $('#text-abc-content').html('')
+    $('.box-question-dimension').hide()
+    $('.box-button-dimension-content').html('')
+    $('.box-button-dimension-content').css('grid-template-rows', '15% 15% 15% 15% 15% 15% 15% 15% 15%')
+    }
+  })
 
 } 

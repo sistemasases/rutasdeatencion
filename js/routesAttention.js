@@ -1,5 +1,3 @@
-
-
 /**
 * Management - Funcionalidad de la capa de informacion
 * @author Cristian Duvan Machado Moquera
@@ -61,7 +59,7 @@ function rutesAttentionMovil(json) {
         entity = index
       }
 
-      console.log($('.arrow-3').hasClass('arrow-active'),'comfirmalo',indexCap)
+      console.log($('.arrow-3').hasClass('arrow-active'), 'comfirmalo', indexCap)
       if (Number(indexCap) < 3) {
         Promise.all([animateBackground(false, sizeScreenWidth),
         animateRute(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension), animateCharacter(sizeScreenWidth)])
@@ -71,11 +69,11 @@ function rutesAttentionMovil(json) {
         $('#arrows-1').attr('title', dimension + ',' + attetionAux + ',' + entity + ',' + name)
       }
       else {
-         $('.arrow-3').removeClass('arrow-active')
-         $('.arrow-3').find('.arrow-text').removeClass('arrow-active')
-         $('.arrow-4').find('.arrow-text').addClass('arrow-active')
-         $('.arrow-4').show()
-         $('.arrow-4').find('.arrow-text').html(nameDimension)
+        $('.arrow-3').removeClass('arrow-active')
+        $('.arrow-3').find('.arrow-text').removeClass('arrow-active')
+        $('.arrow-4').find('.arrow-text').addClass('arrow-active')
+        $('.arrow-4').show()
+        $('.arrow-4').find('.arrow-text').html(nameDimension)
         json.then(function (value) {
           if ((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).tipoCaja == 2) {
             create_box_botton(json, dimension, attetionAux, entity, index)
@@ -146,7 +144,7 @@ function animateRute(band, sizeScreenWidth, screen, json, dimension, attetionAux
   let timeShowRute = ((sizeScreenWidth * 2) * 79) / 100;
   bandAux = true
   bandBrecumbs = true
-
+  $('#arrow-box-principality').addClass('breadcrumbs-active-click')
   var ruteAnimate = setInterval(function () {
 
     if (sizeScreen < sizeScreenWidth * 2) {
@@ -173,6 +171,8 @@ function animateRute(band, sizeScreenWidth, screen, json, dimension, attetionAux
           funcionalityBrecumbs(indexCap, nameDimension)
           funcionalityRute(json, dimension, attetionAux, entity, 1, indexCap, nameArrow);
           show_brecumbs()
+          dimension_description(json, dimension)
+          $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
         }
 
         //funcionalityRute(json , dimension , attetionAux , entity , 1 , indexCap );
@@ -212,7 +212,9 @@ function animateCharacter(sizeScreenWidth) {
 
       //cambiar la imagen determinado tiempo  
       if (timeSequence == 4) {
-        $('#personaje').find('img').attr('src', 'images/personaje/' + imgSequence + '.png')
+        //$('#personaje').find('img').attr('src', 'images/personaje/' + imgSequence + '.png')
+        $(`#personaje-caminata-${imgSequence - 1}`).addClass('features-personajes-off')
+        $(`#personaje-caminata-${imgSequence}`).removeClass('features-personajes-off')
         imgSequence++
         timeSequence = 1
       }
@@ -228,10 +230,12 @@ function animateCharacter(sizeScreenWidth) {
     }
     else {
       killTimer = true
-      $('#personaje').find('img').attr('src', 'images/personaje/personaje.png')
     }
 
     if (killTimer) {
+      for (let i = 2; i < 6; i++) {
+        $(`#personaje-caminata-${i}`).addClass('features-personajes-off')
+      }
       clearInterval(animateCharac)
     }
 
@@ -383,15 +387,20 @@ function funcionality_botton_text(json, dimension, attetionAux, entity, index) {
   band = true
   textEnlace = ""
 
+  //activar clase que significa true
+  $('#enlaces').addClass('bandera-true')
+
   $('.boton-info').on('click', function (event) {
     event.preventDefault();
     event.isPropagationStopped();
 
     botonPress = this
 
+
     //quitar la clase cuando esta activada y se vuelve undir de nuevo
     if ($(botonPress).hasClass('active')) {
       band = false
+      $('#enlaces').removeClass('bandera-true')
     }
 
     //quitar clase activa
@@ -436,16 +445,16 @@ function funcionality_botton_text(json, dimension, attetionAux, entity, index) {
 
     });
 
-     console.log(band,'band')
+    console.log(band, 'band')
     //bajar y subir
-    if (band) {
+    if ($('#enlaces').hasClass('bandera-true')) {
       $(".content-text-botton-box").slideDown('slow');
-      $(this).addClass('active')
+      $(botonPress).addClass('active')
     }
     else {
-      band = true
+      $('#enlaces').addClass('bandera-true')
       $(".content-text-botton-box").slideUp('slow');
-      $(this).removeClass('active')
+      $(botonPress).removeClass('active')
       //$('.content-text-botton-box').find('.content-text-botton').html('hola')
     }
 
@@ -453,6 +462,7 @@ function funcionality_botton_text(json, dimension, attetionAux, entity, index) {
   })
 
 }
+
 
 /**
  * @method funcionality_title_text
@@ -652,6 +662,28 @@ function create_box_botton_abc(json, dimension, attetionAux, entity, index) {
     })
   }).catch((err) => {
     console.log('ups, paso un error al insertar el texto', err)
+  })
+
+}
+
+function dimension_description(json, dimension) {
+  $('.box-question-dimension').show()
+  $('.circle-box-dimension').on('click', function (event) {
+    event.preventDefault();
+    //activar la caja
+    $('#box-dimension-question').show()
+
+    json.then((event) => {
+
+      $('.title-dimension').html(`Dimension ${(Object.values(event)[dimension]).name}`)
+      $('.content-dimension').html((Object.values(event)[dimension]).introduccion)
+      
+    }).catch((err) => {
+
+      console.log('ups, paso un error al insertar el texto', err)
+      
+    });
+
   })
 
 }
