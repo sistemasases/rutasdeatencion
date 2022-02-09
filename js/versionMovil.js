@@ -1,3 +1,4 @@
+
 /**
 * Management - Funcionalidad de la capa de informacion
 * @author Cristian Duvan Machado Moquera
@@ -206,5 +207,5 @@ function breadcrumbs_funcionality(json) {
     $('.box-button-dimension-content').css('grid-template-rows', '15% 15% 15% 15% 15% 15% 15% 15% 15%')
     }
   })
-
+  
 } 

@@ -1,3 +1,4 @@
+
 /**
 * Management - Funcionalidad de la capa de informacion
 * @author Cristian Duvan Machado Moquera
@@ -99,8 +100,4 @@ async function getJson() {
 
 
 }
-
-
-
-
 
