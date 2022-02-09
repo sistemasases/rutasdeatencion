@@ -1,7 +1,7 @@
 {
   "0": {
     "name": "Individual",
-    "introduccion": "En la dimensión individual las atenciones se despliegan: De manera preventiva e informativa cuando se presenta las atenciones disponibles a las cuales puede el/la estudiante recurrir cuando tiene una situación personal o familiar que requiera orientación en salud, Psicosocial, legal o de esparcimiento BOTON LEER MAS De manera Paliativa cuando: El/la estudiante reporta o es evidente un estado de salud mental o físico deteriorado que afecta sus actividades cotidianas y que está siendo pasado por alto, soportado sin apoyo profesional, automedicado, sin tratamiento o con tratamiento intermitente.  Para estas atenciones es importante indagar si el estudiante cuenta con EPS y si realizó la portabilidad en salud. (link al folleto del minsalud) El/la estudiante refiere una situación que requiere de asesoramiento de tipo legal general o orientación, atención y prevención de violencias basadas en género, acompañamiento en temas, se le brinda la información de la subsecretaría de equidad de género.",
+    "introduccion": "En la dimensión individual las atenciones se despliegan: De manera preventiva e informativa cuando se presenta las atenciones disponibles a las cuales puede el/la estudiante recurrir cuando tiene una situación personal o familiar que requiera orientación en salud, Psicosocial, legal o de esparcimiento  MAS De manera Paliativa cuando: El/la estudiante reporta o es evidente un estado de salud mental o físico deteriorado que afecta sus actividades cotidianas y que está siendo pasado por alto, soportado sin apoyo profesional, automedicado, sin tratamiento o con tratamiento intermitente.  Para estas atenciones es importante indagar si el estudiante cuenta con EPS y si realizó la portabilidad en salud. (link al folleto del minsalud) El/la estudiante refiere una situación que requiere de asesoramiento de tipo legal general o orientación, atención y prevención de violencias basadas en género, acompañamiento en temas, se le brinda la información de la subsecretaría de equidad de género.",
     "caminata": false,
     "TiposDeAtencion": {
       "0": {
@@ -69,7 +69,7 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "Atención de urgencias",
-                    "descripcion": "Podrá acudir al Servicio  Médico de cada sede, en el horario habitual de 7:30 a.m. a 5:00 p.m. Después de las 5:30 p.m. se atenderá en las siguientes entidades adscritas al Servicio de Salud de la Universidad del Valle - Cali: <br> Clínica Farallones <br> (Calle 18 N # 5-34 # 50 – 25 TEL.: 487 80 00), <br> Hospital Universitario del Valle <br> (Calle 5 # 36 – 08, TEL. 554 07 00), <br> Hospital Psiquiátrico del Valle <br> (Calle 5 # 80 00, TEL. 682 18 00), <br> Clínica de Fracturas de Cali <br> (Avenida Roosevelt # 42 – 38, TEL.553 66 57), <br> Clínica Oftalmológica de Cali (Carrera 57 # 8 C – 94, TEL. 552 08 90), <br> Traumatólogos Clínica de Fracturas <br> (Carrera 42 # 5 C -103, TEL. 552 28 98), <br> Clínica de Occidente <br> (Calle 18 N # 5 – 34, TEL. 660 30 00). <br> En todas las instituciones mencionadas usted debe presentar: 1) documento de identidad; 2)carné vigente o tabulado y recibo de pago del semestre en curso. *Nota: Si el estudiante tiene E.P.S, Se le orientara a su E.P.S correspondiente.",
+                    "descripcion": "Podrá acudir al Servicio  Médico de cada sede, en el horario habitual de 7:30 a.m. a 5:00 p.m. Después de las 5:30 p.m. se atenderá en las siguientes entidades adscritas al Servicio de Salud de la Universidad del Valle - Cali: <ul style='color:gray'> <li> <strong>Clínica Farallones </strong> (Calle 18 N # 5-34 # 50 – 25 TEL.: 487 80 00), </li> <li> <strong>Hospital Universitario del Valle </strong> (Calle 5 # 36 – 08, TEL. 554 07 00) </li>  <li> <strong>Hospital Psiquiátrico del Valle </strong> (Calle 5 # 80 00, TEL. 682 18 00), </li> <li> <strong>Clínica de Fracturas de Cali </strong> (Avenida Roosevelt # 42 – 38, TEL.553 66 57), </li> <li> <strong>Clínica Oftalmológica de Cali</strong> (Carrera 57 # 8 C – 94, TEL. 552 08 90), </li> <li> <strong>Traumatólogos Clínica de Fracturas </strong> (Carrera 42 # 5 C -103, TEL. 552 28 98), </li> <li>  <strong>Clínica de Occidente </strong> (Calle 18 N # 5 – 34, TEL. 660 30 00). </li> </ul> En todas las instituciones mencionadas usted debe presentar: <ul style='color:gray'> <li>1) documento de identidad </li> <li> 2) carné vigente o tabulado y recibo de pago del semestre en curso. *Nota: Si el estudiante tiene E.P.S, Se le orientara a su E.P.S correspondiente. </li> </ul> ",
                     "enlaces": "http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/atencion-de-urgencias ",
                     "comoSeHace": "Indagar en el  encuentro con el/la estudiante si fue atendido/a por urgencias,  cómo le fue en su cita y si requiere algun otro apoyo en el proceso.",
                     "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
@@ -101,7 +101,7 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "Suministro de medicamentos",
-                    "descripcion": "Se reciben en algunos de los puntos COMFANDI, la entidad contratada para el suministro, debe presentar: 1) la fórmula autorizada; 2) presentar carné renovado o recibo de pago y tabulado; 3) usted debe cancelar en la droguería el 60% del valor total de los medicamentos formulados. La Universidad asumirá el 40% restante.",
+                    "descripcion": "Se reciben en algunos de los puntos COMFANDI, la entidad contratada para el suministro, debe presentar: <ul style='color:gray'> <li> 1) la fórmula autorizada </li> <li> 2) presentar carné renovado o recibo de pago y tabulado </li> <li> 3) usted debe cancelar en la droguería el 60% del valor total de los medicamentos formulados. La Universidad asumirá el 40% restante. </li> </ul> ",
                     "enlaces": "http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/suministro-de-medicamentos",
                     "comoSeHace": "Indagar en los encuentros con el/la estudiante si efectivamente solicitó la cita en servicio odontologico, cómo le fue en su cita y si requiere algun otro apoyo en el proceso. ",
                     "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
@@ -176,12 +176,15 @@
                   "0": {
                     "tipoCaja": 3,
                     "name": "Programa de Promoción y Prevención ",
-                    "descripcion": "Los programas de promoción y prevención están dirigidos a toda la comunidad universitaria y tiene como objetivo mejorar y mantener la salud integral de los estudiantes desarrollando programas y actividades que promueven el mantenimiento de la salud con base en los ciclos vitales y en factores de riesgos individuales y colectivos. <br> Programa de salud sexual y reproductiva Programas de planificación familiar: - Métodos de planificación: control del método - Orientación para el control prenatal - Charlas y talleres Semana de salud, belleza y nutrición Jornadas de donación de sangre  y vacunación Toma de muestras de VIH Talleres: Prevención consumo de alcohol y tabaco, prevención consumo de SPA, nutrición, estilo de vida saludable, entre otras",
+                    "descripcion": "Los programas de promoción y prevención están dirigidos a toda la comunidad universitaria y tiene como objetivo mejorar y mantener la salud integral de los estudiantes desarrollando programas y actividades que promueven el mantenimiento de la salud con base en los ciclos vitales y en factores de riesgos individuales y colectivos. <br><br> Programa de salud sexual y reproductiva Programas de planificación familiar: - Métodos de planificación: control del método - Orientación para el control prenatal - Charlas y talleres Semana de salud, belleza y nutrición Jornadas de donación de sangre  y vacunación Toma de muestras de VIH Talleres: Prevención consumo de alcohol y tabaco, prevención consumo de SPA, nutrición, estilo de vida saludable, entre otras",
                     "enlaces": "",
                     "comoSeHace": "",
                     "quienLoHace": "",
                     "periodicidad": "",
-                    "a": "Sede Yumbo: http://yumbo.univalle.edu.co/bienestar/2015-11-12-23-15-00/bienestar-areas-servicios-salud  Tel: 6699323 - Ext. 4, marcela.borrero@correounivalle.edu.co , Sede Norte del Cauca:  http://nortedelcauca.univalle.edu.co/bienestar-universitario/atenciono-primaria-en-salud , saludocupacional.ncauca@correounivalle.edu.co , Sede Pacifico: http://pacifico.univalle.edu.co/bienestar-universitario/areas-servicios/salud ,Tel: 57 602 240 3669 - 602 240 1290 ext 6412 , bienestar.pacifico@correounivalle.edu.co, Sede Calcedonia: http://caicedonia.univalle.edu.co/bienestar/programas/universidad-saludable , +57 2 2160070 Ext. 6208,Bienestar.caicedonia@correounivalle.edu.co , Sede Zarzal: http://zarzal.univalle.edu.co/buv/desarrollo-buv , bienestar.zarzal @correounivalle.edu.co , Tel: 2209193 - 2035069 , Sede Cartago: http://cartago.univalle.edu.co/bienestar-universitario/areas-servicios/salud.html , bienestar.cartago@correounivalle.edu.co ,Tel: 323 5908395 - 2119978 - 2119976 - 2135131 ext. 6308 , Sede Palmira: http://palmira.univalle.edu.co/bienestar-universitario-principal , auxiliarenfermeria.palmira@correounivalle.edu.co , Tel: 321 2100 Ext. 6524 , Sede Buga: bienestar.buga@correounivalle.edu.co , Tel: +57 2 2372496 Ext. 6115 , Sede Tulua:  http://tulua.univalle.edu.co/bienestar/area-de-promocion-y-prevencion , bienestar.tulua@correounivalle.edu.co , Tel: 2349938"
+                    "a": "Sede Yumbo: http://yumbo.univalle.edu.co/bienestar/2015-11-12-23-15-00/bienestar-areas-servicios-salud  Tel: 6699323 - Ext. 4, marcela.borrero@correounivalle.edu.co , Sede Norte del Cauca:  http://nortedelcauca.univalle.edu.co/bienestar-universitario/atenciono-primaria-en-salud , saludocupacional.ncauca@correounivalle.edu.co , Sede Pacifico: http://pacifico.univalle.edu.co/bienestar-universitario/areas-servicios/salud ,Tel: 57 602 240 3669 - 602 240 1290 ext 6412 , bienestar.pacifico@correounivalle.edu.co, Sede Calcedonia: http://caicedonia.univalle.edu.co/bienestar/programas/universidad-saludable , +57 2 2160070 Ext. 6208,Bienestar.caicedonia@correounivalle.edu.co , Sede Zarzal: http://zarzal.univalle.edu.co/buv/desarrollo-buv , bienestar.zarzal @correounivalle.edu.co , Tel: 2209193 - 2035069 , Sede Cartago: http://cartago.univalle.edu.co/bienestar-universitario/areas-servicios/salud.html , bienestar.cartago@correounivalle.edu.co ,Tel: 323 5908395 - 2119978 - 2119976 - 2135131 ext. 6308 , Sede Palmira: http://palmira.univalle.edu.co/bienestar-universitario-principal , auxiliarenfermeria.palmira@correounivalle.edu.co , Tel: 321 2100 Ext. 6524 , Sede Buga: bienestar.buga@correounivalle.edu.co , Tel: +57 2 2372496 Ext. 6115 , Sede Tulua:  http://tulua.univalle.edu.co/bienestar/area-de-promocion-y-prevencion , bienestar.tulua@correounivalle.edu.co , Tel: 2349938",
+                    "b": "",
+                    "c": "",
+                    "d": ""
                   }
                 }
               }
@@ -298,8 +301,8 @@
                     "caminata": true,
                     "tipoCaja": 1,
                     "name": "Programa de salud mental",
-                    "descripcion": "preventiva:http://vicebienestar.univalle.edu.co/home/22-actividades-servicio-psicologico/50-programa-de-salud-mental-preventiva En este programa se desarrollan una serie de talleres con el objetivo de ofrecer al individuo herramientas que le permitan a través de un mayor conocimiento de sí mismo, de sus potencialidades y del fortalecimiento de sus principios y valores, realizar los cambios necesarios para afrontar la vida con actitud positiva y tomar decisiones responsables.",
-                    "enlaces": "https://drive.google.com/file/d/1OGfoeyX1LNvdSTSo7FXepDRQwmAFNb1j/view?usp=sharing",
+                    "descripcion": "En este programa se desarrollan una serie de talleres con el objetivo de ofrecer al individuo herramientas que le permitan a través de un mayor conocimiento de sí mismo, de sus potencialidades y del fortalecimiento de sus principios y valores, realizar los cambios necesarios para afrontar la vida con actitud positiva y tomar decisiones responsables.",
+                    "enlaces": "https://drive.google.com/file/d/1OGfoeyX1LNvdSTSo7FXepDRQwmAFNb1j/view?usp=sharing,http://vicebienestar.univalle.edu.co/home/22-actividades-servicio-psicologico/50-programa-de-salud-mental-preventiva",
                     "comoSeHace": "Indagar en los encuentros con el/la estudiante si realizó la llamada a la linea-Indagar  cómo se ha sentido en el proceso de atención, si se relaizó alguna remisión o requiere un acompañamiento extra. ",
                     "quienLoHace": "Profesional, Practicante y/o Monitor/a del Componente Socioeducativo",
                     "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
@@ -308,7 +311,7 @@
                     "caminata": true,
                     "tipoCaja": 1,
                     "name": "Asesoría Psicológica",
-                    "descripcion": "Este programa va dirigido a aquellas personas que requieren un proceso terapéutico al presentar un motivo específico de consulta, bien sea en el área personal, familiar, social, académica u ocupacional.Para solicitar información sobre nuestros programas y expresar sus inquietudes puede comunicarse a través del correo electrónico serviciopsicologico@univalle.edu.co y de las líneas telefónicas 3212319 y 3212374.",
+                    "descripcion": "Este programa va dirigido a aquellas personas que requieren un proceso terapéutico al presentar un motivo específico de consulta, bien sea en el área personal, familiar, social, académica u ocupacional.Para solicitar información sobre nuestros programas y expresar sus inquietudes puede comunicarse a través del correo electrónico <a href='mailto:serviciopsicologico@univalle.edu.co'>serviciopsicologico@univalle.edu.co</a> y de las líneas telefónicas 3212319 y 3212374.",
                     "enlaces": "http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/servicio-psicologico/asesoria-psicologica",
                     "comoSeHace": "",
                     "quienLoHace": "",
@@ -356,7 +359,7 @@
                   "0": {
                     "tipoCaja": 3,
                     "name": "Atención interna",
-                    "descripcion": "-Asesoría psicológica: atención individual con procesos terapéuticos, atendiendo motivos de consulta a nivel personal, familiar, social académico y laboral.-Programa de salud mental preventiva: talleres y/ o campañas  para fortalecer la toma de decisiones asertivas y favorecer su relación consigo.",
+                    "descripcion": "Asesoría psicológica: atención individual con procesos terapéuticos, atendiendo motivos de consulta a nivel personal, familiar, social académico y laboral.-Programa de salud mental preventiva: talleres y/ o campañas  para fortalecer la toma de decisiones asertivas y favorecer su relación consigo.",
                     "enlaces": "",
                     "comoSeHace": "",
                     "quienLoHace": "",
@@ -439,13 +442,13 @@
             "caminata": true,
             "Entidades": {
               "0": {
-                "tipoTitulo": 1,
-                "name": "",
+                "tipoTitulo": 2,
+                "name": "Acompañamiento,educativo",
                 "caminata": true,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 2,
-                    "name": "",
+                    "name": "Acompañamiento,educativo,regionales",
                     "descripcion": "",
                     "enlaces": "",
                     "comoSeHace": "",
@@ -478,8 +481,8 @@
             "caminata": true,
             "Entidades": {
               "0": {
-                "tipoTitulo": 1,
-                "name": "",
+                "tipoTitulo": 2,
+                "name": "Tramites,juridicos",
                 "caminata": true,
                 "Atenciones": {
                   "0": {
@@ -501,8 +504,8 @@
             "caminata": true,
             "Entidades": {
               "0": {
-                "tipoTitulo": 1,
-                "name": "",
+                "tipoTitulo": 3,
+                "name": "trámites,jurídicos,regionales",
                 "caminata": true,
                 "Atenciones": {
                   "0": {
@@ -545,7 +548,7 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "Proceso 1",
-                    "descripcion": "Si la situación de violencia ocurrió en la universidad o fue perpetrada por un miembro de la comunidad universitaria (docente, estudiante, trabajador(a) o funcionario(a)) dirigirse al área de Bienestar Universitario. En caso de que sea otra persona la que ha sido afectada por la violencia de género acompañarla hasta la oficina (si se es testigo de la violencia, pero la persona no quiere denunciar, usted puede notificar). ",
+                    "descripcion": "Si la situación de violencia ocurrió en la universidad o fue perpetrada por un miembro de la comunidad universitaria (docente, estudiante, trabajador(a) o funcionario(a)) dirigirse al área de Bienestar Universitario. <br><br>En caso de que sea otra persona la que ha sido afectada por la violencia de género acompañarla hasta la oficina (si se es testigo de la violencia, pero la persona no quiere denunciar, usted puede notificar). ",
                     "enlaces": "",
                     "comoSeHace": "",
                     "quienLoHace": "",
@@ -561,7 +564,7 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "Proceso 2",
-                    "descripcion": "Solicite el acompañamiento de un profesional en psicología o trabajo social, esta persona la o lo acompañará en la construcción del relato que será indispensable para realizar la denuncia de Violencia de Género ante el Centro de investigación género, mujer y sociedad de la Universidad del Valle, esta instancia se encargaran de llevar a cabo la investigación (tenga en cuenta que es posible que le soliciten una carta de autorización para iniciar el proceso y utilizar las pruebas que usted entregue). Dependiendo del caso el profesional que atienda su caso en Bienestar remitirá a instancias externas (entidades municipales) para realizar el procedimiento pertinente (el hospital, la EPS, fiscalía, policía, comisaría de familia, personería, defensoría del pueblo, ICBF o medicina legal) *Acudir a la EPS en caso de que la situación lo requiera. Si la persona no cuenta con afiliación por régimen subsidiado o contributivo, se atenderá la emergencia por medio del convenio Univalle - ASOHOSVAL, en uno de los hospitales públicos del Valle. También puede comunicarse con el Plan de Contingencia para la Prevención y Atención Oportuna de las Violencias Basadas en Género contra las Mujeres y Población Diversa en el Departamento del Valle del Cauca”. Línea de atención: 317 434 2586 - Janeth Vivas Fuentes.",
+                    "descripcion": "Solicite el acompañamiento de un profesional en psicología o trabajo social, esta persona la o lo acompañará en la construcción del relato que será indispensable para realizar la denuncia de Violencia de Género ante el Centro de investigación género, mujer y sociedad de la Universidad del Valle, esta instancia se encargaran de llevar a cabo la investigación (tenga en cuenta que es posible que le soliciten una carta de autorización para iniciar el proceso y utilizar las pruebas que usted entregue). <br><br> Dependiendo del caso el profesional que atienda su caso en Bienestar remitirá a instancias externas (entidades municipales) para realizar el procedimiento pertinente (el hospital, la EPS, fiscalía, policía, comisaría de familia, personería, defensoría del pueblo, ICBF o medicina legal) *Acudir a la EPS en caso de que la situación lo requiera. Si la persona no cuenta con afiliación por régimen subsidiado o contributivo, se atenderá la emergencia por medio del convenio Univalle - ASOHOSVAL, en uno de los hospitales públicos del Valle. También puede comunicarse con el Plan de Contingencia para la Prevención y Atención Oportuna de las Violencias Basadas en Género contra las Mujeres y Población Diversa en el Departamento del Valle del Cauca”. Línea de atención: 317 434 2586 - Janeth Vivas Fuentes.",
                     "enlaces": "",
                     "comoSeHace": "",
                     "quienLoHace": "",
@@ -577,7 +580,97 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "Proceso 3",
-                    "descripcion": "Espere la notificación del Centro de género de la Universidad del Valle (esta notificación puede tardar algunas semanas, pero usted puede solicitar información por medio del correo de Bienestar Universitario de la Sede). El área de Bienestar Universitario se encarga de hacer el seguimiento de los casos con el Centro de Género de la Universidad bienestar.yumbo@correounivalle.edu.co  bienestar.nortedelcauca@correounivalle.edu.co  bienestar.pacifico@correounivalle.edu.co bienestar.zarzal@correounivalle.edu.co bienestar.palmira@correounivalle.edu.co bienestar.caicedonia@correounivalle.edu.co bienestar.cartago@correounivalle.edu.co bienestar.buga@correo uivalle.edu.co bienestar.tulua@correounivalle.edu.co Oficina de equidad de género de cada municipio Comisaria de Familia del municipio",
+                    "descripcion": "Espere la notificación del Centro de género de la Universidad del Valle (esta notificación puede tardar algunas semanas, pero usted puede solicitar información por medio del correo de Bienestar Universitario de la Sede). El área de Bienestar Universitario se encarga de hacer el seguimiento de los casos con el Centro de Género de la Universidad <ul style='color:gray'> <li><a href='mailto:bienestar.yumbo@correounivalle.edu.co'>bienestar.yumbo@correounivalle.edu.co</a></li> <li> <a href='mailto:bienestar.nortedelcauca@correounivalle.edu.co'>bienestar.nortedelcauca@correounivalle.edu.co</a></li>  <li><a href='mailto:bienestar.pacifico@correounivalle.edu.co'>bienestar.pacifico@correounivalle.edu.co</a></li> <li><a href='mailto:bienestar.zarzal@correounivalle.edu.co'>bienestar.zarzal@correounivalle.edu.co</a></li> <li><a href='mailto:bienestar.palmira@correounivalle.edu.co'>bienestar.palmira@correounivalle.edu.co</a></li> <li><a href='mailto:bienestar.caicedonia@correounivalle.edu.co'> bienestar.caicedonia@correounivalle.edu.co </a></li> <li><a href='mailto:bienestar.cartago@correounivalle.edu.co'>bienestar.cartago@correounivalle.edu.co</a></li> <li><a href='mailto:bienestar.buga@correouivalle.edu.co'> bienestar.buga@correouivalle.edu.co</a></li> <li><a href='mailto:bienestar.tulua@correounivalle.edu.co'>bienestar.tulua@correounivalle.edu.co </a></li> </ul>Oficina de equidad de género de cada municipio Comisaria de Familia del municipio",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "7": {
+        "tipoTitulo": 2,
+        "name": "Asuntos, Etnicos",
+        "caminata": false,
+        "sedes": {
+          "0": {
+            "tipoTitulo": 2,
+            "name": "Todas las,Sedes",
+            "caminata": false,
+            "Entidades": {
+              "0": {
+                "tipoTitulo": 1,
+                "name": "Proceso 1",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "tipoCaja": 1,
+                    "name": "Atencion de Asuntos Etnicos",
+                    "descripcion": "El área de asuntos étnicos es una dependencia de la vicerrectoría de bienestar universitario que promueve el desarrollo de políticas afirmativas para grupos étnicos y facilitar el diálogo intercultural entre los pueblos étnicos y la institucionalidad universitaria nuestro objetivo es orientar coordinar y articular acciones de bienestar para los estudiantes de grupos étnicos comunidades de base dónde habitan los grupos étnicos y organizaciones sociales vinculadas a grupos étnico Las líneas de acción son: Gestión de conocimiento e investigación Éxito académico Áreas de cooperación Extensión comunitaria Etnoeducación y posgrado Equidad de género y diversidad sexual Contacto: Edificio Agora (A2) Desarrollo Humano y Promoción Socioeconómica Universidad del valle Sede Meléndez ",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "8": {
+        "tipoTitulo": 2,
+        "name": "Campus,Diverso",
+        "caminata": false,
+        "sedes": {
+          "0": {
+            "tipoTitulo": 2,
+            "name": "Todas las,Sedes",
+            "caminata": false,
+            "Entidades": {
+              "0": {
+                "tipoTitulo": 1,
+                "name": "Campus Diverso",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "tipoCaja": 1,
+                    "name": "Campus Diverso",
+                    "descripcion": "El proyecto Campus Diverso, adscrito a la Vicerrectoría Académica, la Universidad del Valle, se posiciona como pionera a nivel nacional, en brindar a su comunidad académica un espacio que permita el acompañamiento a estudiantes con identidades de género y orientaciones sexuales diversas (IG/OS). <br><br> En él, profesionales de la salud y de las ciencias sociales y humanas sensibles a las temáticas de diversidad sexual, logran un proceso de acompañamiento y orientación en las diferentes situaciones que vivencian las y los estudiantes a razón de su identidad de género u orientación sexual. <br><br> Proyecto Campus Diverso campusdiverso@correounivalle.edu.co vicerrectoria.academica@correounivalle.edu.co Teléfono: 3212100 Ext. 2229 ",
+                    "enlaces": "",
+                    "comoSeHace": "",
+                    "quienLoHace": "",
+                    "periodicidad": ""
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "9": {
+        "tipoTitulo": 2,
+        "name": "Universidad,Saludable",
+        "caminata": false,
+        "sedes": {
+          "0": {
+            "tipoTitulo": 2,
+            "name": "Todas las,Sedes",
+            "caminata": false,
+            "Entidades": {
+              "0": {
+                "tipoTitulo": 3,
+                "name": "Proyecto,Universidad,Saludable",
+                "caminata": true,
+                "Atenciones": {
+                  "0": {
+                    "tipoCaja": 1,
+                    "name": "Universidad Saludable",
+                    "descripcion": "Universidad Saludable comprometido con la promoción de la salud, el cuidado y bienestar de la comunidad universitaria, es un proyecto concebido con una perspectiva de desarrollo social que está integrado al plan estratégico de desarrollo 2015 – 2025 de la Universidad del Valle, adscrito a Vicerrectoría de Bienestar Universitario y forma parte del programa Institucional Universidad Saludable, Discapacidad y Deporte (USDD) que estableció sus cimientos en el año 2014 cuando la Universidad del Valle decidió asumir el reto de proyectarse a ser una Universidad Saludable para el año 2025. <br><br> Universidad saludable (U.S) busca transformar Univalle en una institución promotora de salud trabajando en términos de promoción y mantenimiento de la salud individual y colectiva en el devenir de lo cotidiano, favoreciendo la salud mental, la convivencia, el desarrollo de habilidades personales con el fin de influir en la adopción de conductas de cuidado de la salud y fortalecer los entornos saludables e inclusivos, la adaptación y el bienestar integral de la comunidad universitaria: estudiantes, docentes y trabajadores. Líneas de acción: Salud mental, física - sexualidad humana, salud social, salud ambiental y generación del conocimiento en promoción de la salud. programa.universidadsaludable@correounivalle.edu.co Ubicación: Edificio D7 (Antes 384) tercer piso Universidad del valle Sede Meléndez Fanpage Facebook: @PUSDDUnivalle",
                     "enlaces": "",
                     "comoSeHace": "",
                     "quienLoHace": "",
@@ -615,8 +708,8 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "Baile Recreativo",
-                    "descripcion": "http://vicebienestar.univalle.edu.co/cultura-recreacion-y-deporte/area-de-cultura/actividades-permanentes Jornadas de gimnasia dirigida a través de bailes típicos y música moderna. Lugares y horarios donde se desarrollan las actividades. Lunes y miércoles de 5:30 p.m. a 6:30 p.m. Salón de Tenis de Mesa - Sede Meléndez. Jueves de 4:30 p.m. a 6:30 p.m. Canchas del Centro Deportivo Universitario - Sede San Fernando.",
-                    "enlaces": "",
+                    "descripcion": "Jornadas de gimnasia dirigida a través de bailes típicos y música moderna. Lugares y horarios donde se desarrollan las actividades. <br><br> Lunes y miércoles de 5:30 p.m. a 6:30 p.m. Salón de Tenis de Mesa - Sede Meléndez. Jueves de 4:30 p.m. a 6:30 p.m. Canchas del Centro Deportivo Universitario - Sede San Fernando.",
+                    "enlaces": "http://vicebienestar.univalle.edu.co/cultura-recreacion-y-deporte/area-de-cultura/actividades-permanentes",
                     "comoSeHace": "",
                     "quienLoHace": "",
                     "periodicidad": ""
@@ -679,13 +772,13 @@
             "caminata": true,
             "Entidades": {
               "0": {
-                "tipoTitulo": 1,
-                "name": "",
+                "tipoTitulo": 2,
+                "name": "bienestar y,cultura",
                 "caminata": true,
                 "Atenciones": {
                   "0": {
-                    "tipoCaja": 2,
-                    "name": "",
+                    "tipoCaja": 3,
+                    "name": "bieneestar y,cultura,regional",
                     "descripcion": "",
                     "enlaces": "",
                     "comoSeHace": "",
@@ -708,8 +801,8 @@
         }
       },
       "1": {
-        "tipoTitulo": 1,
-        "name": "nn",
+        "tipoTitulo": 2,
+        "name": "Actividades,deportivas",
         "caminata": false,
         "sedes": {
           "0": {
@@ -725,8 +818,8 @@
                   "0": {
                     "tipoTitulo": 1,
                     "name": "Actividades acuáticas",
-                    "descripcion": "Natación y natación con aletas: Cursos diseñados para que las personas que no saben nadar aprendan en un entorno seguro, aprendizaje de estilos. Quienes ya saben nadar pueden aprender el uso de las aletas, aprender estilos y mantener su condición física a través de la práctica de la natación. Apnea I: Este curso enseña a conocer el mundo subacuático y a manejar el equipo básico de un buzo: careta, aletas y snorkel, a manejar la flotabilidad y a sumergirse de manera segura. Aprenderá a contener la respiración, a adaptar su cuerpo y su mente para disfrutar de manera libre el medio acuático. Buceo autónomo: El buceo autónomo permite utilizar el equipo Scuba: tanque, regulador y chaleco. Además el curso le enseña todas las implicaciones físicas y fisiológicas que tiene el ingreso al mundo acuático así usted estará preparado para disfrutar del mundo submarino de una manera segura. Al final de cada curso usted recibirá una certificación internacional que le permitirá disfrutar del buceo sin fronteras Colectivo de aprendizaje de natación guiado por el entrenador Fernando Zarama de Lunes a viernes de 12:00 pm a 2:00 pm. CDU Univalle Melendez. https://drive.google.com/file/d/1ZJeqTTZsv8U9RquiflHVX0b9enur2j0_/view?usp=sharing, http://vicebienestar.univalle.edu.co/2-uncategorised/125-natacion",
-                    "enlaces": "",
+                    "descripcion": "Natación y natación con aletas: Cursos diseñados para que las personas que no saben nadar aprendan en un entorno seguro, aprendizaje de estilos. <br><br> Quienes ya saben nadar pueden aprender el uso de las aletas, aprender estilos y mantener su condición física a través de la práctica de la natación. Apnea I: Este curso enseña a conocer el mundo subacuático y a manejar el equipo básico de un buzo: careta, aletas y snorkel, a manejar la flotabilidad y a sumergirse de manera segura. Aprenderá a contener la respiración, a adaptar su cuerpo y su mente para disfrutar de manera libre el medio acuático. <br><br> <strong>Buceo autónomo:</strong> El buceo autónomo permite utilizar el equipo Scuba: tanque, regulador y chaleco. Además el curso le enseña todas las implicaciones físicas y fisiológicas que tiene el ingreso al mundo acuático así usted estará preparado para disfrutar del mundo submarino de una manera segura. Al final de cada curso usted recibirá una certificación internacional que le permitirá disfrutar del buceo sin fronteras Colectivo de aprendizaje de natación guiado por el entrenador Fernando Zarama de Lunes a viernes de 12:00 pm a 2:00 pm. CDU Univalle Melendez.",
+                    "enlaces": "https://drive.google.com/file/d/1ZJeqTTZsv8U9RquiflHVX0b9enur2j0_/view?usp=sharing, http://vicebienestar.univalle.edu.co/2-uncategorised/125-natacion",
                     "comoSeHace": "",
                     "quienLoHace": "",
                     "periodicidad": ""
@@ -741,8 +834,8 @@
                   "0": {
                     "tipoTitulo": 1,
                     "name": "Ajedrez",
-                    "descripcion": "Colectivo de aprendizaje de ajedrez guiado por el entrenador Victor Saavedra Estudiantes: Lunes a viernes 9:00 am a 1:00 pm Salón de Ajedrez Campus Meléndez http://vicebienestar.univalle.edu.co/2-uncategorised/121-ajedrez",
-                    "enlaces": "",
+                    "descripcion": "Colectivo de aprendizaje de ajedrez guiado por el entrenador Victor Saavedra Estudiantes: Lunes a viernes 9:00 am a 1:00 pm Salón de Ajedrez Campus Meléndez",
+                    "enlaces": "http://vicebienestar.univalle.edu.co/2-uncategorised/121-ajedrez",
                     "comoSeHace": "",
                     "quienLoHace": "",
                     "periodicidad": ""
@@ -757,8 +850,8 @@
                   "0": {
                     "tipoTitulo": 1,
                     "name": "Fútbol",
-                    "descripcion": "Colectivo de aprendizaje de fútbol Masculino guiado por los entrenadores Milton Torres (lunes, miércoles y viernes de 12:00 pm a 2:00 pm) y Mauricio Ortiz (lunes a viernes de 12:30 pm a 2:00 pm) Colectivo de aprendizaje de fútbol Femenino guiado por los entrenadores Milton Torres (lunes, miércoles y viernes de 12:00 pm a 2:00 pm) y Mauricio Ortiz (lunes a viernes de 12:30 pm a 2:00 pm) http://vicebienestar.univalle.edu.co/restaurante-universitario/2-uncategorised/123-futbol",
-                    "enlaces": "",
+                    "descripcion": "Colectivo de aprendizaje de fútbol Masculino guiado por los entrenadores Milton Torres (lunes, miércoles y viernes de 12:00 pm a 2:00 pm) y Mauricio Ortiz (lunes a viernes de 12:30 pm a 2:00 pm) Colectivo de aprendizaje de fútbol Femenino guiado por los entrenadores Milton Torres (lunes, miércoles y viernes de 12:00 pm a 2:00 pm) y Mauricio Ortiz (lunes a viernes de 12:30 pm a 2:00 pm)",
+                    "enlaces": "http://vicebienestar.univalle.edu.co/restaurante-universitario/2-uncategorised/123-futbol",
                     "comoSeHace": "",
                     "quienLoHace": "",
                     "periodicidad": ""
@@ -789,8 +882,8 @@
                   "0": {
                     "tipoTitulo": 1,
                     "name": "Voleibol",
-                    "descripcion": "Colectivo de aprendizaje de Voleibol presentado en tres modalidades: 1. Como semillero: guiado por un monitor lunes y miércoles de 12:00 pm a 1:30 pm y los viernes de 1:00 pm a 3:00 pm. 2. Como entrenamiento masculino: guiado por el entrenador Diego Quintero los miércoles de 7:00 pm a 9:00 pm y los jueves de 8:00 a 9:30 pm 3. Como entrenamiento femenino: guiado por el entrenador Diego Quintero los lunes de 8:00 pm a 9:30 pm y los martes de 6:00 pm a 8:00 pm. http://vicebienestar.univalle.edu.co/2-uncategorised/140-voleibol l",
-                    "enlaces": "",
+                    "descripcion": "Colectivo de aprendizaje de Voleibol presentado en tres modalidades: <ul style='color:gray'> <li> 1. Como semillero: guiado por un monitor lunes y miércoles de 12:00 pm a 1:30 pm y los viernes de 1:00 pm a 3:00 pm. </li> <li> 2. Como entrenamiento masculino: guiado por el entrenador Diego Quintero los miércoles de 7:00 pm a 9:00 pm y los jueves de 8:00 a 9:30 pm </li> <li>3. Como entrenamiento femenino: guiado por el entrenador Diego Quintero los lunes de 8:00 pm a 9:30 pm y los martes de 6:00 pm a 8:00 pm.</li></ul>",
+                    "enlaces": "http://vicebienestar.univalle.edu.co/2-uncategorised/140-voleibol",
                     "comoSeHace": "",
                     "quienLoHace": "",
                     "periodicidad": ""
@@ -805,8 +898,8 @@
                   "0": {
                     "tipoTitulo": 1,
                     "name": "Baloncesto",
-                    "descripcion": "Colectivo de aprendizaje de baloncesto guiado por el entrenador James Valdés lunes (de 10:00 am a 12:00 pm), miércoles (de 4:00 pm a 6:00 pm), jueves (6:00 pm a 8:00 pm) y viernes (12:00 pm a 2:00 pm) http://vicebienestar.univalle.edu.co/2-uncategorised/122-baloncesto",
-                    "enlaces": "",
+                    "descripcion": "Colectivo de aprendizaje de baloncesto guiado por el entrenador James Valdés lunes (de 10:00 am a 12:00 pm), miércoles (de 4:00 pm a 6:00 pm), jueves (6:00 pm a 8:00 pm) y viernes (12:00 pm a 2:00 pm)",
+                    "enlaces": "http://vicebienestar.univalle.edu.co/2-uncategorised/122-baloncesto",
                     "comoSeHace": "",
                     "quienLoHace": "",
                     "periodicidad": ""
@@ -821,8 +914,8 @@
                   "0": {
                     "tipoTitulo": 1,
                     "name": "Rugby",
-                    "descripcion": "Colectivo de aprendizaje de rugby masculino guiado por el entrenador Efraín Paz los días martes, jueves y viernes de 12:00 pm a 2:00 pm Colectivo de aprendizaje de rugby femenino guiado por el entrenador Felipe Sanclemente los días lunes, miércoles y viernes. Los entrenamientos para las estudiantes de la categoría A/B son de 5:30 am a 7:30 am y para las estudiantes de la categoría C son de 12:00 pm a 2:00 pmLink: http://vicebienestar.univalle.edu.co/2-uncategorised/133-rugby https://www.facebook.com/LobosUnivalleRugby/?ref=page_internal",
-                    "enlaces": "",
+                    "descripcion": "Colectivo de aprendizaje de rugby masculino guiado por el entrenador Efraín Paz los días martes, jueves y viernes de 12:00 pm a 2:00 pm Colectivo de aprendizaje de rugby femenino guiado por el entrenador Felipe Sanclemente los días lunes, miércoles y viernes. Los entrenamientos para las estudiantes de la categoría A/B son de 5:30 am a 7:30 am y para las estudiantes de la categoría C son de 12:00 pm a 2:00 pm",
+                    "enlaces": "http://vicebienestar.univalle.edu.co/2-uncategorised/133-rugby,https://www.facebook.com/LobosUnivalleRugby/?ref=page_internal",
                     "comoSeHace": "",
                     "quienLoHace": "",
                     "periodicidad": ""
@@ -837,8 +930,8 @@
             "caminata": true,
             "Entidades": {
               "0": {
-                "tipoTitulo": 1,
-                "name": "",
+                "tipoTitulo": 2,
+                "name": "Recreación,Universitaria",
                 "caminata": true,
                 "Atenciones": {
                   "0": {
@@ -882,7 +975,7 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "Cursos De Natacion",
-                    "descripcion": "NATACIÓN Y NATACIÓN CON ALETAS: Cursos diseñados para que las personas que no saben nadar aprendan en un entorno seguro, aprendizaje de estilos. Quienes ya saben nadar pueden aprender el uso de  las aletas, aprender estilos y mantener su condición física a través de la práctica de la natación.APNEA I: Este curso enseña a conocer el mundo subacuático y a manejar el equipo básico de un buzo: careta, aletas y snorkel, a manejar la flotabilidad y a sumergirse de manera segura. Aprenderá a contener la respiración, a adaptar su cuerpo y su mente para disfrutar de manera libre el medio acuático.BUCEO AUTÓNOMO: El buceo autónomo permite utilizar el equipo Scuba: tanque, regulador y chaleco. Además el curso le enseña todas las implicaciones físicas y fisiológicas que tiene el ingreso al mundo acuático así usted estará preparado para disfrutar del mundo submarino de una manera segura. Al final de cada curso usted recibirá una certificación internacional que le permite disfrutar del buceo sin fronteras. BUZO AUTÓNOMO 1 estrella (AGUAS ABIERTAS)",
+                    "descripcion": "<strong>NATACIÓN Y NATACIÓN CON ALETAS:</strong> Cursos diseñados para que las personas que no saben nadar aprendan en un entorno seguro, aprendizaje de estilos. Quienes ya saben nadar pueden aprender el uso de  las aletas, aprender estilos y mantener su condición física a través de la práctica de la <strong>natación.APNEA I:</strong> Este curso enseña a conocer el mundo subacuático y a manejar el equipo básico de un buzo: careta, aletas y snorkel, a manejar la flotabilidad y a sumergirse de manera segura. Aprenderá a contener la respiración, a adaptar su cuerpo y su mente para disfrutar de manera libre el medio acuático.<br><br><strong>BUCEO AUTÓNOMO:</strong> El buceo autónomo permite utilizar el equipo Scuba: tanque, regulador y chaleco. Además el curso le enseña todas las implicaciones físicas y fisiológicas que tiene el ingreso al mundo acuático así usted estará preparado para disfrutar del mundo submarino de una manera segura. Al final de cada curso usted recibirá una certificación internacional que le permite disfrutar del buceo sin fronteras. BUZO AUTÓNOMO 1 estrella (AGUAS ABIERTAS)",
                     "enlaces": "https://drive.google.com/file/d/1ZJeqTTZsv8U9RquiflHVX0b9enur2j0_/view?usp=sharing",
                     "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
                     "quenLoHace": "Monitor/a componente socioeducativo",
@@ -957,7 +1050,7 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "Clases De Voleibol",
-                    "descripcion": "Colectivo de aprendizaje de Voleibol presentado en tres modalidades: 1. Como semillero: guiado por un monitor lunes y miércoles de 12:00 pm a 1:30 pm y los viernes de 1:00 pm a 3:00 pm. 2. Como entrenamiento masculino: guiado por el entrenador Diego Quintero los miércoles de 7:00 pm a 9:00 pm y los jueves de 8:00 a 9:30 pm 3. Como entrenamiento femenino: guiado por el entrenador Diego Quintero los lunes de 8:00pm a 9:30 pm y los martes de 6:00 pm a 8:00 pm.",
+                    "descripcion": "Colectivo de aprendizaje de Voleibol presentado en tres modalidades: <ul style='color:gray'> <li> 1. Como semillero: guiado por un monitor lunes y miércoles de 12:00 pm a 1:30 pm y los viernes de 1:00 pm a 3:00 pm. </li> <li> 2. Como entrenamiento masculino: guiado por el entrenador Diego Quintero los miércoles de 7:00 pm a 9:00 pm y los jueves de 8:00 a 9:30 pm </li><li>3. Como entrenamiento femenino: guiado por el entrenador Diego Quintero los lunes de 8:00pm a 9:30 pm y los martes de 6:00 pm a 8:00 pm.</li></ul>",
                     "enlaces": "http://vicebienestar.univalle.edu.co/2-uncategorised/140-voleibol",
                     "comoSeHace": "En los acompañamientos posteriores se indaga sobre la participacion o no en las actividades extra curriculares y su porceso de adaptacion. Este seguimiento se reporta en las fichas de acompañamiento en la dimensión de vida universitaria para demarcar las acciones especificas implementadas por el monitor/a  del componente socioeducativo",
                     "quenLoHace": "Monitor/a componente socioeducativo",
@@ -1025,8 +1118,8 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "Subsidio Económico y Beca de Alimentación",
-                    "descripcion": "Es un apoyo económico y un auxilio en alimentación, que se brinda a los estudiantes cuya situación financiera es precaria y que se otorga por un determinado tiempo. http://vicebienestar.univalle.edu.co/desarrollo-humano-y-promocion-socioeconomica/subsidio-para-estudiantes-de-escasos-recursos-y-becas-de-alimentacion/subsidio-economico",
-                    "enlaces": "",
+                    "descripcion": "Es un apoyo económico y un auxilio en alimentación, que se brinda a los estudiantes cuya situación financiera es precaria y que se otorga por un determinado tiempo.",
+                    "enlaces": " http://vicebienestar.univalle.edu.co/desarrollo-humano-y-promocion-socioeconomica/subsidio-para-estudiantes-de-escasos-recursos-y-becas-de-alimentacion/subsidio-economico",
                     "comoSeHace": "",
                     "quenLoHace": "",
                     "periodicidad": ""
@@ -1041,8 +1134,8 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "Revisión de derechos económicos",
-                    "descripcion": "La Revisión de Derechos Económicos (del Valor de Matrícula Financiera), es un proceso que ha sido reglamentado para ayudar a las familias de estudiantes de pregrado con dificultades socioeconómicas para pagar el valor de la matrícula. De esta manera, se previene el riesgo de deserción del estudiante por dichas causales. http://vicebienestar.univalle.edu.co/desarrollo-humano-y-promocion-socioeconomica/estudios-socioeconomicos-para-descuentos-en-la-matricula-financiera",
-                    "enlaces": "",
+                    "descripcion": "La Revisión de Derechos Económicos (del Valor de Matrícula Financiera), es un proceso que ha sido reglamentado para ayudar a las familias de estudiantes de pregrado con dificultades socioeconómicas para pagar el valor de la matrícula. De esta manera, se previene el riesgo de deserción del estudiante por dichas causales. ",
+                    "enlaces": "http://vicebienestar.univalle.edu.co/desarrollo-humano-y-promocion-socioeconomica/estudios-socioeconomicos-para-descuentos-en-la-matricula-financiera",
                     "comoSeHace": "",
                     "quenLoHace": "",
                     "periodicidad": ""
@@ -1137,8 +1230,8 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "Descuento por certificado de votación",
-                    "descripcion": "Para hacer válido este derecho usted podrá acercarse a la ventanilla del Área de Matrícula Financiera desde el 7 al 15 de enero del 2020, con la fotocopia del certificado electoral y la cédula de ciudadanía por ambos lados. Este descuento será aplicado a partir del primer semestre del 2020. Negociación del Bono Podrá negociar el bono desde la plataforma de Matrícula Financiera de cada estudiante. https://proxse25.univalle.edu.co/login",
-                    "enlaces": "",
+                    "descripcion": "Para hacer válido este derecho usted podrá acercarse a la ventanilla del Área de Matrícula Financiera desde el 7 al 15 de enero del 2020, con la fotocopia del certificado electoral y la cédula de ciudadanía por ambos lados. Este descuento será aplicado a partir del primer semestre del 2020. Negociación del Bono Podrá negociar el bono desde la plataforma de Matrícula Financiera de cada estudiante.",
+                    "enlaces": "https://proxse25.univalle.edu.co/login",
                     "comoSeHace": "",
                     "quenLoHace": "",
                     "periodicidad": ""
@@ -1197,7 +1290,7 @@
                 "Atenciones": {
                   "0": {
                     "name": "Navega TIC",
-                    "descripcion": "Es un proyecto del MinTIC que llevará servicios de voz y datos móviles a: Por lo menos 145 mil estudiantes de grados noveno, décimo y 11 de instituciones educativas públicas, estudiantes de universidades públicas a nivel nacional y del SENA en los 32 departamentos del país. Mujeres emprendedoras anteriormente beneficiadas por el Viceministerio de Transformación Digital en los años 2020 o 2021 Para participar es necesario que tengas un dispositivo inteligente con tecnología 4G LTE. Beneficios del plan: 15 GB de navegación con tecnología 4G LTE Minutos ilimitados a nivel nacional WhatsApp ilimitado sin videollamadas Acceso a 21 URL o páginas que no consumen datos Vigencia: hasta el 31 de julio de 2022 Para postularte a este beneficio ingresa aquí:",
+                    "descripcion": "Es un proyecto del MinTIC que llevará servicios de voz y datos móviles a: Por lo menos 145 mil estudiantes de grados noveno, décimo y 11 de instituciones educativas públicas, estudiantes de universidades públicas a nivel nacional y del SENA en los 32 departamentos del país. Mujeres emprendedoras anteriormente beneficiadas por el Viceministerio de Transformación Digital en los años 2020 o 2021 Para participar es necesario que tengas un dispositivo inteligente con tecnología 4G LTE.<br><br> Beneficios del plan: 15 GB de navegación con tecnología 4G LTE Minutos ilimitados a nivel nacional WhatsApp ilimitado sin videollamadas Acceso a 21 URL o páginas que no consumen datos Vigencia: hasta el 31 de julio de 2022 Para postularte a este beneficio ingresa aquí:",
                     "enlaces": "https://mintic.gov.co/micrositios/ultimamilla/estudiantes/763/w3-channel.html",
                     "comoSeHace": "",
                     "quenLoHace": "",
@@ -1309,8 +1402,8 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "ASES: Monitorias académicas",
-                    "descripcion": "Formulario de inscripción a monitorías académicas sedes regionales: https://docs.google.com/forms/d/e/1FAIpQLSf2ajt1edVi6bEMPlv1rZ_RhLd3XENUQvJZOW1R8yzzrx2J1A/viewform?fbclid=IwAR3C8n6iE2bwezHo40wT3d8t-1V-DU9bc8M4ysm0BuSe8-tOOznzEVRFCRg  En caso que el link no funcione o que se tengan dudas sobre la inscripción, el estudiante puede acceder a la página de instagram o de facebook de la estrategia ASES o a la página de Facebook y consultar sobre sus dudas: Página de Facebook: https://es-la.facebook.com/estrategia.ases/ Página de Instagram: https://www.instagram.com/estrategia.ases/?hl=es-la ",
-                    "enlaces": "",
+                    "descripcion": "Formulario de inscripción a monitorías académicas sedes regionales En caso que el link no funcione o que se tengan dudas sobre la inscripción, el estudiante puede acceder a la página de instagram o de facebook de la estrategia ASES o a la página de Facebook y consultar sobre sus dudas: Página de Facebook: <a href='https://es-la.facebook.com/estrategia.ases/'>https://es-la.facebook.com/estrategia.ases/</a> Página de Instagram: <a href='https://www.instagram.com/estrategia.ases/?hl=es-la'>https://www.instagram.com/estrategia.ases/?hl=es-la",
+                    "enlaces": "https://docs.google.com/forms/d/e/1FAIpQLSf2ajt1edVi6bEMPlv1rZ_RhLd3XENUQvJZOW1R8yzzrx2J1A/viewform?fbclid=IwAR3C8n6iE2bwezHo40wT3d8t-1V-DU9bc8M4ysm0BuSe8-tOOznzEVRFCRg",
                     "comoSeHace": "",
                     "quenLoHace": "",
                     "periodicidad": ""
@@ -1332,14 +1425,14 @@
             "caminata": true,
             "Entidades": {
               "0": {
-                "tipoTitulo": 1,
-                "name": "",
+                "tipoTitulo": 2,
+                "name": "Representaci-,ónestudiantil",
                 "caminata": true,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
                     "name": "representación estudiantil",
-                    "descripcion": "La representación estudiantil tiene como función principal velar por los derechos de los estudiantes, y promover el cumplimiento de sus deberes.” (Art. 9 – Acuerdo 009 de 1997) A través de la representación estudiantil del respectivo programa académico, expondrá la situación y se revisarán las posibles acciones que dicte el conducto regular para solucionar y llegar acuerdos óptimos con la intención de mejorar las afectaciones de la relación estudiante – docente. Según corresponda desde la representación estudiantil será posible escalar el caso a los diferentes comités del programa académico facultad, o instituto",
+                    "descripcion": "La representación estudiantil tiene como función principal velar por los derechos de los estudiantes, y promover el cumplimiento de sus deberes.” (Art. 9 – Acuerdo 009 de 1997) A través de la representación estudiantil del respectivo programa académico, expondrá la situación y se revisarán las posibles acciones que dicte el conducto regular para solucionar y llegar acuerdos óptimos con la intención de mejorar las afectaciones de la relación estudiante – docente. <br><br> Según corresponda desde la representación estudiantil será posible escalar el caso a los diferentes comités del programa académico facultad, o instituto",
                     "enlaces": "http://secretariageneral.univalle.edu.co/consejo-superior , http://proxse16.univalle.edu.co/~secretariageneral/consejo-superior/reglamento-estudiantil/acuerdo%20009.pdf.",
                     "comoSeHace": "",
                     "quenLoHace": "",
@@ -1362,14 +1455,14 @@
             "caminata": false,
             "Entidades": {
               "0": {
-                "tipoTitulo": 1,
-                "name": "",
+                "tipoTitulo": 3,
+                "name": "Consejería,Estudiantil,Cali",
                 "caminata": true,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
                     "name": "",
-                    "descripcion": "Se debe validar en cada programa si cuenta con la atención de consejería para que se brinde el contacto de la persona encargada.",
+                    "descripcion": "Se debe validar en cada programa si cuenta con la atención de consejería para que se brinde el contacto de la persona encargada. <ul><li>a) Orientar al estudiante en su proceso de matrícula académica </li><li>b) Hacer seguimiento del desempeño y desarrollo académico del estudiante </li><li>c) Orientar la vida universitaria del estudiante de acuerdo con las pautas establecidas en el Reglamento Estudiantil y demás normas de la Universidad</li><li>d) Promover y estimular en el estudiante actividades formativas para un mejor desarrollo como persona </li><li>e) Informar oportunamente al Director del Programa Académico de aquellas situaciones que puedan poner en riesgo la permanencia del estudiante en la Universidad</li> <li>f) Presentar al Jefe de la Unidad Académica o quien haga sus veces, con copia al Director del Programa Académico respectivo, un informe semestral sobre la actividad de consejería realizada. </li></ul>",
                     "enlaces": "",
                     "comoSeHace": "",
                     "quenLoHace": "",
@@ -1385,8 +1478,8 @@
             "caminata": true,
             "Entidades": {
               "0": {
-                "tipoTitulo": 1,
-                "name": "",
+                "tipoTitulo": 2,
+                "name": "Conserjería,Regional",
                 "caminata": true,
                 "Atenciones": {
                   "0": {
@@ -1424,14 +1517,14 @@
             "caminata": false,
             "Entidades": {
               "0": {
-                "tipoTitulo": 1,
-                "name": "",
+                "tipoTitulo": 2,
+                "name": "Graca,cali",
                 "caminata": true,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
                     "name": "",
-                    "descripcion": "Contacto por facultad: Facultad de Ciencias Naturales y Exactas: culturaacademica.ciencias@correounivalle.edu.co , Facultad de Ingeniería: culturaacademica.ingenieria@correounivalle.edu.co , Facultad de Artes Integradas: fai.graca@correounivalle.edu.co , Facultad de Ciencias de la Administración: culturaacademica.administracion@correounivalle.edu.co , Programa de Sociología: sociologia.graca@correounivalle.edu.co , Programa de Trabajo social: trabajosocial.graca@correounivalle.edu.co , Programa de Licenciatura en lenguas extranjeras: graca.ecl@correounivalle.edu.co , Programa de Medicina: culturaacademica.salud@correounivalle.edu.co ",
+                    "descripcion": "Contacto por facultad: Facultad de Ciencias Naturales y Exactas: <ul style='color:gray'> <li><a href='mailto:culturaacademica.ciencias@correounivalle.edu.co'> culturaacademica.ciencias@correounivalle.edu.co </a></li> <li><a href='mailto:culturaacademica.ingenieria@correounivalle.edu.co'>Facultad de Ingeniería: culturaacademica.ingenieria@correounivalle.edu.co </a></li> <li><a href='mailto:fai.graca@correounivalle.edu.co'> Facultad de Artes Integradas: fai.graca@correounivalle.edu.co </a></li> <li><a href='mailto:culturaacademica.administracion@correounivalle.edu.co'> Facultad de Ciencias de la Administración: culturaacademica.administracion@correounivalle.edu.co </a></li> <li><a href='mailto:sociologia.graca@correounivalle.edu.co'> Programa de Sociología: sociologia.graca@correounivalle.edu.co </a> </li> <li><a href='mailto:trabajosocial.graca@correounivalle.edu.co'>Programa de Trabajo social: trabajosocial.graca@correounivalle.edu.co </a></li> <li><a href='mailto:graca.ecl@correounivalle.edu.co'>Programa de Licenciatura en lenguas extranjeras: graca.ecl@correounivalle.edu.co </a></li> <li><a href='mailto:culturaacademica.salud@correounivalle.edu.co'>Programa de Medicina: culturaacademica.salud@correounivalle.edu.co </a></li> </ul> ",
                     "enlaces": "https://drive.google.com/file/d/1_fSt5Xfg2A6Di8nOOoxyO8pib28rCtR6/view?usp=sharing ,  https://drive.google.com/file/d/1aNjjKk7WnaAKpM4lt_cPsPJeQWGG0TRy/view?usp=sharing ",
                     "comoSeHace": "",
                     "quenLoHace": "",
@@ -1448,7 +1541,7 @@
             "Entidades": {
               "0": {
                 "tipoTitulo": 1,
-                "name": "",
+                "name": "Graca,Regionales",
                 "caminata": true,
                 "Atenciones": {
                   "0": {
@@ -1493,7 +1586,7 @@
                   "0": {
                     "tipoCaja": 1,
                     "name": "Biblioteca Mario Carvajal",
-                    "descripcion": "CENDOPU - Instituto de Educación y Pedagogía Recursos Bibliográficos - Instituto de Educación y Pedagogía - IEP / Universidad del Valle / Cali, Colombia (univalle.edu.co) CENDOC - Ciencias Sociales y Económicas https://socioeconomia.univalle.edu.co/cidse/centro-de-documentacion-cendoc Centro de Documentación ECL- Escuela de Ciencias del Lenguaje http://cendoecl.univalle.edu.co/ CINARA - Investigación en abastecimiento de agua http://cinara.univalle.edu.co/ Biblioteca Álvaro López Toro - Departamento de Matemáticas https://sites.google.com/a/correounivalle.edu.co/bialotor/",
+                    "descripcion": "CENDOPU - Instituto de Educación y Pedagogía Recursos Bibliográficos - Instituto de Educación y Pedagogía - IEP / Universidad del Valle / Cali, Colombia (univalle.edu.co) CENDOC - Ciencias Sociales y Económicas <a href='https://socioeconomia.univalle.edu.co/cidse/centro-de-documentacion-cendoc' >https://socioeconomia.univalle.edu.co/cidse/centro-de-documentacion-cendoc</a> Centro de Documentación ECL- Escuela de Ciencias del Lenguaje <a href='http://cendoecl.univalle.edu.co/'>http://cendoecl.univalle.edu.co/</a> CINARA - Investigación en abastecimiento de agua <a href='http://cinara.univalle.edu.co/'>http://cinara.univalle.edu.co/</a> Biblioteca Álvaro López Toro - Departamento de Matemáticas <a href='https://sites.google.com/a/correounivalle.edu.co/bialotor/'>https://sites.google.com/a/correounivalle.edu.co/bialotor/</a>",
                     "enlaces": "https://biblioteca.univalle.edu.co/servicios/presenciales/prestamo-de-material-bibliografico",
                     "comoSeHace": "",
                     "quenLoHace": "",
@@ -1510,7 +1603,7 @@
             "Entidades": {
               "0": {
                 "tipoTitulo": 1,
-                "name": "",
+                "name": "Biblioteca,Regionales",
                 "caminata": true,
                 "Atenciones": {
                   "0": {
@@ -1543,8 +1636,8 @@
         "caminata": true,
         "sedes": {
           "0": {
-            "tipoTitulo": 1,
-            "name": "",
+            "tipoTitulo": 2,
+            "name": "Sede,Cali",
             "caminata": true,
             "Entidades": {
               "0": {
