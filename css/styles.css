@@ -101,6 +101,46 @@
     background-color: #a8bbbf;
 }
 
+.box-button-abc::-webkit-scrollbar {
+    display: initial;
+    width: 20px;
+}
+
+.box-button-abc::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.box-button-abc::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+.box-button-abc::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
+.content-dimension::-webkit-scrollbar {
+    display: initial;
+    width: 20px;
+}
+
+.content-dimension::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.content-dimension::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+.content-dimension::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
 
 /*ajustes generales*/
 
@@ -114,6 +154,7 @@ html {
     background-attachment: fixed;
     background-size: cover;
     background-position-x: 0% , 0% , 0%;
+    background-position-y: 0 , 49% , 45%;
     background-color: #91bafc;
     height: 100vh;
     touch-action: none;
@@ -158,12 +199,23 @@ h1 {
 .title {
     text-align: center;
     font-style: italic;
-    grid-column-start: 2;
-    grid-column-end: 2;
+    font-style: italic;
+    grid-column-start: 1;
     justify-self: stretch;
-    align-self: center;
+    align-self: baseline;
+    font-family: "Roboto", sans-serif;
+    color: #4da34a;
+    font-size: 1.5em;
+    font-weight: 700;
 }
 
+.box-hamburger {
+    display: none;
+}
+
+.box-title {
+    grid-column-start: 2;
+}
 
 .logo-univalle-img {
     width: 0.7em;
@@ -349,8 +401,8 @@ h1 {
 
 .lienzo {
     grid-column-start: 2;
-    align-self: end;
-    justify-self: end;
+    position: relative;
+    right: -50%;
     height: 27em;
 }
 
@@ -358,13 +410,43 @@ h1 {
 
 .box-personaje {
     grid-column-start: 1;
-    align-self: end;
+    grid-column-end: 1;
     justify-self: center;
+    align-self: flex-end;
+    height: 90%;
+    width: 15em;
+    overflow: hidden;
+}
+
+.box-button-abc {
+    display: none;
+}
+
+.box-page-inicio-new {
+    display: grid;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 100%;
+    grid-template-columns: 45% 55%;
+    padding-top: 5.5em;
+    padding-bottom: 3em;
+    overflow: hidden;
 }
 
 .features-personajes {
     width: 100%;
     height: 27em;
+}
+
+.box-svg {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    height: 93%;
+}
+
+.box-svg svg {
+    height: 100%;
 }
 
 .contact-information {
@@ -402,6 +484,14 @@ h1 {
     font-size: 30px;
     background-color: gray;
 }
+
+.major-info {
+    display: none;
+}
+
+.box-dimension {
+    display: none;
+}
 /* 4 espacios para  syntaxis */
 
 /*
@@ -415,6 +505,9 @@ h1 {
 }
 
 */
+.features-personajes-off {
+    display: none !important;
+}
 
 
 
@@ -456,11 +549,11 @@ h1 {
           padding-left: 1.4em;
       }
       .box-title-content {
-            grid-row-start: 2;
-            grid-column-start: 1;
-            display: grid;
-            grid-template-rows: 100%;
-            grid-template-columns: 17em ;
+          grid-row-start: 2;
+          grid-column-start: 1;
+          display: grid;
+          grid-template-rows: 100%;
+          grid-template-columns: 17em ;
       }
       .box-title-aux {
          grid-row-start: 1;
@@ -470,11 +563,11 @@ h1 {
          grid-template-columns: 8em 50%;
       }
       .box-title {
-        grid-column-start: 2;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 50% 50%;
-        padding-bottom: 0.85em;
+         grid-column-start: 2;
+         display: grid;
+         grid-template-columns: 100%;
+         grid-template-rows: 50% 50%;
+         padding-bottom: 0.85em;
       }
       .title {
           text-align: center;
@@ -736,7 +829,7 @@ h1 {
       }
       .title-info {
           color: gray;
-          font-size: 1.5em;
+          font-size: 1.3em;
           font-family: Roboto, sans-serif;
           font-style: italic;
           font-weight: 700;
@@ -871,7 +964,7 @@ h1 {
         height: 100%;
         grid-template-rows: 100%;
         grid-template-columns: 100%;
-        padding-top: 6em;
+        padding-top: 7em;
         padding-bottom: 4em;
         padding-left: 0.5em;
         padding-right: 0.5em;
@@ -903,7 +996,8 @@ h1 {
         font-size: 1.5em;
         font-family: Roboto, sans-serif;
         font-style: italic;
-        font-weight: 430;
+        font-weight: 800;
+        color: gray;
         word-break: break-all;
         hyphens: auto;
         overflow: hidden;
@@ -930,8 +1024,8 @@ h1 {
         height: 100%;
         grid-template-rows: 100%;
         grid-template-columns: 100%;
-        padding-top: 6em;
-        padding-bottom: 4em;
+        padding-top: 7em;
+        padding-bottom: 3em;
         padding-left: 0.5em;
         padding-right: 0.5em;
         z-index: 4;
@@ -1011,6 +1105,7 @@ h1 {
         overflow: hidden;
         background-color: transparent;
         overflow: hidden;
+        z-index: 5;
       }
       .home-arrow-box {
         display: grid;
@@ -1032,6 +1127,7 @@ h1 {
         font-size: xx-large;
       }
       .arrow-1 {
+        display: none;
         position: relative;
         left: -1em;
         background-color: white;
@@ -1042,6 +1138,7 @@ h1 {
         align-self: center;
         border-color: #17d810;
         border-style: solid;
+        overflow: hidden;
       }
       .arrow-2 {
         left: -1.5em !important;
@@ -1052,7 +1149,142 @@ h1 {
       .arrow-4 {
         left: -2.3em !important;
       }
-     
+      .arrow-active {
+          background-color: #767473 !important;
+          color: white !important;
+      }
+      .arrow-text {
+          display: grid;
+          grid-template-rows: 100%;
+          grid-template-columns: 100%;
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          color: #767473;
+          text-align: center;
+          font-family: Roboto, sans-serif;
+          font-weight: 500;
+          line-height: 1em;
+          font-size: 0.8em;
+          border-radius: 3em;
+          overflow: hidden;
+      }
+      .box-abc-dimension {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        grid-template-rows: 15% 50% 15% 20%;
+        grid-template-columns: 100%;
+        padding-top: 7em;
+        padding-bottom: 3em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        z-index: 0;
+        align-items: center;
+        justify-items: center;
+        overflow: hidden;
+      }
+      .box-abc-title {
+         background-color: white;
+         height: 100%;
+         border-top-left-radius: 1em;
+         border-top-right-radius: 1em;
+      }
+      .box-button-abc {
+        display: grid;
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 100%;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        align-items: center;
+        justify-items: center;
+      }
+      .button-abc {
+        height: 70%;
+        width: 80%;
+        background-color: rgb(105, 104, 104);
+        color: white;
+        font-size: 1em;
+        font-family: Roboto, sans-serif;
+        border-radius: 1em;
+        justify-self: center;
+        text-align: center;
+        align-self: center;        
+      }
+      .text-button-abc {
+        display: grid;
+        grid-template-columns: 100%;  
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+        justify-items: center;
+        align-items: center;
+      }
+      .box-button-abc-aux1 {
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        width: 100%;
+        height: 100%;
+      }
+      .box-button-abc-aux2 {
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 25% 25% 25% 25%;
+        width: 100%;
+        height: 100%;
+      }
+      .active-box-button-abc {
+        background-color: rgb(54, 54, 54) !important;
+      }
+      .box-question-dimension {
+          display: none;
+          grid-template-rows: 100%;
+          grid-template-columns: 20% 80%;
+          position: fixed;
+          top: 7em;
+          width: 100%;
+          height: 3em;
+          overflow: hidden;
+      }
+      .circle-box-dimension {
+          justify-self: start;
+          margin-left: 0.3em;
+          display: grid;
+          grid-template-rows: 100%;
+          grid-template-columns: 100%;
+          width: 3em;
+          height: 3em;
+          background-color: white;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+          justify-items: center;
+          align-items: center;
+      }
+      .icon-dimension-question {
+            color: #4da34a;
+            font-size: 2em;
+      }
+      .content-dimension {
+          padding: 0.5em 0.5em;
+          width: 100%;
+          height: 100%;
+          color: #767473;
+          font-size: 1em;
+          font-family: Roboto, sans-serif;
+          font-weight: 500;
+          line-height: 1em;
+          hyphens: auto;
+          word-break: break-all;
+          overflow-x: hidden;
+          overflow-y: scroll;
+      }
+    
 }
 
 
@@ -1413,7 +1645,7 @@ h1 {
 /* RESPONSIVE DEL FONDO */
 @media screen and (max-height: 600px) and (max-width: 500px) and (orientation: portrait) {
    body,html {
-      background-position-y: 2em;
+      background-position-y: 0, 1em, 1em;
    }
 }
 
@@ -1421,6 +1653,6 @@ h1 {
 /* RESPONSIVE DEL FONDO */
 @media screen and (max-height: 600px) and (max-width: 375px) and (orientation: portrait) {
    body,html {
-      background-position-y: 3em;
+      background-position-y: 0%;
    }
 }
