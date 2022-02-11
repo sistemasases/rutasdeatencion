@@ -16,8 +16,8 @@ $(function () {
   /* fin de las varibles */
 
   //activar las funciones en paralelo
-  Promise.all([screenResponsiveWebDesing(json), svgPaint(json), rutesAttentionMovil(json)])
-
+  Promise.all([screenResponsiveWebDesing(json), svgPaint(json), rutesAttentionMovil(json),info_dimension(json),event_click_div()])
+  $('#box-dimension-routes').show()
   /* EVENTOS CLICK  */
 
 
@@ -28,6 +28,10 @@ $(function () {
 function svgPaint(json) {
 
   let i = 0;
+  //apagar el svg de 8 banderitas
+  $('#svg-1-8').hide();
+  $('#svg-1-6').show();
+  
   json.then(function (event) {
 
     let iterador = Object.keys(event).length
@@ -99,7 +103,6 @@ async function getJson() {
 
 
 }
-
 
 
 
