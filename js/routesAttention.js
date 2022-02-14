@@ -17,10 +17,13 @@ function rutesAttentionMovil(json) {
   $('.arrows-lienzo').on('click', function (event) {
     event.preventDefault();
     event.isPropagationStopped();
-  
+
     //sacar el nombre de la senñalitica
     let regerxc = /^\s{10,50}$/
     let name = ($(this).attr('id')).split('-')[0] + '-'
+
+    //calcular la dimension
+    sizeScreenWidthAux = $(window).width()
 
     $(this).find('text').each(function (index, value) {
 
@@ -61,10 +64,18 @@ function rutesAttentionMovil(json) {
 
       console.log($('.arrow-3').hasClass('arrow-active'), 'comfirmalo', indexCap)
       if (Number(indexCap) < 3) {
-        Promise.all([animateBackground(false, sizeScreenWidth),
-        animateRute(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension), animateCharacter(sizeScreenWidth)])
+        if (sizeScreenWidthAux <= 500) {
+          Promise.all([animateBackground(false, sizeScreenWidth, true),
+          animateRute(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension), animateCharacter(sizeScreenWidth)])
+        }
+        else {
 
-        //incrementar el numero de la capa de donde se encontraba
+          Promise.all([animateCharacter(sizeScreenWidth), animateBackground(false, sizeScreenWidth, false), animeteRuteEscritorio(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension)])
+
+          //alert('La pantalla no es suficiente para la animacion')
+        }
+        console.log('entro pero que raro')
+        //incrementar el numero de la capa de donde se encontraba 
         $('body').attr('title', Number(($('body').attr('title'))) + 1)
         $('#arrows-1').attr('title', dimension + ',' + attetionAux + ',' + entity + ',' + name)
       }
@@ -74,18 +85,28 @@ function rutesAttentionMovil(json) {
         $('.arrow-4').find('.arrow-text').addClass('arrow-active')
         $('.arrow-4').show()
         $('.arrow-4').find('.arrow-text').html(nameDimension)
-        json.then(function (value) {
-          if ((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).tipoCaja == 2) {
-            create_box_botton(json, dimension, attetionAux, entity, index)
-          }
-          else if ((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).tipoCaja == 3) {
-            create_box_botton_abc(json, dimension, attetionAux, entity, index)
-          }
-          else {
-            funcionalityInfoContent(json, dimension, attetionAux, entity, index)
-            funcionality_botton_text(json, dimension, attetionAux, entity, index)
-          }
-        })
+
+        if (sizeScreenWidthAux <= 500) {
+
+          json.then(function (value) {
+            if ((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).tipoCaja == 2) {
+              create_box_botton(json, dimension, attetionAux, entity, index)
+            }
+            else if ((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).tipoCaja == 3) {
+              create_box_botton_abc(json, dimension, attetionAux, entity, index)
+            }
+            else {
+              funcionalityInfoContent(json, dimension, attetionAux, entity, index)
+              funcionality_botton_text(json, dimension, attetionAux, entity, index)
+            }
+          })
+
+        }
+        else {
+          console.log('entro pero que raro 25')
+          funcioanlity_box_escritorio(json, dimension, attetionAux, entity, index)
+        }
+
       }
 
     }
@@ -96,12 +117,18 @@ function rutesAttentionMovil(json) {
 
 
 /* animacion del fondo*/
-function animateBackground(band, sizeScreenWidth) {
+function animateBackground(band, sizeScreenWidth, bandAux) {
 
   //let sizeScreenWidth  = $(window).width()
   let sizeScreen = 0;
   let increase = 0;
   let increasefg2 = 0;
+  if (bandAux) {
+    clasName = 'body,html'
+  }
+  else {
+    clasName = 'body'
+  }
 
   //evitar usar los escuchas mientras se hace la animacion
   $('body').removeClass('active')
@@ -110,7 +137,7 @@ function animateBackground(band, sizeScreenWidth) {
 
     //si el tamaño de pantalla es superado habra acaba la animacion
     if (sizeScreen < sizeScreenWidth * 2) {
-      $('body,html').css('background-position-x', '' + increase + '% , ' + (increasefg2) + '% ,' + (increasefg2) + '%')
+      $(`${clasName}`).css('background-position-x', '' + increase + '% , ' + (increasefg2) + '%,' + (increasefg2) + '%')
       increase += 1;
       sizeScreen += 10;
       increasefg2 += 2;
@@ -205,7 +232,7 @@ function animateRute(band, sizeScreenWidth, screen, json, dimension, attetionAux
 
     if ($('#svg-1-6').hasClass('active-svg-info')) {
       $('#svg-1-6').removeClass('active-svg-info')
-      $('.svg-info-aux').each(function (index,value1) {
+      $('.svg-info-aux').each(function (index, value1) {
         $(value1).hide()
       })
     }
@@ -300,6 +327,110 @@ function animateRute(band, sizeScreenWidth, screen, json, dimension, attetionAux
 
 }
 
+function animeteRuteEscritorio(band, sizeScreenWidth, screen, json, dimension, attetionAux, entity, indexCap, nameArrow, nameDimension) {
+
+  json.then(function (value) {
+
+    //variables locales
+    let sizeScreen = 0;
+    let increase = 0;
+    let timeHideRute = ((sizeScreenWidth * 2) * 50) / 100;
+    let timeShowRute = 0
+    let clasName = 'lienzo'
+    bandAux = true
+    bandBrecumbs = true
+    sizeScreenWidth11 = $(window).width()
+    sizeScreenHeigth = $(window).height()
+
+    $('#arrow-box-principality').addClass('breadcrumbs-active-click')
+
+    //recorrer la capas internas del json por dimension, a expecion de la capa mayor  
+    try {
+      objectJson = [(Object.entries((Object.values(value)[dimension].TiposDeAtencion))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes), Object.entries(((Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)[entity])[1]).Entidades)]
+    } catch (err) {
+      console.log('la instancia del json selecionada, esta vacia o le faltan componentes', err)
+      objectJson = [(((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)]
+    }
+
+    //verificar si la dimension es la mayor y el ancho de la pantalla es mayor a 375
+    if (objectJson[indexCap].length < 5) {
+      timeShowRute = ((sizeScreenWidth * 2) * 90) / 100;
+    }
+    else {
+      timeShowRute = ((sizeScreenWidth * 2) * 89) / 100;
+    }
+
+
+    if ($('#svg-1-6').hasClass('active-svg-info')) {
+      $('#svg-1-6').removeClass('active-svg-info')
+      $('.svg-info-aux').each(function (index, value1) {
+        $(value1).hide()
+      })
+    }
+
+    if ($('#svg-1-6').hasClass('active-svg')) {
+      $('#svg-1-6').removeClass('active-svg')
+      increase = -50
+    }
+
+
+    var ruteAnimate = setInterval(function () {
+
+      if (sizeScreen < sizeScreenWidth * 2) {
+
+        //mover el svg hacia fuera de la pantalla
+        if (sizeScreen <= timeHideRute) {
+          $('.detonating-question-box').removeClass('on')
+          //$('.detonating-question-box').fadeOut() 
+          $(`.${clasName}`).css('right', '' + increase + '%')
+          increase += 6;
+        }
+
+        //poner svg al inicio y actulizar su contenido
+        if (sizeScreen > timeHideRute && bandAux) {
+          bandAux = false
+          increase = -90
+        }
+
+        //volver a mostrar el svg con los cambios nuevos
+        if (sizeScreen >= timeShowRute) {
+          if (bandBrecumbs) {
+            bandBrecumbs = false
+            //funcionalityAskDetoting(indexCap)
+            funcionalityBrecumbs(indexCap, nameDimension)
+            funcionalityRute(json, dimension, attetionAux, entity, 1, indexCap, nameArrow);
+            show_brecumbs()
+            //dimension_description(json, dimension)
+            $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
+          }
+
+          //funcionalityRute(json , dimension , attetionAux , entity , 1 , indexCap );
+          $(`.${clasName}`).css('right', '' + increase + '%')
+          console.log(increase, 'increase')
+          increase += 6
+        }
+
+        sizeScreen += 10
+      }
+      else {
+        band = true
+      }
+
+      if (band) {
+        $('#svg-1-6').addClass('active-svg')
+        clearInterval(ruteAnimate)
+      }
+
+    }, 100)
+
+
+    return ruteAnimate
+
+  })
+
+
+}
+
 /* Animacion del personaje */
 function animateCharacter(sizeScreenWidth) {
 
@@ -317,9 +448,12 @@ function animateCharacter(sizeScreenWidth) {
 
       //cambiar la imagen determinado tiempo  
       if (timeSequence == 4) {
-        //$('#personaje').find('img').attr('src', 'images/personaje/' + imgSequence + '.png')
+        if ((imgSequence - 1) == 0) {
+          $(`#personaje-caminata-${imgSequence + 5}`).addClass('features-personajes-off')
+        }
         $(`#personaje-caminata-${imgSequence - 1}`).addClass('features-personajes-off')
         $(`#personaje-caminata-${imgSequence}`).removeClass('features-personajes-off')
+        console.log(imgSequence, 'imgSequence', imgSequence - 1, 'imgSequence - 1')
         imgSequence++
         timeSequence = 1
       }
@@ -338,7 +472,7 @@ function animateCharacter(sizeScreenWidth) {
     }
 
     if (killTimer) {
-      for (let i = 2; i < 6; i++) {
+      for (let i = 2; i < 7; i++) {
         $(`#personaje-caminata-${i}`).addClass('features-personajes-off')
       }
       clearInterval(animateCharac)
@@ -831,20 +965,42 @@ function event_click_div() {
   $('section').on('click', function (event) {
     event.preventDefault()
     event.stopPropagation()
-    
+
     if ($(this).attr('class') === 'box-information-dimension overlay') {
       $(this).hide()
     }
     else if ($(this).attr('class') === 'box-information overlay') {
       $(this).hide()
     }
-   
-    console.log($(this).attr('class'))
+
+    console.log($(this).attr('class'), 'no deberiaaparecer')
 
   })
 
   $('.box-x-dimension-aux').on('click', function (event) {
-     $(this).parent().parent().parent().hide()
+    $(this).parent().parent().parent().hide()
+  })
+
+  $('.box-x-dimension-aux-escritorio').on('click', function (event) {
+    $('#escritorio-dimension-box').hide()
+    $('.overlay').hide()
+  })
+
+}
+
+
+function funcioanlity_box_escritorio(json, dimension, attetionAux, entity, index) {
+
+  json.then(function (value) {
+    console.log('entre a la funcion')
+    $('#escritorio-dimension-box').show()
+    $('.overlay').show()
+    $('.title-escritorio-dimension').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).name)
+    $('.content-dimension').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).descripcion)
+  }).catch((err) => {
+
+    console.log('ups, paso un error al insertar el texto', err)
+
   })
 
 }

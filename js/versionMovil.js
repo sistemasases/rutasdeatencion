@@ -184,14 +184,22 @@ function breadcrumbs_funcionality(json) {
         $('header').css('display', 'grid')
         svgPaint(json)
 
-        //acomodar las flechas
-        if (sizeScreenWidthAux > 375 && sizeScreenHeigth < 667) {
+        //version de escritorio
+        if (sizeScreenWidthAux > 500) {
           $('#svg-1-6').addClass('active-svg')
-          $('#svg-1-6').css('right', '-36%')
-        }
-        else if (sizeScreenWidthAux > 375 && sizeScreenHeigth > 667 || sizeScreenWidthAux < 376 && sizeScreenHeigth >= 667) {
-          $('#svg-1-6').addClass('active-svg')
-          $('#svg-1-6').css('right', '0%')
+          $('#svg-1-6').css('right', '-50%')
+        } else {
+
+          //acomodar las flechas
+          if (sizeScreenWidthAux > 375 && sizeScreenHeigth < 667) {
+            $('#svg-1-6').addClass('active-svg')
+            $('#svg-1-6').css('right', '-36%')
+          }
+          else if (sizeScreenWidthAux > 375 && sizeScreenHeigth > 667 || sizeScreenWidthAux < 376 && sizeScreenHeigth >= 667) {
+            $('#svg-1-6').addClass('active-svg')
+            $('#svg-1-6').css('right', '0%')
+          }
+
         }
 
         $('#svg-1-6').addClass('active-svg-info')
@@ -234,36 +242,50 @@ function breadcrumbs_funcionality(json) {
       $('.box-button-dimension-content').css('grid-template-rows', '15% 15% 15% 15% 15% 15% 15% 15% 15%')
 
       //acomodar la señalitica
-      $('.lienzo').each(function (index, value) {
+      if (sizeScreenWidthAux <= 500) {
+        $('.lienzo').each(function (index, value) {
 
-        if ($(value).css('display') === 'none' && sizeScreenWidthAux > 375 && sizeScreenHeigth < 667) {
-          console.log($(value).attr('id'), 'id')
-          if ($(value).attr('id') === 'svg-1-6') {
-            $(value).css('right', '-36%')
-          } else {
-            $(value).css('right', '0')
+          if ($(value).css('display') === 'none' && sizeScreenWidthAux > 375 && sizeScreenHeigth < 667) {
+            console.log($(value).attr('id'), 'id')
+            if ($(value).attr('id') === 'svg-1-6') {
+              $(value).css('right', '-36%')
+            } else {
+              $(value).css('right', '0')
 
-          }
-        }
-
-        if ($(value).css('display') === 'none' && sizeScreenWidthAux < 376 && sizeScreenHeigth <= 667 ||
-          $(value).css('display') === 'none' && sizeScreenWidthAux > 375 && sizeScreenHeigth > 667 ||
-          $(value).css('display') === 'none' && sizeScreenWidthAux < 375 && sizeScreenHeigth > 667) {
-          if ($(value).attr('id') === 'svg-1-8') {
-            $(value).css('right', '30%')
-            if (sizeScreenWidthAux > 375 && sizeScreenHeigth > 667 || sizeScreenWidthAux < 376 && sizeScreenHeigth > 667) {
-              $('#svg-1-8').addClass('active-svg')
-              $(value).css('right', '60%')
             }
-          } else {
-            $(value).css('right', '0')
           }
-        }
+
+          if ($(value).css('display') === 'none' && sizeScreenWidthAux < 376 && sizeScreenHeigth <= 667 ||
+            $(value).css('display') === 'none' && sizeScreenWidthAux > 375 && sizeScreenHeigth > 667 ||
+            $(value).css('display') === 'none' && sizeScreenWidthAux < 375 && sizeScreenHeigth > 667) {
+            if ($(value).attr('id') === 'svg-1-8') {
+              $(value).css('right', '30%')
+              if (sizeScreenWidthAux > 375 && sizeScreenHeigth > 667 || sizeScreenWidthAux < 376 && sizeScreenHeigth > 667) {
+                $('#svg-1-8').addClass('active-svg')
+                $(value).css('right', '60%')
+              }
+            } else {
+              $(value).css('right', '0')
+            }
+          }
 
 
-      })
+        })
+      }
+      else {
 
+        $('.lienzo').each(function (index, value) {
 
+          if ($(value).css('display') === 'none') {
+            if ($(value).attr('id') === 'svg-1-6') {
+              $(value).css('right', '-50%')
+            } else {
+              $(value).css('right', '-42%')
+
+            }
+          }
+        })
+      }
 
     }
   })

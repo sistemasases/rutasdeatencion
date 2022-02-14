@@ -144,17 +144,16 @@
 
 /*ajustes generales*/
 
-body,
-html {
+body,html {
     padding: 0;
     margin: 0;
     overflow-y: hidden;
-    background-image: url("../images/fondoPantalla/f-3.png") , url("../images/fondoPantalla/f-1.png") , url("../images/fondoPantalla/f-2.png");
+    background-image: url("../images/fondoPantalla/f-3-e.png") , url("../images/fondoPantalla/f-1-e.png") , url("../images/fondoPantalla/f-2-e.png");
     background-repeat: repeat-x;
     background-attachment: fixed;
     background-size: cover;
     background-position-x: 0% , 0% , 0%;
-    background-position-y: 0 , 49% , 45%;
+    background-position-y: 0 , -20% , 45%;
     background-color: #91bafc;
     height: 100vh;
     touch-action: none;
@@ -190,14 +189,15 @@ h1 {
     width: 100%;
     overflow: hidden;
     grid-template-rows: 5em;
-    grid-template-columns: 10% 80% 10%;
+    grid-template-columns: 30% 40% 30%;
     background-color: transparent;
     box-shadow: rgba(199, 202, 202, 0.2) 0px 8px 24px;
     z-index: 1;
 }
 
+
 .title {
-    text-align: center;
+    text-align: center ;
     font-style: italic;
     font-style: italic;
     grid-column-start: 1;
@@ -209,17 +209,38 @@ h1 {
     font-weight: 700;
 }
 
+
+.title-aux-escritorio {
+    color: white !important;
+    margin-right: 2em;
+    text-align: end !important;
+}
+
 .box-hamburger {
     display: none;
 }
+
+.box-question-dimension {
+    display: none;
+    grid-template-rows: 100%;
+    grid-template-columns: 20% 80%;
+    position: fixed;
+    top: 7em;
+    width: 100%;
+    height: 3em;
+    overflow: hidden;
+    z-index: 3;
+} 
 
 .box-title {
     grid-column-start: 2;
 }
 
 .logo-univalle-img {
-    width: 0.7em;
-    height: 0.7em;
+    justify-self: center;
+    align-self: center;
+    width: 3em;
+    height: 4em;
 }
 
 /* ESTILOS DEL FOOTER Y DEPENDENCIAS */
@@ -294,6 +315,20 @@ h1 {
     top: 5em;
     width: 100%;
     z-index: 1;
+}
+
+.box-arrow {
+    display: none;
+    position: fixed;
+    top: 2.3em;
+    grid-template-rows: 100%;
+    grid-template-columns: 1% 9% 8% 8% 8% 8%;
+    width: 100%;
+    height: 4em;
+    overflow: hidden;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 6;
 }
 
 .box-arrows {
@@ -406,6 +441,17 @@ h1 {
     height: 27em;
 }
 
+.overlay {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    background-color: rgba(17, 17, 17, 0.363);
+    overflow-x: hidden;
+}
 /* AJUSTES DEL PERSONAJE */
 
 .box-personaje {
@@ -429,14 +475,14 @@ h1 {
     height: 100%;
     grid-template-rows: 100%;
     grid-template-columns: 45% 55%;
-    padding-top: 5.5em;
-    padding-bottom: 3em;
+    padding-top: 9em;
+    padding-bottom: 2em;
     overflow: hidden;
 }
 
 .features-personajes {
     width: 100%;
-    height: 27em;
+    height: 94%;
 }
 
 .box-svg {
@@ -495,6 +541,212 @@ h1 {
 
 .box-title-1 {
     display: none;
+    
+}
+
+.home-arrow-box {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    color: #4da34a;
+    font-size: xx-large;
+    background-color: white;
+    width: 90%;
+    height: 100%;
+    border-radius: 3em;
+    justify-items: center;
+    align-items: center;
+}
+
+.home-arrow {
+    color: #4da34a;
+    font-size: xx-large;
+}
+
+.arrow-1 {
+    display: none;
+    position: relative;
+    left: -30%;
+    background-color: white;
+    width: 130%;
+    border-radius: 3em;
+    height: 100%;
+    justify-self: flex-start;
+    align-self: center;
+    overflow: hidden;
+}
+
+.border-escritorio {
+    border-style: solid;
+    border-color: #767473;
+}
+.arrow-text {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    color: #767473;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    line-height: 1em;
+    font-size: 0.9em;
+    border-radius: 3em;
+    overflow: hidden;
+}
+
+.box-information-dimension {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    padding-top: 7em;
+    padding-bottom: 4em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    z-index: 4;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+}
+
+.box-button-dimension {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    padding-top: 7em;
+    padding-bottom: 3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    z-index: 4;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+}
+
+.box-abc-dimension {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 15% 50% 15% 20%;
+    grid-template-columns: 100%;
+    padding-top: 7em;
+    padding-bottom: 3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    z-index: 4;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+}
+
+.box-x-dimension-aux {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    justify-self: end;
+    margin-right: 0.5em;
+    align-self: center;
+    color: #8f8e8e;
+    font-size: 1.2em;
+}
+
+.box-x-dimension-aux-escritorio {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    justify-self: end;
+    margin-right: 0.5em;
+    align-self: center;
+    color: #8f8e8e;
+    font-size: 1.2em;
+}
+
+.box-information {
+    display: none;
+}
+
+.arrow-active {
+    background-color: #767473 !important;
+    color: white !important;
+}
+
+.box-escritorio-dimension {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 15% 70% 15%;
+    width: 100%;
+    height: 100vh;
+    justify-items: center;
+    align-items: center;
+     z-index: 500;
+    overflow: hidden;
+}
+
+.box-escritorio-aux {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    display: grid;
+    grid-template-rows: 20% 70% 10%;
+    grid-template-columns: 100%;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#escritorio-dimension-box {
+    z-index: 5;
+}
+
+.box-escritorio-aux-dimension {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    display: grid;
+    grid-template-rows: 15% 85%;
+    grid-template-columns: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: rgba(199, 202, 202, 0.2) 0px 8px 24px;
+    border-radius: 2em;
+    overflow: hidden;
+}
+
+.content-dimension {
+    padding: 0.5em 0.5em;
+    width: 100%;
+    height: 100%;
+    color: #767473;
+    font-size: 1.2em;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    line-height: 1em;
+    text-align: justify;
+    overflow-y: scroll;
+}
+
+.title-dimension {
+    display: grid;
+    height: 80%;
+    width: 100%;
+    grid-template-rows: 100%;
+    grid-template-columns: 95% 5%;
+    align-items: center;
+    justify-items: center;
+    font-size: 1.3em;
+    font-family: Roboto, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    color: gray;
+    overflow: hidden;
 }
 /* 4 espacios para  syntaxis */
 
@@ -923,6 +1175,7 @@ h1 {
       }
       body,html {
           background-position-y: 0 , 1em , 0;
+          background-image: url("../images/fondoPantalla/f-3.png") , url("../images/fondoPantalla/f-1.png") , url("../images/fondoPantalla/f-2.png");
       }
       .box-botton-content {
           display: none;
@@ -1699,17 +1952,18 @@ h1 {
 }
 
 
-/* RESPONSIVE DEL FONDO */
+/* RESPONSIVE DEL FONDO 
 @media screen and (max-height: 600px) and (max-width: 500px) and (orientation: portrait) {
    body,html {
       background-position-y: 0, 1em, 1em;
    }
 }
+/*
 
-
-/* RESPONSIVE DEL FONDO */
+//RESPONSIVE DEL FONDO 
 @media screen and (max-height: 600px) and (max-width: 375px) and (orientation: portrait) {
    body,html {
       background-position-y:  0, 1em, 1em;
    }
 }
+*/
