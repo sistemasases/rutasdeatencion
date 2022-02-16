@@ -17,7 +17,7 @@
 
    <!--  START CONTENT -->
    <header class="title-content">
-
+      <img class="logo-univalle-img" src="images/univalle/univalle.png">
       <div class="box-hamburger">
          <i class="fas fa-bars"></i>
       </div>
@@ -31,7 +31,7 @@
          </div>
 
          <div class="box-title-content">
-            <div class="title">
+            <div class="title ">
                RUTAS DE ATENCIÓN
                <!--<img class="logo-univalle-img" src="images/univalle/univalle.png"> -->
             </div>
@@ -41,7 +41,7 @@
 
    </header>
 
-   <div class="box-title-1 title">
+   <div class="box-title-1 title title-aux-escritorio" id="title-brecumbs-aux">
       RUTAS DE ATENCIÓN
    </div>
 
@@ -50,30 +50,31 @@
 
       <div></div>
 
-      <div class="home-arrow-box arrow-7">
+      <div class="home-arrow-box  border-escritorio arrow-7">
          <div class="home-arrow">
             <i class="fas fa-home"></i>
          </div>
       </div>
 
-      <div class="arrow-1 arrow-7">
+      <div class="arrow-1 border-escritorio arrow-7">
          <div class="arrow-text"></div>
       </div>
 
-      <div class="arrow-1 arrow-2 arrow-7">
+      <div class="arrow-1 border-escritorio arrow-2 arrow-7">
          <div class="arrow-text"></div>
       </div>
 
-      <div class="arrow-1 arrow-3 arrow-7">
+      <div class="arrow-1 border-escritorio arrow-3 arrow-7">
          <div class="arrow-text"></div>
       </div>
 
-      <div class="arrow-1 arrow-4 arrow-7">
+      <div class="arrow-1 border-escritorio arrow-4 arrow-7">
          <div class="arrow-text"></div>
       </div>
 
    </div>
 
+   <!-- ESTOS NO-->
    <div style="display: none;" class="box-major">
 
       <div class="box-arrows">
@@ -124,16 +125,22 @@
       <!--  PERSONAJE  -->
       <div class="box-personaje" id="personaje">
          <img class="features-personajes" src="images/personaje/1.png" id="personaje-caminata-1">
-         <img class="features-personajes features-personajes-off" src="images/personaje/2.png" id="personaje-caminata-2">
-         <img class="features-personajes features-personajes-off" src="images/personaje/3.png" id="personaje-caminata-3">
-         <img class="features-personajes features-personajes-off" src="images/personaje/4.png" id="personaje-caminata-4">
-         <img class="features-personajes features-personajes-off" src="images/personaje/5.png" id="personaje-caminata-5">
-         <img class="features-personajes features-personajes-off" src="images/personaje/6.png" id="personaje-caminata-6">
+         <img class="features-personajes features-personajes-off" src="images/personaje/2.png"
+            id="personaje-caminata-2">
+         <img class="features-personajes features-personajes-off" src="images/personaje/3.png"
+            id="personaje-caminata-3">
+         <img class="features-personajes features-personajes-off" src="images/personaje/4.png"
+            id="personaje-caminata-4">
+         <img class="features-personajes features-personajes-off" src="images/personaje/5.png"
+            id="personaje-caminata-5">
+         <img class="features-personajes features-personajes-off" src="images/personaje/6.png"
+            id="personaje-caminata-6">
       </div>
 
       <!-- RUTAS DE ATENCION SVG -->
       <div class="box-svg">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1513 2698" style="display: none" class="">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1513 2698" class="style-svg-aux lienzo active-svg"
+            id="svg-1-8">
             <defs>
                <style>
                   .cls-1 {
@@ -303,6 +310,18 @@
                   .cls-38 {
                      letter-spacing: -0.02em;
                   }
+
+                  .cls-8-first-letter {
+                     font-size: 3.8em !important;
+                  }
+
+                  .cls-9-first-letter {
+                     font-size: 3.4em !important;
+                  }
+
+                  .cls-10-first-letter {
+                     font-size: 3.4em !important;
+                  }
                </style>
             </defs>
             <g class="cls-1">
@@ -316,17 +335,32 @@
                         points="1012.84 318.99 494.39 318.99 494.39 529.74 1012.84 529.74 1066.59 430.69 1012.84 318.99" />
                      <polygon class="cls-7"
                         points="1066.59 430.71 1012.85 529.72 984.39 529.72 1038.14 430.71 984.39 318.99 1012.85 318.99 1066.59 430.71" />
-                     <text class="cls-8" transform="translate(555.34 414.15)">CONSU<tspan class="cls-9" x="154.92"
-                           y="0">L
-                        </tspan>
-                        <tspan class="cls-10" x="176.48" y="0">T</tspan>
-                        <tspan class="cls-11" x="201.08" y="0">A</tspan>
-                        <tspan x="0" y="52.8">MÉDI</tspan>
-                        <tspan class="cls-12" x="110.31" y="52.8">C</tspan>
-                        <tspan class="cls-13" x="140.8" y="52.8">A</tspan>
-                        <tspan x="171.2" y="52.8" xml:space="preserve"> UNI</tspan>
-                        <tspan class="cls-14" x="258.37" y="52.8">V</tspan>
-                        <tspan class="cls-15" x="286.44" y="52.8">ALLE</tspan>
+                     <!-- text 1 -->
+                     <text style='display:none' class="cls-8 cls-8-first-letter" transform="translate(515.34 444.15)"
+                        id="text-1">
+                        12345678901234
+                     </text>
+                     <!-- text 2 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 404.15)"
+                        id="text-1">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 474.15)"
+                        id="text-1">
+                        12345678901234
+                     </text>
+                     <!-- text 3 -->
+                     <text style='display:none' class="cls-8 cls-10-first-letter" transform="translate(515.34 390.15)"
+                        id="text-1">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-10-first-letter" transform="translate(515.34 448.15)"
+                        id="text-1">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-10-first-letter" transform="translate(515.34 504.15)"
+                        id="text-1">
+                        12345678901234
                      </text>
                   </g>
                   <!-- END Arrow #1 -->
@@ -339,17 +373,26 @@
                         points="1064.43 666.38 1012.84 559.15 494.39 559.15 494.39 666.38 1064.43 666.38" />
                      <polygon class="cls-7"
                         points="1066.59 670.87 1012.85 769.88 984.39 769.88 1038.14 670.87 984.39 559.15 1012.85 559.15 1066.59 670.87" />
-                     <text class="cls-8" transform="translate(555.34 628.82)">
-                        <tspan class="cls-16">A<tspan class="cls-15" x="28.38" y="0">TENCIÓN DE</tspan>
-                        </tspan>
-                        <tspan x="0" y="52.8">U</tspan>
-                        <tspan class="cls-30" x="31.9" y="52.8">R</tspan>
-                        <tspan x="62.17" y="52.8">GENCI</tspan>
-                        <tspan class="cls-31" x="198.75" y="52.8">A</tspan>
-                        <tspan x="229.77" y="52.8">S </tspan>
-                        <tspan x="0" y="105.6">UNI</tspan>
-                        <tspan class="cls-14" x="77.79" y="105.6">V</tspan>
-                        <tspan class="cls-15" x="105.86" y="105.6">ALLE</tspan>
+                     <!-- text 1 -->
+                     <text style='display:none' class="cls-8 cls-8-first-letter" transform="translate(515.34 668.82)">
+                        12345678901234
+                     </text>
+                     <!-- text 2 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 638.82)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 708.82)">
+                        12345678901234
+                     </text>
+                     <!-- text 3 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 618.82)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 678.82)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 728.82)">
+                        12345678901234
                      </text>
                   </g>
                   <!-- END Arrow #2 -->
@@ -363,14 +406,26 @@
                         points="1063.92 903.05 1014.23 799.77 495.77 799.77 495.77 903.05 1063.92 903.05" />
                      <polygon class="cls-7"
                         points="1067.97 911.49 1014.23 1010.5 985.78 1010.5 1039.52 911.49 985.78 799.77 1014.23 799.77 1067.97 911.49" />
-                     <text class="cls-8" transform="translate(557.34 892.42)">LABOR<tspan class="cls-16" x="150.48"
-                           y="0">A
-                        </tspan>
-                        <tspan class="cls-17" x="178.86" y="0">T</tspan>
-                        <tspan x="206.09" y="0">ORIO</tspan>
-                        <tspan x="0" y="52.8">CLÍNICO UNI</tspan>
-                        <tspan class="cls-14" x="266.68" y="52.8">V</tspan>
-                        <tspan x="294.75" y="52.8">ALLE</tspan>
+                     <!-- text 1 -->
+                     <text style='display:none' class="cls-8 cls-8-first-letter" transform="translate(515.34 922.42)">
+                        12345678901234
+                     </text>
+                     <!-- text 2 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 882.42)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 962.42)">
+                        12345678901234
+                     </text>
+                     <!-- text 3 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 872.42)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 922.42)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 982.42)">
+                        12345678901234
                      </text>
                   </g>
                   <!-- END Arrow #3 -->
@@ -384,22 +439,26 @@
                         points="1065.82 1144.17 1014.23 1036.93 495.77 1036.93 495.77 1144.17 1065.82 1144.17" />
                      <polygon class="cls-7"
                         points="1067.97 1148.65 1014.23 1247.66 985.78 1247.66 1039.52 1148.65 985.78 1036.93 1014.23 1036.93 1067.97 1148.65" />
-                     <text class="cls-8" transform="translate(557.34 1105.27)">SUMINI<tspan class="cls-24" x="132.57"
-                           y="0">
-                           S</tspan>
-                        <tspan x="156.84" y="0">T</tspan>
-                        <tspan class="cls-25" x="180.15" y="0">R</tspan>
-                        <tspan x="205.61" y="0">O DE </tspan>
-                        <tspan x="0" y="44.4">MEDI</tspan>
-                        <tspan class="cls-26" x="92.76" y="44.4">C</tspan>
-                        <tspan x="118.4" y="44.4">AMEN</tspan>
-                        <tspan class="cls-27" x="225.77" y="44.4">T</tspan>
-                        <tspan x="248.67" y="44.4">OS </tspan>
-                        <tspan x="0" y="88.8">UNI</tspan>
-                        <tspan class="cls-28" x="65.41" y="88.8">V</tspan>
-                        <tspan x="89.02" y="88.8">ALLE O COM</tspan>
-                        <tspan class="cls-29" x="308.39" y="88.8">F</tspan>
-                        <tspan x="329.81" y="88.8">ANDI</tspan>
+                     <!-- text 1 -->
+                     <text style='display:none' class="cls-8 cls-8-first-letter" transform="translate(515.34 1155.27)">
+                        12345678901234
+                     </text>
+                     <!-- text 2 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1125.27)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1195.27)">
+                        12345678901234
+                     </text>
+                     <!-- text 3 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1105.27)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1165.27)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1225.27)">
+                        12345678901234
                      </text>
                   </g>
                   <!-- END Arrow #4 -->
@@ -412,18 +471,26 @@
                         points="1067.05 1385.92 1013.31 1484.93 984.85 1484.93 1038.6 1385.92 984.85 1274.2 1013.31 1274.2 1067.05 1385.92" />
                      <polygon class="cls-6"
                         points="1066.97 1381.18 1015.38 1273.95 496.93 1273.95 496.93 1381.18 1066.97 1381.18" />
-
-                     <text class="cls-8" transform="translate(569.44 1345.74)">SE<tspan class="cls-19" x="52.08" y="0">R
-                        </tspan>
-                        <tspan x="78.84" y="0">VICIO </tspan>
-                        <tspan x="0" y="48">ODON</tspan>
-                        <tspan class="cls-20" x="114.36" y="48">T</tspan>
-                        <tspan x="139.12" y="48">O</tspan>
-                        <tspan class="cls-21" x="167.6" y="48">L</tspan>
-                        <tspan x="191.16" y="48">ÓGICO</tspan>
-                        <tspan x="0" y="96">UNI</tspan>
-                        <tspan class="cls-22" x="70.72" y="96">V</tspan>
-                        <tspan x="96.24" y="96">ALLE </tspan>
+                     <!-- text 1 -->
+                     <text style='display:none' class="cls-8 cls-8-first-letter" transform="translate(515.34 1395.74)">
+                        12345678901234
+                     </text>
+                     <!-- text 2 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1365.74)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1435.74)">
+                        12345678901234
+                     </text>
+                     <!-- text 3 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1345.74)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1405.74)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1465.74)">
+                        12345678901234
                      </text>
 
                   </g>
@@ -437,18 +504,26 @@
                         points="1068.03 1623.68 1014.29 1722.69 985.84 1722.69 1039.58 1623.68 985.84 1511.96 1014.29 1511.96 1068.03 1623.68" />
                      <polygon class="cls-6"
                         points="1067.96 1618.94 1016.37 1511.71 497.91 1511.71 497.91 1618.94 1067.96 1618.94" />
-
-                     <text class="cls-8" transform="translate(570.42 1583.5)">SE<tspan class="cls-19" x="52.08" y="0">R
-                        </tspan>
-                        <tspan x="78.84" y="0">VICIO </tspan>
-                        <tspan x="0" y="48">ODON</tspan>
-                        <tspan class="cls-20" x="114.36" y="48">T</tspan>
-                        <tspan x="139.12" y="48">O</tspan>
-                        <tspan class="cls-21" x="167.6" y="48">L</tspan>
-                        <tspan x="191.16" y="48">ÓGICO</tspan>
-                        <tspan x="0" y="96">UNI</tspan>
-                        <tspan class="cls-22" x="70.72" y="96">V</tspan>
-                        <tspan x="96.24" y="96">ALLE </tspan>
+                     <!-- text 1 -->
+                     <text style='display:none' class="cls-8 cls-8-first-letter" transform="translate(515.34 1633.5)">
+                        12345678901234
+                     </text>
+                     <!-- text 2 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1603.5)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1673.5)">
+                        12345678901234
+                     </text>
+                     <!-- text 3 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1593.5)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1653.5)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1703.5)">
+                        12345678901234
                      </text>
                   </g>
                   <!-- END Arrow #6 -->
@@ -461,22 +536,26 @@
                         points="1068.03 1862.33 1014.29 1961.35 985.84 1961.35 1039.58 1862.33 985.84 1750.61 1014.29 1750.61 1068.03 1862.33" />
                      <polygon class="cls-6"
                         points="1067.96 1857.6 1016.37 1750.36 497.91 1750.36 497.91 1857.6 1067.96 1857.6" />
-                     <text class="cls-8" transform="translate(570.42 1822.16)">P<tspan class="cls-25" x="25.01" y="0">R
-                        </tspan>
-                        <tspan x="50.47" y="0">OGRAM</tspan>
-                        <tspan class="cls-32" x="186.14" y="0">A</tspan>
-                        <tspan x="211.71" y="0" xml:space="preserve"> DE </tspan>
-                        <tspan x="0" y="44.4">CONT</tspan>
-                        <tspan class="cls-25" x="102.23" y="44.4">R</tspan>
-                        <tspan x="127.69" y="44.4">O</tspan>
-                        <tspan class="cls-33" x="154.03" y="44.4">L</tspan>
-                        <tspan x="175.27" y="44.4" xml:space="preserve"> PREN</tspan>
-                        <tspan class="cls-34" x="283.97" y="44.4">AT</tspan>
-                        <tspan x="328.52" y="44.4">A</tspan>
-                        <tspan class="cls-33" x="355.01" y="44.4">L</tspan>
-                        <tspan x="0" y="88.8">UNI</tspan>
-                        <tspan class="cls-35" x="65.42" y="88.8">V</tspan>
-                        <tspan x="89.02" y="88.8">ALLE</tspan>
+                     <!-- text 1 -->
+                     <text style='display:none' class="cls-8 cls-8-first-letter" transform="translate(515.34 1862.16)">
+                        12345678901234
+                     </text>
+                     <!-- text 2 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1832.16)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1902.16)">
+                        12345678901234
+                     </text>
+                     <!-- text 3 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1812.16)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1872.16)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 1932.16)">
+                        12345678901234
                      </text>
                   </g>
                   <!-- END Arrow #7 -->
@@ -489,28 +568,26 @@
                         points="1068.03 2101.68 1014.29 2200.69 985.84 2200.69 1039.58 2101.68 985.84 1989.96 1014.29 1989.96 1068.03 2101.68" />
                      <polygon class="cls-6"
                         points="1067.96 2096.94 1016.37 1989.71 497.91 1989.71 497.91 2096.94 1067.96 2096.94" />
-                     <text class="cls-8" transform="translate(570.42 2061.5)">P<tspan class="cls-25" x="25.01" y="0">R
-                        </tspan>
-                        <tspan x="50.47" y="0">OGRAM</tspan>
-                        <tspan class="cls-32" x="186.14" y="0">A</tspan>
-                        <tspan x="211.71" y="0" xml:space="preserve"> DE </tspan>
-                        <tspan class="cls-27" x="277.61" y="0">S</tspan>
-                        <tspan x="301.73" y="0">A</tspan>
-                        <tspan class="cls-36" x="328.22" y="0">L</tspan>
-                        <tspan x="349.83" y="0">UD</tspan>
-                        <tspan x="0" y="44.4">SE</tspan>
-                        <tspan class="cls-37" x="48.17" y="44.4">X</tspan>
-                        <tspan class="cls-38" x="73.55" y="44.4">U</tspan>
-                        <tspan x="99.79" y="44.4">A</tspan>
-                        <tspan class="cls-33" x="126.28" y="44.4">L</tspan>
-                        <tspan x="147.52" y="44.4" xml:space="preserve"> REP</tspan>
-                        <tspan class="cls-25" x="229.62" y="44.4">R</tspan>
-                        <tspan x="255.08" y="44.4">ODUCTI</tspan>
-                        <tspan class="cls-28" x="396.01" y="44.4">V</tspan>
-                        <tspan class="cls-32" x="419.61" y="44.4">A</tspan>
-                        <tspan x="0" y="88.8">UNI</tspan>
-                        <tspan class="cls-35" x="65.42" y="88.8">V</tspan>
-                        <tspan x="89.02" y="88.8">ALLE</tspan>
+                     <!-- text 1 -->
+                     <text style='display:none' class="cls-8 cls-8-first-letter" transform="translate(515.34 2101.5)">
+                        12345678901234
+                     </text>
+                     <!-- text 2 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 2081.5)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 2151.5)">
+                        12345678901234
+                     </text>
+                     <!-- text 3 -->
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 2051.5)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 2111.5)">
+                        12345678901234
+                     </text>
+                     <text style='display:none' class="cls-8 cls-9-first-letter" transform="translate(515.34 2171.5)">
+                        12345678901234
                      </text>
                   </g>
                   <!-- END Arrow #8 -->
@@ -539,7 +616,8 @@
          </svg> <!-- END SVG -->
 
          <!-- svg-2 -->
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="400 50 1213 2398" class="lienzo">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="400 50 1213 2398" class="lienzo active-svg active-svg-info"
+            id="svg-1-6">
             <defs>
                <style>
                   .cls-1 {
@@ -803,9 +881,22 @@
                   <rect class="cls-5" x="511.51" y="1455.64" width="14.29" height="43.88" />
                   <rect class="cls-2" x="511.83" y="1754.09" width="34.02" height="43.88" />
                   <rect class="cls-5" x="512.4" y="1754.09" width="14.29" height="43.88" />
-
-               </g>
-            </g>
+                  <svg class='svg-info-aux' viewBox="760 -2300 192 11012">
+                     <path fill="#0b56a7"
+                        d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z" />
+                  </svg>
+                  <svg class='svg-info-aux' viewBox="760 -3700 192 11012">
+                     <path fill="#0b56a7"
+                        d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z" />
+                  </svg>
+                  <svg class='svg-info-aux' viewBox="760 -5100 192 11012">
+                     <path fill="#0b56a7"
+                        d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z" />
+                  </svg>
+                  <svg class='svg-info-aux' viewBox="760 -6500 192 11012">
+                     <path fill="#0b56a7"
+                        d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z" />
+                  </svg>
          </svg>
       </div>
 
@@ -813,21 +904,39 @@
 
    <!--  BOTON DESCRIPSION DIMENSIONES -->
    <div class="box-question-dimension">
-       <div class="circle-box-dimension">
-           <div class="icon-dimension-question">
+      <div class="circle-box-dimension">
+         <div class="icon-dimension-question">
             <i class="fas fa-question"></i>
-           </div>
-       </div>
+         </div>
+      </div>
    </div>
 
    <!-- CAJA DEL TEXTO  -->
+   <section class="box-information overlay" id="escritorio-dimension-box">
+      <section class="box-escritorio-dimension ">
+         <section class="box-escritorio-aux">
+            <section class="box-escritorio-aux-dimension">
+               <div class="title-dimension">
+                  <div class="title-escritorio-dimension"></div>
+                  <div class="box-x-dimension-aux-escritorio">
+                     <i class="fas fa-window-close"></i>
+                  </div>
+               </div>
+               <div class="content-dimension"> </div>
+            </section>
+         </section>
+      </section>
+   </section>
 
-   <div class="box-information overlay" id="information">
+   <section class="box-information overlay" id="information">
 
-      <div class="box-text-information-rute">
+      <section class="box-text-information-rute">
 
          <div class="title-content-info">
             <div class="title-info">
+            </div>
+            <div class="box-x-dimension-aux">
+               <i class="fas fa-times"></i>
             </div>
          </div>
 
@@ -838,19 +947,19 @@
 
          <div class="major-info">
 
-            <div class="boton-info" id="enlaces">
+            <div style="display: none;" class="boton-info" id="enlaces">
                <div class="text-boton-info">
                   Enlaces
                </div>
             </div>
 
-            <div class="boton-info">
+            <div style="display: none;" class="boton-info">
                <div class="text-boton-info active">
                   ¿Quien lo hace?
                </div>
             </div>
 
-            <div class="boton-info">
+            <div style="display: none;" class="boton-info">
                <div class="text-boton-info">
                   ¿Como se hace?
                </div>
@@ -868,23 +977,49 @@
          </div>
 
 
-      </div>
+      </section>
 
-   </div>
-   <div class="box-information-dimension overlay" id="box-dimension-question">
+   </section>
+   <section class="box-information-dimension overlay" id="box-dimension-question">
       <div class="box-dimension">
-         <div class="title-dimension">  </div>
+         <div class="title-dimension">
+            <div class="box-x-dimension-aux">
+               <i class="fas fa-window-close"></i>
+            </div>
+         </div>
          <div class="content-dimension"> </div>
          <div class="read-more-button" style="display:none"> Leer Mas </div>
       </div>
-   </div>
+   </section>
+
+   <section class="box-information-dimension overlay" id="box-dimension-routes">
+      <section class="box-dimension">
+         <div class="title-dimension"> ¿ De Donde Vienen Las Rutas?
+            <div class="box-x-dimension-aux">
+               <i class="fas fa-times"></i>
+            </div>
+         </div>
+         <div class="content-dimension">
+            <p>Ruta de atención, apoyo y esparcimiento para estudiantes de la Estrategia ASES: En articulación con las
+               atenciones de la Universidad del Valle
+               *Las atenciones presentadas a continuación refieren a la oferta disponible en las Sedes donde la
+               Estrategia de Acompañamiento y Seguimiento Estudiantil está Operando
+            </p>
+            <p>Esta ruta recoge la estructura integral de la oferta de servicios a los cuales los profesionales,
+               practicantes y monitores de la estrategia ASES remiten a los estudiantes en pro de brindar atenciones
+               pertinentes para la comunidad universitaria. Estos servicios incluyen aspectos como atenciones
+               remediales, inmediatas o priorizadas, acciones de apoyo y de promoción o prevención.</p>
+         </div>
+         <div class="read-more-button" style="display:none"> Leer Mas </div>
+      </section>
+   </section>
    <div class="box-button-dimension overlay">
       <div class="box-button-dimension-content">
 
       </div>
    </div>
 
-   <div class="box-abc-dimension">
+   <div class="box-abc-dimension overlay">
       <div class="title-dimension  box-abc-title">
       </div>
       <div class="content-text-info">
@@ -893,19 +1028,19 @@
       </div>
       <div class="box-button-abc">
          <div class="box-button-abc-aux1">
-            <div class="button-abc">  Enlaces </div>
-            <div class="button-abc">  ¿Quien lo hace? </div>
-            <div class="button-abc">  ¿Como se hace?</div>
+            <div class="button-abc" id='boton-abc-1'> Enlaces </div>
+            <div class="button-abc" id='boton-abc-2'> ¿Quien lo hace? </div>
+            <div class="button-abc" id='boton-abc-3'> ¿Como se hace?</div>
          </div>
          <div class="box-button-abc-aux2">
-         <div class="button-abc"> A </div>
-         <div class="button-abc"> B </div>
-         <div class="button-abc"> C </div>
-         <div class="button-abc"> D </div>
+            <div class="button-abc"> A </div>
+            <div class="button-abc"> B </div>
+            <div class="button-abc"> C </div>
+            <div class="button-abc"> D </div>
          </div>
       </div>
       <div class="text-button-abc">
-      <div class="content-text-botton" id="text-abc-content"></div>
+         <div class="content-text-botton" id="text-abc-content"></div>
       </div>
    </div>
    <!-- END CAJA DEL TEXTO -->
@@ -922,7 +1057,7 @@
    <footer class="footer-content">
 
       <!-- BOTON MI PASO POR LA U -->
-      <div style="display: none;" class="box-botton" id="miPasoPorLaU">
+      <div class="box-botton" id="miPasoPorLaU">
          <a target="_blank" href="https://drive.google.com/file/d/1hLFi7Hg1PgUobjaFDwMZamNunsTqVRz6/view?ts=610dcb8e"
             data-bs-toggle="tooltip">
             <button class="text-botton-uv" title="mi paso por la u">
@@ -936,7 +1071,7 @@
       <div class="box-botton-mayorInformation" id="mayorInformacion">
          <a href="#mayorInformacion" data-bs-toggle="tooltip">
             <button class="text-botton" title="mi paso por la u">
-               Información De Contacto
+               Mayor Información
             </button>
          </a>
       </div>

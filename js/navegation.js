@@ -8,7 +8,7 @@
 $(function () {
 
   /*     variables       */
-
+  let sizeScreenWidth = $(window).width()
   //obtener la informacion del json
   const json = getJson();
 
@@ -16,22 +16,36 @@ $(function () {
   /* fin de las varibles */
 
   //activar las funciones en paralelo
-  Promise.all([screenResponsiveWebDesing(json), svgPaint(json), rutesAttentionMovil(json)])
-
+  Promise.all([screenResponsiveWebDesing(json), svgPaint(json), rutesAttentionMovil(json), info_dimension(json), event_click_div()])
+  //$('#box-dimension-routes').show()
+  if (sizeScreenWidth <= 500) {
+    $('#title-brecumbs-aux').removeClass('title-aux-escritorio')
+    $('.arrow-7').each(function (index, value) {
+      console.log(index, value)
+      $(value).removeClass('border-escritorio')
+    })
+    $('#box-dimension-routes').show()
+  }
   /* EVENTOS CLICK  */
 
 
 });
 
 
+
+
 /* Pinta la capa mayor que corresponde a los nombres de las dimensiones */
 function svgPaint(json) {
 
   let i = 0;
+  //apagar el svg de 8 banderitas
+  $('#svg-1-8').hide();
+  $('#svg-1-6').show();
+
   json.then(function (event) {
 
     let iterador = Object.keys(event).length
-   
+
     for (const dimension of Object.values(event)) {
       //incrementos
       iterador++;
@@ -68,7 +82,7 @@ function svgPaint(json) {
 function getJsonNew(json) {
 
   json.then((value) => {
-    
+
     console.log(Object.values(Object.values(((Object.entries(((((Object.values(value)[0]).TiposDeAtencion)[2]).sedes)[0].Entidades))[1][1]).Atenciones)))
     //console.log( (Object.values(value)[0]) )
 
@@ -99,7 +113,6 @@ async function getJson() {
 
 
 }
-
 
 
 

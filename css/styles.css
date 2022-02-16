@@ -144,17 +144,16 @@
 
 /*ajustes generales*/
 
-body,
-html {
+body,html {
     padding: 0;
     margin: 0;
     overflow-y: hidden;
-    background-image: url("../images/fondoPantalla/f-3.png") , url("../images/fondoPantalla/f-1.png") , url("../images/fondoPantalla/f-2.png");
+    background-image: url("../images/fondoPantalla/f-3-e.png") , url("../images/fondoPantalla/f-1-e.png") , url("../images/fondoPantalla/f-2-e.png");
     background-repeat: repeat-x;
     background-attachment: fixed;
     background-size: cover;
     background-position-x: 0% , 0% , 0%;
-    background-position-y: 0 , 49% , 45%;
+    background-position-y: 0 , -20% , 45%;
     background-color: #91bafc;
     height: 100vh;
     touch-action: none;
@@ -190,14 +189,15 @@ h1 {
     width: 100%;
     overflow: hidden;
     grid-template-rows: 5em;
-    grid-template-columns: 10% 80% 10%;
-    background-color: white;
+    grid-template-columns: 30% 40% 30%;
+    background-color: transparent;
     box-shadow: rgba(199, 202, 202, 0.2) 0px 8px 24px;
     z-index: 1;
 }
 
+
 .title {
-    text-align: center;
+    text-align: center ;
     font-style: italic;
     font-style: italic;
     grid-column-start: 1;
@@ -209,17 +209,38 @@ h1 {
     font-weight: 700;
 }
 
+
+.title-aux-escritorio {
+    color: white !important;
+    margin-right: 2em;
+    text-align: end !important;
+}
+
 .box-hamburger {
     display: none;
 }
+
+.box-question-dimension {
+    display: none;
+    grid-template-rows: 100%;
+    grid-template-columns: 20% 80%;
+    position: fixed;
+    top: 7em;
+    width: 100%;
+    height: 3em;
+    overflow: hidden;
+    z-index: 3;
+} 
 
 .box-title {
     grid-column-start: 2;
 }
 
 .logo-univalle-img {
-    width: 0.7em;
-    height: 0.7em;
+    justify-self: center;
+    align-self: center;
+    width: 3em;
+    height: 4em;
 }
 
 /* ESTILOS DEL FOOTER Y DEPENDENCIAS */
@@ -240,17 +261,17 @@ h1 {
 .text-botton-uv {
     border: hidden;
     border-radius: 10px;
-    width: 60%;
+    width: 30%;
     height: 55%;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 35%;
+    margin-right: 35%;
     color: white;
     font-size: 1.3em;
     font-family: Roboto, sans-serif;
     font-style: italic;
     font-weight: unset;
     text-align: center;
-    background-color: #2271b3;         
+    background-color: #75797c;         
 }
 
 .box-botton-mayorInformation {
@@ -268,7 +289,7 @@ h1 {
     font-style: italic;
     font-weight: unset;
     text-align: center;
-    background-color: gray;
+    background-color: transparent;
     box-shadow: rgb(213 216 215) 0px 2px 10px 0px;
 }      
 
@@ -294,6 +315,20 @@ h1 {
     top: 5em;
     width: 100%;
     z-index: 1;
+}
+
+.box-arrow {
+    display: none;
+    position: fixed;
+    top: 2.3em;
+    grid-template-rows: 100%;
+    grid-template-columns: 1% 9% 8% 8% 8% 8%;
+    width: 100%;
+    height: 4em;
+    overflow: hidden;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 6;
 }
 
 .box-arrows {
@@ -406,6 +441,17 @@ h1 {
     height: 27em;
 }
 
+.overlay {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    background-color: rgba(17, 17, 17, 0.363);
+    overflow-x: hidden;
+}
 /* AJUSTES DEL PERSONAJE */
 
 .box-personaje {
@@ -429,14 +475,14 @@ h1 {
     height: 100%;
     grid-template-rows: 100%;
     grid-template-columns: 45% 55%;
-    padding-top: 5.5em;
-    padding-bottom: 3em;
+    padding-top: 9em;
+    padding-bottom: 2em;
     overflow: hidden;
 }
 
 .features-personajes {
     width: 100%;
-    height: 27em;
+    height: 94%;
 }
 
 .box-svg {
@@ -492,6 +538,216 @@ h1 {
 .box-dimension {
     display: none;
 }
+
+.box-title-1 {
+    display: none;
+    
+}
+
+.home-arrow-box {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    color: #4da34a;
+    font-size: xx-large;
+    background-color: white;
+    width: 90%;
+    height: 100%;
+    border-radius: 3em;
+    justify-items: center;
+    align-items: center;
+}
+
+.home-arrow {
+    color: #4da34a;
+    font-size: xx-large;
+}
+
+.arrow-1 {
+    display: none;
+    position: relative;
+    left: -30%;
+    background-color: white;
+    width: 130%;
+    border-radius: 3em;
+    height: 100%;
+    justify-self: flex-start;
+    align-self: center;
+    overflow: hidden;
+}
+
+.border-escritorio {
+    border-style: solid;
+    border-color: #767473;
+}
+.arrow-text {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    color: #767473;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    line-height: 1em;
+    font-size: 0.9em;
+    border-radius: 3em;
+    overflow: hidden;
+}
+
+.box-information-dimension {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    padding-top: 7em;
+    padding-bottom: 4em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    z-index: 4;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+}
+
+.box-button-dimension {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+    padding-top: 7em;
+    padding-bottom: 3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    z-index: 4;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+}
+
+.box-abc-dimension {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 15% 50% 15% 20%;
+    grid-template-columns: 100%;
+    padding-top: 7em;
+    padding-bottom: 3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    z-index: 4;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+}
+
+.box-x-dimension-aux {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    justify-self: end;
+    margin-right: 0.5em;
+    align-self: center;
+    color: #8f8e8e;
+    font-size: 1.2em;
+}
+
+.box-x-dimension-aux-escritorio {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    justify-self: end;
+    margin-right: 0.5em;
+    align-self: center;
+    color: #8f8e8e;
+    font-size: 1.2em;
+}
+
+.box-information {
+    display: none;
+}
+
+.arrow-active {
+    background-color: #767473 !important;
+    color: white !important;
+}
+
+.box-escritorio-dimension {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 15% 70% 15%;
+    width: 100%;
+    height: 100vh;
+    justify-items: center;
+    align-items: center;
+     z-index: 500;
+    overflow: hidden;
+}
+
+.box-escritorio-aux {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    display: grid;
+    grid-template-rows: 20% 70% 10%;
+    grid-template-columns: 100%;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#escritorio-dimension-box {
+    z-index: 5;
+}
+
+.box-escritorio-aux-dimension {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    display: grid;
+    grid-template-rows: 15% 85%;
+    grid-template-columns: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: rgba(199, 202, 202, 0.2) 0px 8px 24px;
+    border-radius: 2em;
+    overflow: hidden;
+}
+
+.content-dimension {
+    padding: 0.5em 0.5em;
+    width: 100%;
+    height: 100%;
+    color: #767473;
+    font-size: 1.2em;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    line-height: 1em;
+    text-align: justify;
+    overflow-y: scroll;
+}
+
+.title-dimension {
+    display: grid;
+    height: 80%;
+    width: 100%;
+    grid-template-rows: 100%;
+    grid-template-columns: 95% 5%;
+    align-items: center;
+    justify-items: center;
+    font-size: 1.3em;
+    font-family: Roboto, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    color: gray;
+    overflow: hidden;
+}
 /* 4 espacios para  syntaxis */
 
 /*
@@ -509,6 +765,21 @@ h1 {
     display: none !important;
 }
 
+/* REPONSIVE PARA PANTALLAS DE 500 DE ANCHO Y CON UN ALTO MAXIMO DE 667 */
+@media screen and (max-width:500px) and (max-height:667px) and (orientation: portrait) {
+      .lienzo {
+          position: relative;
+          right: -36%;
+      }
+}
+
+/* REPONSIVE PARA PANTALLAS DE 500 DE ANCHO Y CON UN ALTO MAXIMO DE 667 */
+@media screen and (max-width:500px) and (max-height:1000px) and (orientation: portrait) {
+      .lienzo {
+          position: relative;
+          right: 0;
+      }
+}
 
 
 /* RESPOSIVE WE DESING PARA PANTALLAS DE 500PX DE ANCHO */
@@ -582,7 +853,7 @@ h1 {
       }
       .footer-content {
           display: grid;
-          grid-template-rows: 3.4em 1.7em;
+          grid-template-rows: 2.5em 1.4em;
           position: fixed;
           bottom: 0;
           width: 100%;
@@ -590,6 +861,7 @@ h1 {
       .box-botton {
           grid-row-start: 1;
           grid-row-end: 1;
+          align-self: center;
       }
       .text-botton-uv {
           border: hidden;
@@ -604,7 +876,7 @@ h1 {
           font-style: italic;
           font-weight: unset;
           text-align: center;
-          background-color: #2271b3;   
+          background-color: #686a6b;   
           overflow: hidden;      
       }
       .box-botton-mayorInformation {
@@ -616,17 +888,19 @@ h1 {
           width: 100%;
           height: 100%;
           color: white;
-          font-size: 1em;
+          font-size: 0.8em;
           font-family: Roboto, sans-serif;
           font-style: italic;
           font-weight: unset;
           text-align: center;
-          background-color: gray;
+          background-color: transparent;
           box-shadow: rgb(213 216 215) 0px 2px 10px 0px;
       }      
       .logo-univalle-img {
-          width: 0.9em;
-          height: 0.9em;
+          justify-self: flex-end;
+          align-self: center;
+          width: 2em;
+          height: 2em;
       }
       .contact-information {
           display: inline;
@@ -770,10 +1044,6 @@ h1 {
           grid-template-columns: 50% 50%;
           overflow: hidden;
       }
-      .lienzo {
-          position: relative;
-          right: 0;
-      }
       .detonating-question-box {
           display: grid;
           position: fixed;
@@ -803,14 +1073,17 @@ h1 {
       }
       .box-text-information-rute {
           display: grid;
-          grid-template-rows: 13% 70% 17%;
+          grid-template-rows: 13% 84% 3%;
           grid-template-columns: 100%;
           position: fixed;
           width: 100%;
           height: 100%;
           padding-top: 7.5em;
           padding-bottom: 7.5em;
+          padding-left: 0.5em;
+          padding-right: 0.5em;
           overflow: hidden;
+          border-radius: 1em;
           z-index: 2;
       }
       .title-content-info {
@@ -820,9 +1093,11 @@ h1 {
           grid-column-end: 1;
           display: grid;
           grid-template-rows: 100%;
-          grid-template-columns: 100%;
+          grid-template-columns: 95% 5%;
           align-items: center;
           justify-items: center;
+          border-top-left-radius: 1em;
+          border-top-right-radius: 1em;
           width: 100%;
           background-color: white;
           overflow: hidden;
@@ -869,6 +1144,8 @@ h1 {
           height: 100%;
           grid-template-rows: 100%;
           grid-template-columns: 33% 33% 33%;
+          border-bottom-left-radius: 1em;
+          border-bottom-right-radius: 1em;
           align-items: center;
           justify-items: center;
           background-color: white;
@@ -898,6 +1175,7 @@ h1 {
       }
       body,html {
           background-position-y: 0 , 1em , 0;
+          background-image: url("../images/fondoPantalla/f-3.png") , url("../images/fondoPantalla/f-1.png") , url("../images/fondoPantalla/f-2.png");
       }
       .box-botton-content {
           display: none;
@@ -932,7 +1210,7 @@ h1 {
           z-index: 3;
           left: 0;
           top: 0;
-          background-color: rgb(180 180 180 / 85%);
+          background-color: rgba(17, 17, 17, 0.548);
           overflow-x: hidden;
       }
       .boton-info.active {
@@ -971,11 +1249,11 @@ h1 {
         z-index: 4;
         align-items: center;
         justify-items: center;
-         overflow: hidden;
+        overflow: hidden;
       }
       .box-dimension {
         display: grid;
-        grid-template-rows: 20% 70% 10%;
+        grid-template-rows: 10% 80% 10%;
         grid-template-columns: 100%;
         align-items: center;
         justify-items: center;
@@ -990,16 +1268,14 @@ h1 {
         height: 80%;
         width: 100%;
         grid-template-rows: 100%;
-        grid-template-columns: 100%;
+        grid-template-columns: 95% 5%;
         align-items: center;
         justify-items: center;
-        font-size: 1.5em;
+        font-size: 1.3em;
         font-family: Roboto, sans-serif;
         font-style: italic;
         font-weight: 800;
         color: gray;
-        word-break: break-all;
-        hyphens: auto;
         overflow: hidden;
       }
       .read-more-button {
@@ -1092,6 +1368,7 @@ h1 {
         align-items: center;
         justify-items: end;
         overflow: hidden;
+        color: white !important;
         background-color: transparent;
       }
       .box-arrow {
@@ -1119,8 +1396,6 @@ h1 {
         border-radius: 3em;
         justify-items: center;
         align-items: center;
-        border-color: #17d810;
-        border-style: solid;
       }
       .home-arrow {
         color: #4da34a;
@@ -1136,8 +1411,6 @@ h1 {
         height: 80%;
         justify-self: flex-start;
         align-self: center;
-        border-color: #17d810;
-        border-style: solid;
         overflow: hidden;
       }
       .arrow-2 {
@@ -1180,7 +1453,7 @@ h1 {
         padding-bottom: 3em;
         padding-left: 0.5em;
         padding-right: 0.5em;
-        z-index: 0;
+        z-index: 4;
         align-items: center;
         justify-items: center;
         overflow: hidden;
@@ -1250,6 +1523,7 @@ h1 {
           width: 100%;
           height: 3em;
           overflow: hidden;
+          z-index: 3;
       }
       .circle-box-dimension {
           justify-self: start;
@@ -1275,14 +1549,41 @@ h1 {
           width: 100%;
           height: 100%;
           color: #767473;
-          font-size: 1em;
+          font-size: 1.2em;
           font-family: Roboto, sans-serif;
           font-weight: 500;
           line-height: 1em;
-          hyphens: auto;
-          word-break: break-all;
-          overflow-x: hidden;
+          text-align: justify;
           overflow-y: scroll;
+      }
+      .style-svg-aux {
+          height: 110% !important;
+      }
+      .style-aux-lienzo-1 {
+          right: -36% ;
+      }
+      #boton-abc-2 {
+          font-size: 0.8em !important;
+      }
+      #boton-abc-3 {
+          font-size: 0.8em !important;
+      }
+      .box-x-dimension {
+          display: grid;
+          grid-template-rows: 100%;
+          grid-template-columns: 90% 10%;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+      }
+      .box-x-dimension-aux {
+          grid-column-start: 2;
+          grid-column-end: 2;
+          justify-self: end;
+          margin-right: 0.5em;
+          align-self: center;
+          color: #8f8e8e;
+          font-size: 1.2em;
       }
     
 }
@@ -1320,7 +1621,7 @@ h1 {
       }
       .footer-content {
           display: grid;
-          grid-template-rows: 3.4em 2em;
+          grid-template-rows: 2.5em 1.4em;
           position: fixed;
           bottom: 0;
           width: 100%;
@@ -1345,7 +1646,7 @@ h1 {
           font-style: italic;
           font-weight: unset;
           text-align: center;
-          background-color: #2271b3;     
+          background-color: #6b6d6e;     
           overflow: hidden;
       }
       .box-botton-mayorInformation {
@@ -1362,12 +1663,12 @@ h1 {
           font-style: italic;
           font-weight: unset;
           text-align: center;
-          background-color: gray;
+          background-color: transparent;
           box-shadow: rgb(213 216 215) 0px 2px 10px 0px;
       }
       .logo-univalle-img {
-          width: 0.9em;
-          height: 0.9em;
+          width: 2em;
+          height: 2em;
       }
       .contact-information {
           display: inline;
@@ -1536,21 +1837,25 @@ h1 {
       }
       .box-text-information-rute {
           display: grid;
-          grid-template-rows: 15% 70% 15%;
+          grid-template-rows: 15% 83% 2%;
           grid-template-columns: 100%;
           position: fixed;
           width: 100%;
           height: 100%;
           padding-top: 7.5em;
           padding-bottom: 7.5em;
+          padding-left: 0.5em;
+          padding-right: 0.5em;
           overflow: hidden;
       }
       .title-content-info {
           display: grid;
           grid-template-rows: 100%;
-          grid-template-columns: 100%;
+          grid-template-columns: 95% 5%;
           align-items: center;
           justify-items: center;
+          border-top-left-radius: 1em;
+          border-top-right-radius: 1em;
           width: 100%;
           background-color: white;
           overflow: hidden;
@@ -1581,12 +1886,11 @@ h1 {
           width: 92%;
           height: 92%;
           color: gray;
-          font-size: 0.9em;
+          font-size: 1em;
           font-family: Roboto, sans-serif;
           font-style: italic;
+          text-align: justify;
           font-weight: 450;
-          word-break: break-all;
-          hyphens: auto;
           overflow-y: scroll;
           overflow-x: hidden;
           overscroll-behavior: contain;
@@ -1597,6 +1901,8 @@ h1 {
           height: 100%;
           grid-template-rows: 100%;
           grid-template-columns: 33% 33% 33%;
+          border-bottom-left-radius: 1em;
+          border-bottom-right-radius: 1em;
           align-items: center;
           justify-items: center;
           background-color: white;
@@ -1638,21 +1944,26 @@ h1 {
          padding-bottom: 3em;
          overflow: hidden;
      }
+     .style-svg-aux {
+        height: 110% !important;
+        right: 10%;
+     }
 
 }
 
 
-/* RESPONSIVE DEL FONDO */
+/* RESPONSIVE DEL FONDO 
 @media screen and (max-height: 600px) and (max-width: 500px) and (orientation: portrait) {
    body,html {
       background-position-y: 0, 1em, 1em;
    }
 }
+/*
 
-
-/* RESPONSIVE DEL FONDO */
+//RESPONSIVE DEL FONDO 
 @media screen and (max-height: 600px) and (max-width: 375px) and (orientation: portrait) {
    body,html {
-      background-position-y: 0%;
+      background-position-y:  0, 1em, 1em;
    }
 }
+*/
