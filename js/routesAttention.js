@@ -69,7 +69,7 @@ function rutesAttentionMovil(json) {
           animateRute(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension), animateCharacter(sizeScreenWidth)])
         }
         else {
-
+          
           Promise.all([animateCharacter(sizeScreenWidth), animateBackground(false, sizeScreenWidth, false), animeteRuteEscritorio(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension)])
 
           //alert('La pantalla no es suficiente para la animacion')
@@ -962,9 +962,10 @@ function info_dimension(json) {
 
 function event_click_div() {
 
+
   $('section').on('click', function (event) {
-    event.preventDefault()
-    event.stopPropagation()
+    //event.preventDefault()
+    //event.stopPropagation()
 
     if ($(this).attr('class') === 'box-information-dimension overlay') {
       $(this).hide()
@@ -991,12 +992,12 @@ function event_click_div() {
 
 function funcioanlity_box_escritorio(json, dimension, attetionAux, entity, index) {
 
-  json.then(function (value) {
+  json.then( function (value) {
     console.log('entre a la funcion')
-    $('#escritorio-dimension-box').show()
-    $('.overlay').show()
-    $('.title-escritorio-dimension').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).name)
-    $('.content-dimension').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).descripcion)
+     $('#escritorio-dimension-box').show()
+     $('.overlay').show()
+     $('.title-escritorio-dimension').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).name)
+     $('.content-dimension').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).descripcion)
   }).catch((err) => {
 
     console.log('ups, paso un error al insertar el texto', err)

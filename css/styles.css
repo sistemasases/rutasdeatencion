@@ -1951,7 +1951,10 @@ h1 {
 
 }
 
-
+.color-ul-style {
+    color: #767473;
+    line-height: 1.3em;
+}
 /* RESPONSIVE DEL FONDO 
 @media screen and (max-height: 600px) and (max-width: 500px) and (orientation: portrait) {
    body,html {
