@@ -220,7 +220,7 @@ function breadcrumbs_funcionality(json) {
       $('.box-abc-dimension').hide()
       $('.box-button-dimension').hide()
       $('.box-information-dimension').hide()
-
+      $('#escritorio-dimension-box').hide()
       //restaurar los estados de los botones de las cajas
       $('#enlaces').addClass('bandera-true')
       $('.boton-info').off('click')

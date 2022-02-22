@@ -19,13 +19,19 @@ $(function () {
   Promise.all([screenResponsiveWebDesing(json), svgPaint(json), rutesAttentionMovil(json),info_dimension(json),event_click_div()])
   //$('#box-dimension-routes').show()
   if (sizeScreenWidth <= 500) {
+    //$('#box-dimension-routes').removeClass('box-escritorio-dimension-rutas')
     $('#title-brecumbs-aux').removeClass('title-aux-escritorio')
     $('.arrow-7').each(function (index, value) {
        console.log(index,value)
        $(value).removeClass('border-escritorio')
     })
-    $('#box-dimension-routes').show()
+   
   }
+  else { 
+   //$('#box-dimension-routes').addClass('box-escritorio-dimension-rutas')
+  }
+
+   $('#box-dimension-routes').show()
   /* EVENTOS CLICK  */
 
 
