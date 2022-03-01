@@ -1143,8 +1143,6 @@ h1 {
           font-weight: 700;
           text-align: center;
           line-height: 1em;
-          word-break: break-all;
-          hyphens: auto;
       }
       .content-text-info {
           display: grid;
@@ -1165,8 +1163,6 @@ h1 {
           font-family: Roboto, sans-serif;
           font-style: italic;
           font-weight: 450;
-          word-break: break-all;
-          hyphens: auto;
           overflow-y: scroll;
           overflow-x: hidden;
           overscroll-behavior: contain;
@@ -1901,8 +1897,6 @@ h1 {
           font-weight: 700;
           text-align: center;
           line-height: 1em;
-          word-break: break-all;
-          hyphens: auto;
       }
       .content-text-info {
           display: grid;

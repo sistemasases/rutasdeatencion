@@ -1009,3 +1009,4 @@ function funcioanlity_box_escritorio(json, dimension, attetionAux, entity, index
   })
 
 }
+
