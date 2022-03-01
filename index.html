@@ -135,6 +135,10 @@
             id="personaje-caminata-5">
          <img class="features-personajes features-personajes-off" src="images/personaje/6.png"
             id="personaje-caminata-6">
+         <img class="features-personajes features-personajes-off" src="images/personaje/7.png"
+            id="personaje-caminata-7">
+         <img class="features-personajes features-personajes-off" src="images/personaje/8.png"
+            id="personaje-caminata-8">
       </div>
 
       <!-- RUTAS DE ATENCION SVG -->
@@ -912,10 +916,10 @@
    </div>
 
    <!-- CAJA DEL TEXTO  -->
-   <section class="box-information overlay" id="escritorio-dimension-box">
-      <section class="box-escritorio-dimension ">
-         <section class="box-escritorio-aux">
-            <section class="box-escritorio-aux-dimension">
+   <div class="box-information-escritorio overlay" id="escritorio-dimension-box">
+      <div class="box-escritorio-dimension">
+         <div class="box-escritorio-aux">
+            <div class="box-escritorio-aux-dimension">
                <div class="title-dimension">
                   <div class="title-escritorio-dimension"></div>
                   <div class="box-x-dimension-aux-escritorio">
@@ -923,14 +927,14 @@
                   </div>
                </div>
                <div class="content-dimension"> </div>
-            </section>
-         </section>
-      </section>
-   </section>
+            </div>
+         </div>
+      </div>
+   </div>
 
-   <section class="box-information overlay" id="information">
+   <div class="box-information overlay" id="information">
 
-      <section class="box-text-information-rute">
+      <div class="box-text-information-rute">
 
          <div class="title-content-info">
             <div class="title-info">
@@ -977,33 +981,43 @@
          </div>
 
 
-      </section>
+      </div>
 
-   </section>
+   </div>
    <section class="box-information-dimension overlay" id="box-dimension-question">
-      <div class="box-dimension">
+      <section class="box-dimension">
          <div class="title-dimension">
+            <div class="title-aux-dimensio-content"></div>
             <div class="box-x-dimension-aux">
-               <i class="fas fa-window-close"></i>
+               <!--<i class="fas fa-window-close"></i> -->
+               <svg style='width:0.7em;fill:gray' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                  <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                     d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" />
+               </svg>
             </div>
          </div>
          <div class="content-dimension"> </div>
          <div class="read-more-button" style="display:none"> Leer Mas </div>
-      </div>
+      </section>
    </section>
 
    <section class="box-information-dimension overlay" id="box-dimension-routes">
-      <section class="box-dimension">
+      <section class="box-dimension" id="box-dimension-internta-rutas">
          <div class="title-dimension"> ¿ De Donde Vienen Las Rutas?
             <div class="box-x-dimension-aux">
-               <i class="fas fa-times"></i>
+               <svg style='width:0.7em;fill:gray' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                  <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                     d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" />
+               </svg>
             </div>
          </div>
          <div class="content-dimension">
             <p>Ruta de atención, apoyo y esparcimiento para estudiantes de la Estrategia ASES: En articulación con las
                atenciones de la Universidad del Valle
-               *Las atenciones presentadas a continuación refieren a la oferta disponible en las Sedes donde la
-               Estrategia de Acompañamiento y Seguimiento Estudiantil está Operando
+               <strong>*Las atenciones presentadas a continuación refieren a la oferta disponible en las Sedes donde la
+                  Estrategia de Acompañamiento y Seguimiento Estudiantil está Operando*</strong>
             </p>
             <p>Esta ruta recoge la estructura integral de la oferta de servicios a los cuales los profesionales,
                practicantes y monitores de la estrategia ASES remiten a los estudiantes en pro de brindar atenciones

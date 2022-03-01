@@ -86,6 +86,7 @@ function rutesAttentionMovil(json) {
         $('.arrow-4').show()
         $('.arrow-4').find('.arrow-text').html(nameDimension)
 
+
         if (sizeScreenWidthAux <= 500) {
 
           json.then(function (value) {
@@ -436,8 +437,8 @@ function animateCharacter(sizeScreenWidth) {
 
   //variables
   let sizeScreen = 0;
-  let timeSequence = 3
-  let imgSequence = 1
+  let timeSequence = 4
+  let imgSequence = 0
   band = true
   killTimer = false
 
@@ -449,7 +450,7 @@ function animateCharacter(sizeScreenWidth) {
       //cambiar la imagen determinado tiempo  
       if (timeSequence == 4) {
         if ((imgSequence - 1) == 0) {
-          $(`#personaje-caminata-${imgSequence + 5}`).addClass('features-personajes-off')
+          $(`#personaje-caminata-${imgSequence + 7}`).addClass('features-personajes-off')
         }
         $(`#personaje-caminata-${imgSequence - 1}`).addClass('features-personajes-off')
         $(`#personaje-caminata-${imgSequence}`).removeClass('features-personajes-off')
@@ -459,7 +460,7 @@ function animateCharacter(sizeScreenWidth) {
       }
 
       //restablecer la imagen inicial finalizada la primer secuencia
-      if (imgSequence > 6) {
+      if (imgSequence > 8) {
         imgSequence = 1
       }
 
@@ -472,7 +473,8 @@ function animateCharacter(sizeScreenWidth) {
     }
 
     if (killTimer) {
-      for (let i = 2; i < 7; i++) {
+      //$(`#personaje-caminata-1`).removeClass('features-personajes-off')
+      for (let i = 2; i < 9; i++) {
         $(`#personaje-caminata-${i}`).addClass('features-personajes-off')
       }
       clearInterval(animateCharac)
@@ -530,7 +532,7 @@ function funcionalityRute(json, dimension, attetionAux, entity, iterador, indexC
       objectJson = [(((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)]
     }
 
-    console.log(indexCap, 'indexCap', objectJson, 'OBJECT JSON')
+    //console.log(indexCap, 'indexCap', objectJson, 'OBJECT JSON')
     //insertar el texto de las llaves del json al svg
     for (const attention of objectJson[indexCap]) {
       console.log((objectJson[indexCap]).length, 'attention')
@@ -932,7 +934,7 @@ function dimension_description(json, dimension) {
 
   json.then((event) => {
 
-    $('.title-dimension').html(`Dimension ${(Object.values(event)[dimension]).name}`)
+    $('.title-dimension .title-aux-dimensio-content').html(`Dimension ${(Object.values(event)[dimension]).name}`)
     $('.content-dimension').html((Object.values(event)[dimension]).introduccion)
 
   }).catch((err) => {
@@ -964,16 +966,16 @@ function event_click_div() {
 
 
   $('section').on('click', function (event) {
-    //event.preventDefault()
-    //event.stopPropagation()
-
+    event.preventDefault()
+    event.stopPropagation()
+    
     if ($(this).attr('class') === 'box-information-dimension overlay') {
       $(this).hide()
     }
     else if ($(this).attr('class') === 'box-information overlay') {
       $(this).hide()
     }
-
+    console.log($(this).attr('id'),'hola')
     console.log($(this).attr('class'), 'no deberiaaparecer')
 
   })
@@ -995,7 +997,9 @@ function funcioanlity_box_escritorio(json, dimension, attetionAux, entity, index
   json.then( function (value) {
     console.log('entre a la funcion')
      $('#escritorio-dimension-box').show()
-     $('.overlay').show()
+     $('#box-dimension-question').css('display', 'none')
+     $('#box-dimension-routes').css('display', 'none')
+     //$('.overlay').show()
      $('.title-escritorio-dimension').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).name)
      $('.content-dimension').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).descripcion)
   }).catch((err) => {
