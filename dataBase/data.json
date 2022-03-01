@@ -526,8 +526,8 @@
             "caminata": false,
             "Entidades": {
               "0": {
-                "tipoTitulo": 1,
-                "name": "Campus Diverso",
+                "tipoTitulo": 2,
+                "name": "Campus,Diverso",
                 "caminata": true,
                 "Atenciones": {
                   "0": {
