@@ -32,6 +32,7 @@ function rutesAttentionMovil(json) {
           nameDimension = $(value).text()
         }
       }
+
     });
 
     //sacar un numero al dar click en la felchita
@@ -65,11 +66,11 @@ function rutesAttentionMovil(json) {
       console.log($('.arrow-3').hasClass('arrow-active'), 'comfirmalo', indexCap)
       if (Number(indexCap) < 3) {
         if (sizeScreenWidthAux <= 500) {
-          Promise.all([animateBackground(false, sizeScreenWidth, true),
-          animateRute(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension), animateCharacter(sizeScreenWidth)])
+          Promise.all([animateBackgroundNew(false, sizeScreenWidth, true),
+          animateRuteNew(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension), animateCharacterNew(sizeScreenWidth)])
         }
         else {
-          
+
           Promise.all([animateCharacter(sizeScreenWidth), animateBackground(false, sizeScreenWidth, false), animeteRuteEscritorio(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension)])
 
           //alert('La pantalla no es suficiente para la animacion')
@@ -162,6 +163,51 @@ function animateBackground(band, sizeScreenWidth, bandAux) {
 
 }
 
+/* animacion del fondo*/
+function animateBackgroundNew(band, sizeScreenWidth, bandAux) {
+
+  //let sizeScreenWidth  = $(window).width()
+  let sizeScreen = 0;
+  let increase = 0;
+  let increasefg2 = 0;
+  if (bandAux) {
+    clasName = 'body,html'
+  }
+  else {
+    clasName = 'body'
+  }
+
+  //evitar usar los escuchas mientras se hace la animacion
+  $('body').removeClass('active')
+
+  const timer = setInterval(function () {
+
+    //si el tamaño de pantalla es superado habra acaba la animacion
+    if (sizeScreen < sizeScreenWidth * 1.5) {
+      $(`${clasName}`).css('background-position-x', '' + increase + '% , ' + (increasefg2) + '%,' + (increasefg2) + '%')
+      increase += 1;
+      sizeScreen += 10;
+      increasefg2 += 2;
+    }
+    else {
+      band = true;
+    }
+
+    if (band) {
+      clearInterval(timer)
+      band = null
+      sizeScreen = 0;
+      increasefg2 = 0;
+      increase = 0;
+      $('body').addClass('active')
+    }
+
+  }, 100)
+
+  return timer;
+
+}
+
 
 /* animacion de la ruta */
 function animateRute(band, sizeScreenWidth, screen, json, dimension, attetionAux, entity, indexCap, nameArrow, nameDimension) {
@@ -173,8 +219,8 @@ function animateRute(band, sizeScreenWidth, screen, json, dimension, attetionAux
     let sizeScreen = 0;
     let increase = 0;
     let timeHideRute = ((sizeScreenWidth * 2) * 50) / 100;
-    let timeShowRute = 0
-    let clasName = 'lienzo'
+    let timeShowRute = 0;
+    let clasName = 'lienzo';
     bandAux = true
     bandBrecumbs = true
     sizeScreenWidth11 = $(window).width()
@@ -328,6 +374,75 @@ function animateRute(band, sizeScreenWidth, screen, json, dimension, attetionAux
 
 }
 
+
+/* animacion de la ruta */
+function animateRuteNew(band, sizeScreenWidth, screen, json, dimension, attetionAux, entity, indexCap, nameArrow, nameDimension) {
+
+
+  json.then(function (value) {
+
+    //variables locales
+    let sizeScreen = 0;
+    let increase = 0;
+    let timeHideRute = ((sizeScreenWidth * 1.5) * 63) / 100;
+    let timeShowRute = 0
+    let clasName = 'lienzo'
+    bandAux = true
+    bandBrecumbs = true
+    sizeScreenWidth11 = $(window).width()
+    sizeScreenHeigth = $(window).height()
+
+    $('#arrow-box-principality').addClass('breadcrumbs-active-click')
+
+    //recorrer la capas internas del json por dimension, a expecion de la capa mayor  
+
+    var ruteAnimate = setInterval(function () {
+
+      if (sizeScreen < sizeScreenWidth * 1.5) {
+
+        //mover el svg hacia fuera de la pantalla
+        if (sizeScreen <= timeHideRute) {
+          $('.detonating-question-box').removeClass('on')
+          //$('.detonating-question-box').fadeOut() 
+          console.log('entro a la condicion 1')
+          $(`.${clasName}`).css('right', '' + increase + '%')
+          increase += 6;
+        }
+        else {
+
+          if (bandAux) {
+            bandAux = false
+            increase = -120
+          }
+
+          //if (increase <= 0) {
+            $(`.${clasName}`).css('right', '' + increase + '%')
+            increase += 6
+          //}
+
+        }
+
+        console.log($(`.${clasName}`).width(), 'Object.isSealed(value)', timeHideRute)
+        sizeScreen += 10
+      }
+      else {
+        band = true
+      }
+
+      if (band) {
+        clearInterval(ruteAnimate)
+      }
+
+    }, 100)
+
+
+    return ruteAnimate
+
+  })
+
+}
+
+
 function animeteRuteEscritorio(band, sizeScreenWidth, screen, json, dimension, attetionAux, entity, indexCap, nameArrow, nameDimension) {
 
   json.then(function (value) {
@@ -474,6 +589,60 @@ function animateCharacter(sizeScreenWidth) {
 
     if (killTimer) {
       //$(`#personaje-caminata-1`).removeClass('features-personajes-off')
+      for (let i = 2; i < 9; i++) {
+        $(`#personaje-caminata-${i}`).addClass('features-personajes-off')
+      }
+      clearInterval(animateCharac)
+    }
+
+  }, 100)
+
+  return animateCharac
+
+}
+
+/* Animacion del personaje */
+function animateCharacterNew(sizeScreenWidth) {
+
+  //variables
+  let sizeScreen = 0;
+  let timeSequence = 4
+  let imgSequence = 0
+  band = true
+  killTimer = false
+
+
+  var animateCharac = setInterval(function () {
+
+    if (sizeScreen < sizeScreenWidth * 1.5) {
+
+      //cambiar la imagen determinado tiempo  
+      if (timeSequence == 4) {
+        if ((imgSequence - 1) == 0) {
+          $(`#personaje-caminata-${imgSequence + 7}`).addClass('features-personajes-off')
+        }
+        $(`#personaje-caminata-${imgSequence - 1}`).addClass('features-personajes-off')
+        $(`#personaje-caminata-${imgSequence}`).removeClass('features-personajes-off')
+        console.log(imgSequence, 'imgSequence', imgSequence - 1, 'imgSequence - 1')
+        imgSequence++
+        timeSequence = 1
+      }
+
+      //restablecer la imagen inicial finalizada la primer secuencia
+      if (imgSequence > 8) {
+        imgSequence = 1
+      }
+
+      //incrementos
+      timeSequence++
+      sizeScreen += 10
+    }
+    else {
+      killTimer = true
+    }
+
+    if (killTimer) {
+      $(`#personaje-caminata-1`).removeClass('features-personajes-off')
       for (let i = 2; i < 9; i++) {
         $(`#personaje-caminata-${i}`).addClass('features-personajes-off')
       }
@@ -968,14 +1137,14 @@ function event_click_div() {
   $('section').on('click', function (event) {
     event.preventDefault()
     event.stopPropagation()
-    
+
     if ($(this).attr('class') === 'box-information-dimension overlay') {
       $(this).hide()
     }
     else if ($(this).attr('class') === 'box-information overlay') {
       $(this).hide()
     }
-    console.log($(this).attr('id'),'hola')
+    console.log($(this).attr('id'), 'hola')
     console.log($(this).attr('class'), 'no deberiaaparecer')
 
   })
@@ -994,14 +1163,14 @@ function event_click_div() {
 
 function funcioanlity_box_escritorio(json, dimension, attetionAux, entity, index) {
 
-  json.then( function (value) {
+  json.then(function (value) {
     console.log('entre a la funcion')
-     $('#escritorio-dimension-box').show()
-     $('#box-dimension-question').css('display', 'none')
-     $('#box-dimension-routes').css('display', 'none')
-     //$('.overlay').show()
-     $('.title-escritorio-dimension').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).name)
-     $('.content-dimension').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).descripcion)
+    $('#escritorio-dimension-box').show()
+    $('#box-dimension-question').css('display', 'none')
+    $('#box-dimension-routes').css('display', 'none')
+    //$('.overlay').show()
+    $('.title-escritorio-dimension').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).name)
+    $('.content-dimension').html((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).descripcion)
   }).catch((err) => {
 
     console.log('ups, paso un error al insertar el texto', err)
