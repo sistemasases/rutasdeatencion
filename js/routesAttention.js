@@ -66,8 +66,8 @@ function rutesAttentionMovil(json) {
       console.log($('.arrow-3').hasClass('arrow-active'), 'comfirmalo', indexCap)
       if (Number(indexCap) < 3) {
         if (sizeScreenWidthAux <= 500) {
-          Promise.all([animateBackgroundNew(false, sizeScreenWidth, true),
-          animateRuteNew(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension), animateCharacterNew(sizeScreenWidth)])
+          Promise.all([animateBackgroundNew(false, sizeScreenWidth, true , json , dimension, attetionAux, entity, indexCap),
+          animateRuteNew(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension), animateCharacterNew(json, dimension , attetionAux , entity , indexCap , sizeScreenWidth)])
         }
         else {
 
@@ -164,11 +164,13 @@ function animateBackground(band, sizeScreenWidth, bandAux) {
 }
 
 /* animacion del fondo*/
-function animateBackgroundNew(band, sizeScreenWidth, bandAux) {
+function animateBackgroundNew(band, sizeScreenWidth, bandAux , json , dimension, attetionAux, entity, indexCap) {
 
+  json.then(function (value) {
   //let sizeScreenWidth  = $(window).width()
   let sizeScreen = 0;
   let increase = 0;
+  let timeMultiplier = Number((get_time_multiplier(value, dimension, attetionAux, entity, indexCap)).split(',')[1])
   let increasefg2 = 0;
   if (bandAux) {
     clasName = 'body,html'
@@ -183,7 +185,7 @@ function animateBackgroundNew(band, sizeScreenWidth, bandAux) {
   const timer = setInterval(function () {
 
     //si el tamaño de pantalla es superado habra acaba la animacion
-    if (sizeScreen < sizeScreenWidth * 1.5) {
+    if (sizeScreen < sizeScreenWidth * timeMultiplier) {
       $(`${clasName}`).css('background-position-x', '' + increase + '% , ' + (increasefg2) + '%,' + (increasefg2) + '%')
       increase += 1;
       sizeScreen += 10;
@@ -205,7 +207,7 @@ function animateBackgroundNew(band, sizeScreenWidth, bandAux) {
   }, 100)
 
   return timer;
-
+  })
 }
 
 
@@ -384,41 +386,67 @@ function animateRuteNew(band, sizeScreenWidth, screen, json, dimension, attetion
     //variables locales
     let sizeScreen = 0;
     let increase = 0;
-    let timeHideRute = ((sizeScreenWidth * 1.5) * 63) / 100;
+    let timeHideRute = 0;
     let timeShowRute = 0
+    let timeMultiplier = Number((get_time_multiplier(value, dimension, attetionAux, entity, indexCap)).split(',')[1])
+    let porcentShowRute = Number((get_time_multiplier(value, dimension, attetionAux, entity, indexCap)).split(',')[0])
     let clasName = 'lienzo'
     bandAux = true
     bandBrecumbs = true
-    sizeScreenWidth11 = $(window).width()
-    sizeScreenHeigth = $(window).height()
 
     $('#arrow-box-principality').addClass('breadcrumbs-active-click')
 
-    //recorrer la capas internas del json por dimension, a expecion de la capa mayor  
+    /*recorrer la capas internas del json por dimension, a expecion de la capa mayor  
+    try {
+      objectJson = [(Object.entries((Object.values(value)[dimension].TiposDeAtencion))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes), Object.entries(((Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)[entity])[1]).Entidades)]
+    } catch (err) {
+      console.log('la instancia del json selecionada, esta vacia o le faltan componentes', err)
+      objectJson = [(((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)]
+    }
+
+    if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667) {
+      porcentShowRute = 63
+      timeMultiplier = 1.5
+    }
+    else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667) {
+      porcentShowRute = 58
+      timeMultiplier = 1.6
+    }
+    else {
+      porcentShowRute = 68
+      timeMultiplier = 1.37
+    }*/
+
+
+    timeHideRute = ((sizeScreenWidth * timeMultiplier) * porcentShowRute) / 100;
 
     var ruteAnimate = setInterval(function () {
 
-      if (sizeScreen < sizeScreenWidth * 1.5) {
+      if (sizeScreen < sizeScreenWidth * timeMultiplier) {
 
         //mover el svg hacia fuera de la pantalla
         if (sizeScreen <= timeHideRute) {
           $('.detonating-question-box').removeClass('on')
-          //$('.detonating-question-box').fadeOut() 
           console.log('entro a la condicion 1')
           $(`.${clasName}`).css('right', '' + increase + '%')
           increase += 6;
         }
         else {
 
+          //poner svg al inicio y actulizar su contenido
           if (bandAux) {
             bandAux = false
-            increase = -120
+            increase = -90
+            funcionalityBrecumbs(indexCap, nameDimension)
+            funcionalityRute(json, dimension, attetionAux, entity, 1, indexCap, nameArrow);
+            show_brecumbs()
+            $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
           }
 
-          //if (increase <= 0) {
-            $(`.${clasName}`).css('right', '' + increase + '%')
-            increase += 6
-          //}
+          //incrementar el movimiento del svg          
+          $(`.${clasName}`).css('right', '' + increase + '%')
+          increase += 6
+
 
         }
 
@@ -602,56 +630,61 @@ function animateCharacter(sizeScreenWidth) {
 }
 
 /* Animacion del personaje */
-function animateCharacterNew(sizeScreenWidth) {
+function animateCharacterNew(json, dimension, attetionAux, entity, indexCap, sizeScreenWidth) {
 
-  //variables
-  let sizeScreen = 0;
-  let timeSequence = 4
-  let imgSequence = 0
-  band = true
-  killTimer = false
+  json.then(function (value) {
+    //variables
+    let sizeScreen = 0;
+    let timeSequence = 4
+    let imgSequence = 0
+    band = true
+    killTimer = false
+    let timeMultiplier = Number((get_time_multiplier(value, dimension, attetionAux, entity, indexCap)).split(',')[1])
 
+    var animateCharac = setInterval(function () {
 
-  var animateCharac = setInterval(function () {
+      if (sizeScreen < sizeScreenWidth * timeMultiplier) {
 
-    if (sizeScreen < sizeScreenWidth * 1.5) {
-
-      //cambiar la imagen determinado tiempo  
-      if (timeSequence == 4) {
-        if ((imgSequence - 1) == 0) {
-          $(`#personaje-caminata-${imgSequence + 7}`).addClass('features-personajes-off')
+        //cambiar la imagen determinado tiempo  
+        if (timeSequence == 4) {
+          if ((imgSequence - 1) == 0) {
+            $(`#personaje-caminata-${imgSequence + 7}`).addClass('features-personajes-off')
+          }
+          $(`#personaje-caminata-${imgSequence - 1}`).addClass('features-personajes-off')
+          $(`#personaje-caminata-${imgSequence}`).removeClass('features-personajes-off')
+          console.log(imgSequence, 'imgSequence', imgSequence - 1, 'imgSequence - 1')
+          imgSequence++
+          timeSequence = 1
         }
-        $(`#personaje-caminata-${imgSequence - 1}`).addClass('features-personajes-off')
-        $(`#personaje-caminata-${imgSequence}`).removeClass('features-personajes-off')
-        console.log(imgSequence, 'imgSequence', imgSequence - 1, 'imgSequence - 1')
-        imgSequence++
-        timeSequence = 1
+
+        //restablecer la imagen inicial finalizada la primer secuencia
+        if (imgSequence > 8) {
+          imgSequence = 1
+        }
+
+        //incrementos
+        timeSequence++
+        sizeScreen += 10
+      }
+      else {
+        killTimer = true
       }
 
-      //restablecer la imagen inicial finalizada la primer secuencia
-      if (imgSequence > 8) {
-        imgSequence = 1
+      if (killTimer) {
+        $(`#personaje-caminata-1`).removeClass('features-personajes-off')
+        for (let i = 2; i < 9; i++) {
+          $(`#personaje-caminata-${i}`).addClass('features-personajes-off')
+        }
+        clearInterval(animateCharac)
       }
 
-      //incrementos
-      timeSequence++
-      sizeScreen += 10
-    }
-    else {
-      killTimer = true
-    }
+    }, 100)
 
-    if (killTimer) {
-      $(`#personaje-caminata-1`).removeClass('features-personajes-off')
-      for (let i = 2; i < 9; i++) {
-        $(`#personaje-caminata-${i}`).addClass('features-personajes-off')
-      }
-      clearInterval(animateCharac)
-    }
+    return animateCharac
 
-  }, 100)
-
-  return animateCharac
+  }).catch(function (error) {
+    console.log(error)
+  })
 
 }
 
@@ -1179,3 +1212,27 @@ function funcioanlity_box_escritorio(json, dimension, attetionAux, entity, index
 
 }
 
+
+function get_time_multiplier(value, dimension, attetionAux, entity, indexCap) {
+
+  sizeScreenWidth11 = $(window).width()
+  sizeScreenHeigth = $(window).height()
+
+  try {
+    objectJson = [(Object.entries((Object.values(value)[dimension].TiposDeAtencion))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes), Object.entries(((Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)[entity])[1]).Entidades)]
+  } catch (err) {
+    console.log('la instancia del json selecionada, esta vacia o le faltan componentes', err)
+    objectJson = [(((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)]
+  }
+
+  if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667) {
+    return '63,1.5'
+  }
+  else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667) {
+    return '58,1.6'
+  }
+  else {
+    return '68,1.37'
+  }
+
+}
