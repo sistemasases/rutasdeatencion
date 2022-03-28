@@ -45,100 +45,6 @@ function screenResponsiveWebDesing(json) {
 }
 
 
-/*
-async function breadcrumbs_funcionality(json) {
-
-    let arrows;
-    let aux = ['a','div','span']
-    let breadcrumbs_array = []
-    
-    $('.box-breadcrumbs').each((index,value)=> {
-    breadcrumbs_array.push(value)
-    })
-
-    $('.box-breadcrumbs').on('click', function(event) {
-       event.preventDefault();
-       event.isPropagationStopped();
-   
-       arrows = this;
-
-       //sacar un numero al dar click en el brecumbs
-       dimensionNav = $(this).parent()
-       navsInDimension = dimensionNav.find('.box-breadcrumbs')
-       index = navsInDimension.index(this)
-
-       $('.boton-info').each(function (index, value) {
-           $(value).removeClass('active')
-       })
-
-
-       //
-       $('#information').fadeOut()
-       $('#page-inicio').show()
-       $('.content-text-botton-box').css('display','none')
-       $('.boton-info').off('click')
-
-      if ($('body').hasClass('active')) {
-       //agregar la clase activa a la flecha selecionada
-       if ( $(arrows).hasClass('box-breadcrumbs-active') === false ) {
-           
-          //quitar la clase activa y agregarla a la selecionada
-          $('.box-breadcrumbs').each((index,value)=> {
-
-            //si el href es igual al selecionado se le agrega la clase active
-            if ($(value).find('a').attr('href') === $(arrows).find('a').attr('href') ) {
-           
-            //agregar el fondo de color para la primer flecha  
-            ($(value).find('a').attr('href') === '#home')?  $(value).find('a').css({
-            'background-color': '#2271b3'
-            }):false 
-            $(arrows).addClass('box-breadcrumbs-active')
-            
-            //quitar las felchas que estan despues de la selecionada
-            for (let i = 0 ; i < 3 ; i++) {
-            $(breadcrumbs_array[(index+1)+i]).hide()
-            $(arrows).find(aux[i]).addClass('active')
-            }
-
-            }
-            else {
-
-            //quitar la clase activa
-            $(value).removeClass('box-breadcrumbs-active')
-            $(value).find('a').attr('style',' ')
-
-            for (let i = 0 ; i < 3 ; i++) {
-            $(value).find(aux[i]).removeClass('active')
-            }
-
-            }
-
-          })
-
-          if ($(arrows).find('a').attr('href') == '#home') {
-          $('body').attr('title', 0)
-          $('.detonating-question-box').removeClass('on')
-          $('.detonating-question-box').hide()
-          svgPaint(json)
-          }
-          else {
-          $('.detonating-question-box').removeClass('on')
-          funcionalityAskDetoting(index-1)
-          $('body').attr('title', index)  
-          let paramters = ($('#arrows-1').attr('title')).split(',') 
-          funcionalityRute(json, paramters[0] , paramters[1] , paramters[2] , 1 , index-1) 
-          }
-
-       }
-      
-      } 
-
-    })
-    
-}
-*/
-
-
 function breadcrumbs_funcionality(json) {
 
   //evento click en el breadcrumbs
@@ -175,6 +81,7 @@ function breadcrumbs_funcionality(json) {
 
       })
 
+      //regresar estados a su estado original cuando se da click en el home
       if (index === 0) {
         $('#bread-1').addClass('box-breadcrumbs-active')
         $('.arrow-1').addClass('active')
@@ -214,28 +121,41 @@ function breadcrumbs_funcionality(json) {
         funcionalityRute(json, Number(paramters[0]), Number(paramters[1]), Number(paramters[2]), 1, index - 1, paramters[3])
       }
 
+      /*  Funcionalidades para ambos casos */
+      
+      //dar clase activa al breadcrumbs 3 cuando se da clik en el breadcrumbs 4
+      if ($(this).hasClass('arrow-4') ) {
+        $('#breadcumbs-3').find('.arrow-text').addClass('arrow-active')
+        $(this).hide()
+      }
 
+      console.log($(this).hasClass('arrow-4'), 'text de prueba')
       //Ocultar las cajas de texto
       $('.box-information').hide()
       $('.box-abc-dimension').hide()
       $('.box-button-dimension').hide()
       $('.box-information-dimension').hide()
       $('#escritorio-dimension-box').hide()
+
+
       //restaurar los estados de los botones de las cajas
       $('#enlaces').addClass('bandera-true')
       $('.boton-info').off('click')
       $(".content-text-botton-box").slideUp('slow');
 
+      //ocultar el contenido de la dimension
       $('.boton-info').each(function (index, value) {
         if ($(value).hasClass('active')) {
           $(value).removeClass('active')
         }
       })
 
+      //ocultar el contenido de la dimension
       $('.button-abc').each(function (index1, value) {
         $(value).removeClass('active-box-button-abc')
       })
 
+      //ocultar el contenido de la dimension
       $('#text-abc-content').html('')
       $('.box-question-dimension').hide()
       $('.box-button-dimension-content').html('')
@@ -243,6 +163,7 @@ function breadcrumbs_funcionality(json) {
 
       //acomodar la señalitica
       if (sizeScreenWidthAux <= 500) {
+
         $('.lienzo').each(function (index, value) {
 
           if ($(value).css('display') === 'none' && sizeScreenWidthAux > 375 && sizeScreenHeigth < 667) {
@@ -271,6 +192,7 @@ function breadcrumbs_funcionality(json) {
 
 
         })
+
       }
       else {
 
@@ -284,6 +206,7 @@ function breadcrumbs_funcionality(json) {
 
             }
           }
+
         })
       }
 
