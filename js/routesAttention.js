@@ -66,8 +66,8 @@ function rutesAttentionMovil(json) {
       console.log($('.arrow-3').hasClass('arrow-active'), 'comfirmalo', indexCap)
       if (Number(indexCap) < 3) {
         if (sizeScreenWidthAux <= 500) {
-          Promise.all([animateBackgroundNew(false, sizeScreenWidth, true , json , dimension, attetionAux, entity, indexCap),
-          animateRuteNew(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension), animateCharacterNew(json, dimension , attetionAux , entity , indexCap , sizeScreenWidth)])
+          Promise.all([animateBackgroundNew(false, sizeScreenWidth, true, json, dimension, attetionAux, entity, indexCap),
+          animateRuteNew(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension), animateCharacterNew(json, dimension, attetionAux, entity, indexCap, sizeScreenWidth)])
         }
         else {
 
@@ -164,49 +164,49 @@ function animateBackground(band, sizeScreenWidth, bandAux) {
 }
 
 /* animacion del fondo*/
-function animateBackgroundNew(band, sizeScreenWidth, bandAux , json , dimension, attetionAux, entity, indexCap) {
+function animateBackgroundNew(band, sizeScreenWidth, bandAux, json, dimension, attetionAux, entity, indexCap) {
 
   json.then(function (value) {
-  //let sizeScreenWidth  = $(window).width()
-  let sizeScreen = 0;
-  let increase = 0;
-  let timeMultiplier = Number((get_time_multiplier(value, dimension, attetionAux, entity, indexCap)).split(',')[1])
-  let increasefg2 = 0;
-  if (bandAux) {
-    clasName = 'body,html'
-  }
-  else {
-    clasName = 'body'
-  }
-
-  //evitar usar los escuchas mientras se hace la animacion
-  $('body').removeClass('active')
-
-  const timer = setInterval(function () {
-
-    //si el tamaño de pantalla es superado habra acaba la animacion
-    if (sizeScreen < sizeScreenWidth * timeMultiplier) {
-      $(`${clasName}`).css('background-position-x', '' + increase + '% , ' + (increasefg2) + '%,' + (increasefg2) + '%')
-      increase += 1;
-      sizeScreen += 10;
-      increasefg2 += 2;
+    //let sizeScreenWidth  = $(window).width()
+    let sizeScreen = 0;
+    let increase = 0;
+    let timeMultiplier = Number((get_time_multiplier(value, dimension, attetionAux, entity, indexCap)).split(',')[1])
+    let increasefg2 = 0;
+    if (bandAux) {
+      clasName = 'body,html'
     }
     else {
-      band = true;
+      clasName = 'body'
     }
 
-    if (band) {
-      clearInterval(timer)
-      band = null
-      sizeScreen = 0;
-      increasefg2 = 0;
-      increase = 0;
-      $('body').addClass('active')
-    }
+    //evitar usar los escuchas mientras se hace la animacion
+    $('body').removeClass('active')
 
-  }, 100)
+    const timer = setInterval(function () {
 
-  return timer;
+      //si el tamaño de pantalla es superado habra acaba la animacion
+      if (sizeScreen < sizeScreenWidth * timeMultiplier) {
+        $(`${clasName}`).css('background-position-x', '' + increase + '% , ' + (increasefg2) + '%,' + (increasefg2) + '%')
+        increase += 1;
+        sizeScreen += 10;
+        increasefg2 += 2;
+      }
+      else {
+        band = true;
+      }
+
+      if (band) {
+        clearInterval(timer)
+        band = null
+        sizeScreen = 0;
+        increasefg2 = 0;
+        increase = 0;
+        $('body').addClass('active')
+      }
+
+    }, 100)
+
+    return timer;
   })
 }
 
@@ -387,7 +387,6 @@ function animateRuteNew(band, sizeScreenWidth, screen, json, dimension, attetion
     let sizeScreen = 0;
     let increase = 0;
     let timeHideRute = 0;
-    let timeShowRute = 0
     let timeMultiplier = Number((get_time_multiplier(value, dimension, attetionAux, entity, indexCap)).split(',')[1])
     let porcentShowRute = Number((get_time_multiplier(value, dimension, attetionAux, entity, indexCap)).split(',')[0])
     let clasName = 'lienzo'
@@ -396,27 +395,12 @@ function animateRuteNew(band, sizeScreenWidth, screen, json, dimension, attetion
 
     $('#arrow-box-principality').addClass('breadcrumbs-active-click')
 
-    /*recorrer la capas internas del json por dimension, a expecion de la capa mayor  
-    try {
-      objectJson = [(Object.entries((Object.values(value)[dimension].TiposDeAtencion))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes), Object.entries(((Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)[entity])[1]).Entidades)]
-    } catch (err) {
-      console.log('la instancia del json selecionada, esta vacia o le faltan componentes', err)
-      objectJson = [(((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)]
+    if ($('#svg-1-6').hasClass('active-svg-info')) {
+      $('#svg-1-6').removeClass('active-svg-info')
+      $('.svg-info-aux').each(function (index, value1) {
+        $(value1).hide()
+      })
     }
-
-    if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667) {
-      porcentShowRute = 63
-      timeMultiplier = 1.5
-    }
-    else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667) {
-      porcentShowRute = 58
-      timeMultiplier = 1.6
-    }
-    else {
-      porcentShowRute = 68
-      timeMultiplier = 1.37
-    }*/
-
 
     timeHideRute = ((sizeScreenWidth * timeMultiplier) * porcentShowRute) / 100;
 
@@ -1225,12 +1209,17 @@ function get_time_multiplier(value, dimension, attetionAux, entity, indexCap) {
     objectJson = [(((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)]
   }
 
-  if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667) {
+  //30% of right
+  if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||
+    objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth <= 667) {
     return '63,1.5'
   }
-  else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667) {
+  //60% of right
+  else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667 ||
+    objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 667) {
     return '58,1.6'
   }
+  //0% of right
   else {
     return '68,1.37'
   }
