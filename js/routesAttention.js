@@ -1168,11 +1168,15 @@ function event_click_div() {
 
   $('.box-x-dimension-aux').on('click', function (event) {
     $(this).parent().parent().parent().hide()
+    $('#breadcumbs-3').find('.arrow-text').addClass('arrow-active')
+    $('#breadcumbs-4').hide()
   })
 
   $('.box-x-dimension-aux-escritorio').on('click', function (event) {
     $('#escritorio-dimension-box').hide()
     $('.overlay').hide()
+    $('#breadcumbs-3').find('.arrow-text').addClass('arrow-active')
+    $('#breadcumbs-4').hide()
   })
 
 }
