@@ -71,7 +71,7 @@ function rutesAttentionMovil(json) {
         }
         else {
 
-          Promise.all([animateCharacter(sizeScreenWidth), animateBackground(false, sizeScreenWidth, false), animeteRuteEscritorio(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension)])
+          Promise.all([animateCharacterNew(json, dimension, attetionAux, entity, indexCap, sizeScreenWidth),animateBackgroundNew(false, sizeScreenWidth, true, json, dimension, attetionAux, entity, indexCap) , animateRuteNew(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension)])
 
           //alert('La pantalla no es suficiente para la animacion')
         }
@@ -385,10 +385,88 @@ function animateRuteNew(band, sizeScreenWidth, screen, json, dimension, attetion
 
     //variables locales
     let sizeScreen = 0;
-    let increase = 0;
+    let increase = Number((get_time_multiplier(value, dimension, attetionAux, entity, indexCap)).split(',')[2]);
     let timeHideRute = 0;
     let timeMultiplier = Number((get_time_multiplier(value, dimension, attetionAux, entity, indexCap)).split(',')[1])
     let porcentShowRute = Number((get_time_multiplier(value, dimension, attetionAux, entity, indexCap)).split(',')[0])
+    let clasName = 'lienzo'
+    bandAux = true
+    bandBrecumbs = true
+
+    $('#arrow-box-principality').addClass('breadcrumbs-active-click')
+
+    if ($('#svg-1-6').hasClass('active-svg-info')) {
+      $('#svg-1-6').removeClass('active-svg-info')
+      $('.svg-info-aux').each(function (index, value1) {
+        $(value1).hide()
+      })
+    }
+
+    timeHideRute = ((sizeScreenWidth * timeMultiplier) * porcentShowRute) / 100;
+
+    var ruteAnimate = setInterval(function () {
+
+      if (sizeScreen < sizeScreenWidth * timeMultiplier) {
+
+        //mover el svg hacia fuera de la pantalla
+        if (sizeScreen <= timeHideRute) {
+          $('.detonating-question-box').removeClass('on')
+          console.log('entro a la condicion 1')
+          $(`.${clasName}`).css('right', '' + increase + '%')
+          increase += 6;
+        }
+        else {
+
+          //poner svg al inicio y actulizar su contenido
+          if (bandAux) {
+            bandAux = false
+            increase = -90
+            funcionalityBrecumbs(indexCap, nameDimension)
+            funcionalityRute(json, dimension, attetionAux, entity, 1, indexCap, nameArrow);
+            show_brecumbs()
+            $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
+          }
+
+          //incrementar el movimiento del svg          
+          $(`.${clasName}`).css('right', '' + increase + '%')
+          increase += 6
+
+
+        }
+
+        console.log($(`.${clasName}`).width(), 'Object.isSealed(value)', timeHideRute)
+        sizeScreen += 10
+      }
+      else {
+        band = true
+      }
+
+      if (band) {
+        clearInterval(ruteAnimate)
+      }
+
+    }, 100)
+
+
+    return ruteAnimate
+
+  })
+
+}
+
+
+/* animacion de la ruta */
+function animateRuteNewEscritorio(band, sizeScreenWidth, screen, json, dimension, attetionAux, entity, indexCap, nameArrow, nameDimension) {
+
+
+  json.then(function (value) {
+
+    //variables locales
+    let sizeScreen = 0;
+    let increase = 0;
+    let timeHideRute = 0;
+    let timeMultiplier = 1.4
+    let porcentShowRute = 85
     let clasName = 'lienzo'
     bandAux = true
     bandBrecumbs = true
@@ -1212,20 +1290,28 @@ function get_time_multiplier(value, dimension, attetionAux, entity, indexCap) {
     console.log('la instancia del json selecionada, esta vacia o le faltan componentes', err)
     objectJson = [(((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)]
   }
-
+  
+  //-42% of right es para que se vea bien en el escritorio
+  if (objectJson[indexCap].length > 5 && sizeScreenWidth11 > 500) {
+    return '83,1.4,-42'
+  }
+  //-48% of right es para que se vea bien en el escritorio
+  else if (objectJson[indexCap].length < 5 && sizeScreenWidth11 > 500) {
+    return '85,1.4,-48'
+  }
   //30% of right
-  if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||
+  else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||
     objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth <= 667) {
-    return '63,1.5'
+    return '63,1.5,0'
   }
   //60% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667 ||
     objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 667) {
-    return '58,1.6'
+    return '58,1.6,0'
   }
   //0% of right
   else {
-    return '68,1.37'
+    return '68,1.37,0'
   }
 
 }

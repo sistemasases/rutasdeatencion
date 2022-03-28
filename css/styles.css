@@ -278,7 +278,7 @@ h1 {
     grid-row-start: 2;
     grid-row-end: 2;
 }
-      
+     
 .text-botton {
     border: hidden;
     width: 100%;
@@ -288,7 +288,8 @@ h1 {
     font-family: Roboto, sans-serif;
     font-style: italic;
     font-weight: unset;
-    text-align: center;
+    text-align: start;
+    margin-left: 1.5em;
     background-color: transparent;
 }      
 
@@ -695,6 +696,7 @@ h1 {
     align-self: center;
     color: #8f8e8e;
     font-size: 1.2em;
+    cursor: pointer;
 }
 
 .box-x-dimension-aux-escritorio {
@@ -705,6 +707,7 @@ h1 {
     align-self: center;
     color: #8f8e8e;
     font-size: 1.2em;
+    cursor: pointer;
 }
 
 .box-information {
