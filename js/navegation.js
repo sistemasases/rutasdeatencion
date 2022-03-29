@@ -52,7 +52,7 @@ function svgPaint(json) {
   json.then(function (event) {
 
     let iterador = Object.keys(event).length
-   
+    console.log(Object.values(event), 'iterador')
     for (const dimension of Object.values(event)) {
       //incrementos
       iterador++;
@@ -63,11 +63,17 @@ function svgPaint(json) {
       $('#arrow-' + iterador).hide()
       //insertar el texto correspiente de la flecha
       $('#arrow-' + i + '').find('text').each(function (index, value) {
-        if (index == 0) {
+        if (index == 0 && dimension.tipoTitulo != 2) {
           $(value).show()
           $(value).html((dimension.name).toUpperCase())
           $(value).attr('title', 1)
-        } else {
+        }
+        else if (index > 0 && index < 3 && dimension.tipoTitulo == 2) {
+          $(value).show()
+          $(value).html((dimension.name).split(',')[index-1].toUpperCase())
+          $(value).attr('title', 1)
+        } 
+        else {
           $(value).hide()
           $(value).attr('title', 0)
         }
