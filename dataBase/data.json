@@ -1,7 +1,7 @@
 {
   "0": {
-    "tipoTitulo": 3,
-    "name": "Individual - Familiar",
+    "tipoTitulo": 2,
+    "name": "Individual,Familiar",
     "introduccion": "En la dimensión individual - familiar las atenciones se despliegan: <br><br>Cuando el/la estudiante tiene una situación personal o familiar que requiera orientación o atención en salud física o mental, Psicosocial, legal o de esparcimiento. <br><br> Para estas atenciones es importante indagar si el estudiante cuenta con EPS y si realizó la portabilidad en salud.",
     "caminata": false,
     "TiposDeAtencion": {
@@ -579,7 +579,7 @@
     }
   },
   "1": {
-    "tipoTitulo": 2,
+    "tipoTitulo": 1,
     "name": "Universitaria",
     "caminata": false,
     "introduccion": "En la dimensión vida universitaria las atenciones se despliegan: <br><br> Cuando el/la estudiante tiene una situación al interior de la universidad que requiera de algún tipo de atención relacionada con los servicios que ésta ofrece. Ya sea de carácter cultural, deportivo, administrativo o de vivienda.",
