@@ -1301,13 +1301,13 @@ function get_time_multiplier(value, dimension, attetionAux, entity, indexCap) {
   }
   //30% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||
-    objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth <= 667) {
+    objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth <= 779) {
     return '63,1.5,0'
   }
   //60% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667 ||
-    objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 667) {
-    return '59,1.6,0'
+    objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 779) {
+    return '58,1.6,0'
   }
   //0% of right
   else {
