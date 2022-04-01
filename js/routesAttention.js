@@ -1302,16 +1302,34 @@ function get_time_multiplier(value, dimension, attetionAux, entity, indexCap) {
   //30% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||
     objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth <= 800) {
-    return '63,1.5,0'
+    return `63,1.5,${ ($('#svg-1-6').css('display') !== 'none') ? '6' : '30' }`
   }
-  //60% of right
+  //54% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667 ||
     objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 800) {
-    return '58,1.6,0'
+    return `58,1.6,${ ($('#svg-1-6').css('display') !== 'none') ? '6' : '54' }`
   }
   //0% of right
   else {
-    return '68,1.37,0'
+    return `68,1.37,${ ($('#svg-1-6').css('display') !== 'none') ? '6' : get_increase_size(objectJson,indexCap,sizeScreenWidth11,sizeScreenHeigth) }`
   }
 
+}
+
+
+//funcion para acomodar el increase depeniendo de 2 facotores el tamaño de la pantalla y la señalitica
+function get_increase_size(objectJson,indexCap,sizeScreenWidth11,sizeScreenHeigth) {
+   
+   //30% of right
+   if (sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||
+       sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth <= 800) {
+    return `${ ($('#svg-1-6').css('display') !== 'none') ? '6' : '30' }`
+   }
+   //54% of right
+   else if (sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667 ||
+            sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 800) {
+    return `${ ($('#svg-1-6').css('display') !== 'none') ? '6' : '54' }`
+   }
+  
+   
 }
