@@ -245,84 +245,6 @@ function animateRuteNew(band, sizeScreenWidth, screen, json, dimension, attetion
 }
 
 
-/* animacion de la ruta */
-function animateRuteNewEscritorio(band, sizeScreenWidth, screen, json, dimension, attetionAux, entity, indexCap, nameArrow, nameDimension) {
-
-
-  json.then(function (value) {
-
-    //variables locales
-    let sizeScreen = 0;
-    let increase = 0;
-    let timeHideRute = 0;
-    let timeMultiplier = 1.4
-    let porcentShowRute = 85
-    let clasName = 'lienzo'
-    bandAux = true
-    bandBrecumbs = true
-
-    $('#arrow-box-principality').addClass('breadcrumbs-active-click')
-
-    if ($('#svg-1-6').hasClass('active-svg-info')) {
-      $('#svg-1-6').removeClass('active-svg-info')
-      $('.svg-info-aux').each(function (index, value1) {
-        $(value1).hide()
-      })
-    }
-
-    timeHideRute = ((sizeScreenWidth * timeMultiplier) * porcentShowRute) / 100;
-
-    var ruteAnimate = setInterval(function () {
-
-      if (sizeScreen < sizeScreenWidth * timeMultiplier) {
-
-        //mover el svg hacia fuera de la pantalla
-        if (sizeScreen <= timeHideRute) {
-          $('.detonating-question-box').removeClass('on')
-          console.log('entro a la condicion 1')
-          $(`.${clasName}`).css('right', '' + increase + '%')
-          increase += 6;
-        }
-        else {
-
-          //poner svg al inicio y actulizar su contenido
-          if (bandAux) {
-            bandAux = false
-            increase = -90
-            funcionalityBrecumbs(indexCap, nameDimension)
-            funcionalityRute(json, dimension, attetionAux, entity, 1, indexCap, nameArrow);
-            show_brecumbs()
-            $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
-          }
-
-          //incrementar el movimiento del svg          
-          $(`.${clasName}`).css('right', '' + increase + '%')
-          increase += 6
-
-
-        }
-
-        console.log($(`.${clasName}`).width(), 'Object.isSealed(value)', timeHideRute)
-        sizeScreen += 10
-      }
-      else {
-        band = true
-      }
-
-      if (band) {
-        clearInterval(ruteAnimate)
-      }
-
-    }, 100)
-
-
-    return ruteAnimate
-
-  })
-
-}
-
-
 /* Animacion del personaje */
 function animateCharacterNew(json, dimension, attetionAux, entity, indexCap, sizeScreenWidth) {
 
@@ -830,7 +752,7 @@ function dimension_description(json, dimension) {
 
   json.then((event) => {
 
-    $('.title-dimension .title-aux-dimensio-content').html(`Dimension ${(Object.values(event)[dimension]).name}`)
+    $('.title-dimension .title-aux-dimensio-content').html(`Dimension ${((Object.values(event)[dimension]).name).replace(',',' ')}`)
     $('.content-dimension').html((Object.values(event)[dimension]).introduccion)
 
   }).catch((err) => {
@@ -925,11 +847,11 @@ function get_time_multiplier(value, dimension, attetionAux, entity, indexCap) {
   
   //-42% of right es para que se vea bien en el escritorio
   if (objectJson[indexCap].length > 5 && sizeScreenWidth11 > 500) {
-    return '83,1.4,-42'
+    return '73,0.9,-42'
   }
   //-48% of right es para que se vea bien en el escritorio
   else if (objectJson[indexCap].length < 5 && sizeScreenWidth11 > 500) {
-    return '85,1.4,-48'
+    return '75,0.9,-48'
   }
   //30% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||

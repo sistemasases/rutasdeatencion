@@ -191,7 +191,6 @@ h1 {
     grid-template-rows: 5em;
     grid-template-columns: 30% 40% 30%;
     background-color: transparent;
-    box-shadow: rgba(199, 202, 202, 0.2) 0px 8px 24px;
     z-index: 1;
 }
 
@@ -693,7 +692,8 @@ h1 {
     grid-column-start: 2;
     grid-column-end: 2;
     justify-self: end;
-    margin-right: 0.5em;
+    margin-right: 0.2em;
+    margin-bottom: 0.7em;
     align-self: center;
     color: #8f8e8e;
     font-size: 1.2em;
@@ -705,6 +705,7 @@ h1 {
     grid-column-end: 2;
     justify-self: end;
     margin-right: 0.5em;
+    margin-bottom: 0.7em;
     align-self: center;
     color: #8f8e8e;
     font-size: 1.2em;
@@ -1216,7 +1217,7 @@ h1 {
           display: none;
       }
       body,html {
-          background-position-y: 0 , 1em , 0;
+          background-position-y: 0 , 0em , 0;
           background-image: url("../images/fondoPantalla/f-3.png") , url("../images/fondoPantalla/f-1.png") , url("../images/fondoPantalla/f-2.png");
       }
       .box-botton-content {
@@ -1980,7 +1981,7 @@ h1 {
           display: none;
       }
       body,html {
-          background-position-y: 0 , 1em , 0;
+          background-position-y: 0 , 0 , 0;
       }
       .box-page-inicio-new {
          display: grid;

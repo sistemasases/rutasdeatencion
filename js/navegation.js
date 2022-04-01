@@ -27,11 +27,9 @@ $(function () {
     })
    
   }
-  else {
-    $('#box-dimension-question').hide()
-  }
   
-
+  
+   $('#box-dimension-question').hide()
    $('#box-dimension-routes').show()
   /* EVENTOS CLICK  */
 

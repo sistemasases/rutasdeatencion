@@ -83,6 +83,7 @@ function breadcrumbs_funcionality(json) {
 
       //regresar estados a su estado original cuando se da click en el home
       if (index === 0) {
+        $('body').css('background-position-x', '0 , 0 , 0')
         $('#bread-1').addClass('box-breadcrumbs-active')
         $('.arrow-1').addClass('active')
         $('body').attr('title', 0)
