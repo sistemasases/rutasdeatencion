@@ -118,50 +118,6 @@ function rutesAttentionMovil(json) {
 }
 
 
-/* animacion del fondo*/
-function animateBackground(band, sizeScreenWidth, bandAux) {
-
-  //let sizeScreenWidth  = $(window).width()
-  let sizeScreen = 0;
-  let increase = 0;
-  let increasefg2 = 0;
-  if (bandAux) {
-    clasName = 'body,html'
-  }
-  else {
-    clasName = 'body'
-  }
-
-  //evitar usar los escuchas mientras se hace la animacion
-  $('body').removeClass('active')
-
-  const timer = setInterval(function () {
-
-    //si el tamaño de pantalla es superado habra acaba la animacion
-    if (sizeScreen < sizeScreenWidth * 2) {
-      $(`${clasName}`).css('background-position-x', '' + increase + '% , ' + (increasefg2) + '%,' + (increasefg2) + '%')
-      increase += 1;
-      sizeScreen += 10;
-      increasefg2 += 2;
-    }
-    else {
-      band = true;
-    }
-
-    if (band) {
-      clearInterval(timer)
-      band = null
-      sizeScreen = 0;
-      increasefg2 = 0;
-      increase = 0;
-      $('body').addClass('active')
-    }
-
-  }, 100)
-
-  return timer;
-
-}
 
 /* animacion del fondo*/
 function animateBackgroundNew(band, sizeScreenWidth, bandAux, json, dimension, attetionAux, entity, indexCap) {
@@ -208,172 +164,6 @@ function animateBackgroundNew(band, sizeScreenWidth, bandAux, json, dimension, a
 
     return timer;
   })
-}
-
-
-/* animacion de la ruta */
-function animateRute(band, sizeScreenWidth, screen, json, dimension, attetionAux, entity, indexCap, nameArrow, nameDimension) {
-
-
-  json.then(function (value) {
-
-    //variables locales
-    let sizeScreen = 0;
-    let increase = 0;
-    let timeHideRute = ((sizeScreenWidth * 2) * 50) / 100;
-    let timeShowRute = 0;
-    let clasName = 'lienzo';
-    bandAux = true
-    bandBrecumbs = true
-    sizeScreenWidth11 = $(window).width()
-    sizeScreenHeigth = $(window).height()
-
-    $('#arrow-box-principality').addClass('breadcrumbs-active-click')
-
-    //recorrer la capas internas del json por dimension, a expecion de la capa mayor  
-    try {
-      objectJson = [(Object.entries((Object.values(value)[dimension].TiposDeAtencion))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes), Object.entries(((Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)[entity])[1]).Entidades)]
-    } catch (err) {
-      console.log('la instancia del json selecionada, esta vacia o le faltan componentes', err)
-      objectJson = [(((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)]
-    }
-
-    //verificar si la dimension es la mayor y el ancho de la pantalla es mayor a 375
-    if (objectJson[indexCap].length < 5 && sizeScreenWidth11 > 375 && sizeScreenHeigth < 667) {
-      timeShowRute = ((sizeScreenWidth * 2) * 87) / 100;
-      console.log('entro a la condicion 1')
-    }
-    else if (sizeScreenWidth11 > 375 && sizeScreenHeigth < 667) {
-      timeShowRute = ((sizeScreenWidth * 2) * 79) / 100;
-      console.log('entro a la condicion 2')
-    }
-
-
-    if (objectJson[indexCap].length > 5 && sizeScreenWidth11 < 376 && sizeScreenHeigth < 668) {
-      timeShowRute = ((sizeScreenWidth * 2) * 73) / 100;
-      console.log('entro a la condicion 5')
-    }
-    else if (sizeScreenWidth11 < 376 && sizeScreenHeigth < 668) {
-      timeShowRute = ((sizeScreenWidth * 2) * 79) / 100;
-      console.log('entro a la condicion 6')
-    }
-
-    //verificar si la dimension es la mayor y el ancho de la pantalla es mayor a 375
-    if (objectJson[indexCap].length > 5 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 668) {
-      timeShowRute = ((sizeScreenWidth * 2) * 66) / 100;
-      console.log('entro a la condicion 3')
-    }
-    else if (sizeScreenWidth11 > 375 && sizeScreenHeigth > 667) {
-      timeShowRute = ((sizeScreenWidth * 2) * 79) / 100;
-      console.log('entro a la condicion 4')
-    }
-
-
-    //verificar si la dimension es la mayor y el ancho de la pantalla es menor a 375
-    if (objectJson[indexCap].length > 5 && sizeScreenWidth11 < 376 && sizeScreenHeigth > 668) {
-      timeShowRute = ((sizeScreenWidth * 2) * 66) / 100;
-      //console.log('entro a la condicion 3')
-    }
-    else if (sizeScreenWidth11 < 376 && sizeScreenHeigth > 668) {
-      timeShowRute = ((sizeScreenWidth * 2) * 79) / 100;
-      //alert('entre')
-    }
-
-    if ($('#svg-1-6').hasClass('active-svg-info')) {
-      $('#svg-1-6').removeClass('active-svg-info')
-      $('.svg-info-aux').each(function (index, value1) {
-        $(value1).hide()
-      })
-    }
-
-    if ($('#svg-1-6').hasClass('active-svg') && sizeScreenWidth11 > 375 && sizeScreenHeigth < 667) {
-      $('#svg-1-6').removeClass('active-svg')
-
-      increase = -36
-      console.log('entro a la condicion 7')
-    }
-
-
-    if ($('#svg-1-8').css('display') != 'none' && $('#svg-1-8').hasClass('active-svg') && sizeScreenWidth11 > 375 && sizeScreenHeigth > 667) {
-      $('#svg-1-8').removeClass('active-svg')
-      increase = 60
-      console.log('entro a la condicion 8')
-    }
-
-    if ($('#svg-1-6').css('display') === 'none' && $('#svg-1-8').css('display') != 'none' && $('#svg-1-8').hasClass('active-svg') && sizeScreenWidth11 > 375
-      && sizeScreenHeigth > 667) {
-      $('#svg-1-8').removeClass('active-svg')
-      increase = 60
-      console.log('entro a la condicion 9')
-    }
-
-    if ($('#svg-1-8').css('display') != 'none' && $('#svg-1-8').hasClass('active-svg') && sizeScreenWidth11 < 376 && sizeScreenHeigth > 667) {
-      $('#svg-1-8').removeClass('active-svg')
-      increase = 60
-      console.log('entro a la condicion 8')
-    }
-
-    if ($('#svg-1-6').css('display') === 'none' && $('#svg-1-8').css('display') != 'none' && $('#svg-1-8').hasClass('active-svg') && sizeScreenWidth11 < 376
-      && sizeScreenHeigth > 667) {
-      $('#svg-1-8').removeClass('active-svg')
-      increase = 60
-      console.log('entro a la condicion 9')
-    }
-
-
-    var ruteAnimate = setInterval(function () {
-
-      if (sizeScreen < sizeScreenWidth * 2) {
-
-        //mover el svg hacia fuera de la pantalla
-        if (sizeScreen <= timeHideRute) {
-          $('.detonating-question-box').removeClass('on')
-          //$('.detonating-question-box').fadeOut() 
-          $(`.${clasName}`).css('right', '' + increase + '%')
-          increase += 6;
-        }
-
-        //poner svg al inicio y actulizar su contenido
-        if (sizeScreen > timeHideRute && bandAux) {
-          bandAux = false
-          increase = -90
-        }
-
-        //volver a mostrar el svg con los cambios nuevos
-        if (sizeScreen >= timeShowRute) {
-          if (bandBrecumbs) {
-            bandBrecumbs = false
-            //funcionalityAskDetoting(indexCap)
-            funcionalityBrecumbs(indexCap, nameDimension)
-            funcionalityRute(json, dimension, attetionAux, entity, 1, indexCap, nameArrow);
-            show_brecumbs()
-            //dimension_description(json, dimension)
-            $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
-          }
-
-          //funcionalityRute(json , dimension , attetionAux , entity , 1 , indexCap );
-          $(`.${clasName}`).css('right', '' + increase + '%')
-          console.log(increase, 'increase')
-          increase += 6
-        }
-
-        sizeScreen += 10
-      }
-      else {
-        band = true
-      }
-
-      if (band) {
-        clearInterval(ruteAnimate)
-      }
-
-    }, 100)
-
-
-    return ruteAnimate
-
-  })
-
 }
 
 
@@ -454,242 +244,6 @@ function animateRuteNew(band, sizeScreenWidth, screen, json, dimension, attetion
 
 }
 
-
-/* animacion de la ruta */
-function animateRuteNewEscritorio(band, sizeScreenWidth, screen, json, dimension, attetionAux, entity, indexCap, nameArrow, nameDimension) {
-
-
-  json.then(function (value) {
-
-    //variables locales
-    let sizeScreen = 0;
-    let increase = 0;
-    let timeHideRute = 0;
-    let timeMultiplier = 1.4
-    let porcentShowRute = 85
-    let clasName = 'lienzo'
-    bandAux = true
-    bandBrecumbs = true
-
-    $('#arrow-box-principality').addClass('breadcrumbs-active-click')
-
-    if ($('#svg-1-6').hasClass('active-svg-info')) {
-      $('#svg-1-6').removeClass('active-svg-info')
-      $('.svg-info-aux').each(function (index, value1) {
-        $(value1).hide()
-      })
-    }
-
-    timeHideRute = ((sizeScreenWidth * timeMultiplier) * porcentShowRute) / 100;
-
-    var ruteAnimate = setInterval(function () {
-
-      if (sizeScreen < sizeScreenWidth * timeMultiplier) {
-
-        //mover el svg hacia fuera de la pantalla
-        if (sizeScreen <= timeHideRute) {
-          $('.detonating-question-box').removeClass('on')
-          console.log('entro a la condicion 1')
-          $(`.${clasName}`).css('right', '' + increase + '%')
-          increase += 6;
-        }
-        else {
-
-          //poner svg al inicio y actulizar su contenido
-          if (bandAux) {
-            bandAux = false
-            increase = -90
-            funcionalityBrecumbs(indexCap, nameDimension)
-            funcionalityRute(json, dimension, attetionAux, entity, 1, indexCap, nameArrow);
-            show_brecumbs()
-            $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
-          }
-
-          //incrementar el movimiento del svg          
-          $(`.${clasName}`).css('right', '' + increase + '%')
-          increase += 6
-
-
-        }
-
-        console.log($(`.${clasName}`).width(), 'Object.isSealed(value)', timeHideRute)
-        sizeScreen += 10
-      }
-      else {
-        band = true
-      }
-
-      if (band) {
-        clearInterval(ruteAnimate)
-      }
-
-    }, 100)
-
-
-    return ruteAnimate
-
-  })
-
-}
-
-
-function animeteRuteEscritorio(band, sizeScreenWidth, screen, json, dimension, attetionAux, entity, indexCap, nameArrow, nameDimension) {
-
-  json.then(function (value) {
-
-    //variables locales
-    let sizeScreen = 0;
-    let increase = 0;
-    let timeHideRute = ((sizeScreenWidth * 2) * 50) / 100;
-    let timeShowRute = 0
-    let clasName = 'lienzo'
-    bandAux = true
-    bandBrecumbs = true
-    sizeScreenWidth11 = $(window).width()
-    sizeScreenHeigth = $(window).height()
-
-    $('#arrow-box-principality').addClass('breadcrumbs-active-click')
-
-    //recorrer la capas internas del json por dimension, a expecion de la capa mayor  
-    try {
-      objectJson = [(Object.entries((Object.values(value)[dimension].TiposDeAtencion))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes), Object.entries(((Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)[entity])[1]).Entidades)]
-    } catch (err) {
-      console.log('la instancia del json selecionada, esta vacia o le faltan componentes', err)
-      objectJson = [(((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)]
-    }
-
-    //verificar si la dimension es la mayor y el ancho de la pantalla es mayor a 375
-    if (objectJson[indexCap].length < 5) {
-      timeShowRute = ((sizeScreenWidth * 2) * 90) / 100;
-    }
-    else {
-      timeShowRute = ((sizeScreenWidth * 2) * 89) / 100;
-    }
-
-
-    if ($('#svg-1-6').hasClass('active-svg-info')) {
-      $('#svg-1-6').removeClass('active-svg-info')
-      $('.svg-info-aux').each(function (index, value1) {
-        $(value1).hide()
-      })
-    }
-
-    if ($('#svg-1-6').hasClass('active-svg')) {
-      $('#svg-1-6').removeClass('active-svg')
-      increase = -50
-    }
-
-
-    var ruteAnimate = setInterval(function () {
-
-      if (sizeScreen < sizeScreenWidth * 2) {
-
-        //mover el svg hacia fuera de la pantalla
-        if (sizeScreen <= timeHideRute) {
-          $('.detonating-question-box').removeClass('on')
-          //$('.detonating-question-box').fadeOut() 
-          $(`.${clasName}`).css('right', '' + increase + '%')
-          increase += 6;
-        }
-
-        //poner svg al inicio y actulizar su contenido
-        if (sizeScreen > timeHideRute && bandAux) {
-          bandAux = false
-          increase = -90
-        }
-
-        //volver a mostrar el svg con los cambios nuevos
-        if (sizeScreen >= timeShowRute) {
-          if (bandBrecumbs) {
-            bandBrecumbs = false
-            //funcionalityAskDetoting(indexCap)
-            funcionalityBrecumbs(indexCap, nameDimension)
-            funcionalityRute(json, dimension, attetionAux, entity, 1, indexCap, nameArrow);
-            show_brecumbs()
-            //dimension_description(json, dimension)
-            $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
-          }
-
-          //funcionalityRute(json , dimension , attetionAux , entity , 1 , indexCap );
-          $(`.${clasName}`).css('right', '' + increase + '%')
-          console.log(increase, 'increase')
-          increase += 6
-        }
-
-        sizeScreen += 10
-      }
-      else {
-        band = true
-      }
-
-      if (band) {
-        $('#svg-1-6').addClass('active-svg')
-        clearInterval(ruteAnimate)
-      }
-
-    }, 100)
-
-
-    return ruteAnimate
-
-  })
-
-
-}
-
-/* Animacion del personaje */
-function animateCharacter(sizeScreenWidth) {
-
-  //variables
-  let sizeScreen = 0;
-  let timeSequence = 4
-  let imgSequence = 0
-  band = true
-  killTimer = false
-
-
-  var animateCharac = setInterval(function () {
-
-    if (sizeScreen < sizeScreenWidth * 2) {
-
-      //cambiar la imagen determinado tiempo  
-      if (timeSequence == 4) {
-        if ((imgSequence - 1) == 0) {
-          $(`#personaje-caminata-${imgSequence + 7}`).addClass('features-personajes-off')
-        }
-        $(`#personaje-caminata-${imgSequence - 1}`).addClass('features-personajes-off')
-        $(`#personaje-caminata-${imgSequence}`).removeClass('features-personajes-off')
-        console.log(imgSequence, 'imgSequence', imgSequence - 1, 'imgSequence - 1')
-        imgSequence++
-        timeSequence = 1
-      }
-
-      //restablecer la imagen inicial finalizada la primer secuencia
-      if (imgSequence > 8) {
-        imgSequence = 1
-      }
-
-      //incrementos
-      timeSequence++
-      sizeScreen += 10
-    }
-    else {
-      killTimer = true
-    }
-
-    if (killTimer) {
-      //$(`#personaje-caminata-1`).removeClass('features-personajes-off')
-      for (let i = 2; i < 9; i++) {
-        $(`#personaje-caminata-${i}`).addClass('features-personajes-off')
-      }
-      clearInterval(animateCharac)
-    }
-
-  }, 100)
-
-  return animateCharac
-
-}
 
 /* Animacion del personaje */
 function animateCharacterNew(json, dimension, attetionAux, entity, indexCap, sizeScreenWidth) {
@@ -1198,7 +752,7 @@ function dimension_description(json, dimension) {
 
   json.then((event) => {
 
-    $('.title-dimension .title-aux-dimensio-content').html(`Dimension ${(Object.values(event)[dimension]).name}`)
+    $('.title-dimension .title-aux-dimensio-content').html(`Dimension ${((Object.values(event)[dimension]).name).replace(',',' ')}`)
     $('.content-dimension').html((Object.values(event)[dimension]).introduccion)
 
   }).catch((err) => {
@@ -1244,7 +798,7 @@ function event_click_div() {
 
   })
 
-  $('.box-x-dimension-aux').on('click', function (event) {
+  $('.box-x-dimension-aux , .box-x-dimension-end-aux').on('click', function (event) {
     $(this).parent().parent().parent().hide()
     $('#breadcumbs-3').find('.arrow-text').addClass('arrow-active')
     $('#breadcumbs-4').hide()
@@ -1293,25 +847,43 @@ function get_time_multiplier(value, dimension, attetionAux, entity, indexCap) {
   
   //-42% of right es para que se vea bien en el escritorio
   if (objectJson[indexCap].length > 5 && sizeScreenWidth11 > 500) {
-    return '83,1.4,-42'
+    return '73,0.9,-42'
   }
   //-48% of right es para que se vea bien en el escritorio
   else if (objectJson[indexCap].length < 5 && sizeScreenWidth11 > 500) {
-    return '85,1.4,-48'
+    return '75,0.9,-48'
   }
   //30% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||
     objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth <= 800) {
-    return '63,1.5,0'
+    return `63,1.5,${ ($('#svg-1-6').css('display') !== 'none') ? '6' : '30' }`
   }
-  //60% of right
+  //54% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667 ||
     objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 800) {
-    return '58,1.6,0'
+    return `58,1.6,${ ($('#svg-1-6').css('display') !== 'none') ? '6' : '54' }`
   }
   //0% of right
   else {
-    return '68,1.37,0'
+    return `68,1.37,${ ($('#svg-1-6').css('display') !== 'none') ? '6' : get_increase_size(objectJson,indexCap,sizeScreenWidth11,sizeScreenHeigth) }`
   }
 
+}
+
+
+//funcion para acomodar el increase depeniendo de 2 facotores el tamaño de la pantalla y la señalitica
+function get_increase_size(objectJson,indexCap,sizeScreenWidth11,sizeScreenHeigth) {
+   
+   //30% of right
+   if (sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||
+       sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth <= 800) {
+    return `${ ($('#svg-1-6').css('display') !== 'none') ? '6' : '30' }`
+   }
+   //54% of right
+   else if (sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667 ||
+            sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 800) {
+    return `${ ($('#svg-1-6').css('display') !== 'none') ? '6' : '54' }`
+   }
+  
+   
 }
