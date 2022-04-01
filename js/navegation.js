@@ -17,9 +17,9 @@ $(function () {
 
   //activar las funciones en paralelo
   Promise.all([screenResponsiveWebDesing(json), svgPaint(json), rutesAttentionMovil(json),info_dimension(json),event_click_div()])
-  //$('#box-dimension-routes').show()
+ 
   if (sizeScreenWidth <= 500) {
-    //$('#box-dimension-routes').removeClass('box-escritorio-dimension-rutas')
+    
     $('#title-brecumbs-aux').removeClass('title-aux-escritorio')
     $('.arrow-7').each(function (index, value) {
        console.log(index,value)
@@ -27,9 +27,10 @@ $(function () {
     })
    
   }
-  else { 
-   //$('#box-dimension-routes').addClass('box-escritorio-dimension-rutas')
+  else {
+    $('#box-dimension-question').hide()
   }
+  
 
    $('#box-dimension-routes').show()
   /* EVENTOS CLICK  */
@@ -51,7 +52,7 @@ function svgPaint(json) {
   json.then(function (event) {
 
     let iterador = Object.keys(event).length
-   
+    console.log(Object.values(event), 'iterador')
     for (const dimension of Object.values(event)) {
       //incrementos
       iterador++;
@@ -62,11 +63,17 @@ function svgPaint(json) {
       $('#arrow-' + iterador).hide()
       //insertar el texto correspiente de la flecha
       $('#arrow-' + i + '').find('text').each(function (index, value) {
-        if (index == 0) {
+        if (index == 0 && dimension.tipoTitulo != 2) {
           $(value).show()
           $(value).html((dimension.name).toUpperCase())
           $(value).attr('title', 1)
-        } else {
+        }
+        else if (index > 0 && index < 3 && dimension.tipoTitulo == 2) {
+          $(value).show()
+          $(value).html((dimension.name).split(',')[index-1].toUpperCase())
+          $(value).attr('title', 1)
+        } 
+        else {
           $(value).hide()
           $(value).attr('title', 0)
         }
