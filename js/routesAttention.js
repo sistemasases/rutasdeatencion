@@ -887,3 +887,128 @@ function get_increase_size(objectJson,indexCap,sizeScreenWidth11,sizeScreenHeigt
   
    
 }
+
+
+/**
+ * @method get_params_url
+ * @description funcion para capturar los parametros de la url y retornarlos
+ * @returns objecttype json
+ */
+function get_params_url() {
+
+  //capturar los parametros de la url
+  var url_string = window.location.href
+  var url = new URL(url_string)
+  var dm = url.searchParams.get("dm")
+  var at = url.searchParams.get("at")
+  var sd = url.searchParams.get("sd")
+  var atx = url.searchParams.get("atx")
+
+  console.log('dm', dm, 'at', at, 'sd', sd, 'atx', atx)
+
+  //retornar los parametros de la url 
+  return {
+    dm: dm,
+    at: at,
+    sd: sd,
+    atx: atx
+  }
+
+}
+
+/**
+ * @method valiate_params_url
+ * @description funcion para verificar que los parametros de la url sean correctos
+ * @returns 
+ */
+function valiate_params_url() {
+
+   var params = get_params_url()
+   var regexp = /^[0-7]{1}$/
+   var index = ''
+   
+   //recorer los parametros de la url
+   for (var key in params) {
+      
+
+     //validar que los parametros de la url sean correctos
+     if (regexp.exec(params[key]) != null) {
+      index += '0'
+     }
+     else {
+      index += '1'
+     }
+
+   }
+   
+   //verficar el tipo de la url
+   if (index === '0111' || index === '0011' || index === '0001' || index === '0000') {
+     return index
+   }
+   else {
+     return '1111'
+   }
+
+}
+
+/**
+ * @method carry_box_dimension
+ * @description funcion para llevarlo a la dimension que seleciono el usuario
+ * @returns 
+ */
+function carry_box_dimension(json) {
+
+   var params_boolean = valiate_params_url()
+   var params = get_params_url()
+   var array_value_params = []
+   var index = 0
+  
+   //si el parametro de la url es correcto hacer el caminado
+   if (params_boolean !== '1111') {
+
+      //recorer los parametros de la url
+      for (var key in params) {
+   
+        if (params[key] !== null) {
+          array_value_params.push(Number(params[key]))
+          index++
+        }else {
+          array_value_params.push(0)
+        }
+
+      }
+      console.log('array_value_params', array_value_params)
+      funcionalityBrecumbs(index-1, 'Individual')
+      funcionalityRute(json, array_value_params[0] , array_value_params[1] , array_value_params[2] , 1 , index-1, 'arrows-')
+      show_brecumbs()
+      $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
+      console.log('index', index)
+      get_name_dimension(json,array_value_params[0],0,0,0)
+   }
+   else {
+     console.log('los parametros de la url no son incorrectos')
+   }
+    
+}
+
+/**
+ * @method get_name_dimension
+ * @description funcion para obtener el nombre de la dimension
+ * @returns 
+ */
+function get_name_dimension(json,index,attention,sedes,entity) {
+
+    json.then((result) => {
+
+      //console.log('salida', Object.values(result)[index].name, index)
+      //console.log('salida 48', Object.values( Object.values(result)[index].TiposDeAtencion)[attention].name )
+     //console.log('salida 48', Object.values(Object.values( Object.values(result)[index].TiposDeAtencion)[attention].sedes)[sedes].name )
+     //console.log('salida 48', Object.values(Object.values(Object.values( Object.values(result)[index].TiposDeAtencion)[attention].sedes)[sedes].Entidades)[entity].name )
+
+    }).catch((err) => {
+
+      console.log('error', err)
+
+    });
+
+}

@@ -16,8 +16,8 @@ $(function () {
   /* fin de las varibles */
 
   //activar las funciones en paralelo
-  Promise.all([screenResponsiveWebDesing(json), svgPaint(json), rutesAttentionMovil(json),info_dimension(json),event_click_div()])
- 
+  Promise.all([screenResponsiveWebDesing(json), svgPaint(json), rutesAttentionMovil(json),info_dimension(json),event_click_div(),carry_box_dimension(json)])
+
   if (sizeScreenWidth <= 500) {
     
     $('#title-brecumbs-aux').removeClass('title-aux-escritorio')
