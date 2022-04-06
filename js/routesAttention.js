@@ -71,7 +71,7 @@ function rutesAttentionMovil(json) {
         }
         else {
 
-          Promise.all([animateCharacterNew(json, dimension, attetionAux, entity, indexCap, sizeScreenWidth),animateBackgroundNew(false, sizeScreenWidth, true, json, dimension, attetionAux, entity, indexCap) , animateRuteNew(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension)])
+          Promise.all([animateCharacterNew(json, dimension, attetionAux, entity, indexCap, sizeScreenWidth), animateBackgroundNew(false, sizeScreenWidth, true, json, dimension, attetionAux, entity, indexCap), animateRuteNew(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension)])
 
           //alert('La pantalla no es suficiente para la animacion')
         }
@@ -752,7 +752,7 @@ function dimension_description(json, dimension) {
 
   json.then((event) => {
 
-    $('.title-dimension .title-aux-dimensio-content').html(`Dimension ${((Object.values(event)[dimension]).name).replace(',',' ')}`)
+    $('.title-dimension .title-aux-dimensio-content').html(`Dimension ${((Object.values(event)[dimension]).name).replace(',', ' ')}`)
     $('.content-dimension').html((Object.values(event)[dimension]).introduccion)
 
   }).catch((err) => {
@@ -844,7 +844,7 @@ function get_time_multiplier(value, dimension, attetionAux, entity, indexCap) {
     console.log('la instancia del json selecionada, esta vacia o le faltan componentes', err)
     objectJson = [(((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)]
   }
-  
+
   //-42% of right es para que se vea bien en el escritorio
   if (objectJson[indexCap].length > 5 && sizeScreenWidth11 > 500) {
     return '73,0.9,-42'
@@ -856,36 +856,36 @@ function get_time_multiplier(value, dimension, attetionAux, entity, indexCap) {
   //30% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||
     objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth <= 800) {
-    return `63,1.5,${ ($('#svg-1-6').css('display') !== 'none') ? '6' : '30' }`
+    return `63,1.5,${($('#svg-1-6').css('display') !== 'none') ? '6' : '30'}`
   }
   //54% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667 ||
     objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 800) {
-    return `58,1.6,${ ($('#svg-1-6').css('display') !== 'none') ? '6' : '54' }`
+    return `58,1.6,${($('#svg-1-6').css('display') !== 'none') ? '6' : '54'}`
   }
   //0% of right
   else {
-    return `68,1.37,${ ($('#svg-1-6').css('display') !== 'none') ? '6' : get_increase_size(objectJson,indexCap,sizeScreenWidth11,sizeScreenHeigth) }`
+    return `68,1.37,${($('#svg-1-6').css('display') !== 'none') ? '6' : get_increase_size(objectJson, indexCap, sizeScreenWidth11, sizeScreenHeigth)}`
   }
 
 }
 
 
 //funcion para acomodar el increase depeniendo de 2 facotores el tamaño de la pantalla y la señalitica
-function get_increase_size(objectJson,indexCap,sizeScreenWidth11,sizeScreenHeigth) {
-   
-   //30% of right
-   if (sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||
-       sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth <= 800) {
-    return `${ ($('#svg-1-6').css('display') !== 'none') ? '6' : '30' }`
-   }
-   //54% of right
-   else if (sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667 ||
-            sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 800) {
-    return `${ ($('#svg-1-6').css('display') !== 'none') ? '6' : '54' }`
-   }
-  
-   
+function get_increase_size(objectJson, indexCap, sizeScreenWidth11, sizeScreenHeigth) {
+
+  //30% of right
+  if (sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||
+    sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth <= 800) {
+    return `${($('#svg-1-6').css('display') !== 'none') ? '6' : '30'}`
+  }
+  //54% of right
+  else if (sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667 ||
+    sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 800) {
+    return `${($('#svg-1-6').css('display') !== 'none') ? '6' : '54'}`
+  }
+
+
 }
 
 
@@ -923,31 +923,31 @@ function get_params_url() {
  */
 function valiate_params_url() {
 
-   var params = get_params_url()
-   var regexp = /^[0-7]{1}$/
-   var index = ''
-   
-   //recorer los parametros de la url
-   for (var key in params) {
-      
+  var params = get_params_url()
+  var regexp = /^[0-7]{1}$/
+  var index = ''
 
-     //validar que los parametros de la url sean correctos
-     if (regexp.exec(params[key]) != null) {
+  //recorer los parametros de la url
+  for (var key in params) {
+
+
+    //validar que los parametros de la url sean correctos
+    if (regexp.exec(params[key]) != null) {
       index += '0'
-     }
-     else {
+    }
+    else {
       index += '1'
-     }
+    }
 
-   }
-   
-   //verficar el tipo de la url
-   if (index === '0111' || index === '0011' || index === '0001' || index === '0000') {
-     return index
-   }
-   else {
-     return '1111'
-   }
+  }
+
+  //verficar el tipo de la url
+  if (index === '0111' || index === '0011' || index === '0001' || index === '0000') {
+    return index
+  }
+  else {
+    return '1111'
+  }
 
 }
 
@@ -958,37 +958,47 @@ function valiate_params_url() {
  */
 function carry_box_dimension(json) {
 
-   var params_boolean = valiate_params_url()
-   var params = get_params_url()
-   var array_value_params = []
-   var index = 0
-  
-   //si el parametro de la url es correcto hacer el caminado
-   if (params_boolean !== '1111') {
+
+  json.then((value) => {
+
+    var params_boolean = valiate_params_url()
+    var params = get_params_url()
+    var array_value_params = []
+    var index = 0
+
+    //si el parametro de la url es correcto hacer el caminado
+    if (params_boolean !== '1111') {
 
       //recorer los parametros de la url
       for (var key in params) {
-   
+
         if (params[key] !== null) {
           array_value_params.push(Number(params[key]))
           index++
-        }else {
+        } else {
           array_value_params.push(0)
         }
 
       }
-      console.log('array_value_params', array_value_params)
-      funcionalityBrecumbs(index-1, 'Individual')
-      funcionalityRute(json, array_value_params[0] , array_value_params[1] , array_value_params[2] , 1 , index-1, 'arrows-')
+
+      console.log(index,'index salidad')
+      funcionalityBrecumbs(index,  get_name_dimension(value, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3], index - 1))
+      funcionalityRute(json, array_value_params[0], array_value_params[1], array_value_params[2], 1, index - 1, 'arrows-')
       show_brecumbs()
       $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
-      console.log('index', index)
-      get_name_dimension(json,array_value_params[0],0,0,0)
-   }
-   else {
-     console.log('los parametros de la url no son incorrectos')
-   }
-    
+      
+      //155
+    }
+    else {
+      console.log('los parametros de la url no son incorrectos')
+    }
+
+  }).catch((error) => {
+
+    console.log('error', error)
+
+  })
+
 }
 
 /**
@@ -996,19 +1006,15 @@ function carry_box_dimension(json) {
  * @description funcion para obtener el nombre de la dimension
  * @returns 
  */
-function get_name_dimension(json,index,attention,sedes,entity) {
+function get_name_dimension(value, index, attention, sedes, entity, indexAux) {
 
-    json.then((result) => {
+    objectCap = {
+      0: Object.values(value)[index].name,
+      1: Object.values(Object.values(value)[index].TiposDeAtencion)[attention].name,
+      2: Object.values(Object.values(Object.values(value)[index].TiposDeAtencion)[attention].sedes)[sedes].name,
+      3: Object.values(Object.values(Object.values(Object.values(value)[index].TiposDeAtencion)[attention].sedes)[sedes].Entidades)[entity].name
+    }
 
-      //console.log('salida', Object.values(result)[index].name, index)
-      //console.log('salida 48', Object.values( Object.values(result)[index].TiposDeAtencion)[attention].name )
-     //console.log('salida 48', Object.values(Object.values( Object.values(result)[index].TiposDeAtencion)[attention].sedes)[sedes].name )
-     //console.log('salida 48', Object.values(Object.values(Object.values( Object.values(result)[index].TiposDeAtencion)[attention].sedes)[sedes].Entidades)[entity].name )
-
-    }).catch((err) => {
-
-      console.log('error', err)
-
-    });
+    return objectCap[indexAux]
 
 }
