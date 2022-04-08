@@ -63,6 +63,26 @@ function rutesAttentionMovil(json) {
         entity = index
       }
 
+      if (valiate_params_url() !== '1111' && $('header').hasClass('active-url')) {
+        $('header').removeClass('active-url')
+        var params_url = get_params_url()
+        var array_value_params = []
+
+        for (key in params_url) {
+
+          if (params_url[key] != null) {
+            array_value_params.push(Number(params_url[key]))
+          }
+          else {
+            array_value_params.push(0)
+          }
+        }
+
+        dimension = array_value_params[0]
+        attetionAux = array_value_params[1]
+        entity = array_value_params[2]
+      }
+
       console.log($('.arrow-3').hasClass('arrow-active'), 'comfirmalo', indexCap)
       if (Number(indexCap) < 3) {
         if (sizeScreenWidthAux <= 500) {
@@ -88,26 +108,17 @@ function rutesAttentionMovil(json) {
         $('.arrow-4').find('.arrow-text').html(nameDimension)
 
 
+
         if (sizeScreenWidthAux <= 500) {
-
-          json.then(function (value) {
-            if ((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).tipoCaja == 2) {
-              create_box_botton(json, dimension, attetionAux, entity, index)
-            }
-            else if ((Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).tipoCaja == 3) {
-              create_box_botton_abc(json, dimension, attetionAux, entity, index)
-            }
-            else {
-              funcionalityInfoContent(json, dimension, attetionAux, entity, index)
-              funcionality_botton_text(json, dimension, attetionAux, entity, index)
-            }
-          })
-
+          console.log(dimension, attetionAux, entity, indexCap, index, 'salidad 89')
+          funcionalityInfoContent(json, dimension, attetionAux, entity, index)
+          funcionality_botton_text(json, dimension, attetionAux, entity, index)
         }
         else {
           console.log('entro pero que raro 25')
           funcioanlity_box_escritorio(json, dimension, attetionAux, entity, index)
         }
+
 
       }
 
@@ -982,22 +993,45 @@ function carry_box_dimension(json) {
 
       }
 
-      show_breadcrumb = index -1
-
-      show_brecumbs()
-
-      for (var i = 0 ; i < index ; i++) {
-    
-         funcionalityBrecumbs(show_breadcrumb,  get_name_dimension(value, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3], show_breadcrumb ))
-         show_breadcrumb--
+      //las capas de la dimension inician en 1 por eso se resta 1
+      show_breadcrumb = index - 1
+      //pasar los paremtros a la dimension que seleciono el usuario
+      $('body').attr('title', (index < 4)? index : 3)
+      $('#bread-1').removeClass('box-breadcrumbs-active')
+      $('#arrows-1').attr('title', array_value_params[0] + ',' + array_value_params[1] + ',' + array_value_params[2] + ',' + 'arrows-')
+      
+      //activar el brecumbs 
+      for (var i = 0; i < index; i++) {
+        console.log('i', i)
+        funcionalityBrecumbs(show_breadcrumb, get_name_dimension(value, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3], show_breadcrumb))
+        show_breadcrumb--
       }
 
-  
-      funcionalityRute(json, array_value_params[0], array_value_params[1], array_value_params[2], 1, index - 1, 'arrows-')
-      //show_brecumbs_params_url(index)
-      $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
+      //mostrar el brecumbs
+      show_brecumbs()
+
+      //ocultar que son las rutas
+      $('#box-dimension-routes').hide()
+
+      //quitar los signos de exclamacion de la señalitica
+      $('.svg-info-aux').each(function (index, value1) {
+        $(value1).hide()
+      })
+
+      //añadir la clase activa al breadcrumbs
+      add_class_active_brecumbs_params_url(index)
+
+      //poner los nombres en las señaliticas
+      funcionalityRute(json, array_value_params[0], array_value_params[1], array_value_params[2], 1, (index < 4)? index - 1 : 2 , 'arrows-')
       
-      //155
+      //si todos los paremetros son diferentes de null mostrar la caja
+      if (index === 4) {       
+          funcionalityInfoContent(json, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3])
+      }
+
+      
+      $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
+ 
     }
     else {
       console.log('los parametros de la url no son incorrectos')
@@ -1018,32 +1052,36 @@ function carry_box_dimension(json) {
  */
 function get_name_dimension(value, index, attention, sedes, entity, indexAux) {
 
-    objectCap = {
-      0: Object.values(value)[index].name,
-      1: Object.values(Object.values(value)[index].TiposDeAtencion)[attention].name,
-      2: Object.values(Object.values(Object.values(value)[index].TiposDeAtencion)[attention].sedes)[sedes].name,
-      3: Object.values(Object.values(Object.values(Object.values(value)[index].TiposDeAtencion)[attention].sedes)[sedes].Entidades)[entity].name
-    }
+  objectCap = {
+    0: Object.values(value)[index].name,
+    1: Object.values(Object.values(value)[index].TiposDeAtencion)[attention].name,
+    2: Object.values(Object.values(Object.values(value)[index].TiposDeAtencion)[attention].sedes)[sedes].name,
+    3: Object.values(Object.values(Object.values(Object.values(value)[index].TiposDeAtencion)[attention].sedes)[sedes].Entidades)[entity].name
+  }
 
-    return objectCap[indexAux]
+  return objectCap[indexAux]
 
 }
 
 /**
- * @method show_brecumbs_params_url
- * @description funcion para mostrar los brecumbs depiendo de los parametros de la url
+ * @method add_class_active_brecumbs_params_url
+ * @description funcion para añadir la clase active al breadcrumbs
  * @returns 
  */
-function show_brecumbs_params_url(indexUrlParams) {
+function add_class_active_brecumbs_params_url(indexUrlParams) {
 
   //each of jequry
   $('.arrow-7').each(function (index, element) {
-    
-     if (indexUrlParams === index) {
-       $(element).show()
-     }
+
+    if (indexUrlParams === index) {
+      $(element).find('.arrow-text').addClass('arrow-active')
+      $(element).addClass('arrow-active')
+    }else {
+      $(element).find('.arrow-text').removeClass('arrow-active')
+      $(element).removeClass('arrow-active')
+    }
 
   })
-  
-  
+
+
 }
