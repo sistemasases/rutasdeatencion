@@ -965,6 +965,7 @@ function carry_box_dimension(json) {
     var params = get_params_url()
     var array_value_params = []
     var index = 0
+    var show_breadcrumb = 0
 
     //si el parametro de la url es correcto hacer el caminado
     if (params_boolean !== '1111') {
@@ -981,10 +982,19 @@ function carry_box_dimension(json) {
 
       }
 
-      console.log(index,'index salidad')
-      funcionalityBrecumbs(index,  get_name_dimension(value, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3], index - 1))
-      funcionalityRute(json, array_value_params[0], array_value_params[1], array_value_params[2], 1, index - 1, 'arrows-')
+      show_breadcrumb = index -1
+
       show_brecumbs()
+
+      for (var i = 0 ; i < index ; i++) {
+    
+         funcionalityBrecumbs(show_breadcrumb,  get_name_dimension(value, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3], show_breadcrumb ))
+         show_breadcrumb--
+      }
+
+  
+      funcionalityRute(json, array_value_params[0], array_value_params[1], array_value_params[2], 1, index - 1, 'arrows-')
+      //show_brecumbs_params_url(index)
       $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
       
       //155
@@ -1017,4 +1027,23 @@ function get_name_dimension(value, index, attention, sedes, entity, indexAux) {
 
     return objectCap[indexAux]
 
+}
+
+/**
+ * @method show_brecumbs_params_url
+ * @description funcion para mostrar los brecumbs depiendo de los parametros de la url
+ * @returns 
+ */
+function show_brecumbs_params_url(indexUrlParams) {
+
+  //each of jequry
+  $('.arrow-7').each(function (index, element) {
+    
+     if (indexUrlParams === index) {
+       $(element).show()
+     }
+
+  })
+  
+  
 }
