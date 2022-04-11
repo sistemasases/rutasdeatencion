@@ -858,21 +858,21 @@ function get_time_multiplier(value, dimension, attetionAux, entity, indexCap) {
 
   //-42% of right es para que se vea bien en el escritorio
   if (objectJson[indexCap].length > 5 && sizeScreenWidth11 > 500) {
-    return '73,0.9,-42'
+    return '73,0.9,-42,-42'
   }
   //-48% of right es para que se vea bien en el escritorio
   else if (objectJson[indexCap].length < 5 && sizeScreenWidth11 > 500) {
-    return '75,0.9,-48'
+    return '75,0.9,-48,-48'
   }
   //30% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth <= 667 ||
     objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth <= 800) {
-    return `63,1.5,${($('#svg-1-6').css('display') !== 'none') ? '6' : '30'}`
+    return `63,1.5,${($('#svg-1-6').css('display') !== 'none') ? '6' : '30'},30`
   }
   //54% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667 ||
     objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 800) {
-    return `58,1.6,${($('#svg-1-6').css('display') !== 'none') ? '6' : '54'}`
+    return `58,1.6,${($('#svg-1-6').css('display') !== 'none') ? '6' : '54'},54`
   }
   //0% of right
   else {
@@ -978,6 +978,7 @@ function carry_box_dimension(json) {
     var index = 0
     var show_breadcrumb = 0
 
+
     //si el parametro de la url es correcto hacer el caminado
     if (params_boolean !== '1111') {
 
@@ -995,6 +996,9 @@ function carry_box_dimension(json) {
 
       //las capas de la dimension inician en 1 por eso se resta 1
       show_breadcrumb = index - 1
+
+      
+
       //pasar los paremtros a la dimension que seleciono el usuario
       $('body').attr('title', (index < 4)? index : 3)
       $('#bread-1').removeClass('box-breadcrumbs-active')
@@ -1017,6 +1021,12 @@ function carry_box_dimension(json) {
       $('.svg-info-aux').each(function (index, value1) {
         $(value1).hide()
       })
+
+      //saber si el svg esta oculto
+      if (size_object_senalitica(value, array_value_params[0], array_value_params[1], array_value_params[2], index-1).length > 5) {
+        $(`.lienzo`).css('right', `${get_time_multiplier(value, array_value_params[0], array_value_params[1], array_value_params[2], index - 1).split(',')[3]}%`)
+      }
+
 
       //añadir la clase activa al breadcrumbs
       add_class_active_brecumbs_params_url(index)
@@ -1063,6 +1073,7 @@ function get_name_dimension(value, index, attention, sedes, entity, indexAux) {
 
 }
 
+
 /**
  * @method add_class_active_brecumbs_params_url
  * @description funcion para añadir la clase active al breadcrumbs
@@ -1083,5 +1094,23 @@ function add_class_active_brecumbs_params_url(indexUrlParams) {
 
   })
 
+
+}
+
+//objectJson = [(Object.entries((Object.values(value)[dimension].TiposDeAtencion))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes), Object.entries(((Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)[entity])[1]).Entidades)]
+/**
+ * @method size_object_senalitica
+ * @description funcion para saber el tamaño del objeto
+ * @returns 
+ */
+function size_object_senalitica(value, dimension, attention, entity, indexAux) {
+
+  objectCap = {
+    0: Object.entries((Object.values(value)[dimension].TiposDeAtencion)),
+    1: Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attention])[1].sedes),
+    2: Object.entries(((Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attention])[1].sedes)[entity])[1]).Entidades)
+  }
+
+  return objectCap[indexAux]
 
 }
