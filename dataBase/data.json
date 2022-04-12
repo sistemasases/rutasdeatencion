@@ -3,7 +3,7 @@
     "tipoTitulo": 2,
     "name": "Individual,Familiar",
     "introduccion": "En la dimensión individual - familiar las atenciones se despliegan: <br><br>Cuando el/la estudiante tiene una situación personal o familiar que requiera orientación o atención en salud física o mental, Psicosocial, legal o de esparcimiento. <br><br> Para estas atenciones es importante indagar si el estudiante cuenta con EPS y si realizó la portabilidad en salud.",
-    "caminata": false,
+    "caminata": true,
     "TiposDeAtencion": {
       "0": {
         "tipoTitulo": 1,
@@ -13,12 +13,12 @@
           "0": {
             "tipoTitulo": 2,
             "name": "Todas las, sedes",
-            "caminata": true,
+            "caminata": false,
             "Entidades": {
               "0": {
                 "tipoTitulo": 3,
                 "name": "Monitorias, Socio, educativas",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -39,17 +39,17 @@
       "1": {
         "tipoTitulo": 3,
         "name": "Atención en,Salud y,Odontología",
-        "caminata": false,
+        "caminata": true,
         "sedes": {
           "0": {
             "tipoTitulo": 1,
             "name": "Sede Cali",
-            "caminata": false,
+            "caminata": true,
             "Entidades": {
               "0": {
                 "tipoTitulo": 3,
                 "name": "Consulta,Médica,Univalle",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -65,7 +65,7 @@
               "1": {
                 "tipoTitulo": 3,
                 "name": "Atencion De,Urgencias,Univalle",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -81,7 +81,7 @@
               "2": {
                 "tipoTitulo": 3,
                 "name": "Laboratorio,Clínico,Univalle",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -97,7 +97,7 @@
               "3": {
                 "tipoTitulo": 3,
                 "name": "Suministro,De,Medicamentos",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -113,7 +113,7 @@
               "4": {
                 "tipoTitulo": 3,
                 "name": "Programa de,promoción y,prevención",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -129,7 +129,7 @@
               "5": {
                 "tipoTitulo": 2,
                 "name": "Servicio,Odontológico",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -147,12 +147,12 @@
           "1": {
             "tipoTitulo": 2,
             "name": "Sede,Regionales",
-            "caminata": false,
+            "caminata": true,
             "Entidades": {
               "0": {
                 "tipoTitulo": 3,
                 "name": "Atención,primaria,en Salud",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -168,7 +168,7 @@
               "1": {
                 "tipoTitulo": 3,
                 "name": "Consulta Médica,urgencias y, odontología externa",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -188,7 +188,7 @@
               "2": {
                 "tipoTitulo": 3,
                 "name": "Programa de,Promoción y,Prevención",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -208,7 +208,7 @@
               "3": {
                 "tipoTitulo": 2,
                 "name": "Servicio,Odontologico",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -232,12 +232,12 @@
       "2": {
         "tipoTitulo": 2,
         "name": "Atención,Psicosocial",
-        "caminata": false,
+        "caminata": true,
         "sedes": {
           "0": {
             "tipoTitulo": 1,
             "name": "Sede Cali",
-            "caminata": false,
+            "caminata": true,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
@@ -245,7 +245,6 @@
                 "caminata": false,
                 "Atenciones": {
                   "0": {
-                    "caminata": true,
                     "tipoCaja": 1,
                     "name": "Atención Interna Psicosocial",
                     "descripcion": "<strong>Programa de salud mental: </strong>En este programa se desarrollan una serie de talleres con el objetivo de ofrecer al individuo herramientas que le permitan a través de un mayor conocimiento de sí mismo, de sus potencialidades y del fortalecimiento de sus principios y valores, realizar los cambios necesarios para afrontar la vida con actitud positiva y tomar decisiones responsables. <a href=':http://vicebienestar.univalle.edu.co/home/22-actividades-servicio-psicologico/50-programa-de-salud-mental-preventiva' target='_blank'> Programa De Salud Mental Preventiva .</a> <br><br><strong>Asesoría Psicológica: </strong>Este programa va dirigido a aquellas personas que requieren un proceso terapéutico al presentar un motivo específico de consulta, bien sea en el área personal, familiar, social, académica u ocupacional.Para solicitar información sobre nuestros programas y expresar sus inquietudes puede comunicarse a través del correo electrónico: <a href='mailto:serviciopsicologico@univalle.edu.co'>serviciopsicologico@univalle.edu.co</a> y de las líneas telefónicas 3212319 y 3212374. <a target='_blank' href='http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/servicio-psicologico/asesoria-psicologica'> Asesoria Psicologica. </a>",
@@ -255,7 +254,6 @@
                     "periodicidad": "Encuentros semanales y/o quincenales con el/la estudiante"
                   },
                   "1": {
-                    "caminata": true,
                     "tipoCaja": 1,
                     "name": "Asesoría Psicológica",
                     "descripcion": "Este programa va dirigido a aquellas personas que requieren un proceso terapéutico al presentar un motivo específico de consulta, bien sea en el área personal, familiar, social, académica u ocupacional.Para solicitar información sobre nuestros programas y expresar sus inquietudes puede comunicarse a través del correo electrónico <a href='mailto:serviciopsicologico@univalle.edu.co'>serviciopsicologico@univalle.edu.co</a> y de las líneas telefónicas 3212319 y 3212374. <a target='_blank' href='http://vicebienestar.univalle.edu.co/servicio-medico-estudiantil/servicio-psicologico/asesoria-psicologica'> Asesoria Psicologica. </a>",
@@ -296,12 +294,12 @@
           "1": {
             "tipoTitulo": 2,
             "name": "Sede,Regionales",
-            "caminata": false,
+            "caminata": true,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
                 "name": "Atención,interna",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -318,7 +316,7 @@
               "1": {
                 "tipoTitulo": 2,
                 "name": "Atención,externa",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -342,17 +340,17 @@
       "3": {
         "tipoTitulo": 2,
         "name": "Atención,educativa",
-        "caminata": false,
+        "caminata": true,
         "sedes": {
           "0": {
             "tipoTitulo": 1,
             "name": "Sede Cali",
-            "caminata": false,
+            "caminata": true,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
                 "name": "Atención,interna",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -368,7 +366,7 @@
               "1": {
                 "tipoTitulo": 2,
                 "name": "Atención,externa",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -386,12 +384,12 @@
           "1": {
             "tipoTitulo": 2,
             "name": "Sedes,Regionales",
-            "caminata": true,
+            "caminata": false,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
                 "name": "Acompañamiento,educativo",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -420,17 +418,17 @@
       "4": {
         "tipoTitulo": 3,
         "name": "Atención de,Violencias Bas-,adas en Genero",
-        "caminata": false,
+        "caminata": true,
         "sedes": {
           "0": {
             "tipoTitulo": 2,
-            "name": "Todas las,sedes",
+            "name": "Política de, género",
             "caminata": false,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
                 "name": "Política de, género",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -442,11 +440,18 @@
                     "periodicidad": ""
                   }
                 }
-              },
-              "1": {
+              }
+            }
+          },
+          "1": {
+            "tipoTitulo": 3,
+            "name": "Asesoría,Jurídica,Externa Cali",
+            "caminata": false,
+            "Entidades": {
+              "0": {
                 "tipoTitulo": 3,
                 "name": "Asesoría,Jurídica,Externa Cali",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -458,11 +463,18 @@
                     "periodicidad": ""
                   }
                 }
-              },
-              "2": {
+              }
+            }
+          },
+          "2": {
+            "tipoTitulo": 3,
+            "name": "Asesoría,Jurídica,Externa Regionales",
+            "caminata": false,
+            "Entidades": {
+              "0": {
                 "tipoTitulo": 3,
                 "name": "Asesoría,Jurídica,Externa Regionales",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -574,23 +586,23 @@
   "1": {
     "tipoTitulo": 1,
     "name": "Universitaria",
-    "caminata": false,
+    "caminata": true,
     "introduccion": "En la dimensión vida universitaria las atenciones se despliegan: <br><br> Cuando el/la estudiante tiene una situación al interior de la universidad que requiera de algún tipo de atención relacionada con los servicios que ésta ofrece. Ya sea de carácter cultural, deportivo, administrativo o de vivienda.",
     "TiposDeAtencion": {
       "0": {
         "tipoTitulo": 2,
         "name": "Actividades,extracurriculares",
-        "caminata": false,
+        "caminata": true,
         "sedes": {
           "0": {
             "tipoTitulo": 1,
             "name": "Sede Cali",
-            "caminata": false,
+            "caminata": true,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
                 "name": "Baile,Recreativo",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -606,7 +618,7 @@
               "1": {
                 "tipoTitulo": 3,
                 "name": "Grupo de danzas,y música folclórica,Carmen Lopez",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -622,7 +634,7 @@
               "2": {
                 "tipoTitulo": 2,
                 "name": "Colectivo,teatral",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -638,7 +650,7 @@
               "3": {
                 "tipoTitulo": 1,
                 "name": "Shaman Crew",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -656,12 +668,12 @@
           "1": {
             "tipoTitulo": 2,
             "name": "Sede,Regionales",
-            "caminata": true,
+            "caminata": false,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
                 "name": "Bienestar y,Cultura",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -690,12 +702,12 @@
       "1": {
         "tipoTitulo": 2,
         "name": "Actividades,deportivas",
-        "caminata": false,
+        "caminata": true,
         "sedes": {
           "0": {
             "tipoTitulo": 1,
             "name": "Sede Cali",
-            "caminata": false,
+            "caminata": true,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
@@ -716,7 +728,7 @@
               "1": {
                 "tipoTitulo": 1,
                 "name": "Ajedrez",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoTitulo": 1,
@@ -732,7 +744,7 @@
               "2": {
                 "tipoTitulo": 1,
                 "name": "Fútbol",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoTitulo": 1,
@@ -748,7 +760,7 @@
               "3": {
                 "tipoTitulo": 2,
                 "name": "Tenis de,campo",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoTitulo": 1,
@@ -764,7 +776,7 @@
               "4": {
                 "tipoTitulo": 1,
                 "name": "Voleibol",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoTitulo": 1,
@@ -780,7 +792,7 @@
               "5": {
                 "tipoTitulo": 1,
                 "name": "Baloncesto",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoTitulo": 1,
@@ -796,7 +808,7 @@
               "6": {
                 "tipoTitulo": 1,
                 "name": "Rugby",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoTitulo": 1,
@@ -814,12 +826,12 @@
           "1": {
             "tipoTitulo": 2,
             "name": "Sede,Regionales",
-            "caminata": true,
+            "caminata": false,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
                 "name": "Recreación,Universitaria",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -850,23 +862,23 @@
   "2": {
     "tipoTitulo": 1,
     "name": "Economica",
-    "caminata": false,
+    "caminata": true,
     "introduccion": "En la dimensión económica las atenciones se despliegan cuando: <br><br> El/la estudiante tiene una situación económica, laboral o instrumental que requiera orientación en subsidios, descuentos, becas, préstamos o coberturas económicas.",
     "TiposDeAtencion": {
       "0": {
         "tipoTitulo": 3,
         "name": "Atención,socioeconómica,interna",
-        "caminata": false,
+        "caminata": true,
         "sedes": {
           "0": {
             "tipoTitulo": 1,
             "name": "Sede Cali",
-            "caminata": false,
+            "caminata": true,
             "Entidades": {
               "0": {
                 "tipoTitulo": 3,
                 "name": "Subsidio Eco-,nómico y Beca,de Alimentación",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -882,7 +894,7 @@
               "1": {
                 "tipoTitulo": 3,
                 "name": "Revisión de,derechos,económicos",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -898,7 +910,7 @@
               "2": {
                 "tipoTitulo": 3,
                 "name": "Fondo de,préstamo,estudiantil",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -914,7 +926,7 @@
               "3": {
                 "tipoTitulo": 3,
                 "name": "Descuento de,Matricula,por Hermanos",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -930,7 +942,7 @@
               "4": {
                 "tipoTitulo": 3,
                 "name": "Padrinazgo,Educativo,Univalle",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -946,7 +958,7 @@
               "5": {
                 "tipoTitulo": 3,
                 "name": "Fomento para, el empleo,Univalle/Sena",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -962,7 +974,7 @@
               "6": {
                 "tipoTitulo": 3,
                 "name": "Subsidio de apoyo,económico Biene-,star Universitario",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -978,7 +990,7 @@
               "7": {
                 "tipoTitulo": 1,
                 "name": "Descuentos",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -996,12 +1008,12 @@
           "1": {
             "tipoTitulo": 2,
             "name": "Sedes,Regionales",
-            "caminata": true,
+            "caminata": false,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
                 "name": "Derechos,económicos",
-                "caminata": true,
+                "caminata": false,
                 "Atenciones": {
                   "0": {
                     "tipoCaja": 1,
@@ -1060,7 +1072,7 @@
     "tipoTitulo": 1,
     "name": "Academica",
     "introduccion": "En la dimensión académica las atenciones se despliegan cuando:<br><br> El/la estudiante tiene una situación académica que requiera orientación (trámites académicos, búsquedas bibliográficas, obtención de material de apoyo o participación en monitorias académicas) o cuando se tiene un rendimiento académico bajo o se está en riesgo de caer en uno.</li></ul>",
-    "caminata": false,
+    "caminata": true,
     "TiposDeAtencion": {
       "0": {
         "tipoTitulo": 3,
@@ -1125,7 +1137,7 @@
       "2": {
         "tipoTitulo": 2,
         "name": "Consejería,Estudiantil",
-        "caminata": false,
+        "caminata": true,
         "sedes": {
           "0": {
             "tipoTitulo": 1,
@@ -1153,7 +1165,7 @@
           "1": {
             "tipoTitulo": 2,
             "name": "Sedes,Regionales",
-            "caminata": true,
+            "caminata": false,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
@@ -1187,7 +1199,7 @@
       "3": {
         "tipoTitulo": 1,
         "name": "GRACA",
-        "caminata": false,
+        "caminata": true,
         "sedes": {
           "0": {
             "tipoTitulo": 1,
@@ -1215,7 +1227,7 @@
           "1": {
             "tipoTitulo": 2,
             "name": "Sede,Regionales",
-            "caminata": true,
+            "caminata": false,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
@@ -1249,7 +1261,7 @@
       "4": {
         "tipoTitulo": 1,
         "name": "Biblioteca",
-        "caminata": false,
+        "caminata": true,
         "sedes": {
           "0": {
             "tipoTitulo": 1,
@@ -1277,7 +1289,7 @@
           "1": {
             "tipoTitulo": 2,
             "name": "Sede,Regionales",
-            "caminata": true,
+            "caminata": false,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
@@ -1316,7 +1328,7 @@
           "0": {
             "tipoTitulo": 1,
             "name": "Sede Cali",
-            "caminata": true,
+            "caminata": false,
             "Entidades": {
               "0": {
                 "tipoTitulo": 3,
@@ -1339,7 +1351,7 @@
           "1": {
             "tipoTitulo": 2,
             "name": "Sedes,Regionales",
-            "caminata": true,
+            "caminata": false,
             "Entidades": {
               "0": {
                 "tipoTitulo": 2,
