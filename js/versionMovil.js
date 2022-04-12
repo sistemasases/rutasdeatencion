@@ -117,6 +117,7 @@ function breadcrumbs_funcionality(json) {
 
       }
       else {
+        console.log(index,'index salida 59')
         $('body').attr('title', index)
         let paramters = ($('#arrows-1').attr('title')).split(',')
         funcionalityRute(json, Number(paramters[0]), Number(paramters[1]), Number(paramters[2]), 1, index - 1, paramters[3])
