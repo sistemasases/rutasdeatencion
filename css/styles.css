@@ -189,7 +189,7 @@ h1 {
     width: 100%;
     overflow: hidden;
     grid-template-rows: 5em;
-    grid-template-columns: 30% 40% 30%;
+    grid-template-columns: 20% 60% 20%;
     background-color: transparent;
     z-index: 1;
 }
@@ -233,6 +233,10 @@ h1 {
 
 .box-title {
     grid-column-start: 2;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    padding-bottom: 0.85em;
 }
 
 .logo-univalle-img {
@@ -548,7 +552,7 @@ h1 {
     justify-self: center;
     align-self: center;
     display: grid;
-    grid-template-rows: 10% 80% 10%;
+    grid-template-rows: 10% 86% 4%;
     grid-template-columns: 100%;
     align-items: center;
     justify-items: center;
@@ -557,6 +561,13 @@ h1 {
     background-color: white;
     overflow: hidden;
     border-radius: 1em;
+}
+
+.box-dimension-escritorio {
+    height: auto !important;
+    min-height: 55%;
+    max-height: 100%;
+    padding: 0.3em 0.5em;
 }
 
 .box-title-1 {
@@ -692,21 +703,22 @@ h1 {
     grid-column-start: 2;
     grid-column-end: 2;
     justify-self: end;
-    margin-right: 0.2em;
-    margin-bottom: 0.7em;
+    margin-right: 0.1em;
+    margin-bottom: 0.6em;
     align-self: center;
     color: #8f8e8e;
     font-size: 1.2em;
     cursor: pointer;
 }
 
+.arrow-7 {
+    cursor: pointer;
+}
+
 .box-x-dimension-aux-escritorio {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    justify-self: end;
-    margin-right: 0.5em;
-    margin-bottom: 0.7em;
-    align-self: center;
+    position: absolute;
+    top: -1.2%;
+    right: 1.5%;
     color: #8f8e8e;
     font-size: 1.2em;
     cursor: pointer;
@@ -760,8 +772,12 @@ h1 {
     display: grid;
     grid-template-rows: 15% 85%;
     grid-template-columns: 100%;
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 45%;
+    max-height: 100%;
+    padding: 0.5em 0.5em;
     background-color: white;
     box-shadow: rgba(199, 202, 202, 0.2) 0px 8px 24px;
     border-radius: 2em;
@@ -794,7 +810,6 @@ h1 {
     font-style: italic;
     font-weight: 800;
     color: gray;
-    overflow: hidden;
 }
 /* 4 espacios para  syntaxis */
 
