@@ -19,16 +19,22 @@ $(function () {
   Promise.all([screenResponsiveWebDesing(json), svgPaint(json), rutesAttentionMovil(json),info_dimension(json),event_click_div(),carry_box_dimension(json)])
 
   if (sizeScreenWidth <= 500) {
-    
+    $('#header-escritorio').hide()
+    //box-dimension-escritorio
+    $('#aux-grid-question').removeClass('box-dimension-escritorio')
+    $('#header-movil').css('display', 'grid')
     $('#title-brecumbs-aux').removeClass('title-aux-escritorio')
     $('.arrow-7').each(function (index, value) {
        console.log(index,value)
        $(value).removeClass('border-escritorio')
     })
    
+  }else {
+    $('#header-movil').hide()
+    //$('#header-escritorio').css('display', 'grid') 
   }
   
-  
+ 
    $('#box-dimension-question').hide()
    $('#box-dimension-routes').show()
   /* EVENTOS CLICK  */
