@@ -42,7 +42,7 @@ function rutesAttentionMovil(json) {
 
     //sacar el numero de la capa actual
     let indexCap = $('body').attr('title')
-
+    
     if ($('body').hasClass('active')) {
 
       //si esta activa la clase del brecumbs home, guarda el numero de la dimension precionada y activa la animacion
@@ -83,8 +83,9 @@ function rutesAttentionMovil(json) {
         entity = array_value_params[2]
       }
 
-      console.log($('.arrow-3').hasClass('arrow-active'), 'comfirmalo', indexCap)
-      if (Number(indexCap) < 3) {
+      json.then(function (value) {
+      console.log( dimension, attetionAux, entity, (Number(indexCap) === 3)? index : 0 , indexCap , 'caminata','salida 87')
+      if (get_name_dimension(value, dimension, attetionAux, entity, (Number(indexCap) === 3)? index : 0 , indexCap , 'caminata')) {
         if (sizeScreenWidthAux <= 500) {
           Promise.all([animateBackgroundNew(false, sizeScreenWidth, true, json, dimension, attetionAux, entity, indexCap),
           animateRuteNew(false, sizeScreenWidth, (index + 1), json, dimension, attetionAux, entity, indexCap, name, nameDimension), animateCharacterNew(json, dimension, attetionAux, entity, indexCap, sizeScreenWidth)])
@@ -101,26 +102,30 @@ function rutesAttentionMovil(json) {
         $('#arrows-1').attr('title', dimension + ',' + attetionAux + ',' + entity + ',' + name)
       }
       else {
+
+        if (Number(indexCap) === 3) {
         $('.arrow-3').removeClass('arrow-active')
         $('.arrow-3').find('.arrow-text').removeClass('arrow-active')
         $('.arrow-4').find('.arrow-text').addClass('arrow-active')
         $('.arrow-4').show()
         $('.arrow-4').find('.arrow-text').html(nameDimension)
-
+        }
 
 
         if (sizeScreenWidthAux <= 500) {
-          console.log(dimension, attetionAux, entity, indexCap, index, 'salidad 89')
-          funcionalityInfoContent(json, dimension, attetionAux, entity, index)
-          funcionality_botton_text(json, dimension, attetionAux, entity, index)
+          console.log(dimension, attetionAux, entity, index, 'salidad 89')
+          funcionalityInfoContent(json, dimension, attetionAux, entity, (Number(indexCap) === 3)? index : 0 )
+          funcionality_botton_text(json, dimension, attetionAux, entity, (Number(indexCap) === 3)? index : 0 )
         }
         else {
           console.log('entro pero que raro 25')
-          funcioanlity_box_escritorio(json, dimension, attetionAux, entity, index)
+          funcioanlity_box_escritorio(json, dimension, attetionAux, entity, (Number(indexCap) === 3)? index : 0 )
         }
 
 
       }
+
+      })
 
     }
 
@@ -235,7 +240,7 @@ function animateRuteNew(band, sizeScreenWidth, screen, json, dimension, attetion
 
         }
 
-        console.log($(`.${clasName}`).width(), 'Object.isSealed(value)', timeHideRute)
+        //console.log($(`.${clasName}`).width(), 'Object.isSealed(value)', timeHideRute)
         sizeScreen += 10
       }
       else {
@@ -279,7 +284,7 @@ function animateCharacterNew(json, dimension, attetionAux, entity, indexCap, siz
           }
           $(`#personaje-caminata-${imgSequence - 1}`).addClass('features-personajes-off')
           $(`#personaje-caminata-${imgSequence}`).removeClass('features-personajes-off')
-          console.log(imgSequence, 'imgSequence', imgSequence - 1, 'imgSequence - 1')
+          //console.log(imgSequence, 'imgSequence', imgSequence - 1, 'imgSequence - 1')
           imgSequence++
           timeSequence = 1
         }
@@ -1007,7 +1012,7 @@ function carry_box_dimension(json) {
       //activar el brecumbs 
       for (var i = 0; i < index; i++) {
         console.log('i', i)
-        funcionalityBrecumbs(show_breadcrumb, get_name_dimension(value, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3], show_breadcrumb))
+        funcionalityBrecumbs(show_breadcrumb, get_name_dimension(value, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3], show_breadcrumb,'name'))
         show_breadcrumb--
       }
 
@@ -1023,9 +1028,11 @@ function carry_box_dimension(json) {
       })
 
       //saber si el svg esta oculto
+      if (index < 4) {
       if (size_object_senalitica(value, array_value_params[0], array_value_params[1], array_value_params[2], index-1).length > 5) {
         $(`.lienzo`).css('right', `${get_time_multiplier(value, array_value_params[0], array_value_params[1], array_value_params[2], index - 1).split(',')[3]}%`)
       }
+     }
 
 
       //añadir la clase activa al breadcrumbs
@@ -1060,15 +1067,15 @@ function carry_box_dimension(json) {
  * @description funcion para obtener el nombre de la dimension
  * @returns 
  */
-function get_name_dimension(value, index, attention, sedes, entity, indexAux) {
+function get_name_dimension(value, index, attention, sedes, entity, indexAux , key) {
 
   objectCap = {
-    0: Object.values(value)[index].name,
-    1: Object.values(Object.values(value)[index].TiposDeAtencion)[attention].name,
-    2: Object.values(Object.values(Object.values(value)[index].TiposDeAtencion)[attention].sedes)[sedes].name,
-    3: Object.values(Object.values(Object.values(Object.values(value)[index].TiposDeAtencion)[attention].sedes)[sedes].Entidades)[entity].name
+    0: Object.values(value)[index][key],
+    1: Object.values(Object.values(value)[index].TiposDeAtencion)[attention][key],
+    2: Object.values(Object.values(Object.values(value)[index].TiposDeAtencion)[attention].sedes)[sedes][key],
+    3: Object.values(Object.values(Object.values(Object.values(value)[index].TiposDeAtencion)[attention].sedes)[sedes].Entidades)[entity][key]
   }
-
+  console.log('objectCap', indexAux)
   return objectCap[indexAux]
 
 }
@@ -1097,13 +1104,32 @@ function add_class_active_brecumbs_params_url(indexUrlParams) {
 
 }
 
-//objectJson = [(Object.entries((Object.values(value)[dimension].TiposDeAtencion))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes), Object.entries(((Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)[entity])[1]).Entidades)]
+
 /**
  * @method size_object_senalitica
  * @description funcion para saber el tamaño del objeto
  * @returns 
  */
 function size_object_senalitica(value, dimension, attention, entity, indexAux) {
+
+  objectCap = {
+    0: Object.entries((Object.values(value)[dimension].TiposDeAtencion)),
+    1: Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attention])[1].sedes),
+    2: Object.entries(((Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attention])[1].sedes)[entity])[1]).Entidades)
+  }
+
+  return objectCap[indexAux]
+
+}
+
+
+//(Object.values(((Object.entries(((((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux]).sedes)[entity].Entidades))[index][1]).Atenciones)[0]).name
+/**
+ * @method get_info_box_senalitica
+ * @description funcion para sacar el titulo y el contenido de la señalitica
+ * @returns 
+ */
+function get_info_box_senalitica(value, dimension, attention, entity, indexAux) {
 
   objectCap = {
     0: Object.entries((Object.values(value)[dimension].TiposDeAtencion)),
