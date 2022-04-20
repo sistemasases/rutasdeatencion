@@ -189,11 +189,38 @@ h1 {
     width: 100%;
     overflow: hidden;
     grid-template-rows: 5em;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 25% 50% 25%;
     background-color: transparent;
     z-index: 1;
 }
 
+.box-dimension-header-escritorio {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 17.5% 15% 50% 17.5%;
+    grid-template-areas: "dimension";
+    background-color: white;
+    border-bottom-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(199, 202, 202, 0.2) 0px 8px 27px;
+    z-index: 1;
+}
+
+.position-grid-header-logo {
+    grid-column-start: 2 !important;
+    grid-column-end: 2 !important;
+}
+
+.position-grid-header-title {
+    grid-column-start: 3 !important;
+    grid-column-end: 3 !important;
+}
 
 .title {
     text-align: center ;
@@ -240,7 +267,7 @@ h1 {
 }
 
 .logo-univalle-img {
-    justify-self: center;
+    justify-self: end;
     align-self: center;
     width: 3em;
     height: 4em;
