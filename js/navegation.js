@@ -22,6 +22,7 @@ $(function () {
     $('#header-escritorio').hide()
     //box-dimension-escritorio
     $('#aux-grid-question').removeClass('box-dimension-escritorio')
+    $('#box-dimension-internta-rutas').removeClass('box-dimension-escritorio')
     $('#header-movil').css('display', 'grid')
     $('#title-brecumbs-aux').removeClass('title-aux-escritorio')
     $('.arrow-7').each(function (index, value) {
