@@ -88,8 +88,14 @@ function breadcrumbs_funcionality(json) {
         $('.arrow-1').addClass('active')
         $('body').attr('title', 0)
         $('.box-title-1').css('display', 'none')
+
+        if (sizeScreenWidthAux < 500) {
+          $('#header-movil').css('display', 'grid')
+        }
+        else { $('#header-escritorio').css('display', 'grid') }
+
         $('.box-arrow').css('display', 'none')
-        $('header').css('display', 'grid')
+
         svgPaint(json)
 
         //version de escritorio
@@ -117,16 +123,16 @@ function breadcrumbs_funcionality(json) {
 
       }
       else {
-        console.log(index,'index salida 59')
+        console.log(index, 'index salida 59')
         $('body').attr('title', index)
         let paramters = ($('#arrows-1').attr('title')).split(',')
         funcionalityRute(json, Number(paramters[0]), Number(paramters[1]), Number(paramters[2]), 1, index - 1, paramters[3])
       }
 
       /*  Funcionalidades para ambos casos */
-      
+
       //dar clase activa al breadcrumbs 3 cuando se da clik en el breadcrumbs 4
-      if ($(this).hasClass('arrow-4') ) {
+      if ($(this).hasClass('arrow-4')) {
         $('#breadcumbs-3').find('.arrow-text').addClass('arrow-active')
         $(this).hide()
       }
