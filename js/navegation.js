@@ -12,6 +12,8 @@ $(function () {
   //obtener la informacion del json
   const json = getJson();
 
+  //preload de la pagina
+
 
   /* fin de las varibles */
 
@@ -43,7 +45,9 @@ $(function () {
 
 });
 
-
+window.onload = function () {
+    $('.box-preload-page').fadeOut();
+}
 
 
 /* Pinta la capa mayor que corresponde a los nombres de las dimensiones */
