@@ -64,7 +64,11 @@ function rutesAttentionMovil(json) {
       }
 
       if (valiate_params_url() !== '1111' && $('header').hasClass('active-url')) {
+     
+        //quitar la clase active-url del header
         $('header').removeClass('active-url')
+
+        //variabes
         var params_url = get_params_url()
         var array_value_params = []
 
@@ -76,15 +80,16 @@ function rutesAttentionMovil(json) {
           else {
             array_value_params.push(0)
           }
+         
         }
-
+        console.log(array_value_params,'array_value_params')
         dimension = array_value_params[0]
         attetionAux = array_value_params[1]
         entity = array_value_params[2]
       }
 
       json.then(function (value) {
-      console.log( dimension, attetionAux, entity, (Number(indexCap) === 3)? index : 0 , indexCap , 'caminata','salida 87')
+      //console.log( dimension, attetionAux, entity, (Number(indexCap) === 3)? index : 0 , indexCap , 'caminata','salida 87')
       if (get_name_dimension(value, dimension, attetionAux, entity, (Number(indexCap) === 3)? index : 0 , indexCap , 'caminata')) {
         if (sizeScreenWidthAux <= 500) {
           Promise.all([animateBackgroundNew(false, sizeScreenWidth, true, json, dimension, attetionAux, entity, indexCap),
@@ -1005,10 +1010,10 @@ function carry_box_dimension(json) {
       //las capas de la dimension inician en 1 por eso se resta 1
       show_breadcrumb = index - 1
 
-      
+     
 
       //pasar los paremtros a la dimension que seleciono el usuario
-      $('body').attr('title', (index < 4)? index : 3)
+      $('body').attr('title', (index < 4)? (  (permission_walk)? index : index - 1 ) : 3)
       $('#bread-1').removeClass('box-breadcrumbs-active')
       $('#arrows-1').attr('title', array_value_params[0] + ',' + array_value_params[1] + ',' + array_value_params[2] + ',' + 'arrows-')
       
