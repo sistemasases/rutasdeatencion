@@ -978,6 +978,7 @@ function carry_box_dimension(json) {
   json.then((value) => {
 
     var params_boolean = valiate_params_url()
+    var sizeScreenWidth = $(window).width()
     var params = get_params_url()
     var array_value_params = []
     var index = 0
@@ -999,6 +1000,8 @@ function carry_box_dimension(json) {
 
       }
 
+
+      var permission_walk = get_name_dimension(value, array_value_params[0],  array_value_params[1],  array_value_params[2],  array_value_params[3], index - 1 , 'caminata')
       //las capas de la dimension inician en 1 por eso se resta 1
       show_breadcrumb = index - 1
 
@@ -1039,12 +1042,19 @@ function carry_box_dimension(json) {
       add_class_active_brecumbs_params_url(index)
 
       //poner los nombres en las señaliticas
-      funcionalityRute(json, array_value_params[0], array_value_params[1], array_value_params[2], 1, (index < 4)? index - 1 : 2 , 'arrows-')
+      funcionalityRute(json, array_value_params[0], array_value_params[1], array_value_params[2], 1, (index < 4)?  ( (permission_walk)? index - 1 : index - 2 ): 2 , 'arrows-')
       
       //si todos los paremetros son diferentes de null mostrar la caja
-      if (index === 4) {       
+      if (!permission_walk) {   
+          
+         if (sizeScreenWidth <= 500) { 
           funcionalityInfoContent(json, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3])
-      }
+         }
+         else {
+          funcioanlity_box_escritorio(json, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3] )
+         }
+
+      } 
 
       
       $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
