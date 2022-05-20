@@ -1013,7 +1013,7 @@ function carry_box_dimension(json) {
       $('#arrows-1').attr('title', array_value_params[0] + ',' + array_value_params[1] + ',' + array_value_params[2] + ',' + 'arrows-')
       
       //activar el brecumbs 
-      for (var i = 0; i < index; i++) {
+      for (var i = 0; i < ((permission_walk)? index : index - 1) ; i++) {
         console.log('i', i)
         funcionalityBrecumbs(show_breadcrumb, get_name_dimension(value, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3], show_breadcrumb,'name'))
         show_breadcrumb--
