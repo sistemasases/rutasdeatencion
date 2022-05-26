@@ -6,7 +6,9 @@
 */
 
 
-/* Funcionalidad de rutas de atencion svg */
+/* Funcionalidad de rutas de atencion svg 
+   TODO: Acomodar cuando la caminata es false y se pasa los parametros de la url a la funcion
+*/
 function rutesAttentionMovil(json) {
 
   let dimension, attetionAux, entity;
@@ -18,7 +20,7 @@ function rutesAttentionMovil(json) {
     event.preventDefault();
     event.isPropagationStopped();
 
-    //sacar el nombre de la senñalitica
+    //sacar el nombre de la señalitica
     let regerxc = /^\s{10,50}$/
     let name = ($(this).attr('id')).split('-')[0] + '-'
 
@@ -64,7 +66,11 @@ function rutesAttentionMovil(json) {
       }
 
       if (valiate_params_url() !== '1111' && $('header').hasClass('active-url')) {
+     
+        //quitar la clase active-url del header
         $('header').removeClass('active-url')
+
+        //variabes
         var params_url = get_params_url()
         var array_value_params = []
 
@@ -76,7 +82,11 @@ function rutesAttentionMovil(json) {
           else {
             array_value_params.push(0)
           }
+         
         }
+        
+
+        array_value_params[indexCap] = index
 
         dimension = array_value_params[0]
         attetionAux = array_value_params[1]
@@ -84,7 +94,7 @@ function rutesAttentionMovil(json) {
       }
 
       json.then(function (value) {
-      console.log( dimension, attetionAux, entity, (Number(indexCap) === 3)? index : 0 , indexCap , 'caminata','salida 87')
+      //console.log( dimension, attetionAux, entity, (Number(indexCap) === 3)? index : 0 , indexCap , 'caminata','salida 87')
       if (get_name_dimension(value, dimension, attetionAux, entity, (Number(indexCap) === 3)? index : 0 , indexCap , 'caminata')) {
         if (sizeScreenWidthAux <= 500) {
           Promise.all([animateBackgroundNew(false, sizeScreenWidth, true, json, dimension, attetionAux, entity, indexCap),
@@ -853,7 +863,7 @@ function get_time_multiplier(value, dimension, attetionAux, entity, indexCap) {
 
   sizeScreenWidth11 = $(window).width()
   sizeScreenHeigth = $(window).height()
-
+console.log('entre a la funcion')
   try {
     objectJson = [(Object.entries((Object.values(value)[dimension].TiposDeAtencion))), Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes), Object.entries(((Object.entries((Object.entries((Object.values(value)[dimension]).TiposDeAtencion)[attetionAux])[1].sedes)[entity])[1]).Entidades)]
   } catch (err) {
@@ -877,10 +887,12 @@ function get_time_multiplier(value, dimension, attetionAux, entity, indexCap) {
   //54% of right
   else if (objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 375 && sizeScreenHeigth > 667 ||
     objectJson[indexCap].length > 5 && sizeScreenWidth11 <= 500 && sizeScreenWidth11 > 375 && sizeScreenHeigth > 800) {
-    return `58,1.6,${($('#svg-1-6').css('display') !== 'none') ? '6' : '54'},54`
+      
+      return `58,1.6,${($('#svg-1-6').css('display') !== 'none') ? '6' : '54'},54`
   }
   //0% of right
   else {
+    console.log('entre a la opcion de 0% de right')
     return `68,1.37,${($('#svg-1-6').css('display') !== 'none') ? '6' : get_increase_size(objectJson, indexCap, sizeScreenWidth11, sizeScreenHeigth)}`
   }
 
@@ -978,6 +990,7 @@ function carry_box_dimension(json) {
   json.then((value) => {
 
     var params_boolean = valiate_params_url()
+    var sizeScreenWidth = $(window).width()
     var params = get_params_url()
     var array_value_params = []
     var index = 0
@@ -999,20 +1012,25 @@ function carry_box_dimension(json) {
 
       }
 
-      //las capas de la dimension inician en 1 por eso se resta 1
-      show_breadcrumb = index - 1
 
-      
+      var permission_walk = get_name_dimension(value, array_value_params[0],  array_value_params[1],  array_value_params[2],  array_value_params[3], index - 1 , 'caminata')
+      //las capas de la dimension inician en 1 por eso se resta 1
+      show_breadcrumb = (permission_walk)? index - 1 : (index === 4)? index -1 : index - 2
+
+     
 
       //pasar los paremtros a la dimension que seleciono el usuario
-      $('body').attr('title', (index < 4)? index : 3)
+      $('body').attr('title', (index < 4)? (  (permission_walk)? index : index - 1 ) : 3)
       $('#bread-1').removeClass('box-breadcrumbs-active')
       $('#arrows-1').attr('title', array_value_params[0] + ',' + array_value_params[1] + ',' + array_value_params[2] + ',' + 'arrows-')
       
+      console.log(index, show_breadcrumb , 'flores para sebas')
+
       //activar el brecumbs 
-      for (var i = 0; i < index; i++) {
+      for (var i = 0; i < ( (!permission_walk && index != 4)? index - 1 : index )  ; i++) {
         console.log('i', i)
-        funcionalityBrecumbs(show_breadcrumb, get_name_dimension(value, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3], show_breadcrumb,'name'))
+        name_dimension = (get_name_dimension(value, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3], show_breadcrumb,'name'))
+        funcionalityBrecumbs(show_breadcrumb, (name_dimension).split(',')[((name_dimension).split(',')).length - 1].replace(',',' ').toUpperCase())
         show_breadcrumb--
       }
 
@@ -1029,22 +1047,31 @@ function carry_box_dimension(json) {
 
       //saber si el svg esta oculto
       if (index < 4) {
-      if (size_object_senalitica(value, array_value_params[0], array_value_params[1], array_value_params[2], index-1).length > 5) {
-        $(`.lienzo`).css('right', `${get_time_multiplier(value, array_value_params[0], array_value_params[1], array_value_params[2], index - 1).split(',')[3]}%`)
+
+      if (size_object_senalitica(value, array_value_params, ( (permission_walk)?  index - 1: index - 2 ) ).length > 5) {
+        $(`.lienzo`).css('right', `${get_time_multiplier(value, array_value_params[0], array_value_params[1], array_value_params[2], ( (permission_walk)?  index - 1: index - 2 )).split(',')[3]}%`)
       }
+
      }
 
 
       //añadir la clase activa al breadcrumbs
-      add_class_active_brecumbs_params_url(index)
+      add_class_active_brecumbs_params_url((!permission_walk && index != 4 )? index - 1 : index )
 
       //poner los nombres en las señaliticas
-      funcionalityRute(json, array_value_params[0], array_value_params[1], array_value_params[2], 1, (index < 4)? index - 1 : 2 , 'arrows-')
+      funcionalityRute(json, array_value_params[0], array_value_params[1], array_value_params[2], 1, (index < 4)?  ( (permission_walk)? index - 1 : index - 2 ): 2 , 'arrows-')
       
       //si todos los paremetros son diferentes de null mostrar la caja
-      if (index === 4) {       
+      if (!permission_walk) {   
+          
+         if (sizeScreenWidth <= 500) { 
           funcionalityInfoContent(json, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3])
-      }
+         }
+         else {
+          funcioanlity_box_escritorio(json, array_value_params[0], array_value_params[1], array_value_params[2], array_value_params[3] )
+         }
+
+      } 
 
       
       $('#arrow-box-principality').removeClass('breadcrumbs-active-click')
@@ -1075,7 +1102,7 @@ function get_name_dimension(value, index, attention, sedes, entity, indexAux , k
     2: Object.values(Object.values(Object.values(value)[index].TiposDeAtencion)[attention].sedes)[sedes][key],
     3: Object.values(Object.values(Object.values(Object.values(value)[index].TiposDeAtencion)[attention].sedes)[sedes].Entidades)[entity][key]
   }
-  console.log('objectCap', indexAux)
+  console.log('objectCap', objectCap[indexAux])
   return objectCap[indexAux]
 
 }
@@ -1110,7 +1137,15 @@ function add_class_active_brecumbs_params_url(indexUrlParams) {
  * @description funcion para saber el tamaño del objeto
  * @returns 
  */
-function size_object_senalitica(value, dimension, attention, entity, indexAux) {
+function size_object_senalitica(value, array_value_params, indexAux) {
+  
+  //console de array_value_params
+  console.log('array_value_params en size', array_value_params)
+
+  //variables
+  dimension = array_value_params[0]
+  attention = array_value_params[1]
+  entity = array_value_params[2]
 
   objectCap = {
     0: Object.entries((Object.values(value)[dimension].TiposDeAtencion)),

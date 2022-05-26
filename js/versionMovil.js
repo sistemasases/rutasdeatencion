@@ -9,7 +9,6 @@
 function screenResponsiveWebDesing(json) {
 
   /*  VARIABLES  */
-  let sizeScreenWidth = $(window).width()
   let sizeScreenHeigth = $(window).height()
 
   // if ( sizeScreenWidth <= 1050 &&  sizeScreenWidth < sizeScreenHeigth) {
