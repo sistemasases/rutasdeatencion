@@ -489,7 +489,7 @@ h1 {
     grid-column-end: 1;
     justify-self: center;
     align-self: flex-end;
-    height: 94.5%;
+    height: 90%;
     width: 15em;
     overflow: hidden;
 }
@@ -518,7 +518,7 @@ h1 {
 .box-svg {
     grid-column-start: 2;
     grid-column-end: 2;
-    height: 95%;
+    height: 100%;
 }
 
 .box-svg svg {
@@ -855,7 +855,9 @@ h1 {
     display: none !important;
 }
 
-
+.aux-box-svg {
+    align-self: flex-end;
+}
 
 @media screen and (min-width: 1200px ) and (min-height: 1100px) {
 
