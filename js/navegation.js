@@ -12,6 +12,8 @@ $(function () {
   //obtener la informacion del json
   const json = getJson();
 
+  //preload de la pagina
+
 
   /* fin de las varibles */
 
@@ -22,6 +24,7 @@ $(function () {
     $('#header-escritorio').hide()
     //box-dimension-escritorio
     $('#aux-grid-question').removeClass('box-dimension-escritorio')
+    $('#box-dimension-internta-rutas').removeClass('box-dimension-escritorio')
     $('#header-movil').css('display', 'grid')
     $('#title-brecumbs-aux').removeClass('title-aux-escritorio')
     $('.arrow-7').each(function (index, value) {
@@ -42,7 +45,9 @@ $(function () {
 
 });
 
-
+window.onload = function () {
+    $('.box-preload-page').fadeOut();
+}
 
 
 /* Pinta la capa mayor que corresponde a los nombres de las dimensiones */
