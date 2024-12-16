@@ -94,7 +94,7 @@ function svgPaint(json) {
     i = null
   }).catch((err) => {
 
-    console.log('ups, paso un error al insertar el texto', err)
+    console.log('ups, paso un error al insertar el texto.', err)
 
   });
 
@@ -109,7 +109,7 @@ function getJsonNew(json) {
     //console.log( (Object.values(value)[0]) )
 
   }).catch((err) => {
-    console.log('ups, paso un error al insertar el texto', err)
+    console.log('ups, paso un error al insertar el texto..', err)
   })
 
 }
